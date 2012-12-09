@@ -49,6 +49,9 @@ foreach($consultas as $consulta)
 function word() {
     document.myform.action = '/rankinginfo/inicio/arrendado/consulta/descarga/word.php';
 }
+function mail() {
+    document.myform.action = '/rankinginfo/inicio/arrendado/consulta/descarga/mail.php';
+}
 function excel() {
     document.myform.action = '/rankinginfo/inicio/arrendado/consulta/descarga/excel.php';
 }
@@ -91,7 +94,8 @@ $(function(){
 			<input type="checkbox" id="selectall" checked="true"/>	
 			<input type="submit" onClick="excel()"value="Excel">
 			<input type="submit" onClick="word()" value="Word">
-		</div>
+			<input type="submit" onClick="mail()" value="Mail">
+ 		</div>
 
 <?php while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 
