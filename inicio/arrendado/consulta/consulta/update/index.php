@@ -52,7 +52,7 @@ function word() {
     document.myform.action = '/rankinginfo/inicio/arrendado/consulta/descarga/word.php';
 }
 function mail() {
-            window.location.href="mailto:?subject="+document.title+"&body="+escape(window.location.href);
+            window.location.href="mailto:?subject="Consulta Ranking Information"&body="+escape(window.location.href);
 }
 function excel() {
     document.myform.action = '/rankinginfo/inicio/arrendado/consulta/descarga/excel.php';
@@ -95,7 +95,7 @@ $(function(){
 			<input type="checkbox" id="selectall" checked="true"/>	
 			<input type="submit" onClick="excel()"value="Excel">
 			<input type="submit" onClick="word()" value="Word">
-			<a href="javascript:mail()" value="Mail">Mail</a>
+			<input type="submit" onClick="mail()" value="Mail">
  		</div>
 <div id="divarrendadoscompleto">
 <?php while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
@@ -122,12 +122,18 @@ $(function(){
 										<td>Domicilio Actual:</td>
 										<td><?php echo $row["domicilio_actual"] ?></td>
 									</tr>
-			<?php }if (!empty($row["telefono_particular"])) { ?>
-									<tr>		
-										<td>Telefono de Casa:</td>
+<?php } if (!empty($row["telefono_particular"]) && !empty($row["telefono_personal"])) { ?>			
+									<tr>
+			<?php if (!empty($row["estado_civil"])) { ?>							
+										<td>Telefono Personal:</td>
+										<td><?php echo $row["telefono_personal"] ?></td>
+			<?php } ?>						
+				
+			<?php if (!empty($row["telefono_particular"])) { ?>		
+										<td>Telefono Particular:</td>
 										<td><?php echo $row["telefono_casa"] ?></td>
+										<?php } ?>
 									</tr>
-
 									
 									<?php } if (!empty($row["estado_civil"])) { ?>										
 									<tr>
