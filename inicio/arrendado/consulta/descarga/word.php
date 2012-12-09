@@ -62,10 +62,41 @@ $PHPWord = new PHPWord();
 
 // New portrait section
 $section = $PHPWord->createSection();
+$table = $section->addTable();
+
 
  while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { 
  
-$section->addLink($nalgas, $nalgas, array('color'=>'0000FF', 'underline'=>PHPWord_Style_Font::UNDERLINE_SINGLE));
+ 	 	$table->addRow();
+ 	 	$table->addCell(900)->addText("Nombre:");
+ 	 	$table->addCell(1000)->addText($row['nombre'].$row["apellido_paterno"].$row["apellido_materno"]);
+ 	 	$table->addRow();
+ 	 	$table->addCell(900)->addText("Curp:");
+ 	 	$table->addCell(1000)->addText($row['curp']);
+ 	 	
+ 	 	
+ 	 	if (!empty($row["domicilio_actual"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(900)->addText("Domicilio Actual:");
+	 	 	$table->addCell(1000)->addText($row['domicilio_actual']);
+ 	 	}
+ 	 	 	 	
+ 	 	if (!empty($row["domicilio_actual"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(900)->addText("Domicilio Actual:");
+	 	 	$table->addCell(1000)->addText($row['domicilio_actual']);
+ 	 	}
+ 	 	
+ 	 	if (!empty($row["domicilio_actual"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(900)->addText("Domicilio Actual:");
+	 	 	$table->addCell(1000)->addText($row['domicilio_actual']);
+ 	 	}
+
+
 
 }
 

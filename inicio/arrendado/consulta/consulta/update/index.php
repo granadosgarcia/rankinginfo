@@ -124,7 +124,7 @@ $(function(){
 									</tr>
 			<?php }if (!empty($row["telefono_particular"])) { ?>
 									<tr>		
-										<td>Telefono de Casa:</td>
+										<td>Telefono de Casa: </td>
 										<td><?php echo $row["telefono_casa"] ?></td>
 									</tr>
 
