@@ -46,7 +46,7 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
         <div id="entero">
             <div id="wrapper">
                 <div id="header">
-<h1> Editando </h1>
+<h1> Editando a <?php echo $row['nombres']." ".$row['apellido_paterno']." ".$row['apellido_materno']; ?></h1>
                 </div>
                 <div id="inputss">
 

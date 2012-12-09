@@ -3,6 +3,9 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
 
+$sqlact="
+INSERT INTO actividades (id_usuario, fecha, actividad)
+VALUES ('$_SESSION[usuario_id]', NOW(), 'Edición Arrendado')";
 
 $sql="
 UPDATE arrendado SET";
@@ -34,7 +37,7 @@ $sql.=", domicilio_aval		= '$_POST[domicilio_aval]'";
 if(!empty($_POST['telefono_aval']))
 $sql.=", telefono_aval 		= '$_POST[telefono_aval]'";
 if(!empty($_POST['nombre_conyuge']))
-$sql.=", nombre_conyuge		= '$_POST[nombre_conyuge]'";
+$sql.=", nombre_conyuge='$_POST[nombre_conyuge]'";
 
 $sql.="WHERE 
 curp='$_SESSION[curp]'";
@@ -50,6 +53,7 @@ curp='$_SESSION[curp]'";
   			!empty($_FILES['file']['name'][2]) ) {
   include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/image_upload.php";
   }
+   mysql_query($sqlact,$con);
   echo '<script> alert("Agregado Exitosamente"); window.location = "../../"; </script>';
 
  mysql_close($con);

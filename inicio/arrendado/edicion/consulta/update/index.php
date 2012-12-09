@@ -46,7 +46,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
         <div id="entero">
             <div id="wrapper">
                 <div id="header">
-<h1> Editando </h1>
+<h1> Editando a <?php echo $row['nombre']." ".$row['apellido_paterno']." ".$row['apellido_materno']; ?></h1>
                 </div>
                 <div id="inputss">
 <input style="visibility:hidden; display: none;"type="text" name="consulta" value="<?php echo $row['curp']?>">

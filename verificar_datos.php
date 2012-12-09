@@ -30,7 +30,7 @@ if($contador == 1){
 		$sql="SELECT password FROM usuario
 			WHERE nombre_usuario='$user'";
 			
-		$sql2 = "SELECT nombre,privilegios FROM usuario
+		$sql2 = "SELECT nombre,privilegios,id FROM usuario
 			WHERE nombre_usuario='$user'";
 				
 		$result=mysql_query($sql);
@@ -42,6 +42,7 @@ if($contador == 1){
 	$_SESSION['usuario']= $user;
 	$_SESSION['nombreusuario']= $nombreses['nombre'];
 	$_SESSION['privilegios']= $nombreses['privilegios'];
+	$_SESSION['usuario_id']= $nombreses['id'];
 	echo "<script>window.location='inicio/index.php'; </script>";
 	}
 
