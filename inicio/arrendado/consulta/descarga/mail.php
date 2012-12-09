@@ -1,29 +1,34 @@
 
 <?php 
+       include('Mail.php');
+        include('Mail/mime.php');
 
-$_SESSION['consultasdescarga']=$curps;
+        // Constructing the email
+        $sender = " Ranking info";                              // Your name and email address
+        $recipient = "crazymarines2@gmail.com";                           // The Recipients name and email address
+        $subject = "Consulta Ranking Information";                                            // Subject for the email
+        $text = 'This is a text message.';   
+        $message->addHTMLImage("button.png");
+                               
+        $html = '<html><body><p><IMG SRC="button.png" /></p></body></html>';  // HTML version of the email
+        $crlf = "\n";
+        $headers = array(
+                        'From'          => $sender,
+                        'Return-Path'   => $sender,
+                        'Subject'       => $subject
+                        );
 
-include('Mail.php'); 
-include('Mail/mime.php'); 
-$text = 'Consulta de Ranking Information'; 
-$html = '<html><body>HTML version of <b>email</b><img src="/madcat.jpeg"/><br/>'; 
-$html .='<font face="verdana" size="1">This can be used to <u>spice up</u> emails with extra goodies!</font></body></html>'; 
-$file = '/madcat.jpeg'; 
+        // Creating the Mime message
+        $mime = new Mail_mime($crlf);
 
-$crlf = "\r\n"; 
-$hdrs = array( 
-        'From' => 'Ranking Information', 
-        'Subject' => 'Consulta' 
-        ); 
-$mime = new Mail_mime($crlf); 
-$mime->addHTMLImage('./madcat.jpeg', 'image/jpg'); 
-$mime->setTXTBody($text); 
-$mime->setHTMLBody($html); 
-$mime->addAttachment($file, 'image/jpg'); 
-$body = $mime->get(); 
-$hdrs = $mime->headers($hdrs); 
-$mail =& Mail::factory('mail'); 
-$mail->send('crazymarines2@gmail.com', $hdrs, $body); 
+        // Setting the body of the email
+        $mime->setTXTBody($text);
+        $mime->setHTMLBody($html);
 
+        $body = $mime->get();
+        $headers = $mime->headers($headers);
 
+        // Sending the email
+        $mail =& Mail::factory('mail');
+        $mail->send($recipient, $headers, $body);
 ?>
