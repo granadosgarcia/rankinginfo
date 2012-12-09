@@ -1,0 +1,601 @@
+
+
+
+
+
+/*---------------------------------- CSS -----------------------*/
+
+@media print {
+.noPrint {
+    display:none;
+}
+}
+
+#contenedortabla{
+	
+	margin: 40px 0px;
+}
+
+.infooo{
+	color: black;
+}
+
+.submitquery{
+	margin: 2px 0px 0px 0px;
+	float: right;
+	
+}
+
+.busquedatexto{
+	width: 300px;
+	font-size: 1.25em;
+	
+}
+#busqueda{
+	margin: 100px auto 0px auto;
+	width: 510px;
+}
+
+#primerrow{
+	border: 1px solid;
+border-radius: 15px;
+width: 300px;
+margin: 30px auto;
+padding: 10px 15px;
+}
+
+#imagenesrow{
+	border: 1px solid;
+border-radius: 15px;
+width: 300px;
+margin: 30px auto;
+padding: 10px 15px;
+}
+
+#imagenessrow{
+	border: 1px solid;
+border-radius: 15px;
+width: 310px;
+margin: 30px auto;
+padding: 10px 15px;
+}
+
+#arrendadorrow{
+	border: 1px solid;
+border-radius: 15px;
+width: 280px;
+margin: 30px auto;
+padding: 10px 15px;
+}
+
+#patronrow{
+	border: 1px solid;
+border-radius: 15px;
+width: 310px;
+margin: 30px auto;
+padding: 10px 15px;
+}
+
+#escolaridad{
+	border: 1px solid;
+border-radius: 15px;
+width: 310px;
+margin: 30px auto;
+padding: 10px 15px;
+}
+
+
+#inputss input[type="text"] { float: right;
+margin: 0px 3px;
+	
+}
+
+#botonesrow{
+	width: 830px;
+	margin: 15px auto;
+	float: left;
+}
+#modificarrow{
+	float: right;
+	margin: -30px 0px 0px 0px;
+}
+
+#borrado{
+margin: 0px 0px 0px 90px;
+width: 200px;
+}
+
+#botonera_menu {
+    margin: -15px 0 0 600px;
+    width: 250px;
+}
+.bienvenida{
+	font-size: 20px;
+	margin: 0px 0px 0px 80px;
+}
+
+.salida{
+	margin: 0px 0px 0px 700px;
+	
+}
+
+#edicion{
+	width: 152px;
+	float: left;
+}
+
+#calificacion{
+	margin: 0px 0px 0px 0px;
+	
+}
+
+#minimenu{
+	margin: 80px 0px 0px 70px;
+}
+
+#navegacion{
+	margin: 00px 0px 0px 70px;
+}
+
+.botonera{
+	margin: 80px 0px 0px 150px;
+	float: left;
+}
+
+body{
+
+	font-family: 'NeutonRegular';
+	background-color: #000000;
+	color: #ffffff;
+}
+
+#entero{
+	width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+}
+
+
+#wrapper{
+	width: 920px;
+			margin-left: auto;
+			margin-right: auto;
+}
+
+#header{
+	background-color: #535151;
+	color: #ffffff;
+	
+}
+
+#ko{
+	margin: 50px auto;
+	width: 200px;
+}
+
+
+.titulo{
+	font: 90px 'NeutonLight', Arial, sans-serif;
+	padding: 10px 0px 10px 80px;
+}
+
+.titulo2{
+	font: 50px/70px 'NeutonLight', Arial, sans-serif;
+	padding: 10px 0px 10px 80px;
+
+}
+
+#headermainstream{
+	background-color: #6e6868;
+	color: #ffffff;
+}
+
+.cuadrologin{
+	background-color: #979595;
+	border-radius: 15px;
+	width: 600px;
+	margin: 10px 0px 0px 150px;
+	color:#2d2c2c;
+	font:42px 'NeutonLight', Arial, sans-serif;
+}
+
+.cuadrologin ul{
+	list-style-type: none;
+}
+li.user{
+	padding: 30px 0px 0px 0px;
+}
+li.pass{
+	padding: 25px 0px 10px 0px;
+}
+li.envio{
+
+	padding: 0px 0px 29px 379px;
+}
+
+input.user{
+	font:36px 'NeutonLight', Arial, sans-serif;
+	margin: 0px 0px 0px 60px;
+}
+
+input.pass{
+	font:36px 'NeutonLight', Arial, sans-serif;
+	margin: 0px 0px 0px 7px;
+}
+
+#co{
+	margin: 20px auto;
+width: 330px;
+	
+}
+
+#ni{
+	margin: 0px auto;
+	width: 200px;
+}
+
+#ca{
+	margin: 25px auto;
+width: 730px;
+}
+.etiqueta{
+	margin:16px 0px 0px 25px;
+}
+
+.rojo {
+   border-top: 1px solid #e30000;
+   background: #ff0000;
+   background: -webkit-gradient(linear, left top, left bottom, from(#f73b3b), to(#ff0000));
+   background: -webkit-linear-gradient(top, #f73b3b, #ff0000);
+   background: -moz-linear-gradient(top, #f73b3b, #ff0000);
+   background: -ms-linear-gradient(top, #f73b3b, #ff0000);
+   background: -o-linear-gradient(top, #f73b3b, #ff0000);
+   padding: 5px 13px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font: bold 16px/1 "NeutonBold", Geneva, Verdana, sans-serif;
+
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.rojo:hover {
+   border-top-color: #ff0000;
+   background: #ff0000;
+   color: #ffe5e5;
+   }
+.rojo:active {
+   border-top-color: #a3051f;
+   background: #a3051f;
+   }
+
+
+
+
+.boton{
+	background-color: #EEE;
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #EEE), color-stop(100%, #CCC));
+background-image: -webkit-linear-gradient(top, #EEE, #CCC);
+background-image: -moz-linear-gradient(top, #EEE, #CCC);
+background-image: -ms-linear-gradient(top, #EEE, #CCC);
+background-image: -o-linear-gradient(top, #EEE, #CCC);
+background-image: linear-gradient(top, #EEE, #CCC);
+border: 1px solid #CCC;
+border-bottom: 1px solid #BBB;
+border-radius: 3px;
+color: #333;
+font: 13px/1 "NeutonBold", Geneva, Verdana, sans-serif;
+padding: 8px 0;
+text-align: center;
+text-shadow: 0 1px 0 #EEE;
+width: 120px;
+	
+}
+.boton:hover {
+    background-color: #dddddd;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #bbbbbb));
+    background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: linear-gradient(top, #dddddd, #bbbbbb);
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #ddd; }
+    
+  .boton:active {
+    border: 1px solid #aaa;
+    border-bottom: 1px solid #888;
+    -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee; }
+
+
+
+.inserta{
+	background-color: #7fbf4d;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
+  background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: linear-gradient(top, #7fbf4d, #63a62f);
+  border: 1px solid #63a62f;
+  border-bottom: 1px solid #5b992b;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+  box-shadow: inset 0 1px 0 0 #96ca6d;
+  color: #fff;
+  font: bold 18px/1 "NeutonBold", Geneva, Verdana, sans-serif;
+  padding: 7px 0 8px 0;
+  text-align: center;
+  text-shadow: 0 -1px 0 #4c9021;
+  width: 150px; 
+}
+.inserta:hover{
+	background-color: #76b347;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76b347), color-stop(100%, #5e9e2e));
+    background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -o-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: linear-gradient(top, #76b347, #5e9e2e);
+    -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
+    box-shadow: inset 0 1px 0 0 #8dbf67;
+    cursor: pointer; 
+}
+.inserta:active{
+	    border: 1px solid #5b992b;
+    border-bottom: 1px solid #538c27;
+    -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+}
+
+
+.edita{
+	background-color: #7fbf4d;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
+  background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: linear-gradient(top, #7fbf4d, #63a62f);
+  border: 1px solid #63a62f;
+  border-bottom: 1px solid #5b992b;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+  box-shadow: inset 0 1px 0 0 #96ca6d;
+  color: #fff;
+  font: bold 18px/1 "NeutonBold", Geneva, Verdana, sans-serif;
+  padding: 7px 0 8px 0;
+  text-align: center;
+  text-shadow: 0 -1px 0 #4c9021;
+  width: 150px; 
+}
+
+.edita:hover{
+	background-color: #76b347;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76b347), color-stop(100%, #5e9e2e));
+    background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -o-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: linear-gradient(top, #76b347, #5e9e2e);
+    -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
+    box-shadow: inset 0 1px 0 0 #8dbf67;
+    cursor: pointer; 
+}
+
+.edita:active{
+	   border: 1px solid #5b992b;
+    border-bottom: 1px solid #538c27;
+    -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+}
+.califica{
+		background-color: #7fbf4d;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
+  background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: linear-gradient(top, #7fbf4d, #63a62f);
+  border: 1px solid #63a62f;
+  border-bottom: 1px solid #5b992b;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+  box-shadow: inset 0 1px 0 0 #96ca6d;
+  color: #fff;
+  font: bold 18px/1 "NeutonBold", Geneva, Verdana, sans-serif;
+  padding: 7px 0 8px 0;
+  text-align: center;
+  text-shadow: 0 -1px 0 #4c9021;
+  width: 150px; 
+}
+.califica:hover{
+	background-color: #76b347;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76b347), color-stop(100%, #5e9e2e));
+    background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -o-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: linear-gradient(top, #76b347, #5e9e2e);
+    -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
+    box-shadow: inset 0 1px 0 0 #8dbf67;
+    cursor: pointer;
+}
+
+.califica:active{
+	 border: 1px solid #5b992b;
+    border-bottom: 1px solid #538c27;
+    -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+}
+.consulta{
+	background-color: #7fbf4d;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
+  background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: linear-gradient(top, #7fbf4d, #63a62f);
+  border: 1px solid #63a62f;
+  border-bottom: 1px solid #5b992b;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+  box-shadow: inset 0 1px 0 0 #96ca6d;
+  color: #fff;
+  font: bold 18px/1 "NeutonBold", Geneva, Verdana, sans-serif;
+  padding: 7px 0 8px 0;
+  text-align: center;
+  text-shadow: 0 -1px 0 #4c9021;
+  width: 150px; 
+}
+.consulta:hover{
+	background-color: #76b347;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76b347), color-stop(100%, #5e9e2e));
+    background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -o-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: linear-gradient(top, #76b347, #5e9e2e);
+    -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
+    box-shadow: inset 0 1px 0 0 #8dbf67;
+    cursor: pointer;
+}
+
+.consulta:active{
+	border: 1px solid #5b992b;
+    border-bottom: 1px solid #538c27;
+    -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+}
+
+.logout{
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: linear-gradient(top, #eeeeee, #cccccc);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  border-radius: 3px;
+  color: #333;
+  font: bold 11px/1 "NeutonBold", Geneva, Verdana, sans-serif;
+   padding: 6px 0;
+  text-align: center;
+  text-shadow: 0 1px 0 #eee;
+  width: 80px; }
+ .logout:hover {
+    background-color: #dddddd;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #bbbbbb));
+    background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: linear-gradient(top, #dddddd, #bbbbbb);
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #ddd; }
+ .logout:active {
+    border: 1px solid #aaa;
+    border-bottom: 1px solid #888;
+    -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee; }
+
+
+
+/* ----------------------------Importar letras ---------------------------------*/
+
+@font-face {
+    font-family: 'NeutonRegular';
+    src: url('fuentes/Neuton-Regular-webfont.eot');
+    src: url('fuentes/Neuton-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-Regular-webfont.woff') format('woff'),
+         url('fuentes/Neuton-Regular-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-Regular-webfont.svg#NeutonRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonExtraLight';
+    src: url('fuentes/Neuton-ExtraLight-webfont.eot');
+    src: url('fuentes/Neuton-ExtraLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-ExtraLight-webfont.woff') format('woff'),
+         url('fuentes/Neuton-ExtraLight-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-ExtraLight-webfont.svg#NeutonExtraLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonLight';
+    src: url('fuentes/Neuton-Light-webfont.eot');
+    src: url('fuentes/Neuton-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-Light-webfont.woff') format('woff'),
+         url('fuentes/Neuton-Light-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-Light-webfont.svg#NeutonLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonItalic';
+    src: url('fuentes/Neuton-Italic-webfont.eot');
+    src: url('fuentes/Neuton-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-Italic-webfont.woff') format('woff'),
+         url('fuentes/Neuton-Italic-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-Italic-webfont.svg#NeutonItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonBold';
+    src: url('fuentes/Neuton-Bold-webfont.eot');
+    src: url('fuentes/Neuton-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-Bold-webfont.woff') format('woff'),
+         url('fuentes/Neuton-Bold-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-Bold-webfont.svg#NeutonBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonExtraBold';
+    src: url('fuentes/Neuton-ExtraBold-webfont.eot');
+    src: url('fuentes/Neuton-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-ExtraBold-webfont.woff') format('woff'),
+         url('fuentes/Neuton-ExtraBold-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-ExtraBold-webfont.svg#NeutonExtraBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonCursiveRegular';
+    src: url('fuentes/NeutonCursive-Regular-webfont.eot');
+    src: url('fuentes/NeutonCursive-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/NeutonCursive-Regular-webfont.woff') format('woff'),
+         url('fuentes/NeutonCursive-Regular-webfont.ttf') format('truetype'),
+         url('fuentes/NeutonCursive-Regular-webfont.svg#NeutonCursiveRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+

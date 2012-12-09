@@ -1,0 +1,192 @@
+body{
+
+	font-family: 'NeutonRegular';
+	background-color: #ffffff;
+	color: #000000;
+}
+@media print {
+.noPrint {
+    display:none;
+}
+}
+
+#entero{
+	width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+}
+
+
+#wrapper{
+	width: 920px;
+			margin-left: auto;
+			margin-right: auto;
+}
+
+#header{
+	background-color: #535151;
+	color: #ffffff;
+	
+}
+.boton{
+	background-color: #EEE;
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #EEE), color-stop(100%, #CCC));
+background-image: -webkit-linear-gradient(top, #EEE, #CCC);
+background-image: -moz-linear-gradient(top, #EEE, #CCC);
+background-image: -ms-linear-gradient(top, #EEE, #CCC);
+background-image: -o-linear-gradient(top, #EEE, #CCC);
+background-image: linear-gradient(top, #EEE, #CCC);
+border: 1px solid #CCC;
+border-bottom: 1px solid #BBB;
+border-radius: 3px;
+color: #333;
+font: 13px/1 "NeutonBold", Geneva, Verdana, sans-serif;
+padding: 8px 0;
+text-align: center;
+text-shadow: 0 1px 0 #EEE;
+width: 120px;
+	
+}
+.boton:hover {
+    background-color: #dddddd;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #bbbbbb));
+    background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: linear-gradient(top, #dddddd, #bbbbbb);
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #ddd; }
+    
+  .boton:active {
+    border: 1px solid #aaa;
+    border-bottom: 1px solid #888;
+    -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee; }
+
+#infoarrendados{
+	
+	
+}
+
+#botonesdescarga{
+	margin: 0px auto;
+width: 300px;
+}
+
+#detallespers{
+	width: 440px;
+	float: left;
+	padding: 25px 0px 0px 15px;
+}
+
+#fotos{
+	width: 460px;
+float: right;
+}
+
+#calificacionesdiv{
+	margin: 60px 0px 0px 70px;
+	float: left;
+	}
+
+.comment{
+	width: 400px;
+	padding-left: 5em;
+}
+
+#arrendadores{
+	width: 450px;
+	float: right;
+}
+
+/*----- IMPORTAR FUENTES ---- */
+/* ----------------------------Importar letras ---------------------------------*/
+
+@font-face {
+    font-family: 'NeutonRegular';
+    src: url('fuentes/Neuton-Regular-webfont.eot');
+    src: url('fuentes/Neuton-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-Regular-webfont.woff') format('woff'),
+         url('fuentes/Neuton-Regular-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-Regular-webfont.svg#NeutonRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonExtraLight';
+    src: url('fuentes/Neuton-ExtraLight-webfont.eot');
+    src: url('fuentes/Neuton-ExtraLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-ExtraLight-webfont.woff') format('woff'),
+         url('fuentes/Neuton-ExtraLight-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-ExtraLight-webfont.svg#NeutonExtraLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonLight';
+    src: url('fuentes/Neuton-Light-webfont.eot');
+    src: url('fuentes/Neuton-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-Light-webfont.woff') format('woff'),
+         url('fuentes/Neuton-Light-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-Light-webfont.svg#NeutonLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonItalic';
+    src: url('fuentes/Neuton-Italic-webfont.eot');
+    src: url('fuentes/Neuton-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-Italic-webfont.woff') format('woff'),
+         url('fuentes/Neuton-Italic-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-Italic-webfont.svg#NeutonItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonBold';
+    src: url('fuentes/Neuton-Bold-webfont.eot');
+    src: url('fuentes/Neuton-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-Bold-webfont.woff') format('woff'),
+         url('fuentes/Neuton-Bold-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-Bold-webfont.svg#NeutonBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonExtraBold';
+    src: url('fuentes/Neuton-ExtraBold-webfont.eot');
+    src: url('fuentes/Neuton-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/Neuton-ExtraBold-webfont.woff') format('woff'),
+         url('fuentes/Neuton-ExtraBold-webfont.ttf') format('truetype'),
+         url('fuentes/Neuton-ExtraBold-webfont.svg#NeutonExtraBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NeutonCursiveRegular';
+    src: url('fuentes/NeutonCursive-Regular-webfont.eot');
+    src: url('fuentes/NeutonCursive-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/NeutonCursive-Regular-webfont.woff') format('woff'),
+         url('fuentes/NeutonCursive-Regular-webfont.ttf') format('truetype'),
+         url('fuentes/NeutonCursive-Regular-webfont.svg#NeutonCursiveRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
