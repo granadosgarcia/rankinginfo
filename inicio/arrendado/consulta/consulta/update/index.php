@@ -11,6 +11,7 @@ $k=0;
 /* GET */
 $consultas = $_GET['consulta'];
 $_SESSION['consultadescarga']= $consultas;
+
 /* Llenado del arreglo */
 foreach($consultas as $consulta)
 {
@@ -51,7 +52,7 @@ function word() {
     document.myform.action = '/rankinginfo/inicio/arrendado/consulta/descarga/word.php';
 }
 function mail() {
-    document.myform.action = '/rankinginfo/inicio/arrendado/consulta/descarga/mail.php';
+            window.location.href="mailto:?subject="+document.title+"&body="+escape(window.location.href);
 }
 function excel() {
     document.myform.action = '/rankinginfo/inicio/arrendado/consulta/descarga/excel.php';
@@ -83,21 +84,20 @@ $(function(){
 
 		</head>
 <body>
-
 <div id="entero">
 	<div id="wrapper">
 		<div id="header" class="noPrint">
 	<h1 >Resultados de b&uacute;squeda</h1>
 		</div>
-		<form method="GET" action="/rankinginfo/inicio/arrendado/consulta/descarga/excel.php" name="myform">
+		<form method="GET" name="myform">
 		<div id="botonesdescarga" class="noPrint">
 			<a href="javascript:window.print();"><input type="button" value="Imprimir"></a>
 			<input type="checkbox" id="selectall" checked="true"/>	
 			<input type="submit" onClick="excel()"value="Excel">
 			<input type="submit" onClick="word()" value="Word">
-			<input type="submit" onClick="mail()" value="Mail">
+			<a href="javascript:mail()" value="Mail">Mail</a>
  		</div>
-
+<div id="divarrendadoscompleto">
 <?php while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 
 		<input checked="true" style="visibility:hidden;" name="consulta[]" type="checkbox" value="<?php echo $row['curp'] ?>">
@@ -400,6 +400,7 @@ $(function(){
 			$k++;
 	}
 ?>
+</div>
 
 </form>
 
