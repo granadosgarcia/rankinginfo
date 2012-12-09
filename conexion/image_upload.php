@@ -12,7 +12,7 @@ mkdir($_SERVER['DOCUMENT_ROOT'].$dir3.$dir2);}
 
 
 
-$allowedExts = array("jpg", "jpeg", "gif", "png");
+$allowedExts = array("jpg", "jpeg", "gif", "png","JPG", "JPEG", "GIF", "PNG");
 
 
 $sql="UPDATE arrendado SET ";
