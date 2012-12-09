@@ -10,6 +10,7 @@ $i=0;
 $k=0;
 /* GET */
 $consultas = $_GET['consulta'];
+$_SESSION['consultadescarga']= $consultas;
 /* Llenado del arreglo */
 foreach($consultas as $consulta)
 {
