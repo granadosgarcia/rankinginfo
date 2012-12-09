@@ -1,9 +1,8 @@
 <?php
+
 session_start();
-
-
   if(!isset($_SESSION['nombreusuario'])){
-		header('Location:/rankinginfo/index.php');
+    echo '<script> window.location = "/rankinginfo/index.php"; </script>';
 	}
 	
 ?> 
