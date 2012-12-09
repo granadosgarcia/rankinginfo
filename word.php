@@ -2,20 +2,41 @@
 // Include the PHPWord.php, all other classes were loaded by an autoloader
 require_once 'PHPWord.php';
 
+
+$date=date("d/m/Y");
+
 // Create a new PHPWord Object
 $PHPWord = new PHPWord();
 
-// Every element you want to append to the word document is placed in a section. So you need a section:
+//SECTION
 $section = $PHPWord->createSection();
+ 
+//HEADER
+$header = $section->createHeader();
+	//Image
+	//DATE
+	
+	// Add table
+$table = $section->addTable();
 
-// After creating a section, you can append elements:
-$section->addText('Hello world!');
 
-// You can directly style your text by giving the addText function an array:
-$section->addText('Hello world! I am formatted.', array('name'=>'Tahoma', 'size'=>16, 'bold'=>true));
+	$table->addRow();
+	
 
-// If you often need the same style again you can create a user defined style to the word document
-// and give the addText function the name of the style:
+		$table->addCell(7000)->addText($date, array('name'=>'Times New Roman', 'size'=>12, 'bold'=>true, 'align'=>'left'));
+		$table->addCell(1750)->addImage('img/third.jpg', array('width'=>100, 'height'=>100, 'align'=>'right'));
+/*
+$header->
+$header->
+*/
+
+
+
+
+
+
+$section->addText('Consulta Ranking Information', array('name'=>'Times New Roman', 'size'=>16, 'bold'=>true, 'align'=>'center'));
+
 $PHPWord->addFontStyle('myOwnStyle', array('name'=>'Verdana', 'size'=>14, 'color'=>'1B2232'));
 $section->addText('Hello world! I am formatted by a user defined style', 'myOwnStyle');
 
