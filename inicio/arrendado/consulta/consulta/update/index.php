@@ -122,12 +122,12 @@ $(function(){
 										<td>Domicilio Actual:</td>
 										<td><?php echo $row["domicilio_actual"] ?></td>
 									</tr>
-<<<<<<< HEAD
+
 <?php } if (!empty($row["telefono_casa"])) { ?>			
 									<tr>						
 										<td>Telefono Personal:</td>
 										<td><?php echo $row["telefono_casa"] ?></td>
-			<?php } ?>						
+							
 <?php } if (!empty($row["estado_civil"])) { ?>										
 									<tr>
 										<td>Estado Civil:</td>
