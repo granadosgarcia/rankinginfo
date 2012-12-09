@@ -122,6 +122,7 @@ $(function(){
 										<td>Domicilio Actual:</td>
 										<td><?php echo $row["domicilio_actual"] ?></td>
 									</tr>
+<<<<<<< HEAD
 <?php } if (!empty($row["telefono_particular"]) && !empty($row["telefono_personal"])) { ?>			
 									<tr>
 			<?php if (!empty($row["estado_civil"])) { ?>							
@@ -131,6 +132,11 @@ $(function(){
 				
 			<?php if (!empty($row["telefono_particular"])) { ?>		
 										<td>Telefono Particular:</td>
+=======
+			<?php }if (!empty($row["telefono_particular"])) { ?>
+									<tr>		
+										<td>Telefono de Casa: </td>
+>>>>>>> d212d9bba073cc1268e9ecbf9c073c1c3e7f1360
 										<td><?php echo $row["telefono_casa"] ?></td>
 										<?php } ?>
 									</tr>
