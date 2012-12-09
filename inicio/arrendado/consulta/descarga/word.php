@@ -67,34 +67,22 @@ $table = $section->addTable();
 
  while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { 
  
- 	 	$table->addRow();
- 	 	$table->addCell(900)->addText("Nombre:");
- 	 	$table->addCell(1000)->addText($row['nombre'].$row["apellido_paterno"].$row["apellido_materno"]);
- 	 	$table->addRow();
- 	 	$table->addCell(900)->addText("Curp:");
- 	 	$table->addCell(1000)->addText($row['curp']);
+ 	 	$table->addRow(800);
+ 	 	$table->addCell(300)->addText("Nombre:");
+ 	 	$table->addCell(500)->addText($row['nombre'].$row["apellido_paterno"].$row["apellido_materno"]);
+ 	 	$table->addRow(800);
+ 	 	$table->addCell(300)->addText("Curp:");
+ 	 	$table->addCell(500)->addText($row['curp']);
  	 	
  	 	
  	 	if (!empty($row["domicilio_actual"])) 
  	 	{
-	 	 	$table->addRow();
-	 	 	$table->addCell(900)->addText("Domicilio Actual:");
-	 	 	$table->addCell(1000)->addText($row['domicilio_actual']);
+	 	 	$table->addRow(800);
+	 	 	$table->addCell(300)->addText("Domicilio Actual:");
+	 	 	$table->addCell(500)->addText($row['domicilio_actual']);
  	 	}
  	 	 	 	
- 	 	if (!empty($row["domicilio_actual"])) 
- 	 	{
-	 	 	$table->addRow();
-	 	 	$table->addCell(900)->addText("Domicilio Actual:");
-	 	 	$table->addCell(1000)->addText($row['domicilio_actual']);
- 	 	}
- 	 	
- 	 	if (!empty($row["domicilio_actual"])) 
- 	 	{
-	 	 	$table->addRow();
-	 	 	$table->addCell(900)->addText("Domicilio Actual:");
-	 	 	$table->addCell(1000)->addText($row['domicilio_actual']);
- 	 	}
+
 
 
 
@@ -109,9 +97,7 @@ $table = $section->addTable();
 // Add hyperlink elements
 $section->addTextBreak(2);
 
-$PHPWord->addLinkStyle('myOwnLinkStyle', array('bold'=>true, 'color'=>'808000'));
-$section->addLink('http://www.bing.com', null, 'myOwnLinkStyle');
-$section->addLink('http://www.yahoo.com', null, 'myOwnLinkStyle');
+
 
 
 
