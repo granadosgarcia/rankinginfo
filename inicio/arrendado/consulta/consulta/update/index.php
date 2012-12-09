@@ -123,23 +123,12 @@ $(function(){
 										<td><?php echo $row["domicilio_actual"] ?></td>
 									</tr>
 <<<<<<< HEAD
-<?php } if (!empty($row["telefono_particular"]) && !empty($row["telefono_personal"])) { ?>			
-									<tr>
-			<?php if (!empty($row["estado_civil"])) { ?>							
+<?php } if (!empty($row["telefono_casa"])) { ?>			
+									<tr>						
 										<td>Telefono Personal:</td>
-										<td><?php echo $row["telefono_personal"] ?></td>
-			<?php } ?>						
-				
-			<?php if (!empty($row["telefono_particular"])) { ?>		
-										<td>Telefono Particular:</td>
-			<?php }if (!empty($row["telefono_particular"])) { ?>
-									<tr>		
-										<td>Telefono de Casa: </td>
 										<td><?php echo $row["telefono_casa"] ?></td>
-										<?php } ?>
-									</tr>
-									
-									<?php } if (!empty($row["estado_civil"])) { ?>										
+			<?php } ?>						
+<?php } if (!empty($row["estado_civil"])) { ?>										
 									<tr>
 										<td>Estado Civil:</td>
 										<td><?php echo $row["estado_civil"] ?></td>
