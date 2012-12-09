@@ -4,6 +4,8 @@ header('Content-Type: application/vnd.ms-word');
 header('Content-Disposition: attachment;filename="Consulta.docx"');
 header('Cache-Control: max-age=0');
 
+error_reporting(E_ERROR);
+
 $con = mysql_connect("localhost","root","crazyMarines910208");
 if (!$con)
   {
@@ -57,36 +59,91 @@ foreach($consultas as $consulta)
    $j++;
 }
 
-// New Word Document
+//WORD
 $PHPWord = new PHPWord();
 
-// New portrait section
 $section = $PHPWord->createSection();
 $table = $section->addTable();
 
 
+$PHPWord->addFontStyle('StyleR', array('bold'=>true, 'italic'=>true, 'size'=>12));
+$PHPWord->addFontStyle('StyleC', array('bold'=>false, 'italic'=>false, 'size'=>13));
+
+
  while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { 
- 
- 	 	$table->addRow(800);
- 	 	$table->addCell(300)->addText("Nombre:");
- 	 	$table->addCell(500)->addText($row['nombre'].$row["apellido_paterno"].$row["apellido_materno"]);
- 	 	$table->addRow(800);
- 	 	$table->addCell(300)->addText("Curp:");
- 	 	$table->addCell(500)->addText($row['curp']);
+
+
+ 	 	$table->addRow();
+ 	 	$table->addCell(3000)->addText("Nombre:",'StyleR');
+ 	 	$table->addCell(9000)->addText($row['nombre'].$row["apellido_paterno"].$row["apellido_materno"],'StyleC');
+ 	 	$table->addRow();
+ 	 	$table->addCell(3000)->addText("Curp:",'StyleR');
+ 	 	$table->addCell(9000)->addText($row['curp'],'StyleC');
  	 	
  	 	
  	 	if (!empty($row["domicilio_actual"])) 
  	 	{
-	 	 	$table->addRow(800);
-	 	 	$table->addCell(300)->addText("Domicilio Actual:");
-	 	 	$table->addCell(500)->addText($row['domicilio_actual']);
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Domicilio Actual:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['domicilio_actual'],'StyleC');
  	 	}
+ 	 	
+ 	 	
+ 	 	if (!empty($row["telefono_casa"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Telefono Personal:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['telefono_casa'],'StyleC');
+ 	 	}
+ 	 	
  	 	 	 	
+ 	 	if (!empty($row["estado_civil"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Estado Civil:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['estado_civil'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	if (!empty($row["nombre_conyuge"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Nombre Conyuge:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['nombre_conyuge'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	
+ 	  	if (!empty($row["domicilio_anterior"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Domicilio Anterior:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['domicilio_anterior'],'StyleC');
+ 	 	}
 
-
-
-
-}
+ 	  	if (!empty($row["nombre_aval"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Nombre del Aval:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['nombre_aval'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	
+ 	 	if (!empty($row["domicilio_aval"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Domicilio del Aval:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['domicilio_aval'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	if (!empty($row["telefono_aval"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Telefono del Aval:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['telefono_aval'],'StyleC');
+ 	 	}
+ 	 
+ 	 
+ 	  		$k++;
+ 	}
 
 
 
