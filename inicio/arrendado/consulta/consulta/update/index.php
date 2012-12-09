@@ -115,7 +115,7 @@ $(function(){
 <?php if (!empty($row["domicilio_actual"])) { ?>
 									<tr>
 										<td>Domicilio Actual:</td>
-										<td><?php echo $row["domicilio"] ?></td>
+										<td><?php echo $row["domicilio_actual"] ?></td>
 									</tr>
 <?php } if (!empty($row["telefono_particular"]) && !empty($row["telefono_personal"])) { ?>			
 									<tr>
