@@ -47,10 +47,13 @@ foreach($consultas as $consulta)
 <html>
 		<head>
 			<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php"; ?>
+			<script type="text/javascript" src="/rankinginfo/js/jquery-1.8.2.min.js"></script>
 
 			<link rel="stylesheet" href="/rankinginfo/css/estilo1.css" type="text/css" charset="utf-8">
-		
-			<script src="/rankinginfo/js/jquery-1.8.2.min.js"></script>
+		<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="/rankinginfo/js/fancybox/source/jquery.fancybox.js?v=2.1.3"></script>
+	<link rel="stylesheet" type="text/css" href="/rankinginfo/js/fancybox/source/jquery.fancybox.css?v=2.1.2" media="screen" />
+
 
 <link rel="icon" href="/rankinginfo/img/favicon.ico" >
 
@@ -188,7 +191,7 @@ $(function(){
 									<td>
 										<p>Foto</p>
 <?php if (!empty($row["img_foto"])) { ?>	
-										<a class="imagengrande" src="<?php echo $row["img_foto"]?>"><img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/></a>
+										<a class="imagengrande" href="<?php echo $row["img_foto"]?>"><img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/></a>
 <?php } else {?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 								

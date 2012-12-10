@@ -56,10 +56,43 @@ foreach($consultas as $consulta)
 <!-- HTML -->
 <html>
 		<head>
+			<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php"; ?>
+
+			<link rel="stylesheet" href="/rankinginfo/css/estilo1.css" type="text/css" charset="utf-8">
+		<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="/rankinginfo/js/fancybox/source/jquery.fancybox.js?v=2.1.3"></script>
+	<link rel="stylesheet" type="text/css" href="/rankinginfo/js/fancybox/source/jquery.fancybox.css?v=2.1.2" media="screen" />
+
+
+<link rel="icon" href="/rankinginfo/img/favicon.ico" >
+
 			
 			<link rel="stylesheet" href="/rankinginfo/css/estilo1.css" type="text/css" charset="utf-8">
 		
-			<script src="/rankinginfo/js/jquery-1.8.2.min.js"></script>
+
+
+
+<script type="text/javascript">
+		$(document).ready(function() {
+
+			$(".imagengrande").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+		});
+</script>
+
 <SCRIPT language="javascript">
 function word() {
     document.myform.action = '/rankinginfo/inicio/empleado/consulta/descarga/word.php';
@@ -198,7 +231,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<td>
 										<p>IFE</p>
 									<?php if (!empty($row["img_ife"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo htmlentities($row["img_ife"])?>"/>
+										<a class="imagengrande" href="<?php echo $row["img_ife"]?>"<img height="100px" width="150px" src="<?php echo htmlentities($row["img_ife"])?>"/></a>
 <?php } else {?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 								
@@ -210,7 +243,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<td>
 										<p>Comprobante Domiciliario</p>
 										<?php if (!empty($row["img_comprobante_domicilio"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo htmlentities($row["img_comprobante_domicilio"])?>"/>
+										<a class="imagengrande" href="<?php echo $row["img_comprobante_domicilio"]?>"<img height="100px" width="150px" src="<?php echo htmlentities($row["img_comprobante_domicilio"])?>"/></a>
 <?php } else { ?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 <?php  }?>
@@ -220,7 +253,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<td>
 										<p>Comprobante de Trabajo</p>
 										<?php if (!empty($row["img_comprobante_trabajo"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo htmlentities($row["img_comprobante_trabajo"])?>"/>
+										<a class="imagengrande" href="<?php echo $row["img_comprobante_trabajo"]?>"<img height="100px" width="150px" src="<?php echo htmlentities($row["img_comprobante_trabajo"])?>"/>
 <?php } else { ?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 <?php  }?>
@@ -234,7 +267,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 							<div id="patrones">
 								<table>
 								
-<?php if (!empty($row["patraon_actual"])) { ?>	
+<?php if (!empty($row["patron_actual"])) { ?>	
 									<tr>
 										<td>Patron Actual:</td>
 										<td><?php echo htmlentities($row["patron_actual"]) ?></td>
@@ -288,12 +321,14 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 <?php } ?>
 									<tr>
 <?php if(!empty($row['img_cedula_profesional'])) {?>
-										<td><label>Cedula Profesional</label><img height="100px" width="150px" src="<?php echo htmlentities($row['img_cedula_profesional'])?>"></td>
+										<td><label>Cedula Profesional</label>
+											 <a class="imagengrande" href="<?php $row['img_cedula_profesional']?>" <img height="100px" width="150px" src="<?php echo htmlentities($row['img_cedula_profesional'])?>"></td>
 <?php } else { ?>
 										<td><img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/></td>
 										
 <?php }if(!empty($row['img_certificado_escolar'])) {?>
-										<td><lable>Certificado Escolar</lable><img height="100px" width="150px" src="<?php echo htmlentities($row['img_certificado_escolar'])?>"></td>			
+										<td><lable>Certificado Escolar</lable>
+											<a class="imagengrande" href="<?php echo htmlentities($row['img_certificado_escolar'])?>"<img height="100px" width="150px" src="<?php echo htmlentities($row['img_certificado_escolar'])?>"></td>			
 <?php } else { ?>
 										<td><img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/></td>
 									</tr>
