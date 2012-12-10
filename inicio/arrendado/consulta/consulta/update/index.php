@@ -12,31 +12,24 @@ $k=0;
 $consultas = $_GET['consulta'];
 $_SESSION['consultadescarga']= $consultas;
 
+$sql="SELECT * from arrendado,calificacion WHERE curp='";
+
 /* Llenado del arreglo */
 foreach($consultas as $consulta)
 {
-   $curp[$i]= $consulta;
-   $sql[$i]="SELECT * from arrendado WHERE curp='".$curp[$i]."' ";
-   
-   
-   
-   $resultado[$i]=mysql_query($sql[$i],$con);
-   if (!$resultado[$i]) { // add this check.
-    die('Invalid query: ' . mysql_error());
-    }
+	if($o==0)
+	   $sql.=$consulta."'";
 
-   $i++;
+   $sql.="and curp='".$consulta."'";
+   
+   $o++;
 }
 
-
-$j=0;
-foreach($consultas as $consulta)
+$resultado=mysql_query($sql,$con);
+if (!$resultado) 
 {
-   $curp[$j]= $consulta;
-   $sql1[$j]="SELECT * from arr_calif as a, calificacion as c WHERE a.curp = '".$curp[$j]."' GROUP BY c.clave";
-   
-   $resultado1[$j]=mysql_query($sql1[$j], $con); 
-   $j++;
+	echo $sql;
+	die('Error: ' . mysql_error());
 }
 
 ?>
@@ -89,16 +82,14 @@ $(function(){
 		<div id="header" class="noPrint">
 	<h1 >Resultados de b&uacute;squeda</h1>
 		</div>
-		<form method="GET" name="myform">
-		<div id="botonesdescarga" class="noPrint">
+				<div id="botonesdescarga" class="noPrint">
 			<a href="javascript:window.print();"><input type="button" value="Imprimir"></a>
-			<input type="checkbox" id="selectall" checked="true"/>	
-			<input type="submit" onClick="excel()"value="Excel">
-			<input type="submit" onClick="word()" value="Word">
-			<input type="submit" onClick="mail()" value="Mail">
+			<a href="../../descarga/word.php"><input type="submit" value="Word"></a>
+			<a href="../descarga/excel.php" ><input type="submit" value="Excel"></a>
+			<a><input type="submit" value="Mail"></a>
  		</div>
 <div id="divarrendadoscompleto">
-<?php while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
+<?php while($row=mysql_fetch_array($resultado)) { ?>
 
 		<input checked="true" style="visibility:hidden;" name="consulta[]" type="checkbox" value="<?php echo $row['curp'] ?>">
 
@@ -394,7 +385,5 @@ $(function(){
 	}
 ?>
 </div>
-
-</form>
 
 

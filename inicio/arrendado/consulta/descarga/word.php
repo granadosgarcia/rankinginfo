@@ -21,11 +21,8 @@ if (!$database)
   if(!isset($_SESSION['nombreusuario'])){
     echo '<script> window.location = "/rankinginfo/index.php"; </script>';
 	}
+		
 	
-	
-	
-	
-
 /* Contador para llenar el arreglo de consultas */
 $i=0;
 $k=0;
@@ -62,16 +59,24 @@ foreach($consultas as $consulta)
 //WORD
 $PHPWord = new PHPWord();
 
+
+
 $section = $PHPWord->createSection();
-$table = $section->addTable();
+
 
 
 $PHPWord->addFontStyle('StyleR', array('bold'=>true, 'italic'=>true, 'size'=>12));
 $PHPWord->addFontStyle('StyleC', array('bold'=>false, 'italic'=>false, 'size'=>13));
+$PHPWord->addFontStyle('titulo', array('bold'=>true, 'italic'=>false, 'size'=>16));
+
 
 
  while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { 
-
+ 
+		
+		$section->addText("Consulta Ranking Information",'titulo');
+		
+		$table = $section->addTable();
 
  	 	$table->addRow();
  	 	$table->addCell(3000)->addText("Nombre:",'StyleR');
@@ -140,10 +145,91 @@ $PHPWord->addFontStyle('StyleC', array('bold'=>false, 'italic'=>false, 'size'=>1
 	 	 	$table->addCell(3000)->addText("Telefono del Aval:",'StyleR');
 	 	 	$table->addCell(9000)->addText($row['telefono_aval'],'StyleC');
  	 	}
- 	 
- 	 
+ 	 	
+ 	 	
+ 	 	if(!empty($row['img_foto']) || !empty($row['img_comprobante_domicilio']) || !empty($row['img_ife']))
+ 	 	{
+ 	 		
+ 	 		$section->addTextBreak(2);
+
+ 	 		$section->addText("Imagenes",'titulo');
+		
+ 	 		$table = $section->addTable();
+ 	 	
+ 	 		$table->addRow();
+	
+	 	 	if(!empty($row['img_foto']))
+	 	 	{
+		 	 	$table->addCell(3000)->addText("Foto:",'StyleR');
+	 	 	}
+	 	 	
+	 	 	if(!empty($row['img_comprobante_domicilio']))
+	 	 	{
+		 	 	$table->addCell(3000)->addText("Comprobante Domicilio:",'StyleR');
+	 	 	}
+	 	 	
+	 	 	if(!empty($row['img_ife']))
+	 	 	{
+		 	 	$table->addCell(3000)->addText("IFE:",'StyleR');
+	 	 	}
+	 	 	
+	 	 	
+	 	 	
+	 	 	$table->addRow();
+	 	 	
+	 	 	
+		 	 //IMG IFE
+	 	 	if(!empty($row['img_foto']))
+	 	 	{
+		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_foto'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+		 	 //IMG COMPROBANTE Domicilio
+	 	 	if(!empty($row['img_comprobante_domicilio']))
+	 	 	{
+		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_comprobante_domicilio'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+		 	 //IMG IFE
+	 	 	if(!empty($row['img_ife']))
+	 	 	{
+		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_ife'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/img_ife.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+
+	 	 }
+
  	  		$k++;
  	}
+ 	$k==0;
+ while($row=mysql_fetch_array($resultado1[$k], MYSQL_BOTH)) 
+ {
+ 	 if(!empty($row['arr_pagos'])||!empty($row['arr_propiedad_actual'])||!empty($row['arr_propiedad_anterior'])||!empty($row['arr_general'])||!empty($row['comentario']))
+ 	 {
+
+	 	if(!empty($row['arr_pagos']))
+	 	{
+		 	switch ($row['arr_pagos'])
+		 	{
+		 	case 1:
+		 	Muy Bueno
+		 	
+			 	
+		 	}
+	 	}
+	 }
+	
+	 	$k++;
+ } 
 
 
 
