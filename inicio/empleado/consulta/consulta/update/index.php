@@ -2,13 +2,14 @@
 header('Content-Type: text/html; charset=utf-8');
 
 error_reporting(E_ERROR);
-$sqlact="
-INSERT INTO actividades (id_usuario, fecha, actividad)
-VALUES ('$_SESSION[usuario_id]', NOW(), 'Consulta Empleado')";
+
 
 /* Includes de php */
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
+$sqlact="
+INSERT INTO actividades (id_usuario, fecha, actividad)
+VALUES ('$_SESSION[usuario_id]', NOW(), 'Consulta Empleado')";
 
 /* Contador para llenar el arreglo de consultas */
 $i=0;
@@ -16,6 +17,11 @@ $k=0;
 /* GET */
 $consultas = $_GET['consulta'];
 /* Llenado del arreglo */
+
+$var = 	mysql_query($sqlact, $con);
+if(!$var){
+echo "errorrr".mysql_error();
+}
 foreach($consultas as $consulta)
 {
    $curp[$i]= $consulta;
@@ -23,6 +29,7 @@ foreach($consultas as $consulta)
    $sql[$i]="SELECT * from empleado, escolaridad where curp='".$curp[$i]."' ";
    
    
+
    $resultado[$i]=mysql_query($sql[$i],$con);
    if (!$resultado[$i]) { // add this check.
     die('Invalid query: ' . mysql_error());
@@ -100,7 +107,9 @@ $(function(){
 			<input type="submit" onClick="word()" value="Word">
 		</div>
 
-<?php while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
+<?php 
+
+while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 
 		<input checked="true" style="visibility:hidden;" name="consulta[]" type="checkbox" value="<?php echo htmlentities($row['curp']) ?>">
 
@@ -382,9 +391,9 @@ $(function(){
 <?php	
 			$k++;
 	}
-	
-	mysql_query($sqlact, $con);
-mysql_close($con);
+	mysql_close($con);
+
+
 ?>
 
 </form>

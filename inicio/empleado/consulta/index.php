@@ -27,7 +27,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 	   		<div id="wrapper">
 		   		
 		   		<div id="header">
-			   		<h1 class="titulo2">Busque Para Calificar</h1>
+			   		<h1 class="titulo2">Busque Para Consultar</h1>
 			   	</div><!-- </header> -->
 		   		
 		   		<div id="calificacion">
