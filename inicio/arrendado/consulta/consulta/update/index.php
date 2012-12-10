@@ -36,7 +36,7 @@ $j=0;
 foreach($consultas as $consulta)
 {
    $curp[$j]= $consulta;
-   $sql1[$j]="SELECT * from arr_calif as a, calificacion as c WHERE a.curp = '".$curp[$j]."' GROUP BY c.clave";
+   $sql1[$j]="SELECT * from arr_calif WHERE curp = '".$curp[$j]."' GROUP BY id";
    
    $resultado1[$j]=mysql_query($sql1[$j], $con); 
    $j++;
