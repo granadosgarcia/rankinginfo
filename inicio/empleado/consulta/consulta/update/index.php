@@ -2,6 +2,9 @@
 header('Content-Type: text/html; charset=utf-8');
 
 error_reporting(E_ERROR);
+$sqlact="
+INSERT INTO actividades (id_usuario, fecha, actividad)
+VALUES ('$_SESSION[usuario_id]', NOW(), 'Consulta Empleado')";
 
 /* Includes de php */
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
@@ -379,6 +382,9 @@ $(function(){
 <?php	
 			$k++;
 	}
+	
+	mysql_query($sqlact, $con);
+mysql_close($con);
 ?>
 
 </form>

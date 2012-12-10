@@ -2,7 +2,9 @@
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
-
+$sqlact="
+INSERT INTO actividades (id_usuario, fecha, actividad)
+VALUES ('$_SESSION[usuario_id]', NOW(), 'Edicion Empleado')";
 
 $sql="
 UPDATE empleado SET";
@@ -100,6 +102,7 @@ clave='$_POST[clave]'";
   	die('Error al actualizar el registro a la base de datos ' . mysql_error());
   }
   
+	mysql_query($sqlact, $con);
   echo '<script> alert("Agregado Exitosamente"); window.location = "../../"; </script>';
 
  mysql_close($con);

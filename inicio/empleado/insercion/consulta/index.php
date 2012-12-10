@@ -5,6 +5,9 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 <html> <head>
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
+$sqlact="
+INSERT INTO actividades (id_usuario, fecha, actividad)
+VALUES ('$_SESSION[usuario_id]', NOW(), 'Insercion Empleado')";
 ?>
 </head></html>
 <?php
@@ -147,6 +150,7 @@ if (!mysql_query($sql,$con))
 
 
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
+	mysql_query($sqlact, $con);
   echo '<script> alert("Agregado Exitosamente"); window.location = "../"; </script>';
 
  mysql_close($con);
