@@ -79,7 +79,7 @@ $styleCell = array('valign'=>'center');
 
  	 	$table->addRow();
  	 	$table->addCell(3000)->addText("Nombre:",'StyleR');
- 	 	$table->addCell(9000)->addText($row['nombre'].$row["apellido_paterno"].$row["apellido_materno"],'StyleC');
+ 	 	$table->addCell(9000)->addText($row['nombre']." ".$row["apellido_paterno"]." ".$row["apellido_materno"],'StyleC');
  	 	$table->addRow();
  	 	$table->addCell(3000)->addText("Curp:",'StyleR');
  	 	$table->addCell(9000)->addText($row['curp'],'StyleC');
@@ -212,14 +212,15 @@ $styleCell = array('valign'=>'center');
  $k=0; $o=0;
  	
  $section->addTextBreak(2);
- $section->addText("Calificacion",'titulo');
- $section->addTextBreak(1);
+
  while($row=mysql_fetch_array($resultado1[$k])) 
  {
 
  
  	 if(!empty($row['arr_pagos'])||!empty($row['arr_propiedad_actual'])||!empty($row['arr_propiedad_anterior'])||!empty($row['arr_general'])||!empty($row['comentario']))
  	 {
+ 	 	 $section->addText("Calificacion",'titulo');
+ 	 	 $section->addTextBreak(1);
 		
  	 	$table = $section->addTable();
  	 	
@@ -243,27 +244,27 @@ $styleCell = array('valign'=>'center');
 	 		{
 										
 				case 1:
-				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Bueno",'StyleC');
 				break;
 										
 				case 2:
-				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleC');
 				break;
 										
 				case 3:
-				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleC');
 				break;
 										
 				case 4:
-				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleC');
 				break;
 										
 				case 5:
-				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleC');
 				break;	
 				
 				default:
-				$table->addCell(3000,$styleCell)->addText("",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("",'StyleC');
 																	 
 			}
 	 	
@@ -272,54 +273,54 @@ $styleCell = array('valign'=>'center');
 			switch($row["arr_propiedad_anterior"])
 			{
 				case 1:
-				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Bueno",'StyleC');
 				break;
 											
 				case 2:
-				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleC');
 				break;
 											
 				case 3:
-				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleC');
 				break;
 											
 				case 4:
-				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleC');
 				break;
 											
 				case 5:
-				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleC');
 				break;
 					
 				default:
-				$table->addCell(3000,$styleCell)->addText("",'StyleR');			}
+				$table->addCell(3000,$styleCell)->addText("",'StyleC');			}
 		
 		
 
 			switch($row["arr_propiedad_actual"])
 			{
 				case 1:
-				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Bueno",'StyleC');
 				break;
 										
 				case 2:
-				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleC');
 				break;
 										
 				case 3:
-				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleC');
 				break;
 										
 				case 4:
-				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleC');
 				break;
 										
 				case 5:
-				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleC');
 				break;	
 				
 				default:
-				$table->addCell(3000,$styleCell)->addText("",'StyleR');			
+				$table->addCell(3000,$styleCell)->addText("",'StyleC');			
 			}
 	 	
 		
@@ -328,27 +329,27 @@ $styleCell = array('valign'=>'center');
 			switch($row["arr_general"])
 			{
 				case 1:
-				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Bueno",'StyleC');
 				break;
 										
 				case 2:
-				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleC');
 				break;
 										
 				case 3:
-				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleC');
 				break;
 
 				case 4:
-				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleC');
 				break;
 										
 				case 5:
-				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleC');
 				break;
 				
 				default:
-				$table->addCell(3000,$styleCell)->addText("",'StyleR');																								 
+				$table->addCell(3000,$styleCell)->addText("",'StyleC');																								 
 			}
 			
 			if (!empty($row["fecha"])) 
@@ -356,7 +357,7 @@ $styleCell = array('valign'=>'center');
 				$section->addTextBreak(1);
 				$table = $section->addTable();
 				$table->addRow();
-				$table->addCell(3000,$styleCell)->addText("Comentario",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Comentario",'StyleC');
 				$table->addRow();
 				$table->addCell(9000,array('valign'=>'center'))->addText($row["comentario"],'StyleR');
 			}

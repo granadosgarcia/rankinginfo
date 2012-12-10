@@ -82,7 +82,7 @@ $section->addText("Consulta Ranking Information",'titulo');
 
  	 	$table->addRow();
  	 	$table->addCell(3000)->addText("Nombre:",'StyleR');
- 	 	$table->addCell(9000)->addText($row['nombres'].$row["apellido_paterno"].$row["apellido_materno"],'StyleC');
+ 	 	$table->addCell(9000)->addText($row['nombres']." ".$row["apellido_paterno"]." ".$row["apellido_materno"],'StyleC');
  	 	$table->addRow();
  	 	$table->addCell(3000)->addText("Curp:",'StyleR');
  	 	$table->addCell(9000)->addText($row['curp'],'StyleC');
@@ -264,15 +264,15 @@ else
  $k=0; $o=0;
  	
  $section->addTextBreak(2);
- $section->addText("Calificacion",'titulo');
- $section->addTextBreak(1);
+
  while($row=mysql_fetch_array($resultado1[$k])) 
  {
-
+	 
  
  	 if(!empty($row['emp_desempeno '])||!empty($row['emp_calif_anterior ']))
  	 {
-		
+		 $section->addText("Calificacion",'titulo');
+		 $section->addTextBreak(1);
  	 	$table = $section->addTable();
  	 	
  	 	if($o==0)
@@ -295,23 +295,23 @@ else
 	 		{
 										
 				case 1:
-				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Bueno",'StyleC');
 				break;
 										
 				case 2:
-				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleC');
 				break;
 										
 				case 3:
-				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleC');
 				break;
 										
 				case 4:
-				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleC');
 				break;
 										
 				case 5:
-				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleC');
 				break;	
 				
 				default:
@@ -324,27 +324,27 @@ else
 			switch($row["emp_calif_anterior "])
 			{
 				case 1:
-				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Bueno",'StyleC');
 				break;
 											
 				case 2:
-				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleC');
 				break;
 											
 				case 3:
-				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleC');
 				break;
 											
 				case 4:
-				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleC');
 				break;
 											
 				case 5:
-				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleC');
 				break;
 					
 				default:
-				$table->addCell(3000,$styleCell)->addText("",'StyleR');			
+				$table->addCell(3000,$styleCell)->addText("",'StyleC');			
 			}
 
 			
