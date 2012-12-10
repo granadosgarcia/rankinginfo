@@ -47,18 +47,7 @@ foreach($consultas as $consulta)
 			<link rel="stylesheet" href="/rankinginfo/css/estilo1.css" type="text/css" charset="utf-8">
 		
 			<script src="/rankinginfo/js/jquery-1.8.2.min.js"></script>
-<SCRIPT language="javascript">
-function word() {
-    document.myform.action = '/rankinginfo/inicio/arrendado/consulta/descarga/word.php';
-}
-function mail() {
-            window.location.href="mailto:?subject="Consulta Ranking Information"&body="+escape(window.location.href);
-}
-function excel() {
-    document.myform.action = '/rankinginfo/inicio/arrendado/consulta/descarga/excel.php';
-}
-	
-</script>
+
 <SCRIPT language="javascript">
 $(function(){
  
@@ -89,17 +78,18 @@ $(function(){
 		<div id="header" class="noPrint">
 	<h1 >Resultados de b&uacute;squeda</h1>
 		</div>
-		<form method="GET" name="myform">
 		<div id="botonesdescarga" class="noPrint">
 			<a href="javascript:window.print();"><input type="button" value="Imprimir"></a>
-			<input type="checkbox" id="selectall" checked="true"/>	
-			<input type="submit" onClick="excel()"value="Excel">
-			<input type="submit" onClick="word()" value="Word">
-			<input type="submit" onClick="mail()" value="Mail">
+			<a href="../../descarga/word.php"><input type="submit" value="Word"></a>
+			<a href="../../"><input type="submit" value="Menu"></a>
+<!--
+			<a href="../../descarga/excel.php"><input type="submit" value="Excel"></a>
+			<a href="../../descarga/mail.php"><input type="submit" value="Mail"></a>
+-->
  		</div>
 <div id="divarrendadoscompleto">
-<?php while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
-
+<?php while($row=mysql_fetch_array($resultado[$k])) { ?>
+<br>
 		<input checked="true" style="visibility:hidden;" name="consulta[]" type="checkbox" value="<?php echo $row['curp'] ?>">
 
 			<div id="infoarrendados">
@@ -244,7 +234,8 @@ $(function(){
 		
 					<div id="calificacionesdiv">
 					
-<?php while($row=mysql_fetch_array($resultado1[$k])){ ?>							
+<?php while($row=mysql_fetch_array($resultado1[$k])){ ?>
+							
 								<table class="califs">
 <?php if (!empty($row["fecha"])) { ?>
 <tr><td> Calificaciones</td></tr>
@@ -376,9 +367,7 @@ $(function(){
 								<table class="comentarios">
 								<tr>
 								 
-										 
 				
-									
 
 								<td class="comment">Comentarios: </br>
 										<?php echo $row["comentario"];?></td>
@@ -395,6 +384,5 @@ $(function(){
 ?>
 </div>
 
-</form>
 
 

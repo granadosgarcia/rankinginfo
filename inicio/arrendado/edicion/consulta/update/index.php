@@ -118,7 +118,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 		<input type='file' name='file[]' id='file' /></br>
 		<label>Foto</label></br>
 		<?php if(!empty($row['img_foto'])) {?>
-		<img width=150px height=100px src='<?php $row['img_foto'] ?>'/></br>
+		<img width=150px height=100px src='<?php echo $row['img_foto'] ?>'/></br>
 		<?php } ?>
 		<input type='file' name='file[]' id='file' /></br>
 		<label>Comprobante Domiciliario</label></br>

@@ -68,14 +68,13 @@ $section = $PHPWord->createSection();
 $PHPWord->addFontStyle('StyleR', array('bold'=>true, 'italic'=>true, 'size'=>12));
 $PHPWord->addFontStyle('StyleC', array('bold'=>false, 'italic'=>false, 'size'=>13));
 $PHPWord->addFontStyle('titulo', array('bold'=>true, 'italic'=>false, 'size'=>16));
+$styleCell = array('valign'=>'center');
 
 
-
- while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { 
- 
-		
+ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) 
+ { 
 		$section->addText("Consulta Ranking Information",'titulo');
-		
+		$section->addTextBreak(1);
 		$table = $section->addTable();
 
  	 	$table->addRow();
@@ -153,24 +152,26 @@ $PHPWord->addFontStyle('titulo', array('bold'=>true, 'italic'=>false, 'size'=>16
  	 		$section->addTextBreak(2);
 
  	 		$section->addText("Imagenes",'titulo');
-		
+ 	 		
+ 	 		$section->addTextBreak(1);
+
  	 		$table = $section->addTable();
  	 	
  	 		$table->addRow();
 	
 	 	 	if(!empty($row['img_foto']))
 	 	 	{
-		 	 	$table->addCell(3000)->addText("Foto:",'StyleR');
+		 	 	$table->addCell(3000,$styleCell)->addText("Foto:",'StyleR');
 	 	 	}
 	 	 	
 	 	 	if(!empty($row['img_comprobante_domicilio']))
 	 	 	{
-		 	 	$table->addCell(3000)->addText("Comprobante Domicilio:",'StyleR');
+		 	 	$table->addCell(3000,$styleCell)->addText("Comprobante Domicilio:",'StyleR');
 	 	 	}
 	 	 	
 	 	 	if(!empty($row['img_ife']))
 	 	 	{
-		 	 	$table->addCell(3000)->addText("IFE:",'StyleR');
+		 	 	$table->addCell(3000,$styleCell)->addText("IFE:",'StyleR');
 	 	 	}
 	 	 	
 	 	 	
@@ -181,55 +182,193 @@ $PHPWord->addFontStyle('titulo', array('bold'=>true, 'italic'=>false, 'size'=>16
 		 	 //IMG IFE
 	 	 	if(!empty($row['img_foto']))
 	 	 	{
-		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_foto'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_foto'], array('width'=>150, 'height'=>100, 'align'=>'center'));
 	 	 	}
 	 	 	else
 	 	 	{
-		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
 		 	 }
 		 	 //IMG COMPROBANTE Domicilio
 	 	 	if(!empty($row['img_comprobante_domicilio']))
 	 	 	{
-		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_comprobante_domicilio'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_comprobante_domicilio'], array('width'=>150, 'height'=>100, 'align'=>'center'));
 	 	 	}
 	 	 	else
 	 	 	{
-		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
 		 	 }
 		 	 //IMG IFE
 	 	 	if(!empty($row['img_ife']))
 	 	 	{
-		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_ife'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_ife'], array('width'=>150, 'height'=>100, 'align'=>'center'));
 	 	 	}
 	 	 	else
 	 	 	{
-		 	 	$table->addCell(9000)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/img_ife.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/img_ife.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
 		 	 }
 
 	 	 }
 
  	  		$k++;
  	}
- 	$k==0;
- while($row=mysql_fetch_array($resultado1[$k], MYSQL_BOTH)) 
+ 	
+ $k=0; $o=0;
+ 	
+ $section->addTextBreak(2);
+ $section->addText("Calificacion",'titulo');
+ $section->addTextBreak(1);
+ while($row=mysql_fetch_array($resultado1[$k])) 
  {
+
+ 
  	 if(!empty($row['arr_pagos'])||!empty($row['arr_propiedad_actual'])||!empty($row['arr_propiedad_anterior'])||!empty($row['arr_general'])||!empty($row['comentario']))
  	 {
+		
+ 	 	$table = $section->addTable();
+ 	 	
+ 	 	if($o==0)
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3500,$styleCell)->addText("Fecha",'StyleR');
+	 	 	$table->addCell(3000,$styleCell)->addText("Pagos",'StyleR');
+	 	 	$table->addCell(3000,$styleCell)->addText("Propiedad Anterior",'StyleR');
+	 	 	$table->addCell(3000,$styleCell)->addText("Propiedad Actual",'StyleR');
+	 	 	$table->addCell(3000,$styleCell)->addText("Calificacion General",'StyleR');
+ 	 	}
+ 	 	
+ 	 	$table->addRow();
+ 	 	
+ 	 	$table->addCell(3000,$styleCell)->addText($row["fecha"],'StyleR');
 
-	 	if(!empty($row['arr_pagos']))
-	 	{
-		 	switch ($row['arr_pagos'])
-		 	{
-		 	case 1:
-		 	Muy Bueno
-		 	
-			 	
-		 	}
-	 	}
-	 }
-	
-	 	$k++;
- } 
+
+
+	 		switch($row["arr_pagos"])
+	 		{
+										
+				case 1:
+				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				break;
+										
+				case 2:
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				break;
+										
+				case 3:
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				break;
+										
+				case 4:
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				break;
+										
+				case 5:
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				break;	
+				
+				default:
+				$table->addCell(3000,$styleCell)->addText("",'StyleR');
+																	 
+			}
+	 	
+	 	
+
+			switch($row["arr_propiedad_anterior"])
+			{
+				case 1:
+				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				break;
+											
+				case 2:
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				break;
+											
+				case 3:
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				break;
+											
+				case 4:
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				break;
+											
+				case 5:
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				break;
+					
+				default:
+				$table->addCell(3000,$styleCell)->addText("",'StyleR');			}
+		
+		
+
+			switch($row["arr_propiedad_actual"])
+			{
+				case 1:
+				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				break;
+										
+				case 2:
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				break;
+										
+				case 3:
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				break;
+										
+				case 4:
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				break;
+										
+				case 5:
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				break;	
+				
+				default:
+				$table->addCell(3000,$styleCell)->addText("",'StyleR');			
+			}
+	 	
+		
+		
+
+			switch($row["arr_general"])
+			{
+				case 1:
+				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				break;
+										
+				case 2:
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				break;
+										
+				case 3:
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				break;
+
+				case 4:
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				break;
+										
+				case 5:
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				break;
+				
+				default:
+				$table->addCell(3000,$styleCell)->addText("",'StyleR');																								 
+			}
+			
+			if (!empty($row["fecha"])) 
+			{
+				$section->addTextBreak(1);
+				$table = $section->addTable();
+				$table->addRow();
+				$table->addCell(3000,$styleCell)->addText("Comentario",'StyleR');
+				$table->addRow();
+				$table->addCell(9000,array('valign'=>'center'))->addText($row["comentario"],'StyleR');
+			}
+	 } 
+	 $o++;
+	 $k++;
+
+ }
+
 
 
 
@@ -240,13 +379,7 @@ $PHPWord->addFontStyle('titulo', array('bold'=>true, 'italic'=>false, 'size'=>16
 // Add hyperlink elements
 $section->addTextBreak(2);
 
-
-
-
-
 // At least write the document to webspace:
 $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');
-
-
 $objWriter->save("php://output");
 ?>
