@@ -5,6 +5,9 @@ error_reporting(E_ERROR);
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 
+$sqlact="
+INSERT INTO actividades (id_usuario, fecha, actividad)
+VALUES ('$_SESSION[usuario_id]', NOW(), 'Consulta Arrendado')";
 /* Contador para llenar el arreglo de consultas */
 $i=0;
 $k=0;
@@ -381,6 +384,7 @@ $(function(){
 <?php	
 			$k++;
 	}
+	mysql_query($sqlact, $con)
 ?>
 </div>
 
