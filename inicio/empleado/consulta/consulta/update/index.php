@@ -133,7 +133,6 @@ $(function(){
 		<div id="header" class="noPrint">
 	<h1 >Resultados de b&uacute;squeda</h1>
 		</div>
-		<form method="GET" action="/rankinginfo/inicio/arrendado/consulta/descarga/excel.php" name="myform">
 		<div id="botonesdescarga" class="noPrint">
 			<a href="javascript:window.print();"><input type="button" value="Imprimir"></a>
 			<a href="../../descarga/word.php"><input type="submit" value="Word"></a>
@@ -435,6 +434,5 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 
 ?>
 
-</form>
 
 
