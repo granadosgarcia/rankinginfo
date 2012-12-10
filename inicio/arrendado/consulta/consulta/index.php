@@ -79,7 +79,7 @@ else echo
 			} );
 		</script>
 		
-<SCRIPT language='javascript'>
+<script language='javascript'>
 $(function(){
  
     // add multiple select / deselect functionality
@@ -109,7 +109,7 @@ $(function(){
   
    			<div id='wrapper'>
 	   				<div id='header'>
-	   					<h1>Usuario a Calificar</h1>
+	   					<h1>Usuario a Consultar</h1>
 					</div>
 					
 					<div id='contenedortabla'>";

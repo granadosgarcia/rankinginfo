@@ -18,7 +18,7 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
 <script> 
     
     function borrar (){
-    if(confirm("Seguro que quiero borrar el registro de <?php echo $row['nombre'] ?>"))
+    if(confirm("Seguro que quiero borrar el registro de <?php echo $row['nombres'] ?>"))
     return true;
     
     else return false;
@@ -170,7 +170,7 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
 	<div id="botonesrow">
 	
 	<div id="borrado">
-		<a href="delete.php" onclick="return borrar ()" class="rojo">Borrar Registro</a>
+		<a href="delete.php" onclick="return borrar()" class="rojo">Borrar Registro</a>
 	</div>
 			<div id="modificarrow">
 		<input type="submit" name="ok" value="Modificar" class="inserta">

@@ -5,7 +5,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
 
 $sqlact="
 INSERT INTO actividades (id_usuario, fecha, actividad)
-VALUES ('$_SESSION[usuario_id]', NOW(), 'Borrar Arrendado')";
+VALUES ('$_SESSION[usuario_id]', NOW(), 'Borrar Empleado')";
 
 $dir="".$_SERVER['DOCUMENT_ROOT']."/rankinginfo/uploads/img12/"."$_SESSION[curp]";
 

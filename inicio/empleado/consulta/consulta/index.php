@@ -1,8 +1,9 @@
 <?php 
 
+
+/* Includes de PHP */
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
-
 
 
 $querybusqueda = $_GET['query'];
@@ -11,7 +12,10 @@ $palabrasquery1 = $querybusqueda;
 $palabrasquery = array_unique(explode(" ", $querybusqueda));
 $numeropalabras = count($palabrasquery);
 
-if($numeropalabras == 1){
+
+/* Query para seleccionar a los arrendado cuando solo se selecciono a uno */
+if($numeropalabras == 1)
+{
 $sql= "SELECT DISTINCT *
 FROM empleado
 WHERE 
@@ -19,20 +23,9 @@ nombres regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
 OR apellido_paterno regexp'[[:<:]]".$palabrasquery1."[[:>:]]' 
 OR apellido_materno regexp'[[:<:]]".$palabrasquery1."[[:>:]]' 
 OR curp = '".$palabrasquery1."'
-OR telefono_particular ='".$palabrasquery1."'";}
+OR telefono_particular ='".$palabrasquery1."'";
+}
 
-// else if($numeropalabras>1){
-// 	$sql= "SELECT DISTINCT *
-// FROM arrendado WHERE 
-// nombre regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
-// OR apellido_paterno = '[[:<:]]".$palabrasquery1."[[:<:]]' 
-// OR apellido_materno = '[[:<:]]".$palabrasquery1."[[:<:]]' 
-// OR curp = '".$palabrasquery1."'
-// OR arrendador_actual ='".$palabrasquery1."'
-// OR telefono_casa ='".$palabrasquery1."'
-// OR nombre_aval='".$palabrasquery1."'";
-// $sql.="EXISTS(
-// 	SELECT * FROM arrendado WHERE";
 
 else
 {
@@ -60,15 +53,12 @@ else
 }
 
 
-
-
-
-	if(!($resultado=mysql_query($sql,$con))){
-			echo "".$sql."<br><br>";
-
-		die ('<br>ERROR '.mysql_error());
-		}
-	else echo
+/* Comprobación de error y ejecución del query */
+if(!($resultado=mysql_query($sql,$con)))
+{
+	die ('<br>ERROR '.mysql_error());
+}
+else echo
 "<html>
 		<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>  
@@ -85,6 +75,29 @@ else
 			} );
 		</script>
 		
+<script language='javascript'>
+$(function(){
+ 
+    // add multiple select / deselect functionality
+    $('#selectall').click(function () {
+          $('.case').attr('checked', this.checked);
+    });
+ 
+    // if all checkbox are selected, check the selectall checkbox
+    // and viceversa
+    $('.case').click(function(){
+ 
+        if($('.case').length == $('.case:checked').length) {
+            $('#selectall').attr('checked', 'checked');
+        } else {
+            $('#selectall').removeAttr('checked');
+        }
+ 
+    });
+});
+</SCRIPT>
+
+<meta charset='UTF-8'>
 		</head>
 	<body>
 
@@ -92,17 +105,16 @@ else
   
    			<div id='wrapper'>
 	   				<div id='header'>
-	   					<h1>Usuario a Calificar</h1>
+	   					<h1>Usuario a Consultar</h1>
 					</div>
 					
 					<div id='contenedortabla'>";
-/* 	Botones Menu */
-	include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";
-
-echo " 	<form method='post' action='update/'>
+					
+		include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";
+		echo "<input type='checkbox' id='selectall'/>";		
+echo " 	<form method='GET' action='update/'>
 
 		 <table id ='tabla'>
-
 		<thead>	
 					<tr role='row'>
 		<th class='sorting' role='columnheader' tabindex='0'>S</th>
@@ -110,6 +122,8 @@ echo " 	<form method='post' action='update/'>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Paterno</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Materno</th>
 		<th class='sorting' role='columnheader' tabindex='0'>CURP</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Arrendador Actual</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Arrendador Anterior</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Telefono</th>
 			
 					</tr>
@@ -119,14 +133,16 @@ echo " 	<form method='post' action='update/'>
 
 while($row = mysql_fetch_array($resultado)){ 
 			
-		echo"<tr class='infooo'>";
-				echo "<td><input type='radio' name='consulta' value='".$row['curp']."'> </td>";
+		echo "<tr class='infooo'>";
+				echo "<td><input type='checkbox' name='consulta[]' class='case' value='".$row['curp']."'> </td>";
 			
 				echo "<td>". $row['nombres']. " </td>";
 				echo "<td>". $row['apellido_paterno']. "</td>";
 				echo "<td>". $row['apellido_materno']. "</td>";
 				echo "<td>". $row['curp']. "</td>";
-				echo "<td>". $row['telefono_particular']. " </td>";
+				echo "<td>". $row['arrendador_actual']. " </td>";
+				echo "<td>". $row['arrendador_anterior']. " </td>";
+				echo "<td>". $row['telefono_casa']. " </td>";
 				
 				
 				
@@ -136,9 +152,7 @@ while($row = mysql_fetch_array($resultado)){
 
 echo "</tbody>
 </table>
-<div id='ko'>
 <input type='submit' name='ok' value='Selecci&oacute;n' class='califica'>
-</div>
 </form>
 	
 </div>
@@ -150,7 +164,5 @@ echo "</tbody>
 </body>
 
 </html>";
-
-
 mysql_close($con);
 ?>
