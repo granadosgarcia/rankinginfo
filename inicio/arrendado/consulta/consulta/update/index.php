@@ -4,9 +4,7 @@ error_reporting(E_ERROR);
 /* Includes de php */
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
-$sqlact="
-INSERT INTO actividades (id_usuario, fecha, actividad)
-VALUES ('$_SESSION[usuario_id]', NOW(), 'Consulta Arrendado')";
+
 /* Contador para llenar el arreglo de consultas */
 $i=0;
 $k=0;
@@ -14,24 +12,31 @@ $k=0;
 $consultas = $_GET['consulta'];
 $_SESSION['consultadescarga']= $consultas;
 
-$sql="SELECT * from arrendado,calificacion WHERE curp='";
-
 /* Llenado del arreglo */
 foreach($consultas as $consulta)
 {
-	if($o==0)
-	   $sql.=$consulta."'";
-
-   $sql.="and curp='".$consulta."'";
+   $curp[$i]= $consulta;
+   $sql[$i]="SELECT * from arrendado WHERE curp='".$curp[$i]."' ";
    
-   $o++;
+   
+   
+   $resultado[$i]=mysql_query($sql[$i],$con);
+   if (!$resultado[$i]) { // add this check.
+    die('Invalid query: ' . mysql_error());
+    }
+
+   $i++;
 }
 
-$resultado=mysql_query($sql,$con);
-if (!$resultado) 
+
+$j=0;
+foreach($consultas as $consulta)
 {
-	echo $sql;
-	die('Error: ' . mysql_error());
+   $curp[$j]= $consulta;
+   $sql1[$j]="SELECT * from arr_calif as a, calificacion as c WHERE a.curp = '".$curp[$j]."' GROUP BY c.clave";
+   
+   $resultado1[$j]=mysql_query($sql1[$j], $con); 
+   $j++;
 }
 
 ?>
@@ -84,14 +89,16 @@ $(function(){
 		<div id="header" class="noPrint">
 	<h1 >Resultados de b&uacute;squeda</h1>
 		</div>
-				<div id="botonesdescarga" class="noPrint">
+		<form method="GET" name="myform">
+		<div id="botonesdescarga" class="noPrint">
 			<a href="javascript:window.print();"><input type="button" value="Imprimir"></a>
-			<a href="../../descarga/word.php"><input type="submit" value="Word"></a>
-			<a href="../descarga/excel.php" ><input type="submit" value="Excel"></a>
-			<a><input type="submit" value="Mail"></a>
+			<input type="checkbox" id="selectall" checked="true"/>	
+			<input type="submit" onClick="excel()"value="Excel">
+			<input type="submit" onClick="word()" value="Word">
+			<input type="submit" onClick="mail()" value="Mail">
  		</div>
 <div id="divarrendadoscompleto">
-<?php while($row=mysql_fetch_array($resultado)) { ?>
+<?php while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 
 		<input checked="true" style="visibility:hidden;" name="consulta[]" type="checkbox" value="<?php echo $row['curp'] ?>">
 
@@ -385,10 +392,9 @@ $(function(){
 <?php	
 			$k++;
 	}
-
-	mysql_query($sqlact, $con);
-mysql_close($con);
 ?>
 </div>
+
+</form>
 
 
