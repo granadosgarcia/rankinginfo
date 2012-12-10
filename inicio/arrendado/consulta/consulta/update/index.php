@@ -46,10 +46,35 @@ foreach($consultas as $consulta)
 <!-- HTML -->
 <html>
 		<head>
-			
+			<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php"; ?>
+
 			<link rel="stylesheet" href="/rankinginfo/css/estilo1.css" type="text/css" charset="utf-8">
 		
 			<script src="/rankinginfo/js/jquery-1.8.2.min.js"></script>
+
+<link rel="icon" href="/rankinginfo/img/favicon.ico" >
+
+<script type="text/javascript">
+		$(document).ready(function() {
+
+			$(".imagengrande").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+		});
+</script>
+
 
 <SCRIPT language="javascript">
 $(function(){
@@ -163,7 +188,7 @@ $(function(){
 									<td>
 										<p>Foto</p>
 <?php if (!empty($row["img_foto"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/>
+										<a class="imagengrande" src="<?php echo $row["img_foto"]?>"><img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/></a>
 <?php } else {?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 								
@@ -174,7 +199,7 @@ $(function(){
 									<td>
 										<p>IFE</p>
 									<?php if (!empty($row["img_ife"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo $row["img_ife"]?>"/>
+										<a class="imagengrande" href="<?php echo $row["img_ife"]?>"><img height="100px" width="150px" src="<?php echo $row["img_ife"]?>"/></a>
 <?php } else {?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 								
@@ -186,7 +211,7 @@ $(function(){
 									<td>
 										<p>Comprobante Domiciliario</p>
 										<?php if (!empty($row["img_comprobante_domicilio"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo $row["img_comprobante_domicilio"]?>"/>
+										<a class="imagengrande" href="<?php echo $row["img_comprobante_domicilio"]?>"><img height="100px" width="150px" src="<?php echo $row["img_comprobante_domicilio"]?>"/></a>
 <?php } else { ?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 <?php  }?>
