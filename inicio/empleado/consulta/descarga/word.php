@@ -1,27 +1,40 @@
 <?php
-header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); // Date in the past
-header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // always modified
-header("Cache-Control: no-store, no-cache, must-revalidate"); // HTTP/1.1
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache"); // HTTP/1.0
-header("Content-type: application/msword");
-header('Content-Disposition: attachment; filename="Registro.doc";');
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/word/PHPWord.php";
+header('Content-Type: application/vnd.ms-word');
+header('Content-Disposition: attachment;filename="Consulta.docx"');
+header('Cache-Control: max-age=0');
+
 error_reporting(E_ERROR);
 
-/* Includes de php */
-include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
-include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
+$con = mysql_connect("localhost","root","crazyMarines910208");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+$database=mysql_select_db("rankinginfo") ;
+if (!$database)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+  
+  session_start();
+  if(!isset($_SESSION['nombreusuario'])){
+     '<script> window.location = "/rankinginfo/index.php"; </script>';
+	}
+		
 
 /* Contador para llenar el arreglo de consultas */
 $i=0;
 $k=0;
 /* GET */
 $consultas = $_GET['consulta'];
+
+
 /* Llenado del arreglo */
 foreach($consultas as $consulta)
 {
    $curp[$i]= $consulta;
-   $sql[$i]="SELECT * from empleado WHERE curp='".$curp[$i]."' ";
+   $sql[$i]="SELECT DISTINCT * from empleado,escolaridad WHERE curp='".$curp[$i]."' GROUP BY curp";
    
    
    
@@ -38,287 +51,322 @@ $j=0;
 foreach($consultas as $consulta)
 {
    $curp[$j]= $consulta;
-   $sql1[$j]="SELECT * from emp_calif as a, calificacion as c WHERE a.curp = '".$curp[$j]."' GROUP BY c.clave";
+   $sql1[$j]="SELECT * from emp_calif WHERE curp = '".$curp[$j]."' GROUP BY id";
    
    $resultado1[$j]=mysql_query($sql1[$j], $con); 
    
    $j++;
 }
 
-?>
-<!-- HTML -->
-<html>
-		<head>
-			
-		
-			<script src="/rankinginfo/js/jquery-1.8.2.min.js"></script>
-		<meta charset='UTF-8'>
-
-		</head>
-<body>
-
-<div id="entero">
-	<div id="wrapper">
-		<div id="header">
-	<h1 >Resultados de b&uacute;squeda</h1>
-		</div>
-		
-
-<?php while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
+//WORD
+$PHPWord = new PHPWord();
 
 
-			<div id="infoarrendados">
-		
-					<div id="notcalif">
-		
-							<div id="detallespers">
-								<table>
-									<tr>
-										<td>Nombre: </td>
-										<td><?php echo $row["nombres"]." ".$row["apellido_paterno"]." ".$row["apellido_materno"]?></td>
-									</tr>
+
+$section = $PHPWord->createSection();
+
+
+
+$PHPWord->addFontStyle('StyleR', array('bold'=>true, 'italic'=>true, 'size'=>12));
+$PHPWord->addFontStyle('StyleC', array('bold'=>false, 'italic'=>false, 'size'=>13));
+$PHPWord->addFontStyle('titulo', array('bold'=>true, 'italic'=>false, 'size'=>16));
+$styleCell = array('valign'=>'center');
+
+
+while($row=mysql_fetch_array($resultado[$k]) {
+
+
+$section->addText("Consulta Ranking Information",'titulo');
+		$section->addTextBreak(1);
+		$table = $section->addTable();
+
+ 	 	$table->addRow();
+ 	 	$table->addCell(3000)->addText("Nombre:",'StyleR');
+ 	 	$table->addCell(9000)->addText($row['nombres'].$row["apellido_paterno"].$row["apellido_materno"],'StyleC');
+ 	 	$table->addRow();
+ 	 	$table->addCell(3000)->addText("Curp:",'StyleR');
+ 	 	$table->addCell(9000)->addText($row['curp'],'StyleC');
+
 									
-									<tr>
-										<td>Curp:</td>
-										<td><?php echo $row["curp"] ?></td>
-									</tr>
-<?php if (!empty($row["domicilio_actual"])) { ?>
-									<tr>
-										<td>Domicilio Actual:</td>
-										<td><?php echo $row["domicilio"] ?></td>
-									</tr>
-<?php } if (!empty($row["telefono_particular"]) && !empty($row["telefono_personal"])) { ?>			
-									<tr>
-			<?php if (!empty($row["estado_civil"])) { ?>							
-										<td>Telefono Personal:</td>
-										<td><?php echo $row["telefono_personal"] ?></td>
-			<?php } ?>						
+if (!empty($row["domicilio_actual"])) 
+{ 
+	$table->addRow();
+	$table->addCell(3000)->addText("Domicilio Actual:",'StyleR');
+	$table->addCell(9000)->addText($row["domicilio"],'StyleC');
+} 
+
+if (!empty($row["telefono_particular"]) && !empty($row["telefono_personal"])) 
+{ 		
+	if (!empty($row["telefono_personal"])) 
+	{ 
+		$table->addRow();
+		$table->addCell(3000)->addText("Telefono Personal:",'StyleR');
+		$table->addCell(9000)->addText($row["telefono_personal"],'StyleC');
+		
+	}				
+	if (!empty($row["telefono_particular"])) 
+	{ 
+		$table->addRow();
+		$table->addCell(3000)->addText("Telefono Particular:",'StyleR');
+		$table->addCell(9000)->addText($row["telefono_particular"],'StyleC');	
+	}									
+}
+
+if (!empty($row["estado_civil"])) 
+{		
+		$table->addRow();
+		$table->addCell(3000)->addText("Estado :",'StyleR');
+		$table->addCell(9000)->addText( $row["estado_civil"],'StyleC');							
+} 
+
+if (!empty($row["nombre_conyuge"])) 
+{ 		
+		$table->addRow();
+		$table->addCell(3000)->addText("Nombre del Conyuge:",'StyleR');
+		$table->addCell(9000)->addText( $row["nombre_conyuge"],'StyleC');										
+	
+} 
+if (!empty($row["responsable_actual"])) 
+{		
+		$table->addRow();
+		$table->addCell(3000)->addText("Responsable Actual:",'StyleR');
+		$table->addCell(9000)->addText( $row["responsable_actual"],'StyleC');							
+ 	
+} 
+if (!empty($row["empleo_anterior"])) 
+{ 	
+		$table->addRow();
+		$table->addCell(3000)->addText("Empleo Anterior:",'StyleR');
+		$table->addCell(9000)->addText( $row["empleo_anterior"],'StyleC');										
+ 	
+} 
+if (!empty($row["tiempo_trabajoanterior"]))
+{ 	
+		$table->addRow();
+		$table->addCell(3000)->addText("Tiempo Trabajo Anterior",'StyleR');
+		$table->addCell(9000)->addText(htmlentities($row["tiempo_trabajoanterior"]),'StyleC');								
+ 	
+} 
+if (!empty($row["habilidades"]))
+{	
+		$table->addRow();
+		$table->addCell(3000)->addText("Habilidades:",'StyleR');
+		$table->addCell(9000)->addText($row["habilidades"],'StyleC');									
+ 	
+}
+
+if (!empty($row["patron_actual"])) 
+{ 	
+		$table->addRow();
+		$table->addCell(3000)->addText("Patron Actual:",'StyleR');
+		$table->addCell(9000)->addText($row["patron_actual"],'StyleC');	
+} 
+if (!empty($row["domicilio_patronactual"])) 
+{ 									
+		$table->addRow();
+		$table->addCell(3000)->addText("Domicilio Patron Actual:",'StyleR');
+		$table->addCell(9000)->addText($row["domicilio_patronactual"],'StyleC');	
+} 
+if (!empty($row["domicilio_patronactual"])) 
+{ 									
+		$table->addRow();
+		$table->addCell(3000)->addText("Domicilio Patron Actual:",'StyleR');
+		$table->addCell(9000)->addText($row["domicilio_patronactual"],'StyleC');	
+} 
+if (!empty($row["patron_anterior"])) 
+{ 
+		$table->addRow();
+		$table->addCell(3000)->addText("Patron Anterior:",'StyleR');
+		$table->addCell(9000)->addText($row["patron_anterior"],'StyleC');	
+}
+if (!empty($row["domicilio_patronanterior"])) 
+{ 
+		$table->addRow();
+		$table->addCell(3000)->addText("Domicilio Patron Anterior:",'StyleR');
+		$table->addCell(9000)->addText($row["domicilio_patronanterior"],'StyleC');	
+} 
+if (!empty($row["telefono_patronanterior"])) 
+{ 
+		$table->addRow();
+		$table->addCell(3000)->addText("Telefono Patron Anterior:",'StyleR');
+		$table->addCell(9000)->addText($row["telefono_patronanterior"],'StyleC');	
+} 
+
+//IMG	
+if(!empty($row["img_foto"])||!empty($row["img_ife"])||!empty($row["img_comprobante_domicilio"])||!empty($row["img_comprobante_trabajo"])||!empty($row["img_cedula_profesional"])||!empty($row["img_certificado_escolar"]))
+{
+	$section->addTextBreak(2);
+
+ 	$section->addText("Imagenes",'titulo');
+ 	 		
+ 	$section->addTextBreak(1);
+
+ 	$table = $section->addTable();
+ 	 	
+ 	$table->addRow();
+ 	
+	$table->addCell(3000)->addText("Foto",'StyleR');
+	$table->addCell(3000)->addText("IFE",'StyleR');
+	$table->addCell(3000)->addText("Comprobante Domicilio",'StyleR');
+	$table->addCell(3000)->addText("Comprobante Trabajo",'StyleR');
+	$table->addCell(3000)->addText("Cedula Profesional",'StyleR');
+	$table->addCell(3000)->addText("Certificado Escolar",'StyleR');
+	
+	$table->addRow();
+	
+if (!empty($row["img_foto"])) 
+{
+	$table->addCell(9000)->addText($row["img_foto"],'StyleC');	
+}
+else 
+{
+	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
+if (!empty($row["img_ife"])) 
+{ 	
+	$table->addCell(9000)->addText($row["img_ife"],'StyleC');	} 
+else 
+{
+	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
+if (!empty($row["img_comprobante_domicilio"])) 
+{ 
+	$table->addCell(9000)->addText($row["img_comprobante_domicilio"],'StyleC');	}
+else 
+{ 
+	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
+if (!empty($row["img_comprobante_trabajo"])) 
+{ 
+	$table->addCell(9000)->addText($row["img_comprobante_trabajo"],'StyleC');	} 
+else 
+{ 
+	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
+}
+
+if (!empty($row["img_cedula_profesional"])) 
+{ 
+	$table->addCell(9000)->addText($row["img_cedula_profesional"],'StyleC');	} 
+else 
+{ 
+	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
+}
+
+if (!empty($row["img_certificado_escolar"])) 
+{ 
+	$table->addCell(9000)->addText($row["img_certificado_escolar"],'StyleC');	} 
+else 
+{ 
+	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
+}
+
+
+
+}
+									
+ $k=0; $o=0;
+ 	
+ $section->addTextBreak(2);
+ $section->addText("Calificacion",'titulo');
+ $section->addTextBreak(1);
+ while($row=mysql_fetch_array($resultado1[$k])) 
+ {
+
+ 
+ 	 if(!empty($row['emp_desempeno '])||!empty($row['emp_calif_anterior ']))
+ 	 {
+		
+ 	 	$table = $section->addTable();
+ 	 	
+ 	 	if($o==0)
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3500,$styleCell)->addText("Fecha",'StyleR');
+	 	 	$table->addCell(3000,$styleCell)->addText("Pagos",'StyleR');
+	 	 	$table->addCell(3000,$styleCell)->addText("Propiedad Anterior",'StyleR');
+	 	 	$table->addCell(3000,$styleCell)->addText("Propiedad Actual",'StyleR');
+	 	 	$table->addCell(3000,$styleCell)->addText("Calificacion General",'StyleR');
+ 	 	}
+ 	 	
+ 	 	$table->addRow();
+ 	 	
+ 	 	$table->addCell(3000,$styleCell)->addText($row["fecha"],'StyleR');
+
+
+
+	 		switch($row["emp_desempeno "])
+	 		{
+										
+				case 1:
+				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				break;
+										
+				case 2:
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				break;
+										
+				case 3:
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				break;
+										
+				case 4:
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				break;
+										
+				case 5:
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				break;	
 				
-			<?php if (!empty($row["telefono_particular"])) { ?>		
-										<td>Telefono Particular:</td>
-										<td><?php echo $row["telefono_particular"] ?></td>
-										<?php } ?>
-									</tr>
-									
-									<?php } if (!empty($row["estado_civil"])) { ?>										
-									<tr>
-										<td>Estado Civil:</td>
-										<td><?php echo $row["estado_civil"] ?></td>
-									</tr>
-<?php } if (!empty($row["nombre_conyuge"])) { ?>										
-									<tr>
-										<td>Conyuge:</td>
-										<td><?php echo $row["nombre_conyuge"] ?></td>
-									</tr>
-<?php } if (!empty($row["responsable_actual"])) { ?>										
-									<tr>
-										<td>Responsable Actual:</td>
-										<td><?php echo $row["responsable_actual"] ?></td>
-									</tr>
-										
-<?php } if (!empty($row["empleo_anterior"])) { ?>										
-									<tr>
-										<td>Empleo Anterior:</td>
-										<td><?php echo $row["empleo_anterior"] ?></td>
-									</tr>
-<?php } if (!empty($row["tiempo_trabajoanterior"])){ ?>										
-									<tr>
-										<td>Tiempo del Trabajo Anterior:</td>
-										<td><?php echo htmlentities($row["tiempo_trabajoanterior"]) ?></td>
-									</tr>
-<?php } if (!empty($row["tiempo_trabajoanterior"])){ ?>										
-									<tr>
-										<td>Habilidades:</td>
-										<td><?php echo $row["habilidades"] ?></td>
-									</tr>
-<? } ?>
-							</div>
-		
-<!--
-							<div id="fotos">
-							<table>
-								<tr>
-									<td>
-										<p>Foto</p>
-<?php if (!empty($row["img_foto"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/>
-<?php } else {?>
-										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
-								
-<?php } ?> 
-									</td>
-								
-								
-									<td>
-										<p>IFE</p>
-									<?php if (!empty($row["img_ife"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo $row["img_ife"]?>"/>
-<?php } else {?>
-										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
-								
-<?php }?>				
-									</td>
-								
-								
-								
-									<td>
-										<p>Comprobante Domiciliario</p>
-										<?php if (!empty($row["img_comprobante_domicilio"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo $row["img_comprobante_domicilio"]?>"/>
-<?php } else { ?>
-										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
-<?php  }?>
-									</td>
-							
-								
-									<td>
-										<p>Comprobante de Trabajo</p>
-										<?php if (!empty($row["img_comprobante_trabajo"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo $row["img_comprobante_trabajo"]?>"/>
-<?php } else { ?>
-										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
-<?php  }?>
-									</td>
-									
+				default:
+				$table->addCell(3000,$styleCell)->addText("",'StyleR');
+																	 
+			}
+	 	
+	 	
 
-								</tr>
-							</table>
-							</div>
--->
-		
-							<div id="patrones">
-								<table>
-								
-<?php if (!empty($row["patraon_actual"])) { ?>	
-									<tr>
-										<td>Patron Actual:</td>
-										<td><?php echo $row["patron_actual"] ?></td>
-									</tr>
-<?php } if (!empty($row["domicilio_patronactual"])) { ?>									
-									<tr>
-										<td>Domicilio Patron Actual:</td>
-										<td><?php echo $row["domicilio_patronactual"] ?></td>
-									</tr>
-<?php } if (!empty($row["domicilio_patronactual"])) { ?>									
-									<tr>
-										<td>Teléfono Patron Actual:</td>
-										<td><?php echo $row["telefono_patronactual"] ?></td>
-									</tr>
-<?php } 
-	if (!empty($row["patron_anterior"])) { ?>
-									<tr>
-										<td>Patron Anterior:</td>
-										<td><?php echo $row["patron_anterior"] ?></td>
-									</tr>
-<?php } if (!empty($row["domicilio_patronanterior"])) { ?>
-									<tr>
-										<td>Domicilio Patron Anterior:</td>
-										<td><?php echo $row["domicilio_patron_anterior"] ?></td>
-									</tr>
-<?php } if (!empty($row["telefono_patronanterior"])) { ?>
-									<tr>
-										<td>Teléfono Patron Anterior:</td>
-										<td><?php echo $row["telefono_patronanterior"] ?></td>
-									</tr>
-<?php } ?>
-								</table>
-							</div>
-		
-					</div>
-		
-					<div id="calificacionesdiv">
+			switch($row["emp_calif_anterior "])
+			{
+				case 1:
+				$table->addCell(3000,$styleCell)->addText("MuyBueno",'StyleR');
+				break;
+											
+				case 2:
+				$table->addCell(3000,$styleCell)->addText("Bueno",'StyleR');
+				break;
+											
+				case 3:
+				$table->addCell(3000,$styleCell)->addText("Regular",'StyleR');
+				break;
+											
+				case 4:
+				$table->addCell(3000,$styleCell)->addText("Malo",'StyleR');
+				break;
+											
+				case 5:
+				$table->addCell(3000,$styleCell)->addText("Muy Malo",'StyleR');
+				break;
 					
-<?php while($row=mysql_fetch_array($resultado1[$k])){ ?>							
-								<table class="califs">
-<?php if (!empty($row["fecha"])) { ?>
-<tr><td> Calificaciones</td></tr>
-								<tr>
-								<td>Fecha:</td>
-								<td> <?php echo $row["fecha"] ?></td>
-								</tr>
-<?php } ?>
-								<?php if (!empty($row["emp_desempeno"])) { ?>
-									<tr>
-										<td>Desempeño:</td>
-										<td><?php
-										switch($row["emp_desempeno"]){
-										
-										case 1:
-										echo "Muy Bueno";
-										break;
-										
-										case 2:
-										echo "Bueno";
-										break;
-										
-										case 3:
-										echo "Normal";
-										break;
-										
-										case 4:
-										echo "Malo";
-										break;
-										
-										case 5:
-										echo "Muy Malo";
-										break;																				 
-										}
-										 ?></td>
-																				
-									
-									</tr>
-		<?php  if (!empty($row["emp_calif_anterior"])) { ?>
-							
-									<tr>
-										<td>Calificacion Empleo anterior:</td>
-										<td><?php
-										switch($row["emp_calif_anterior"]){
-										
-										case 1:
-										echo "Muy Bueno";
-										break;
-										
-										case 2:
-										echo "Bueno";
-										break;
-										
-										case 3:
-										echo "Normal";
-										break;
-										
-										case 4:
-										echo "Malo";
-										break;
-										
-										case 5:
-										echo "Muy Malo";
-										break;																				 
-										}
-										 ?></td>
-									</tr>
-		<?php } ?>
-								</table>
-								<?php } if (!empty($row["comentario"])) { ?>
-								<table class="comentarios">
-								<tr>
-								 
-								<td class="comment">Comentarios: </br>
-										<?php echo $row["comentario"];?></td>
-								
-								</tr>
-								</table>
-								<?php } ?>
-<?php }?>					</div>
-							
-							<div id="escolaridad">
-							
-							</div>
-		
-			</div>
-<?php	
-			$k++;
-	}
+				default:
+				$table->addCell(3000,$styleCell)->addText("",'StyleR');			
+			}
+
+			
+			if (!empty($row["fecha"])) 
+			{
+				$section->addTextBreak(1);
+				$table = $section->addTable();
+				$table->addRow();
+				$table->addCell(3000,$styleCell)->addText("Comentario",'StyleR');
+				$table->addRow();
+				$table->addCell(9000,array('valign'=>'center'))->addText($row["comentario"],'StyleR');
+			}
+	 } 
+	 $o++;
+	 $k++;
+
+ }
+// Add hyperlink elements
+$section->addTextBreak(2);
+
+// At least write the document to webspace:
+$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');
+$objWriter->save("php://output");
 ?>
-
-
 
