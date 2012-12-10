@@ -20,6 +20,7 @@ $consultas = $_GET['consulta'];
 
 $var = 	mysql_query($sqlact, $con);
 if(!$var){
+echo $sql;
 echo "errorrr".mysql_error();
 }
 foreach($consultas as $consulta)
@@ -43,7 +44,7 @@ $j=0;
 foreach($consultas as $consulta)
 {
    $curp[$j]= $consulta;
-   $sql1[$j]="SELECT * from emp_calif as a, calificacion as c WHERE a.curp = '".$curp[$j]."' GROUP BY c.clave";
+   $sql1[$j]="SELECT * from emp_calif  WHERE curp = '".$curp[$j]."' GROUP BY id";
    
    $resultado1[$j]=mysql_query($sql1[$j], $con); 
    
