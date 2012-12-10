@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.3
+-- version 3.2.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 09, 2012 at 11:52 PM
+-- Generation Time: Dec 10, 2012 at 07:18 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -27,14 +26,16 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `actividades` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
   `id_usuario` int(7) NOT NULL,
   `fecha` datetime NOT NULL,
   `actividad` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_usuario` (`id_usuario`),
-  KEY `id_usuario_2` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=7 ;
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Dumping data for table `actividades`
+--
+
 
 -- --------------------------------------------------------
 
@@ -71,10 +72,6 @@ CREATE TABLE IF NOT EXISTS `arrendado` (
 -- Dumping data for table `arrendado`
 --
 
-INSERT INTO `arrendado` (`nombre`, `apellido_paterno`, `apellido_materno`, `domicilio_actual`, `telefono_casa`, `estado_civil`, `img_ife`, `arrendador_actual`, `arrendador_anterior`, `domicilio_arrendador_actual`, `telefono_arrendador_actual`, `telefono_arrendador_anterior`, `domicilio_arrendador_anterior`, `domicilio_anterior`, `curp`, `nombre_aval`, `domicilio_aval`, `telefono_aval`, `nombre_conyuge`, `img_comprobante_domicilio`, `img_foto`) VALUES
-('', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL),
-('Abraham', 'Farias', 'Gonzalez', 'Mayorazgo 123', 888888, 'Feo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'abrahcurp1', NULL, NULL, NULL, NULL, NULL, NULL),
-('Kevin', 'Mendez', 'Tellez', 'Geovillas 3', 987321, 'Soltero', '/rankinginfo/uploads/img12/kevincurp/ife.jpg', 'vw', 'KEVIN3', NULL, NULL, NULL, NULL, 'Xalapa 5', 'kevincurp', 'Martin', 'Villas 1', 1234, 'kevin11', '/rankinginfo/uploads/img12/kevincurp/comprobante_domicilio.jpg', '/rankinginfo/uploads/img12/kevincurp/foto.jpg');
 
 -- --------------------------------------------------------
 
@@ -83,18 +80,22 @@ INSERT INTO `arrendado` (`nombre`, `apellido_paterno`, `apellido_materno`, `domi
 --
 
 CREATE TABLE IF NOT EXISTS `arr_calif` (
-  `curp` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
-  `clave` int(10) NOT NULL,
-  PRIMARY KEY (`curp`,`clave`),
-  KEY `clave` (`clave`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+  `curp` varchar(30) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `arr_pagos` int(1) DEFAULT NULL,
+  `arr_propiedad_actual` int(1) DEFAULT NULL,
+  `arr_propiedad_anterior` int(1) DEFAULT NULL,
+  `arr_general` int(1) DEFAULT NULL,
+  `comentario` varchar(500) DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  KEY `curp` (`curp`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `arr_calif`
 --
 
-INSERT INTO `arr_calif` (`curp`, `clave`) VALUES
-('kevincurp', 1);
 
 -- --------------------------------------------------------
 
@@ -113,14 +114,12 @@ CREATE TABLE IF NOT EXISTS `calificacion` (
   `emp_calif_anterior` int(10) DEFAULT NULL,
   `fecha` date NOT NULL,
   PRIMARY KEY (`clave`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `calificacion`
 --
 
-INSERT INTO `calificacion` (`clave`, `arr_pagos`, `arr_propiedad_actual`, `arr_propiedad_anterior`, `arr_general`, `emp_desempeno`, `comentario`, `emp_calif_anterior`, `fecha`) VALUES
-(1, 1, 1, 1, 1, NULL, 'lololol', NULL, '2012-12-09');
 
 -- --------------------------------------------------------
 
@@ -155,14 +154,12 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   `habilidades` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`curp`),
   KEY `clave_escolaridad` (`clave_escolaridad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `empleado`
 --
 
-INSERT INTO `empleado` (`curp`, `nombres`, `apellido_paterno`, `apellido_materno`, `domicilio`, `telefono_particular`, `telefono_personal`, `estado_civil`, `img_ife`, `img_comprobante_domicilio`, `img_comprobante_trabajo`, `clave_escolaridad`, `nombre_conyuge`, `patron_anterior`, `patron_actual`, `responsable_actual`, `telefono_patronactual`, `domicilio_patronactual`, `telefono_patronanterior`, `domicilio_patronanterior`, `img_foto`, `empleo_anterior`, `tiempo_trabajoanterior`, `habilidades`) VALUES
-('Prueba1', 'Prueba1', 'Prueba1', 'Prueba1Prueba1', 'Prueba1', 0, 0, 'Prueba1', NULL, NULL, NULL, 37, 'Prueba1', 'Prueba1', 'Prueba1', 'Prueba1', 0, 'Prueba1', 0, 'Prueba1', NULL, 'Prueba1', 'Prueba1Prueba1', 'Prueba1');
 
 -- --------------------------------------------------------
 
@@ -171,11 +168,20 @@ INSERT INTO `empleado` (`curp`, `nombres`, `apellido_paterno`, `apellido_materno
 --
 
 CREATE TABLE IF NOT EXISTS `emp_calif` (
-  `curp` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
-  `clave` int(10) NOT NULL,
-  PRIMARY KEY (`curp`,`clave`),
-  KEY `clave` (`clave`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `curp` varchar(30) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `emp_desempeno` int(1) DEFAULT NULL,
+  `emp_calif_anterior` int(1) DEFAULT NULL,
+  `comentario` int(1) DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `curp` (`curp`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `emp_calif`
+--
+
 
 -- --------------------------------------------------------
 
@@ -196,8 +202,6 @@ CREATE TABLE IF NOT EXISTS `escolaridad` (
 -- Dumping data for table `escolaridad`
 --
 
-INSERT INTO `escolaridad` (`clave`, `grado_escolar`, `lugar_estudio`, `img_certificado_escolar`, `img_cedula_profesional`) VALUES
-(37, 'Prueba1', 'v', '', '');
 
 -- --------------------------------------------------------
 
@@ -236,22 +240,16 @@ ALTER TABLE `actividades`
 -- Constraints for table `arr_calif`
 --
 ALTER TABLE `arr_calif`
-  ADD CONSTRAINT `arr_calif_ibfk_1` FOREIGN KEY (`curp`) REFERENCES `arrendado` (`curp`),
-  ADD CONSTRAINT `arr_calif_ibfk_2` FOREIGN KEY (`clave`) REFERENCES `calificacion` (`clave`);
+  ADD CONSTRAINT `arr_calif_ibfk_1` FOREIGN KEY (`curp`) REFERENCES `arrendado` (`curp`);
 
 --
 -- Constraints for table `emp_calif`
 --
 ALTER TABLE `emp_calif`
-  ADD CONSTRAINT `emp_calif_ibfk_1` FOREIGN KEY (`curp`) REFERENCES `empleado` (`curp`),
-  ADD CONSTRAINT `emp_calif_ibfk_2` FOREIGN KEY (`clave`) REFERENCES `calificacion` (`clave`);
+  ADD CONSTRAINT `emp_calif_ibfk_1` FOREIGN KEY (`curp`) REFERENCES `empleado` (`curp`);
 
 --
 -- Constraints for table `escolaridad`
 --
 ALTER TABLE `escolaridad`
   ADD CONSTRAINT `escolaridad_ibfk_1` FOREIGN KEY (`clave`) REFERENCES `empleado` (`clave_escolaridad`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
