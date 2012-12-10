@@ -103,9 +103,12 @@ $(function(){
 		<form method="GET" action="/rankinginfo/inicio/arrendado/consulta/descarga/excel.php" name="myform">
 		<div id="botonesdescarga" class="noPrint">
 			<a href="javascript:window.print();"><input type="button" value="Imprimir"></a>
-			<input type="checkbox" id="selectall" checked="true"/>	
-			<input type="submit" onClick="excel()"value="Excel">
-			<input type="submit" onClick="word()" value="Word">
+			<a href="../../descarga/word.php"><input type="submit" value="Word"></a>
+			<a href="../../"><input type="submit" value="Menu"></a>
+<!--
+			<a href="../../descarga/excel.php"><input type="submit" value="Excel"></a>
+			<a href="../../descarga/mail.php"><input type="submit" value="Mail"></a>
+-->
 		</div>
 
 <?php 
