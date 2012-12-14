@@ -206,8 +206,7 @@ $styleCell = array('valign'=>'center');
 
 	 	 }
 
- 	  		$k++;
- 	}
+ 
  	
  $k=0; $o=0;
  	
@@ -363,12 +362,12 @@ $styleCell = array('valign'=>'center');
 			}
 	 } 
 	 $o++;
-	 $k++;
 
  }
+	 $k++;
 
 
-
+}
 
 
 

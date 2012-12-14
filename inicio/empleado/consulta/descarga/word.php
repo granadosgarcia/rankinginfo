@@ -19,17 +19,16 @@ if (!$database)
   
   session_start();
   if(!isset($_SESSION['nombreusuario'])){
-     '<script> window.location = "/rankinginfo/index.php"; </script>';
+    echo '<script> window.location = "/rankinginfo/index.php"; </script>';
 	}
 		
-
+	
 /* Contador para llenar el arreglo de consultas */
 $i=0;
 $k=0;
+
 /* GET */
-$consultas = $_GET['consulta'];
-
-
+$consultas = $_SESSION['consultadescarga'];
 /* Llenado del arreglo */
 foreach($consultas as $consulta)
 {
@@ -42,7 +41,7 @@ foreach($consultas as $consulta)
    if (!$resultado[$i]) { // add this check.
     die('Invalid query: ' . mysql_error());
     }
-htmlentities($resultado[$i]);
+
    $i++;
 }
 
@@ -54,7 +53,6 @@ foreach($consultas as $consulta)
    $sql1[$j]="SELECT * from emp_calif WHERE curp = '".$curp[$j]."' GROUP BY id";
    
    $resultado1[$j]=mysql_query($sql1[$j], $con); 
-   
    $j++;
 }
 
@@ -73,7 +71,8 @@ $PHPWord->addFontStyle('titulo', array('bold'=>true, 'italic'=>false, 'size'=>16
 $styleCell = array('valign'=>'center');
 
 
-while($row=mysql_fetch_array($resultado[$k]) {
+ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) 
+ { 
 
 
 $section->addText("Consulta Ranking Information",'titulo');
@@ -152,7 +151,6 @@ if (!empty($row["habilidades"]))
 		$table->addRow();
 		$table->addCell(3000)->addText("Habilidades:",'StyleR');
 		$table->addCell(9000)->addText($row["habilidades"],'StyleC');									
- 	
 }
 
 if (!empty($row["patron_actual"])) 
@@ -220,22 +218,27 @@ if (!empty($row["img_foto"]))
 }
 else 
 {
-	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
+	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');
+}
 if (!empty($row["img_ife"])) 
 { 	
 	$table->addCell(9000)->addText($row["img_ife"],'StyleC');	} 
 else 
 {
-	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
+	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');
+}
 if (!empty($row["img_comprobante_domicilio"])) 
 { 
-	$table->addCell(9000)->addText($row["img_comprobante_domicilio"],'StyleC');	}
+	$table->addCell(9000)->addText($row["img_comprobante_domicilio"],'StyleC');	
+}
 else 
 { 
-	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
+	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');
+}
 if (!empty($row["img_comprobante_trabajo"])) 
 { 
-	$table->addCell(9000)->addText($row["img_comprobante_trabajo"],'StyleC');	} 
+	$table->addCell(9000)->addText($row["img_comprobante_trabajo"],'StyleC');	
+} 
 else 
 { 
 	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
@@ -243,7 +246,8 @@ else
 
 if (!empty($row["img_cedula_profesional"])) 
 { 
-	$table->addCell(9000)->addText($row["img_cedula_profesional"],'StyleC');	} 
+	$table->addCell(9000)->addText($row["img_cedula_profesional"],'StyleC');	
+} 
 else 
 { 
 	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
@@ -251,13 +255,12 @@ else
 
 if (!empty($row["img_certificado_escolar"])) 
 { 
-	$table->addCell(9000)->addText($row["img_certificado_escolar"],'StyleC');	} 
+	$table->addCell(9000)->addText($row["img_certificado_escolar"],'StyleC');	
+} 
 else 
 { 
 	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
 }
-
-
 
 }
 									
@@ -265,11 +268,10 @@ else
  	
  $section->addTextBreak(2);
 
+
  while($row=mysql_fetch_array($resultado1[$k])) 
  {
-	 
- 
- 	 if(!empty($row['emp_desempeno '])||!empty($row['emp_calif_anterior ']))
+ 	 if(!empty($row['emp_desempeno'])||!empty($row['emp_calif_anterior']))
  	 {
 		 $section->addText("Calificacion",'titulo');
 		 $section->addTextBreak(1);
@@ -291,7 +293,7 @@ else
 
 
 
-	 		switch($row["emp_desempeno "])
+	 		switch($row["emp_desempeno"])
 	 		{
 										
 				case 1:
@@ -321,7 +323,7 @@ else
 	 	
 	 	
 
-			switch($row["emp_calif_anterior "])
+			switch($row["emp_calif_anterior"])
 			{
 				case 1:
 				$table->addCell(3000,$styleCell)->addText("Muy Bueno",'StyleC');
@@ -355,13 +357,18 @@ else
 				$table->addRow();
 				$table->addCell(3000,$styleCell)->addText("Comentario",'StyleR');
 				$table->addRow();
-				$table->addCell(9000,array('valign'=>'center'))->addText($row["comentario"],'StyleR');
+				$table->addCell(9000,array('valign'=>'center'))->addText($row["comentario"],'StyleC');
 			}
 	 } 
 	 $o++;
-	 $k++;
 
  }
+	 $k++;
+
+
+}
+
+
 // Add hyperlink elements
 $section->addTextBreak(2);
 
@@ -369,4 +376,3 @@ $section->addTextBreak(2);
 $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');
 $objWriter->save("php://output");
 ?>
-
