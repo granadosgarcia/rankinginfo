@@ -1,0 +1,17 @@
+VW
+	incluir Gestiones
+
+To DO
+	Empleado/word.php
+	Query Insertar Empleado (FOTOS NO JALAN)
+
+DEBUG
+	Todo a UTF-8 (PHP y HTML)
+	Mysql strip en todos los inputs
+	Javascript al insertar los teléfonos(Sólo números)
+	Verificar títulos y h1 de todo
+
+CSS
+	Ambas consultas
+	Que jale en firefox (UL de ser necesario)
+	Favicon en todos
