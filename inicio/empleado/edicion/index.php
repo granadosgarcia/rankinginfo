@@ -4,7 +4,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 <html>
 	<head>
-	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+
 <link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
 <script>	
     function verifica (){

@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 ?>
 <html>
 <head>
-<meta charset="utf-8"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 <title> Insertar Arrendado </title>
 <link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
 

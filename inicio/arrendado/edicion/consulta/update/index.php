@@ -11,6 +11,8 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 	while($row = mysql_fetch_array($result)){?>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+
         <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";?>
 
 
@@ -39,7 +41,6 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
         return true;
     }
 </script>
-<meta charset="utf-8"> 
 </head>
 
 	<body>

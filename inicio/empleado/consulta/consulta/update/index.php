@@ -56,6 +56,8 @@ foreach($consultas as $consulta)
 <!-- HTML -->
 <html>
 		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+
 			<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php"; ?>
 
 			<link rel="stylesheet" href="/rankinginfo/css/estilo1.css" type="text/css" charset="utf-8">

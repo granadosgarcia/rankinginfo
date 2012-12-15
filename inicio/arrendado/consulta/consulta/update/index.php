@@ -46,6 +46,8 @@ foreach($consultas as $consulta)
 <!-- HTML -->
 <html>
 		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+
 			<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php"; ?>
 			<script type="text/javascript" src="/rankinginfo/js/jquery-1.8.2.min.js"></script>
 
@@ -100,7 +102,6 @@ $(function(){
     });
 });
 </SCRIPT>
-		<meta charset='UTF-8'>
 
 		</head>
 <body>

@@ -4,6 +4,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 ?>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+
 	<link rel="stylesheet" type="text/css" href="/rankinginfo/css/estilo.css">
     	<title>Menu de opciones</title>
     	

@@ -9,6 +9,8 @@ while($row = mysql_fetch_array($result)){ ?>
 
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+
 		<title> Calificación Arrendado </title>
 <?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php"; ?>		
 		<script>
