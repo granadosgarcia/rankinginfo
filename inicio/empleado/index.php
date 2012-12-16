@@ -7,7 +7,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 
 	<link rel="stylesheet" type="text/css" href="/rankinginfo/css/estilo.css">
-    	<title>Menú de opciones</title>
+    	<title>Empleados</title>
     <script type="text/javascript">
     
     function init(){

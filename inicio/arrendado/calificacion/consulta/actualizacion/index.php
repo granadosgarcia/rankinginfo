@@ -31,11 +31,11 @@ while($row = mysql_fetch_array($result)){ ?>
 		<div id="entero">
 			<div id='wrapper'>
 	   			<div id='header'>
-		   			<h1> Calificando </h1>
+		   			<h1> Calificando Arrendado</h1>
 	   			</div><!-- </header> -->
 	   			
 	
-				<p>Estas calificando a: <?php echo $row['nombre']." ".$row['apellido_paterno']." ".$row['apellido_materno'];?></p>
+				<p>Estás calificando a: <?php echo $row['nombre']." ".$row['apellido_paterno']." ".$row['apellido_materno'];?></p>
 				<?php } include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";?>		
 <?php if(!empty($row['img_foto'])){?>
 				<img height="100px" width="150px" src="<?php echo $row['img_foto']?>"/>

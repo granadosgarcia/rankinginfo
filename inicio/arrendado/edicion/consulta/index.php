@@ -110,7 +110,7 @@ $sql.="ORDER BY LENGTH(apellido_paterno) DESC";
   
    			<div id='wrapper'>
 	   				<div id='header'>
-	   					<h1>Usuario a Calificar</h1>
+	   					<h1>Usuario a Editar</h1>
 					</div>
 					
 					<div id='contenedortabla'>";
