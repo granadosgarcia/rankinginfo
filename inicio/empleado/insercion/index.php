@@ -130,10 +130,10 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 				<input type="file" name="file[]" id="file"  /></br>
 				
 				<label>Imagen Cedula Profesional</label>
-				<input type="file" name="fileE[]" id="file"  /></br>
+				<input type="file" name="file[]" id="file"  /></br>
 				
 				<label>Imagen Certificado Escolar</label>
-				<input type="file" name="fileE[]" id="file"  /></br>
+				<input type="file" name="file[]" id="file"  /></br>
 				
 			</div>
 			<div id="botonesrow">

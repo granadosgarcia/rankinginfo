@@ -145,8 +145,8 @@ if (!mysql_query($sql,$con))
   			!empty($_FILES['file']['name'][1]) ||
   			!empty($_FILES['file']['name'][2]) ||
   			!empty($_FILES['file']['name'][3]) ||
-  			!empty($_FILES['fileE']['name'][0]) ||
-  			!empty($_FILES['fileE']['name'][1])) {
+  			!empty($_FILES['file']['name'][4]) ||
+  			!empty($_FILES['file']['name'][5])) {
   include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/image_upload_E.php";
   }
 
