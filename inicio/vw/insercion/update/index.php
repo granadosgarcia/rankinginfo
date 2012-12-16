@@ -12,6 +12,18 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
  $etapa_procesal= mysql_real_escape_string($_POST['etapa_procesal']);
  $comentario= mysql_real_escape_string($_POST['comentario']);
  $etapa_juicio= mysql_real_escape_string($_POST['etapa_juicio']);
+ 
+ $sqlact="
+INSERT INTO actividades (id_usuario, fecha, actividad)
+VALUES ('$_SESSION[usuario_id]', NOW(), 'Gestion VW')";
+
+	if (!mysql_query($sqlact,$con))
+  {
+  echo $sql."<br>";
+  die('Error al insertar el registro a la base de datos ' . mysql_error());
+  }
+
+
 
 $sql="
 INSERT INTO vw (fecha";
