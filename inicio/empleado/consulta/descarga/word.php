@@ -33,7 +33,7 @@ $consultas = $_SESSION['consultadescarga'];
 foreach($consultas as $consulta)
 {
    $curp[$i]= $consulta;
-   $sql[$i]="SELECT DISTINCT * from empleado,escolaridad WHERE curp='".$curp[$i]."' GROUP BY curp";
+   $sql[$i]="SELECT * from empleado, escolaridad WHERE curp='".$curp[$i]."' ";
    
    
    
@@ -50,7 +50,7 @@ $j=0;
 foreach($consultas as $consulta)
 {
    $curp[$j]= $consulta;
-   $sql1[$j]="SELECT * from emp_calif WHERE curp = '".$curp[$j]."' GROUP BY id";
+   $sql1[$j]="SELECT * FROM emp_calif WHERE curp = '".$curp[$j]."' GROUP BY id";
    
    $resultado1[$j]=mysql_query($sql1[$j], $con); 
    $j++;
@@ -73,9 +73,7 @@ $styleCell = array('valign'=>'center');
 
  while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) 
  { 
-
-
-$section->addText("Consulta Ranking Information",'titulo');
+		$section->addText("Consulta Ranking Information",'titulo');
 		$section->addTextBreak(1);
 		$table = $section->addTable();
 
@@ -85,206 +83,244 @@ $section->addText("Consulta Ranking Information",'titulo');
  	 	$table->addRow();
  	 	$table->addCell(3000)->addText("Curp:",'StyleR');
  	 	$table->addCell(9000)->addText($row['curp'],'StyleC');
-
-									
-if (!empty($row["domicilio_actual"])) 
-{ 
-	$table->addRow();
-	$table->addCell(3000)->addText("Domicilio Actual:",'StyleR');
-	$table->addCell(9000)->addText($row["domicilio"],'StyleC');
-} 
-
-if (!empty($row["telefono_particular"]) && !empty($row["telefono_personal"])) 
-{ 		
-	if (!empty($row["telefono_personal"])) 
-	{ 
-		$table->addRow();
-		$table->addCell(3000)->addText("Telefono Personal:",'StyleR');
-		$table->addCell(9000)->addText($row["telefono_personal"],'StyleC');
-		
-	}				
-	if (!empty($row["telefono_particular"])) 
-	{ 
-		$table->addRow();
-		$table->addCell(3000)->addText("Telefono Particular:",'StyleR');
-		$table->addCell(9000)->addText($row["telefono_particular"],'StyleC');	
-	}									
-}
-
-if (!empty($row["estado_civil"])) 
-{		
-		$table->addRow();
-		$table->addCell(3000)->addText("Estado :",'StyleR');
-		$table->addCell(9000)->addText( $row["estado_civil"],'StyleC');							
-} 
-
-if (!empty($row["nombre_conyuge"])) 
-{ 		
-		$table->addRow();
-		$table->addCell(3000)->addText("Nombre del Conyuge:",'StyleR');
-		$table->addCell(9000)->addText( $row["nombre_conyuge"],'StyleC');										
-	
-} 
-if (!empty($row["responsable_actual"])) 
-{		
-		$table->addRow();
-		$table->addCell(3000)->addText("Responsable Actual:",'StyleR');
-		$table->addCell(9000)->addText( $row["responsable_actual"],'StyleC');							
- 	
-} 
-if (!empty($row["empleo_anterior"])) 
-{ 	
-		$table->addRow();
-		$table->addCell(3000)->addText("Empleo Anterior:",'StyleR');
-		$table->addCell(9000)->addText( $row["empleo_anterior"],'StyleC');										
- 	
-} 
-if (!empty($row["tiempo_trabajoanterior"]))
-{ 	
-		$table->addRow();
-		$table->addCell(3000)->addText("Tiempo Trabajo Anterior",'StyleR');
-		$table->addCell(9000)->addText(htmlentities($row["tiempo_trabajoanterior"]),'StyleC');								
- 	
-} 
-if (!empty($row["habilidades"]))
-{	
-		$table->addRow();
-		$table->addCell(3000)->addText("Habilidades:",'StyleR');
-		$table->addCell(9000)->addText($row["habilidades"],'StyleC');									
-}
-
-if (!empty($row["patron_actual"])) 
-{ 	
-		$table->addRow();
-		$table->addCell(3000)->addText("Patron Actual:",'StyleR');
-		$table->addCell(9000)->addText($row["patron_actual"],'StyleC');	
-} 
-if (!empty($row["domicilio_patronactual"])) 
-{ 									
-		$table->addRow();
-		$table->addCell(3000)->addText("Domicilio Patron Actual:",'StyleR');
-		$table->addCell(9000)->addText($row["domicilio_patronactual"],'StyleC');	
-} 
-if (!empty($row["domicilio_patronactual"])) 
-{ 									
-		$table->addRow();
-		$table->addCell(3000)->addText("Domicilio Patron Actual:",'StyleR');
-		$table->addCell(9000)->addText($row["domicilio_patronactual"],'StyleC');	
-} 
-if (!empty($row["patron_anterior"])) 
-{ 
-		$table->addRow();
-		$table->addCell(3000)->addText("Patron Anterior:",'StyleR');
-		$table->addCell(9000)->addText($row["patron_anterior"],'StyleC');	
-}
-if (!empty($row["domicilio_patronanterior"])) 
-{ 
-		$table->addRow();
-		$table->addCell(3000)->addText("Domicilio Patron Anterior:",'StyleR');
-		$table->addCell(9000)->addText($row["domicilio_patronanterior"],'StyleC');	
-} 
-if (!empty($row["telefono_patronanterior"])) 
-{ 
-		$table->addRow();
-		$table->addCell(3000)->addText("Telefono Patron Anterior:",'StyleR');
-		$table->addCell(9000)->addText($row["telefono_patronanterior"],'StyleC');	
-} 
-
-//IMG	
-if(!empty($row["img_foto"])||!empty($row["img_ife"])||!empty($row["img_comprobante_domicilio"])||!empty($row["img_comprobante_trabajo"])||!empty($row["img_cedula_profesional"])||!empty($row["img_certificado_escolar"]))
-{
-	$section->addTextBreak(2);
-
- 	$section->addText("Imagenes",'titulo');
- 	 		
- 	$section->addTextBreak(1);
-
- 	$table = $section->addTable();
  	 	
- 	$table->addRow();
+ 	 	
+ 	 	if (!empty($row["domicilio"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Domicilio Actual:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['domicilio'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	
+ 	 	if (!empty($row["telefono_particular"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Telefono Particular:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['telefono_particular'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	 	 	
+ 	 	if (!empty($row["telefono_personal"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Telefono Personal:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['telefono_personal'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	if (!empty($row["estado_civil"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Estado Civil:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['estado_civil'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	
+ 	  	if (!empty($row["nombre_conyuge"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Nombre del Conyuge:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['nombre_conyuge'],'StyleC');
+ 	 	}
+
+ 	  	if (!empty($row["patron_anterior"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Patron Anterior:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['patron_anterior'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	
+ 	 	if (!empty($row["patron_actual"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Patron Actual:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['patron_actual'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	if (!empty($row["responsable_actual"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Responsable Actual:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['responsable_actual'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	if (!empty($row["telefono_patronactual"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Telefono del Patron Actual:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['telefono_patronactual'],'StyleC');
+ 	 	}
+
+ 	 	if (!empty($row["domicilio_patronactual"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Domicilio del Patron Actual Actual:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['domicilio_patronactual'],'StyleC');
+ 	 	}
+ 	 	if (!empty($row["telefono_patronanterior"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Telefono del Patron Anterior:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['telefono_patronanterior'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	if (!empty($row["domicilio_patronanterior"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Domiclio del Patron Anterior:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['domicilio_patronanterior'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	if (!empty($row["empleo_anterior"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Empleo Anterior:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['empleo_anterior'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	if (!empty($row["tiempo_trabajoanterior"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Tiempo de trabajo de su ultimo empleo:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['tiempo_trabajoanterior'],'StyleC');
+ 	 	}
+ 	 	
+ 	 	if (!empty($row["habilidades"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Habilidades:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['habilidades'],'StyleC');
+ 	 	} 	 
+ 	 	
+ 	 	if (!empty($row["grado_escolar"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Grado Escolar:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['grado_escolar'],'StyleC');
+ 	 	} 
+ 	 	
+ 	 	
+ 	 	if (!empty($row["habilidades"])) 
+ 	 	{
+	 	 	$table->addRow();
+	 	 	$table->addCell(3000)->addText("Lugar de Estudio:",'StyleR');
+	 	 	$table->addCell(9000)->addText($row['lugar_estudio'],'StyleC');
+ 	 	} 
+	
+ 	 	
+ 	 	if(!empty($row['img_foto']) || !empty($row['img_comprobante_domicilio']) || !empty($row['img_ife'])|| !empty($row['img_comprobante_trabajo'])|| !empty($row['img_certificado_escolar'])|| !empty($row['img_cedula_profesional']))
+ 	 	{
+ 	 		
+ 	 		$section->addTextBreak(2);
+
+ 	 		$section->addText("Imagenes",'titulo');
+ 	 		
+ 	 		$section->addTextBreak(1);
+
+ 	 		$table = $section->addTable();
+ 	 	
+ 	 		$table->addRow();
+	
+	 	 	
+		 	 	$table->addCell(3000,$styleCell)->addText("Foto:",'StyleR');
+	 	 	
+		 	 	$table->addCell(3000,$styleCell)->addText("Comprobante Domicilio:",'StyleR');
+	 	 	
+		 	 	$table->addCell(3000,$styleCell)->addText("IFE:",'StyleR');
+		 	 	
+		 	 	$table->addCell(3000,$styleCell)->addText("Comprobante de Trabajo:",'StyleR');
+		 	 	
+		 	 	$table->addCell(3000,$styleCell)->addText("Certificado Escolar:",'StyleR');
+		 	 	
+		 	 	$table->addCell(3000,$styleCell)->addText("Cédula Profesional:",'StyleR');
+	 	 	
+	 	 	
+	 	 	
+	 	 	
+	 	 	$table->addRow();
+	 	 	
+	 	 	
+		 	 //IMG IFE
+	 	 	if(!empty($row['img_foto']))
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_foto'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+		 	 //IMG COMPROBANTE Domicilio
+	 	 	if(!empty($row['img_comprobante_domicilio']))
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_comprobante_domicilio'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+		 	 //IMG IFE
+	 	 	if(!empty($row['img_ife']))
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_ife'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+	 	 	if(!empty($row['img_cedula_profesional']))
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_cedula_profesional'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+		 	 
+	 	 	if(!empty($row['img_comprobante_trabajo']))
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_comprobante_trabajo'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+		 	 
+	 	 	if(!empty($row['img_certificado_escolar']))
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_certificado_escolar'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+
+	 	 }
+
+ 
  	
-	$table->addCell(3000)->addText("Foto",'StyleR');
-	$table->addCell(3000)->addText("IFE",'StyleR');
-	$table->addCell(3000)->addText("Comprobante Domicilio",'StyleR');
-	$table->addCell(3000)->addText("Comprobante Trabajo",'StyleR');
-	$table->addCell(3000)->addText("Cedula Profesional",'StyleR');
-	$table->addCell(3000)->addText("Certificado Escolar",'StyleR');
-	
-	$table->addRow();
-	
-if (!empty($row["img_foto"])) 
-{
-	$table->addCell(9000)->addText($row["img_foto"],'StyleC');	
-}
-else 
-{
-	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');
-}
-if (!empty($row["img_ife"])) 
-{ 	
-	$table->addCell(9000)->addText($row["img_ife"],'StyleC');	} 
-else 
-{
-	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');
-}
-if (!empty($row["img_comprobante_domicilio"])) 
-{ 
-	$table->addCell(9000)->addText($row["img_comprobante_domicilio"],'StyleC');	
-}
-else 
-{ 
-	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');
-}
-if (!empty($row["img_comprobante_trabajo"])) 
-{ 
-	$table->addCell(9000)->addText($row["img_comprobante_trabajo"],'StyleC');	
-} 
-else 
-{ 
-	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
-}
-
-if (!empty($row["img_cedula_profesional"])) 
-{ 
-	$table->addCell(9000)->addText($row["img_cedula_profesional"],'StyleC');	
-} 
-else 
-{ 
-	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
-}
-
-if (!empty($row["img_certificado_escolar"])) 
-{ 
-	$table->addCell(9000)->addText($row["img_certificado_escolar"],'StyleC');	
-} 
-else 
-{ 
-	$table->addCell(9000)->addText($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg",'StyleC');	
-}
-
-}
-									
  $k=0; $o=0;
  	
  $section->addTextBreak(2);
 
-
  while($row=mysql_fetch_array($resultado1[$k])) 
  {
- 	 if(!empty($row['emp_desempeno'])||!empty($row['emp_calif_anterior']))
+
+ 
+ 	 if(!empty($row['emp_desempeno'])||!empty($row['emp_calif_anterior'])||!empty($row['comentario']))
  	 {
-		 $section->addText("Calificacion",'titulo');
-		 $section->addTextBreak(1);
+ 	 	 $section->addText("Calificacion",'titulo');
+ 	 	 $section->addTextBreak(1);
+		
  	 	$table = $section->addTable();
  	 	
  	 	if($o==0)
  	 	{
 	 	 	$table->addRow();
 	 	 	$table->addCell(3500,$styleCell)->addText("Fecha",'StyleR');
-	 	 	$table->addCell(3000,$styleCell)->addText("Pagos",'StyleR');
-	 	 	$table->addCell(3000,$styleCell)->addText("Propiedad Anterior",'StyleR');
-	 	 	$table->addCell(3000,$styleCell)->addText("Propiedad Actual",'StyleR');
-	 	 	$table->addCell(3000,$styleCell)->addText("Calificacion General",'StyleR');
+	 	 	$table->addCell(3000,$styleCell)->addText("Desempeño",'StyleR');
+	 	 	$table->addCell(3000,$styleCell)->addText("Calificación Anterior",'StyleR');
+
  	 	}
  	 	
  	 	$table->addRow();
@@ -317,7 +353,7 @@ else
 				break;	
 				
 				default:
-				$table->addCell(3000,$styleCell)->addText("",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("",'StyleC');
 																	 
 			}
 	 	
@@ -346,18 +382,19 @@ else
 				break;
 					
 				default:
-				$table->addCell(3000,$styleCell)->addText("",'StyleC');			
-			}
+				$table->addCell(3000,$styleCell)->addText("",'StyleC');			}
+		
+		
 
-			
+						
 			if (!empty($row["fecha"])) 
 			{
 				$section->addTextBreak(1);
 				$table = $section->addTable();
 				$table->addRow();
-				$table->addCell(3000,$styleCell)->addText("Comentario",'StyleR');
+				$table->addCell(3000,$styleCell)->addText("Comentario",'StyleC');
 				$table->addRow();
-				$table->addCell(9000,array('valign'=>'center'))->addText($row["comentario"],'StyleC');
+				$table->addCell(9000,array('valign'=>'center'))->addText($row["comentario"],'StyleR');
 			}
 	 } 
 	 $o++;
@@ -367,6 +404,9 @@ else
 
 
 }
+
+
+
 
 
 // Add hyperlink elements
