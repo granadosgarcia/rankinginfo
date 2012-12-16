@@ -56,7 +56,7 @@ if(!empty($_POST['nombre_conyuge']))
 $sql.=", nombre_conyuge='$nombre_conyuge'";
 
 $sql.="WHERE 
-curp='$_SESSION[curp]'";
+curp='$curp'";
 
 
 	if (!mysql_query($sql,$con))

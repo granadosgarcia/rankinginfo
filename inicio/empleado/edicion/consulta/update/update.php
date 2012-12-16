@@ -2,6 +2,27 @@
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
+
+ $curp= mysql_real_escape_string($_POST['curp']);
+ $nombres= mysql_real_escape_string($_POST['nombres']);
+ $apellido_paterno= mysql_real_escape_string($_POST['apellido_paterno']);
+ $apellido_materno= mysql_real_escape_string($_POST['apellido_materno']);
+ $domicilio= mysql_real_escape_string($_POST['domicilio']);
+ $telefono_particular= mysql_real_escape_string($_POST['telefono_particular']);
+ $telefono_personal= mysql_real_escape_string($_POST['telefono_personal']);
+ $estado_civil= mysql_real_escape_string($_POST['estado_civil']);
+ $nombre_conyuge= mysql_real_escape_string($_POST['nombre_conyuge']);
+ $patron_anterior= mysql_real_escape_string($_POST['patron_anterior']);
+ $patron_actual= mysql_real_escape_string($_POST['patron_actual']);
+ $responsable_actual= mysql_real_escape_string($_POST['responsable_actual']);
+ $telefono_patronactual= mysql_real_escape_string($_POST['telefono_patronactual']);
+ $domicilio_patronactual= mysql_real_escape_string($_POST['domicilio_patronactual']);
+ $telefono_patronanterior= mysql_real_escape_string($_POST['telefono_patronanterior']);
+ $domicilio_patronanterior= mysql_real_escape_string($_POST['domicilio_patronanterior']);
+ $empleo_anterior= mysql_real_escape_string($_POST['empleo_anterior']);
+ $tiempo_trabajoanterior= mysql_real_escape_string($_POST['tiempo_trabajoanterior']);
+ $habilidades= mysql_real_escape_string($_POST['habilidades']);
+
 $sqlact="
 INSERT INTO actividades (id_usuario, fecha, actividad)
 VALUES ('$_SESSION[usuario_id]', NOW(), 'Edicion Empleado')";
@@ -9,64 +30,64 @@ VALUES ('$_SESSION[usuario_id]', NOW(), 'Edicion Empleado')";
 $sql="
 UPDATE empleado SET";
 
-$sql.=" curp				= '$_POST[curp]'";
+$sql.=" curp				= '$curp'";
 
 if(!empty($_POST['nombres']))
-$sql.=", nombres = '$_POST[nombres]'";
+$sql.=", nombres = '$nombres'";
 
 if(!empty($_POST['apellido_paterno']))
-$sql.=", apellido_paterno 	= '$_POST[apellido_paterno]'";
+$sql.=", apellido_paterno 	= '$apellido_paterno'";
 
 if(!empty($_POST['apellido_materno']))
-$sql.=", apellido_materno 	= '$_POST[apellido_materno]'";
+$sql.=", apellido_materno 	= '$apellido_materno'";
 
 if(!empty($_POST['domicilio']))
-$sql.=", domicilio 	= '$_POST[domicilio]'";
+$sql.=", domicilio 	= '$domicilio'";
 
 if(!empty($_POST['telefono_particular']))
-$sql.=", telefono_particular    	= '$_POST[telefono_particular]'";
+$sql.=", telefono_particular    	= '$telefono_particular'";
 
 if(!empty($_POST['telefono_personal']))
-$sql.=", telefono_personal	 	= '$_POST[telefono_personal]'";
+$sql.=", telefono_personal	 	= '$telefono_personal'";
 
 if(!empty($_POST['estado_civil']))
-$sql.=", estado_civil	= '$_POST[estado_civil]'";
+$sql.=", estado_civil	= '$estado_civil'";
 
 if(!empty($_POST['nombre_conyuge']))
-$sql.=", nombre_conyuge = '$_POST[nombre_conyuge]'";
+$sql.=", nombre_conyuge = '$nombre_conyuge'";
 
 if(!empty($_POST['patron_anterior']))
-$sql.=", patron_anterior	= '$_POST[patron_anterior]'";
+$sql.=", patron_anterior	= '$patron_anterior'";
 
 if(!empty($_POST['patron_actual']))
-$sql.=", patron_actual			= '$_POST[patron_actual]'";
+$sql.=", patron_actual			= '$patron_actual'";
 
 if(!empty($_POST['responsable_actual']))
-$sql.=", responsable_actual		= '$_POST[responsable_actual]'";
+$sql.=", responsable_actual		= '$responsable_actual'";
 
 if(!empty($_POST['telefono_patronactual']))
-$sql.=", telefono_patronactual 		= '$_POST[telefono_patronactual]'";
+$sql.=", telefono_patronactual 		= '$telefono_patronactual'";
 
 if(!empty($_POST['domicilio_patronactual']))
-$sql.=", domicilio_patronactual		= '$_POST[domicilio_patronactual]'";
+$sql.=", domicilio_patronactual		= '$domicilio_patronactual'";
 
 if(!empty($_POST['telefono_patronanterior']))
-$sql.=", telefono_patronanterior		= '$_POST[telefono_patronanterior]'";
+$sql.=", telefono_patronanterior		= '$telefono_patronanterior'";
 
 if(!empty($_POST['domicilio_patronanterior']))
-$sql.=", domicilio_patronanterior		= '$_POST[domicilio_patronanterior]'";
+$sql.=", domicilio_patronanterior		= '$domicilio_patronanterior'";
 
 if(!empty($_POST['empleo_anterior']))
-$sql.=", empleo_anterior		= '$_POST[empleo_anterior]'";
+$sql.=", empleo_anterior		= '$empleo_anterior'";
 
 if(!empty($_POST['tiempo_trabajoanterior']))
-$sql.=", tiempo_trabajoanterior		= '$_POST[tiempo_trabajoanterior]'";
+$sql.=", tiempo_trabajoanterior		= '$tiempo_trabajoanterior'";
 
 if(!empty($_POST['habilidades']))
-$sql.=", habilidades		= '$_POST[habilidades]'";
+$sql.=", habilidades		= '$habilidades'";
 
 $sql.=" WHERE 
-curp ='$_SESSION[curp]'";
+curp ='$curp'";
 
 
 	if (!mysql_query($sql,$con))
