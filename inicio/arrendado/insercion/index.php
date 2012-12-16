@@ -41,7 +41,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
         
     }
 
-}
+
 </script>
 
 	<body>
