@@ -108,7 +108,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 			</br>
 
 		<label>Nombre del Conyuge</label>
-		<input type="text" name="nombre_conyuge"     id="nombre_conyuge"		value="<? $row['nombre_conyuge'] ?>" class="inputderecha">
+		<input type="text" name="nombre_conyuge"     id="nombre_conyuge"		value="<? echo $row['nombre_conyuge'] ?>" class="inputderecha">
 	</div>
 	
 	<div id="imagenesrow">
