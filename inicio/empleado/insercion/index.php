@@ -10,18 +10,50 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 </head>
 
 <script> 
-    function verifica (){
-        if(document.getElementById("nombres").value==""){
-        alert("Nombre Obligatorio");
-        return false;}
+
+    function verifica ()
+{
+        if(document.getElementById("nombres").value=="")
+        {
+	        alert("Nombre Obligatorio");
+	        return false;
+        }
         
         if(document.getElementById("curp").value=="")
-        {alert("Curp Obligatorio");
-        return false;}
+        {
+	        alert("Curp Obligatorio");
+	        return false;
+        }
         
+        if(!(document.getElementById("telefono_particular").value.match(/^\d+$/)) && document.getElementById("telefono_particular").value!="")
+        {
+	      	alert("El telefono Particular solo admite numeros");
+	        return false;  
+        }
+        
+        if(!(document.getElementById("telefono_personal").value.match(/^\d+$/)) && document.getElementById("telefono_personal").value!="")
+        {
+	      	alert("El telefono personal de Casa solo admite numeros");
+	        return false;  
+        }
+       
+        if(!(document.getElementById("telefono_patronactual").value.match(/^\d+$/)) && document.getElementById("telefono_patronactual").value!="")
+        {
+	      	alert("El telefono del patron actual de Casa solo admite numeros");
+	        return false;  
+        }
+        
+        if(!(document.getElementById("telefono_patronanterior").value.match(/^\d+$/)) && document.getElementById("telefono_patronanterior").value!="")
+        {
+	      	alert("El telefono del patron anterior de Casa solo admite numeros");
+	        return false;  
+        }
+               
         else
         return true;
-    }
+        
+        
+}
 </script>
 
 	<body>

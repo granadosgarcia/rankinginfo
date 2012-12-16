@@ -17,29 +17,51 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 
 
 <title> Editar Arrendado </title>
-<script> 
-    
-    function borrar (){
-    if(confirm("Seguro que quiero borrar el registro de <?php echo $row['nombre'] ?>"))
-    return true;
-    
-    else return false;
-    }
 
+
+
+<script> 
+
+    function borrar ()
+    {
+	    if(confirm("Seguro que quiero borrar el registro de <?php echo $row['nombre'] ?>"))
+	    return true;
+	    
+	    else return false;
+    }
+    
     function verifica (){
-        if(document.getElementById("nombre").value==""){
-        alert("Nombre Obligatorio");
-        return false;}
+        if(document.getElementById("nombre").value=="")
+        {
+	        alert("Nombre Obligatorio");
+	        return false;
+        }
         
         if(document.getElementById("curp").value=="")
         {
-        	alert("Curp Obligatorio");
-        	return false;
+	        alert("Curp Obligatorio");
+	        return false;
+        }
+        
+        if(!(document.getElementById("telefono_aval").value.match(/^\d+$/)) && document.getElementById("telefono_aval").value!="")
+        {
+	      	alert("El telefono del aval solo admite numeros");
+	        return false;  
+        }
+        
+        if(!(document.getElementById("telefono_casa").value.match(/^\d+$/)) && document.getElementById("telefono_casa").value!="")
+        {
+	      	alert("El telefono de Casa solo admite numeros");
+	        return false;  
         }
         
         else
         return true;
+        
+        
     }
+
+}
 </script>
 </head>
 

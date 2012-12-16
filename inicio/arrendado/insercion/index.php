@@ -11,17 +11,37 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 <script> 
     function verifica (){
-        if(document.getElementById("nombre").value==""){
-        alert("Nombre Obligatorio");
-        return false;}
+        if(document.getElementById("nombre").value=="")
+        {
+	        alert("Nombre Obligatorio");
+	        return false;
+        }
         
         if(document.getElementById("curp").value=="")
-        {alert("Curp Obligatorio");
-        return false;}
+        {
+	        alert("Curp Obligatorio");
+	        return false;
+        }
+        
+        if(!(document.getElementById("telefono_aval").value.match(/^\d+$/)) && document.getElementById("telefono_aval").value!="")
+        {
+	      	alert("El telefono del aval solo admite numeros");
+	        return false;  
+        }
+        
+        if(!(document.getElementById("telefono_casa").value.match(/^\d+$/)) && document.getElementById("telefono_casa").value!="")
+        {
+	      	alert("El telefono de Casa solo admite numeros");
+	        return false;  
+        }
         
         else
         return true;
+        
+        
     }
+
+}
 </script>
 
 	<body>
