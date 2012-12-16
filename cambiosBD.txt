@@ -6,7 +6,6 @@ To DO
 	ABRAHAM>>> Query Insertar Empleado (FOTOS NO JALAN)
 
 DEBUG 
-	MARTIN>>> Todo a UTF-8 (PHP y HTML)
 	MARTIN>>> Mysql strip en todos los inputs
 	ABRAHAM>>> Javascript al insertar los teléfonos(Sólo números)
 	MARTIN>>> Verificar títulos y h1 de todo
