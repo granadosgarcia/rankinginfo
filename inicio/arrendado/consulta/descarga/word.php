@@ -201,7 +201,7 @@ $styleCell = array('valign'=>'center');
 	 	 	}
 	 	 	else
 	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/img_ife.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
 		 	 }
 
 	 	 }
