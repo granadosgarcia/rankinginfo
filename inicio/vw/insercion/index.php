@@ -42,6 +42,15 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 					<option value="Opcion 4" >Opción 4</option>
 					</select>
 					<br>
+						<label>Etapa del Juicio</label><br>
+					<select name="etapa_juicio" id="etapa_juicio">
+					<option value="" >---</option>
+					<option value="Opcion 1" >Opción 1</option>
+					<option value="Opcion 2" >Opción 2</option>
+					<option value="Opcion 3" >Opción 3</option>
+					<option value="Opcion 4" >Opción 4</option>
+					</select>
+					<br>
 						<label>Etapa Procesal</label><br>
 					<select name="etapa_procesal" id="etapa_procesal">
 					<option value="" >---</option>
@@ -51,9 +60,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 					<option value="Opcion 4" >Opción 4</option>
 					</select>
 					<br>
-					<label>Comentario</label><br>
-					 <textarea rows="10" cols="35"></textarea>
-					
+					<label>Comentario</label>
+					 <input name="comentario" id="comentario" type="text">					
 				
 					
 					
