@@ -66,9 +66,11 @@ width: 120px;
     -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
     box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee; }
 
-#infoarrendados{
+.infoarrendados{
 	
-	
+	margin: 0px auto;
+width: 900px;
+overflow: hidden;
 }
 
 #botonesdescarga{
@@ -77,19 +79,40 @@ width: 300px;
 }
 
 #detallespers{
-	width: 440px;
-	float: left;
-	padding: 25px 0px 0px 15px;
+width: 390px;
+float: left;
+padding: 10px 0px 0px 5px;
+overflow: hidden;
+
 }
 
 #fotos{
 	width: 460px;
-float: right;
+	float: right;
+	overflow: hidden;
+
+
+}
+
+.contain{
+width: 500px;
+float: left;
+overflow: hidden;
 }
 
 #calificacionesdiv{
-	margin: 60px 0px 0px 70px;
-	float: left;
+margin: 30px auto;
+width: 410px;
+overflow: hidden;
+
+	}
+	
+	#notcalif{
+		margin: 10px auto;
+width: 900px;
+overflow: hidden;
+
+		
 	}
 
 .comment{
