@@ -153,7 +153,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 
 		<input checked="true" style="visibility:hidden;" name="consulta[]" type="checkbox" value="<?php echo htmlentities($row['curp']) ?>">
 
-			<div id="infoarrendados">
+			<div id="infoarrendados<?php echo $k;?>" class="infoarrendados">
 		
 					<div id="notcalif">
 		
@@ -218,8 +218,11 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 										<td><?php echo htmlentities($row["habilidades"]) ?></td>
 									</tr>
 <? } ?>
+							</table>
+	
 							</div>
-		
+		<div class="contain">
+
 							<div id="fotos">
 							<table>
 								<tr>
@@ -341,15 +344,15 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 <?php } ?>
 								</table>
 						</div>
+					</div>
+				</div>
+					<div class="calificacionesdiv1">
 
-		
-					<div id="calificacionesdiv">
+										<h2>Calificaciones</h2>
 
-					
 <?php while($row=mysql_fetch_array($resultado1[$k])){ ?>							
 								<table class="califs">
 <?php if (!empty($row["fecha"])) { ?>
-<tr><td> Calificaciones</td></tr>
 								<tr>
 								<td>Fecha:</td>
 								<td> <?php echo htmlentities($row["fecha"]) ?></td>
@@ -437,6 +440,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 
 
 ?>
+</div>
 
 
 
