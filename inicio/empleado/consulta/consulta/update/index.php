@@ -60,6 +60,8 @@ foreach($consultas as $consulta)
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 
 			<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php"; ?>
+			<script type="text/javascript" src="/rankinginfo/js/jquery-1.8.2.min.js"></script>
+
 
 			<link rel="stylesheet" href="/rankinginfo/css/estilo1.css" type="text/css" charset="utf-8">
 		<!-- Add fancyBox main JS and CSS files -->
@@ -126,7 +128,6 @@ $(function(){
     });
 });
 </SCRIPT>
-		<meta charset='UTF-8'>
 
 		</head>
 <body>
