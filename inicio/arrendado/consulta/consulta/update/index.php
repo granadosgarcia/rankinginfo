@@ -48,7 +48,6 @@ foreach($consultas as $consulta)
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 
-			<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php"; ?>
 			<script type="text/javascript" src="/rankinginfo/js/jquery-1.8.2.min.js"></script>
 
 			<link rel="stylesheet" href="/rankinginfo/css/estilo1.css" type="text/css" charset="utf-8">
@@ -124,7 +123,7 @@ $(function(){
 <br>
 		<input checked="true" style="visibility:hidden;" name="consulta[]" type="checkbox" value="<?php echo $row['curp'] ?>">
 
-			<div id="infoarrendados">
+			<div id="infoarrendados<?php echo $k;?>" class="infoarrendados">
 		
 					<div id="notcalif">
 		
@@ -185,7 +184,7 @@ $(function(){
 								</table>
 	
 							</div>
-		
+		<div class="contain">
 							<div id="fotos">
 							<table>
 								<tr>
@@ -263,7 +262,7 @@ $(function(){
 							</div>
 		
 					</div>
-		
+				</div>
 					<div id="calificacionesdiv">
 					
 <?php while($row=mysql_fetch_array($resultado1[$k])){ ?>
