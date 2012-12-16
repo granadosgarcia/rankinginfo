@@ -7,6 +7,21 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
+ $nombre= mysql_real_escape_string($_POST['nombre']);
+ $apellido_paterno= mysql_real_escape_string($_POST['apellido_paterno']);
+ $apellido_materno= mysql_real_escape_string($_POST['apellido_materno']);
+ $domicilio_actual= mysql_real_escape_string($_POST['domicilio_actual']);
+ $telefono_casa= mysql_real_escape_string($_POST['telefono_casa']);
+ $estado_civil= mysql_real_escape_string($_POST['estado_civil']);
+ $arrendador_actual= mysql_real_escape_string($_POST['arrendador_actual']);
+ $arrendador_anterior= mysql_real_escape_string($_POST['arrendador_anterior']);
+ $domicilio_anterior= mysql_real_escape_string($_POST['domicilio_anterior']);
+ $curp= mysql_real_escape_string($_POST['curp']);
+ $nombre_aval= mysql_real_escape_string($_POST['nombre_aval']);
+ $domicilio_aval= mysql_real_escape_string($_POST['domicilio_aval']);
+ $telefono_aval= mysql_real_escape_string($_POST['telefono_aval']);
+ $nombre_conyuge= mysql_real_escape_string($_POST['nombre_conyuge']);
+
 $sqlact="
 INSERT INTO actividades (id_usuario, fecha, actividad)
 VALUES ('$_SESSION[usuario_id]', NOW(), 'Insercion Arrendado')";
@@ -56,32 +71,32 @@ $sql.=",nombre_conyuge";
 $sql.=")
 
 VALUES(
-'$_POST[nombre]'";
-$sql.=",'$_POST[curp]'";
+'$nombre'";
+$sql.=",'$curp'";
 if(!empty($_POST['apellido_paterno']))
-$sql.=",'$_POST[apellido_paterno]'";
+$sql.=",'$apellido_paterno'";
 if(!empty($_POST['apellido_materno']))
-$sql.=",'$_POST[apellido_materno]'";
+$sql.=",'$apellido_materno'";
 if(!empty($_POST['domicilio_actual']))
-$sql.=",'$_POST[domicilio_actual]'";
+$sql.=",'$domicilio_actual'";
 if(!empty($_POST['telefono_casa']))
-$sql.=",'$_POST[telefono_casa]'";
+$sql.=",'$telefono_casa'";
 if(!empty($_POST['estado_civil']))
-$sql.=",'$_POST[estado_civil]'";
+$sql.=",'$estado_civil'";
 if(!empty($_POST['arrendador_actual']))
-$sql.=",'$_POST[arrendador_actual]'";
+$sql.=",'$arrendador_actual'";
 if(!empty($_POST['arrendador_anterior']))
-$sql.=",'$_POST[arrendador_anterior]'";
+$sql.=",'$arrendador_anterior'";
 if(!empty($_POST['domicilio_anterior']))
-$sql.=",'$_POST[domicilio_anterior]'";
+$sql.=",'$domicilio_anterior'";
 if(!empty($_POST['nombre_aval']))
-$sql.=",'$_POST[nombre_aval]'";
+$sql.=",'$nombre_aval'";
 if(!empty($_POST['domicilio_aval']))
-$sql.=",'$_POST[domicilio_aval]'";
+$sql.=",'$domicilio_aval'";
 if(!empty($_POST['telefono_aval']))
-$sql.=",'$_POST[telefono_aval]'";
+$sql.=",'$telefono_aval'";
 if(!empty($_POST['nombre_conyuge']))
-$sql.=",'$_POST[nombre_conyuge]'";
+$sql.=",'$nombre_conyuge'";
 $sql.=")";	
 	if (!mysql_query($sql,$con))
   {
