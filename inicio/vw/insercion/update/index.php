@@ -17,7 +17,7 @@ $sql="
 INSERT INTO vw (fecha";
 
 if(!empty($_POST['tipo_gestion']))
-$sql.="tipo_gestion";
+$sql.=",tipo_gestion";
 
 if(!empty($_POST['etapa_procesal']))
 $sql.=",etapa_procesal";
@@ -33,7 +33,7 @@ $sql.=")";
 
 $sql.="VALUES ( NOW()";
 if(!empty($_POST['tipo_gestion']))
-$sql.="'$tipo_gestion'";
+$sql.=",'$tipo_gestion'";
 if(!empty($_POST['etapa_procesal']))
 $sql.=",'$etapa_procesal'";
 if(!empty($_POST['etapa_juicio']))
