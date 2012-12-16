@@ -30,13 +30,34 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 	   		<div id="inputss">
 
-		   		<form method="post" onsubmit="return verifica ()" action="consulta/" enctype="multipart/form-data">
+		   		<form method="post" onsubmit="return verifica ()" action="update/" enctype="multipart/form-data">
 
 				<div id="primerrow">
-					<label>Tipo</label>
-					<input type="select" name="tipo_gestion" id="tipo_gestion">
+					<label>Tipo</label><br>
+					<select name="tipo_gestion" id="tipo_gestion">
+					<option value="" >---</option>
+					<option value="Opcion 1" >Opción 1</option>
+					<option value="Opcion 2" >Opción 2</option>
+					<option value="Opcion 3" >Opción 3</option>
+					<option value="Opcion 4" >Opción 4</option>
+					</select>
+					<br>
+						<label>Etapa Procesal</label><br>
+					<select name="etapa_procesal" id="etapa_procesal">
+					<option value="" >---</option>
+					<option value="Opcion 1" >Opción 1</option>
+					<option value="Opcion 2" >Opción 2</option>
+					<option value="Opcion 3" >Opción 3</option>
+					<option value="Opcion 4" >Opción 4</option>
+					</select>
+					<br>
+					<label>Comentario</label><br>
+					 <textarea rows="10" cols="35"></textarea>
 					
-					<option value="" >Opción 1</option>
+				
+					
+					
+					
 				</div>
 		
 
