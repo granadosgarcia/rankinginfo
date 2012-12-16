@@ -95,7 +95,7 @@ while($row = mysql_fetch_array($resultado)){
 			
 				echo "<td>". $row['nombre']. " </td>";
 				echo "<td>". $row['fecha']. "</td>";
-				echo "<td>". $row['actividad']. "</td>";
+				echo "<td>". htmlentities($row['actividad']). "</td>";
 		
 				
 		echo "</tr>";
