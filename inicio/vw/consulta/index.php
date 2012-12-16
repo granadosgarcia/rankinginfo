@@ -1,54 +1,55 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 ?>
-
 <html>
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
-
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+<title> Insertar Arrendado </title>
 <link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
-<script>	
-    function verifica (){
-        if(document.getElementById("query").value==""){
-        alert("Busqueda Vacia");
-        return false;}
-        
-
-        
-        else
-        return true;
-    }
-</script>
 
 </head>
+
+
+
 <body>
+
 <div id="entero">
   
-   			<div id="wrapper">
-	   				<div id="header">
+	<div id="wrapper">
+		<div id="header">
+			<h1 class="titulo2">Consulta de Gestiones</h1>
 
-    <h1 class="titulo2">Consulta</h1>
-    </div>
-	   				<div id="calificacion">
-	   				<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_vw.php";?>
-
-
-<br>
-		<div id="busqueda">
-		<form action="consulta/" onsubmit="return verifica();" method="GET">
-			<label>Indique su b&uacute;squeda:</label>
-			<input type="text" name="query" id="query" class="busquedatexto">
-			<div class="submitquery">
-			<input type="submit" value="Buscar" class="logout">
-			</div>
-		</form>
-		
 		</div>
+	   	
+	   	<div id="calificacion">
+	   				
+	   		<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";?>
 
 
+	   		<p name="alerta"></p>
+
+	   		<div id="inputss">
+
+		   		<form method="post" onsubmit="return verifica ()" action="consulta/" enctype="multipart/form-data">
+
+				<div id="primerrow">
+					<label>Nombres</label><input type="text" name="nombre" id="nombre">	</br>
+				</div>
+		
+
+				<div id="botonesrow">
+	
+					<div id="modificarrow">
+						<input type="submit" name="ok" value="Insertar" class="edita">
 					</div>
-   			</div>
-   			
-   </div>
-</body>
-		</html>
+			</div>
+				</form>
+
+			</div>	   				
+		</div>
+	</div>
+</div>
+
+	</body>
+
+</html>

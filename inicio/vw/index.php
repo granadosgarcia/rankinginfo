@@ -2,59 +2,42 @@
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 ?>
+
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 
-	<link rel="stylesheet" type="text/css" href="/rankinginfo/css/estilo.css">
-    	<title>Menu de opciones</title>
-    	
-    <script type="text/javascript">
-    
-    function init(){
-    var privilegios =<?php echo $_SESSION['privilegios'];?>;
-    var remove = document.getElementById("edicion");
-    if( privilegios === 1)
-    remove.parentNode.removeChild(remove);
-    }
-    </script>
-   
+		<link rel="stylesheet" type="text/css" href="/rankinginfo/css/estilo.css">
+    	<title>Menú de opciones</title>
     </head>
-    <body onload="init()"><div id="entero">
-  
-   			<div id="wrapper">
+    <body>
+    	<div id="entero">
+     			<div id="wrapper">
 	   				<div id="header">
-	   			
-   <h1 class="titulo">Volkswagen </h1>
-   
+		   				<h1 class="titulo">Ranking Information </h1>
+		   				   <img src="/rankinginfo/img/third.jpg" height="150" width="150" style="float: left;
+margin: -200px 0px 0px -160px;">
 
-   
-   					</div>
+		   			</div>
    				
-   					<div id="contenido">
-   					
-   					
-    <p class="bienvenida"><?php 
-    
-    echo "Bienvenido ". $_SESSION['nombreusuario'];?></p>
-    
-       	   				<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_inicio.php";?>
-       	   				
+		   			<div id="contenido">
+	   					<p class="bienvenida"><?php echo "Bienvenido ". $_SESSION['nombreusuario'];?></p>
+		   				
+	   					<div class="salida">
+	   						<a href="/rankinginfo/cerrar_sesion.php" ><input type="button" value="Cerrar sesi&oacute;n" class="logout"></a>
+	   					</div>
     	
-    	
-                      	<div class="botonera">
+	   					<div class="botonera">
+		   					<a href="insercion/"><input type="button" value="Inserción" class="inserta"></a>
 
-                          <a href="insercion/"><input type="button" value="Insertar" class="inserta"></a>
-                              
+		   					<a href="consulta/"><input type="button" value="Consulta" class="edita"></a>
 
-                          <a href="consulta/"><input type="button" value="Consultar" class="consulta"></a>
-
-                      	</div>
-
-   					
+		   				
+		   				</div>
 	
-   			</div>
-
+		   			</div>
+   					
+		   		</div>
     </body>
 </html>    
 

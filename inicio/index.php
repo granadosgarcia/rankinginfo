@@ -39,10 +39,7 @@ margin: -200px 0px 0px -160px;">
 		   					<a href="admin/"><input type="button" value="Admin" class="edita"></a>
 <?php } ?>
 
-		   					<?php if(isset($_SESSION['privilegios'])&&$_SESSION['privilegios']>=10){
- ?>
-		   					<a href="gestiones/"><input type="button" value="Gestiones" class="edita"></a>
-<?php } ?>
+		   				
 
 		   				</div>
 	
