@@ -26,20 +26,49 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
     else return false;
     }
 
-    function verifica (){
-        if(document.getElementById("nombre").value==""){
-        alert("Nombre Obligatorio");
-        return false;}
+    function verifica ()
+{
+        if(document.getElementById("nombres").value=="")
+        {
+	        alert("Nombre Obligatorio");
+	        return false;
+        }
         
         if(document.getElementById("curp").value=="")
         {
-        	alert("Curp Obligatorio");
-        	return false;
+	        alert("Curp Obligatorio");
+	        return false;
         }
         
+        if(!(document.getElementById("telefono_particular").value.match(/^\d+$/)) && document.getElementById("telefono_particular").value!="")
+        {
+	      	alert("El telefono Particular solo admite numeros");
+	        return false;  
+        }
+        
+        if(!(document.getElementById("telefono_personal").value.match(/^\d+$/)) && document.getElementById("telefono_personal").value!="")
+        {
+	      	alert("El telefono personal de Casa solo admite numeros");
+	        return false;  
+        }
+       
+        if(!(document.getElementById("telefono_patronactual").value.match(/^\d+$/)) && document.getElementById("telefono_patronactual").value!="")
+        {
+	      	alert("El telefono del patron actual de Casa solo admite numeros");
+	        return false;  
+        }
+        
+        if(!(document.getElementById("telefono_patronanterior").value.match(/^\d+$/)) && document.getElementById("telefono_patronanterior").value!="")
+        {
+	      	alert("El telefono del patron anterior de Casa solo admite numeros");
+	        return false;  
+        }
+               
         else
         return true;
-    }
+        
+        
+}
 </script>
 <meta charset="utf-8"> 
 </head>
