@@ -264,12 +264,11 @@ $(function(){
 					</div>
 				</div>
 					<div id="calificacionesdiv">
-					
+					<h2>Calificaciones</h2>
 <?php while($row=mysql_fetch_array($resultado1[$k])){ ?>
 							
 								<table class="califs">
 <?php if (!empty($row["fecha"])) { ?>
-<tr><td> Calificaciones</td></tr>
 								<tr>
 								<td>Fecha:</td>
 								<td> <?php echo $row["fecha"] ?></td>
