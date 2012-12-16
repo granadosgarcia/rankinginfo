@@ -328,13 +328,13 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<tr>
 <?php if(!empty($row['img_cedula_profesional'])) {?>
 										<td><label>Cedula Profesional</label>
-											 <a class="imagengrande" href="<?php echo htmlentities($row['img_cedula_profesional'])?>" <img height="100px" width="150px" src="<?php echo htmlentities($row['img_cedula_profesional'])?>"></td>
+											 <a class="imagengrande" href="<?php echo htmlentities($row['img_cedula_profesional'])?>"> <img height="100px" width="150px" src="<?php echo htmlentities($row['img_cedula_profesional'])?>"></td>
 <?php } else { ?>
 										<td><img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/></td>
 										
 <?php }if(!empty($row['img_certificado_escolar'])) {?>
 										<td><lable>Certificado Escolar</lable>
-											<a class="imagengrande" href="<?php echo htmlentities($row['img_certificado_escolar'])?>"<img height="100px" width="150px" src="<?php echo htmlentities($row['img_certificado_escolar'])?>"></td>			
+											<a class="imagengrande" href="<?php echo htmlentities($row['img_certificado_escolar'])?>"><img height="100px" width="150px" src="<?php echo htmlentities($row['img_certificado_escolar'])?>"></td>			
 <?php } else { ?>
 										<td><img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/></td>
 									</tr>
