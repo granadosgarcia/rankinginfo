@@ -34,7 +34,7 @@ margin: -200px 0px 0px -160px;">
 
 		   					<a href="vw/"><input type="button" value="VW" class="edita"></a>
 
-		   					<?php if(isset($_SESSION['privilegios'])&&$_SESSION['privilegios']>=10){
+		   					<?php if(isset($_SESSION['privilegios'])&&$_SESSION['privilegios']>=10){ 
  ?>
 		   					<a href="admin/"><input type="button" value="Admin" class="edita"></a>
 <?php } ?>
