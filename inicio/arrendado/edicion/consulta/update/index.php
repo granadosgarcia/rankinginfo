@@ -61,7 +61,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
         
     }
 
-}
+
 </script>
 </head>
 
