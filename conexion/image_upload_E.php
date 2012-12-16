@@ -74,7 +74,7 @@ $extension = end(explode(".", $_FILES["file"]["name"][$i]));
 		      		
 		      			      		
 	      
-				      $sql.=$var[$i];
+				      $sql.= mysql_real_escape_string($var[$i]);
 				      $sql.="'";
 				      
 

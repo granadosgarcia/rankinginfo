@@ -59,7 +59,7 @@ $extension = end(explode(".", $_FILES["file"]["name"][$i]));
 		      		$var[$i] ="img_comprobante_domicilio='/rankinginfo/uploads/img12/".$dir."comprobante_domicilio".".".$extension;
 		      		}
 				      
-				      $sql.=$var[$i];
+				      $sql.= mysql_real_escape_string($var[$i]);
 				      $sql.="'";
 				      
 				      if(($contador)!=($contador2))
