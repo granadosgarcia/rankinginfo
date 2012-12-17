@@ -264,9 +264,14 @@ $(function(){
 					</div>
 				</div>
 					<div id="calificacionesdiv">
-					<h2>Calificaciones</h2>
-<?php while($row=mysql_fetch_array($resultado1[$k])){ ?>
-							
+<?php 
+$contador=0;
+while($row=mysql_fetch_array($resultado1[$k])){ ?>
+<?php if (!empty($row["fecha"]) && $contador==0) { 
+	$contador++;
+?>
+			<h2>Calificaciones</h2>
+<?php } ?>
 								<table class="califs">
 <?php if (!empty($row["fecha"])) { ?>
 								<tr>

@@ -109,13 +109,14 @@ $(function(){
   
    			<div id='wrapper'>
 	   				<div id='header'>
-	   					<h1>Usuario a Consultar</h1>
+	   					<h1>Arrendado a Consultar</h1>
 					</div>
 					
 					<div id='contenedortabla'>";
 					
 		include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";
-		echo "<input type='checkbox' id='selectall'/>";		
+		echo "<label>Seleccionar Todo</label>
+		<input type='checkbox' id='selectall'/><br><br>";		
 echo " 	<form method='GET' action='update/'>
 
 		 <table id ='tabla'>

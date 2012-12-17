@@ -33,11 +33,11 @@ $sql.=", apellido_paterno 	= '$apellido_paterno'";
 if(!empty($_POST['apellido_materno']))
 $sql.=", apellido_materno 	= '$apellido_materno'";
 if(!empty($_POST['domicilio_actual']))
-$sql.=", domicilio_actual 	= '$$domicilio_actual'";
+$sql.=", domicilio_actual 	= '$domicilio_actual'";
 if(!empty($_POST['telefono_casa']))
 $sql.=", telefono_casa    	= '$telefono_casa'";
 if(!empty($_POST['estado_civil']))
-$sql.=", estado_civil	 	= '$$estado_civil'";
+$sql.=", estado_civil	 	= '$estado_civil'";
 if(!empty($_POST['arrendador_actual']))
 $sql.=", arrendador_actual	= '$arrendador_actual'";
 if(!empty($_POST['arrendador_anterior']))

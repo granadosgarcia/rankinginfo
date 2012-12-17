@@ -87,7 +87,7 @@ else
    			<div id='wrapper'>
 	   				
 	   				<div id='header'>
-	   					<h1>Usuario a Calificar</h1>
+	   					<h1>Arrendado a Calificar</h1>
 					</div><!-- </header> -->
 					
 					<div id='contenedortabla'>

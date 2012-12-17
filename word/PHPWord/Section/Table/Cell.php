@@ -108,7 +108,7 @@ class PHPWord_Section_Table_Cell {
 	 * @return PHPWord_Section_Text
 	 */
 	public function addText($text, $styleFont = null, $styleParagraph = null) {
-		$text = utf8_encode($text);
+		$text = $text;
 		$text = new PHPWord_Section_Text($text, $styleFont, $styleParagraph);
 		$this->_elementCollection[] = $text;
 		return $text;
@@ -160,7 +160,7 @@ class PHPWord_Section_Table_Cell {
 	 * @return PHPWord_Section_ListItem
 	 */
 	public function addListItem($text, $depth = 0, $styleText = null, $styleList = null) {
-		$text = utf8_encode($text);
+		$text = $text;
 		$listItem = new PHPWord_Section_ListItem($text, $depth, $styleText, $styleList);
 		$this->_elementCollection[] = $listItem;
 		return $listItem;
@@ -269,7 +269,7 @@ class PHPWord_Section_Table_Cell {
 	 */
 	public function addPreserveText($text, $styleFont = null, $styleParagraph = null) {
 		if($this->_insideOf == 'footer' || $this->_insideOf == 'header') {
-			$text = utf8_encode($text);
+			$text = $text;
 			$ptext = new PHPWord_Section_Footer_PreserveText($text, $styleFont, $styleParagraph);
 			$this->_elementCollection[] = $ptext;
 			return $ptext;

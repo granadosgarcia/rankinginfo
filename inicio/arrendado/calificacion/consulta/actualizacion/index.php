@@ -31,16 +31,18 @@ while($row = mysql_fetch_array($result)){ ?>
 		<div id="entero">
 			<div id='wrapper'>
 	   			<div id='header'>
-		   			<h1> Calificando Arrendado</h1>
+		   			<h1>Calificando <?php echo $row['nombre']." ".$row['apellido_paterno']." ".$row['apellido_materno'];?>
+</h1>
 	   			</div><!-- </header> -->
 	   			
 	
-				<p>Estás calificando a: <?php echo $row['nombre']." ".$row['apellido_paterno']." ".$row['apellido_materno'];?></p>
-				<?php } include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";?>		
+				<?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";?>
+						
 <?php if(!empty($row['img_foto'])){?>
 				<img height="100px" width="150px" src="<?php echo $row['img_foto']?>"/>
-<? 		} else { ?>
-				<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
+<?php } else { ?> 
+<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
+<?php } } ?>
 				
 
 		
@@ -104,4 +106,4 @@ while($row = mysql_fetch_array($result)){ ?>
 	</body>
 
 </html>
-<?php } include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/close.php";?>
+<?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/close.php";?>
