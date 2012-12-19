@@ -117,7 +117,7 @@ $sql.="ORDER BY LENGTH(apellido_paterno) DESC";
 /* 	Botones Menu */
 	include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";
 
-echo " 	<form method='post' action='update/'>
+echo " 	<form method='get' action='update/'>
 
 		 <table id ='tabla'>
 
