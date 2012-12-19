@@ -4,7 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
-<title> Insertar Arrendado </title>
+<title> Consultar VW </title>
 <link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
 
 </head>
@@ -17,7 +17,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
   
 	<div id="wrapper">
 		<div id="header">
-			<h1 class="titulo2">Consulta de Gestiones</h1>
+			<h1 class="titulo2">Consulta VW</h1>
 
 		</div>
 	   	
@@ -30,7 +30,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 	   		<div id="inputss">
 
-		   		<form method="post" onsubmit="return verifica ()" action="consulta/" enctype="multipart/form-data">
+		   		<form method="post" onsubmit="return verifica()" action="consulta/" enctype="multipart/form-data">
 
 				<div id="primerrow">
 					<label>Nombres</label><input type="text" name="nombre" id="nombre">	</br>

@@ -17,14 +17,14 @@ $numeropalabras = count($palabrasquery);
 if($numeropalabras == 1)
 {
 $sql= "SELECT DISTINCT *
-FROM cliente_vw
+FROM vw
 WHERE 
-nombre_cliente regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
-OR direccion regexp'[[:<:]]".$palabrasquery1."[[:>:]]' 
-OR curp = '".$palabrasquery1."'
+nombre regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
+OR apellido_paterno regexp'[[:<:]]".$palabrasquery1."[[:>:]]' 
+OR apellido_materno = '".$palabrasquery1."'
+OR curp ='".$palabrasquery1."'
 OR telefono ='".$palabrasquery1."'
-OR estado ='".$palabrasquery1."'
-OR poblacion='".$palabrasquery1."'";
+OR domicilio='".$palabrasquery1."'";
 }
 
 
@@ -32,7 +32,7 @@ else
 {
 /* Query para seleccionar a más de un cliente vw */
 	$sql.= " SELECT DISTINCT *
-		FROM cliente_vw
+		FROM vw
 		WHERE ";
 
 
@@ -45,12 +45,12 @@ else
 
 
 		$sql.= "
-			nombre_cliente regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]'
-			OR direccion regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]' 
-			OR curp = '".$palabrasquery[$i]."'
+			nombre regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]'
+			OR apellido_paterno regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]' 
+			OR apellido_materno = '".$palabrasquery[$i]."'
+			OR curp ='".$palabrasquery[$i]."'
 			OR telefono ='".$palabrasquery[$i]."'
-			OR estado ='".$palabrasquery[$i]."'
-			OR poblacion='".$palabrasquery[$i]."')";		
+			OR domicilio='".$palabrasquery[$i]."')";		
 	}
 }
 
@@ -119,13 +119,12 @@ echo " 	<form method='GET' action='update/'>
 		 <table id ='tabla'>
 		<thead>	
 					<tr role='row'>
-		<th class='sorting' role='columnheader' tabindex='0'>S</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Nombre</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Direccion</th>
-		<th class='sorting' role='columnheader' tabindex='0'>CURP</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Estado</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Poblacion</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Saldo</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Apellido Paterno</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Apellido Materno</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Curp</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Telefono</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Domicilio</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Saldo Atrasado</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Semanas Atraso</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Último Abono</th>
@@ -138,14 +137,14 @@ echo " 	<form method='GET' action='update/'>
 while($row = mysql_fetch_array($resultado)){ 
 			
 		echo "<tr class='infooo'>";
-				echo "<td><input type='checkbox' name='consulta[]' class='case' value='".$row['curp']."'> </td>";
+				echo "<td><input type='' name='consulta[]' class='case' value='".$row['curp']."'> </td>";
 			
-				echo "<td>". $row['nombre_cliente']. " </td>";
-				echo "<td>". $row['direccion']. "</td>";
+				echo "<td>". $row['nombre']. " </td>";
+				echo "<td>". $row['apellido_paterno']. "</td>";
+				echo "<td>". $row['apellido_materno']. "</td>";
 				echo "<td>". $row['curp']. "</td>";
-				echo "<td>". $row['estado']. "</td>";
-				echo "<td>". $row['poblacion']. " </td>";
-				echo "<td>". $row['saldo']. " </td>";
+				echo "<td>". $row['telefono']. " </td>";
+				echo "<td>". $row['domicilio']. " </td>";
 				echo "<td>". $row['saldo_atrasado']. " </td>";
 				echo "<td>". $row['semanas_atraso']. " </td>";
 				echo "<td>". $row['ultimo_abono']. " </td>";
@@ -159,7 +158,7 @@ while($row = mysql_fetch_array($resultado)){
 echo "</tbody>
 </table>
 
-<!--<input type='submit' name='ok' value='Selecci&oacute;n' class='califica'>-->
+<input type='submit' name='ok' value='Selecci&oacute;n' class='califica'>
 </form>
 	
 </div>
