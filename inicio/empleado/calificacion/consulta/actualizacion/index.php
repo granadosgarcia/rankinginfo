@@ -38,7 +38,7 @@ while($row = mysql_fetch_array($result)){ ?>
 				<p>Estas calificando a: <?php echo $row['nombres']." ".$row['apellido_paterno']." ".$row['apellido_materno'];?></p>
 				<?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";?>		
 <?php if (!empty($row["img_foto"])) { ?>	
-				<img height="100px" width="150px" src="<?php echo htmlentities($row["img_foto"])?>"/>
+				<img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/>
 <? 		} else { ?>
 				<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 

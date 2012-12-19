@@ -83,7 +83,7 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
 
 
 
-    <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";?>
+    <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query_e.php";?>
 
 <form method="POST" onsubmit="return verifica ()" action="update.php" enctype="multipart/form-data">
 <input style="visibility:hidden; display: none;"type="text" name="clave" value="<?php echo $row['clave']?>">
@@ -190,11 +190,11 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
 		<img width=150px height=100px src='<?php echo $row['img_cedula_profesional'] ?>'/>
 		<?php } ?>
 		<input type='file' name='file[]' id='file'  /></br>
-		<label> Certificado Escolar </label>
+		<label> Certificado Escolar </label><br>
 		<?php if(!empty($row['img_certificado_escolar'])) {?>
 		<img width=150px height=100px src='<?php echo $row['img_certificado_escolar'] ?>'/>
 		<?php } ?>
-		<input type='file' name='file[]' id='file'  /></br>
+		<input type='file' name='file[]' id='file'  /></br><br>
 
 		
 	</div>

@@ -92,7 +92,7 @@ else
   
    			<div id='wrapper'>
 	   				<div id='header'>
-	   					<h1>Usuario a Calificar</h1>
+	   					<h1>Empleado a Calificar</h1>
 					</div>
 					
 					<div id='contenedortabla'>";

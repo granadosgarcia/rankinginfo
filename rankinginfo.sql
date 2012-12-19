@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 16, 2012 at 07:15 AM
+-- Generation Time: Dec 19, 2012 at 03:03 AM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -32,26 +32,70 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=141 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=200 ;
 
 --
 -- Dumping data for table `actividades`
 --
 
 INSERT INTO `actividades` (`id_usuario`, `fecha`, `actividad`, `id`) VALUES
-(8, '2012-12-16 01:01:58', 'Consulta Arrendado', 128),
-(8, '2012-12-16 01:02:00', 'Consulta Arrendado', 129),
-(8, '2012-12-16 01:02:00', 'Consulta Arrendado', 130),
-(8, '2012-12-16 01:05:40', 'Insercion Empleado', 131),
-(8, '2012-12-16 01:07:17', 'Calificacion Empleado', 132),
-(8, '2012-12-16 01:07:41', 'Calificacion Empleado', 133),
-(8, '2012-12-16 01:07:49', 'Consulta Empleado', 134),
-(8, '2012-12-16 01:07:56', 'Consulta Empleado', 135),
-(8, '2012-12-16 01:08:14', 'Consulta Empleado', 136),
-(8, '2012-12-16 01:10:26', 'Insercion Arrendado', 137),
-(8, '2012-12-16 01:10:54', 'Calificacion Arrendado', 138),
-(8, '2012-12-16 01:11:07', 'Calificacion Arrendado', 139),
-(8, '2012-12-16 01:11:16', 'Consulta Arrendado', 140);
+(8, '2012-12-16 16:07:58', 'Insercion Arrendado', 143),
+(8, '2012-12-16 16:10:21', 'Insercion Arrendado', 144),
+(8, '2012-12-16 16:10:48', 'Consulta Arrendado', 145),
+(8, '2012-12-16 16:14:03', 'Consulta Arrendado', 146),
+(8, '2012-12-16 16:20:07', 'Consulta Arrendado', 147),
+(8, '2012-12-16 16:21:44', 'Consulta Arrendado', 148),
+(8, '2012-12-16 16:22:26', 'Consulta Arrendado', 149),
+(8, '2012-12-16 16:25:31', 'Consulta Arrendado', 150),
+(8, '2012-12-16 16:26:45', 'Consulta Arrendado', 151),
+(8, '2012-12-16 16:31:34', 'Edición Arrendado', 152),
+(8, '2012-12-16 16:32:04', 'Edición Arrendado', 153),
+(8, '2012-12-16 16:32:31', 'Edición Arrendado', 154),
+(8, '2012-12-16 17:38:45', 'Edición Arrendado', 155),
+(8, '2012-12-16 17:43:26', 'Calificacion Arrendado', 156),
+(8, '2012-12-16 17:43:57', 'Calificacion Arrendado', 157),
+(8, '2012-12-16 17:45:35', 'Calificacion Arrendado', 158),
+(8, '2012-12-16 17:45:55', 'Consulta Arrendado', 159),
+(8, '2012-12-16 17:47:11', 'Consulta Arrendado', 160),
+(8, '2012-12-16 17:48:10', 'Calificacion Arrendado', 161),
+(8, '2012-12-16 17:48:21', 'Consulta Arrendado', 162),
+(8, '2012-12-16 17:48:41', 'Calificacion Arrendado', 163),
+(8, '2012-12-16 17:48:55', 'Consulta Arrendado', 164),
+(8, '2012-12-16 17:49:25', 'Consulta Arrendado', 165),
+(8, '2012-12-16 17:51:17', 'Insercion Arrendado', 166),
+(8, '2012-12-16 17:55:49', 'Consulta Arrendado', 167),
+(8, '2012-12-16 18:00:25', 'Edición Arrendado', 168),
+(8, '2012-12-16 18:00:47', 'Consulta Arrendado', 169),
+(8, '2012-12-16 18:01:21', 'Edición Arrendado', 170),
+(8, '2012-12-16 18:04:50', 'Edición Arrendado', 171),
+(8, '2012-12-16 18:05:09', 'Consulta Arrendado', 172),
+(8, '2012-12-16 18:22:01', 'Consulta Arrendado', 173),
+(8, '2012-12-16 18:23:59', 'Consulta Arrendado', 174),
+(8, '2012-12-16 18:24:10', 'Consulta Arrendado', 175),
+(8, '2012-12-16 23:31:07', 'Insercion Arrendado', 176),
+(8, '2012-12-16 23:36:35', 'Consulta Arrendado', 177),
+(8, '2012-12-16 23:39:50', 'Consulta Arrendado', 178),
+(8, '2012-12-16 23:39:52', 'Consulta Arrendado', 179),
+(8, '2012-12-16 23:42:16', 'Consulta Arrendado', 180),
+(8, '2012-12-16 23:43:26', 'Consulta Arrendado', 181),
+(8, '2012-12-16 23:43:36', 'Consulta Arrendado', 182),
+(8, '2012-12-16 23:51:10', 'Consulta Arrendado', 183),
+(8, '2012-12-16 23:56:02', 'Consulta Arrendado', 184),
+(8, '2012-12-16 23:56:40', 'Consulta Arrendado', 185),
+(8, '2012-12-16 23:59:03', 'Consulta Arrendado', 186),
+(8, '2012-12-18 20:45:37', 'Insercion Empleado', 187),
+(8, '2012-12-18 20:47:09', 'Edicion Empleado', 188),
+(8, '2012-12-18 20:52:37', 'Edicion Empleado', 189),
+(8, '2012-12-18 20:55:45', 'Calificacion Empleado', 190),
+(8, '2012-12-18 20:55:59', 'Consulta Empleado', 191),
+(8, '2012-12-18 20:56:01', 'Consulta Empleado', 192),
+(8, '2012-12-18 20:56:07', 'Consulta Empleado', 193),
+(8, '2012-12-18 20:56:40', 'Consulta Empleado', 194),
+(8, '2012-12-18 20:58:12', 'Consulta Empleado', 195),
+(8, '2012-12-18 20:58:41', 'Consulta Empleado', 196),
+(8, '2012-12-18 21:00:03', 'Consulta Empleado', 197),
+(8, '2012-12-18 21:00:45', 'Consulta Empleado', 198),
+(8, '2012-12-18 21:02:13', 'Consulta Empleado', 199);
 
 -- --------------------------------------------------------
 
@@ -89,7 +133,10 @@ CREATE TABLE IF NOT EXISTS `arrendado` (
 --
 
 INSERT INTO `arrendado` (`nombre`, `apellido_paterno`, `apellido_materno`, `domicilio_actual`, `telefono_casa`, `estado_civil`, `img_ife`, `arrendador_actual`, `arrendador_anterior`, `domicilio_arrendador_actual`, `telefono_arrendador_actual`, `telefono_arrendador_anterior`, `domicilio_arrendador_anterior`, `domicilio_anterior`, `curp`, `nombre_aval`, `domicilio_aval`, `telefono_aval`, `nombre_conyuge`, `img_comprobante_domicilio`, `img_foto`) VALUES
-('Kevin', 'Mendez', 'Tellez', '13 B sur 7737 San', 903290, 'Casado', '/rankinginfo/uploads/img12/092390jksdfkevin2309k/ife.jpg', 'Jose Merenges Altimoa', 'Martin Granados GarcÃ­a', NULL, NULL, NULL, NULL, '2938 del maria finlandia rosario', '092390jksdfkevin2309k', 'Irvin Mendez Tellez', '09kidfsj del rosario en canada', 903209, 'Maria Juanita Jimenez', '/rankinginfo/uploads/img12/092390jksdfkevin2309k/comprobante_domicilio.jpg', '/rankinginfo/uploads/img12/092390jksdfkevin2309k/foto.jpg');
+('Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 8884589, 'Ã¡cÃ©ntÃ³', '/rankinginfo/uploads/img12/Ã¡cÃ©ntÃ³/ife.jpg', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', NULL, NULL, NULL, NULL, 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 9995499, 'Ã¡cÃ©ntÃ³', '/rankinginfo/uploads/img12/Ã¡cÃ©ntÃ³/comprobante_domicilio.jpg', '/rankinginfo/uploads/img12/Ã¡cÃ©ntÃ³/foto.jpg'),
+('Kevin', 'Mendez', 'Tellez', '13 B sur 7737 San Jose Mayorazgo', 8884588, 'Casado', '/rankinginfo/uploads/img12/BEML920313HCMLNS09/ife.jpg', 'Abraham GonzÃ¡lez FarÃ­as', 'Martin Granados GarcÃ­a', NULL, NULL, NULL, NULL, '13 B sur 7737 San Jose Mayorazgo', 'BEML920313HCMLNS09', 'Irvin Mendez Tellez', '13 B sur 7737 San Jose Mayorazgo', 8884588, 'Maria Martita Jimenez', '/rankinginfo/uploads/img12/BEML920313HCMLNS09/comprobante_domicilio.jpg', '/rankinginfo/uploads/img12/BEML920313HCMLNS09/foto.jpg'),
+('JÃ³LOÃ¡Ã©l', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'nerfnow', NULL, NULL, NULL, NULL, NULL, NULL),
+('Prueba1', 'Prueba1', 'Prueba1', 'Prueba1', 23452, 'Prueba1', '/rankinginfo/uploads/img12/Prueba1/ife.jpg', 'Prueba1', 'Prueba1', NULL, NULL, NULL, NULL, 'Prueba1', 'Prueba1', 'Prueba1', 'Prueba1', 23423, 'Prueba1', '/rankinginfo/uploads/img12/Prueba1/comprobante_domicilio.jpg', '/rankinginfo/uploads/img12/Prueba1/foto.jpg');
 
 -- --------------------------------------------------------
 
@@ -108,15 +155,18 @@ CREATE TABLE IF NOT EXISTS `arr_calif` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `arr_calif`
 --
 
 INSERT INTO `arr_calif` (`curp`, `arr_pagos`, `arr_propiedad_actual`, `arr_propiedad_anterior`, `arr_general`, `comentario`, `fecha`, `id`) VALUES
-('092390jksdfkevin2309k', 5, 2, 1, 1, 'Me gustaria tenerlo de arrendado', '2012-12-16', 3),
-('092390jksdfkevin2309k', 3, 2, 2, 2, 'kevinasdÃ±fj', '2012-12-16', 4);
+('BEML920313HCMLNS09', 2, 4, 2, 3, 'sdfjk acetÃ³ Ã¡cÃ©ntÃ³ jo jojo deberia de terner mas experiencia, pero no me gusto entonces y por eso bla bla bal bla lbalblaldsklfjsadÃ±klfjÃ±skdljfklÃ±adjsfklÃ±jiohji0`', '2012-12-16', 5),
+('BEML920313HCMLNS09', 4, 1, 1, 5, 'espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera ', '2012-12-16', 6),
+('BEML920313HCMLNS09', 0, 0, 0, 0, 'no tengo opinion', '2012-12-16', 7),
+('Ã¡cÃ©ntÃ³', 3, 0, 0, 0, '', '2012-12-16', 8),
+('Ã¡cÃ©ntÃ³', 0, 0, 0, 0, 'asdf', '2012-12-16', 9);
 
 -- --------------------------------------------------------
 
@@ -151,14 +201,14 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   `habilidades` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`curp`),
   KEY `clave_escolaridad` (`clave_escolaridad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `empleado`
 --
 
 INSERT INTO `empleado` (`curp`, `nombres`, `apellido_paterno`, `apellido_materno`, `domicilio`, `telefono_particular`, `telefono_personal`, `estado_civil`, `img_ife`, `img_comprobante_domicilio`, `img_comprobante_trabajo`, `clave_escolaridad`, `nombre_conyuge`, `patron_anterior`, `patron_actual`, `responsable_actual`, `telefono_patronactual`, `domicilio_patronactual`, `telefono_patronanterior`, `domicilio_patronanterior`, `img_foto`, `empleo_anterior`, `tiempo_trabajoanterior`, `habilidades`) VALUES
-('92390Kevinfsdasdf', 'Kevin', 'Mendez', 'Tellez', 'Atlixco de la concepcion del rosario kevin', 923818, 2147483647, 'Casado', '/rankinginfo/uploads/img21/92390Kevinfsdasdf/ife.jpg', '/rankinginfo/uploads/img21/92390Kevinfsdasdf/comprobante_domicilio.jpg', '/rankinginfo/uploads/img21/92390Kevinfsdasdf/comprobante_trabajo.jpg', 13, 'Maria Juanita Jimenez', 'Martin Granados GarcÃ­a', 'Abraham Gonzalez Farias', 'Irvin Mendez Tellez', 9230909, '13 B sur 7737 San Jose Mayorazgo', 92384829, 'Atlixcayotlo lol lol cp.3829 numero 13', '/rankinginfo/uploads/img21/92390Kevinfsdasdf/foto.jpg', 'Like a Bus', '9 aÃ±os', 'Comer sin parar hasta morir');
+('kasdcurpkevinsadÃ±lkfj', 'Kevin', 'Mendez', 'Tellez', '13 B sur 7737 San Jose Mayorazgo', 8884588, 8884588, 'Casado', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/ife.jpg', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/comprobante_domicilio.jpg', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/comprobante_trabajo.jpg', 1, 'Maria Martita Jimenez', 'Abraham GonzÃ¡lez FarÃ­as', 'Martin Granados GarcÃ­a', 'Irvin Mendez Tellez', 8884588, 'Atlixcayotl numero 4d bla bla', 8884588, '13 B sur 7737 San Jose Mayorazgo', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/foto.jpg', 'Arrendador', '2 aÃ±os', 'Todas las hablidades posibles por existir y por haber en un empleado');
 
 -- --------------------------------------------------------
 
@@ -175,15 +225,14 @@ CREATE TABLE IF NOT EXISTS `emp_calif` (
   `fecha` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `emp_calif`
 --
 
 INSERT INTO `emp_calif` (`id`, `curp`, `emp_desempeno`, `emp_calif_anterior`, `comentario`, `fecha`) VALUES
-(3, '92390Kevinfsdasdf', 1, 4, 'Excelente Trabajador Contratelo sin pensarlo', '2012-12-16'),
-(4, '92390Kevinfsdasdf', 2, 4, 'Deseso q vuelva a trabajar ', '2012-12-16');
+(1, 'kasdcurpkevinsadÃ±lkfj', 4, 2, 'safdsaf', '2012-12-18');
 
 -- --------------------------------------------------------
 
@@ -205,7 +254,30 @@ CREATE TABLE IF NOT EXISTS `escolaridad` (
 --
 
 INSERT INTO `escolaridad` (`clave`, `grado_escolar`, `lugar_estudio`, `img_certificado_escolar`, `img_cedula_profesional`) VALUES
-(13, 'Posgrado', 'ITesm', '/rankinginfo/uploads/img21/92390Kevinfsdasdf/img_certificado_escolar.jpg', '/rankinginfo/uploads/img21/92390Kevinfsdasdf/img_cedula_profesional.jpg');
+(1, 'Ingeniero en Ciencias de la ComputaciÃ³n', 'Finlandia ITESM etc', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/img_certificado_escolar.jpg', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/img_cedula_profesional.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gestiones`
+--
+
+CREATE TABLE IF NOT EXISTS `gestiones` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `tipo_gestion` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `comentario` varchar(500) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `etapa_procesal` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `etapa_juicio` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `curp` varchar(30) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `curp` (`curp`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `gestiones`
+--
+
 
 -- --------------------------------------------------------
 
@@ -237,25 +309,19 @@ INSERT INTO `usuario` (`id`, `nombre`, `nombre_usuario`, `password`, `privilegio
 --
 
 CREATE TABLE IF NOT EXISTS `vw` (
-  `fecha` datetime NOT NULL,
-  `tipo_gestion` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
-  `comentario` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
-  `etapa_procesal` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
-  `etapa_juicio` varchar(300) DEFAULT NULL,
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  `nombre` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `apellido_paterno` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `appellido_materno` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `curp` varchar(30) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `telefono` int(20) DEFAULT NULL,
+  `domicilio` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`curp`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vw`
 --
 
-INSERT INTO `vw` (`fecha`, `tipo_gestion`, `comentario`, `etapa_procesal`, `etapa_juicio`, `id`) VALUES
-('2012-12-16 00:55:17', 'Opcion 2', NULL, 'Opcion 3', 'Opcion 3', 1),
-('2012-12-16 00:55:56', 'Opcion 4', NULL, 'Opcion 2', 'Opcion 1', 2),
-('2012-12-16 00:57:38', NULL, 'sadfÃ±ladjsflÃ±kadjsfklÃ±ajsdf', NULL, NULL, 3),
-('2012-12-16 01:13:51', 'Opcion 3', 'fghcjfgkf', 'Opcion 3', 'Opcion 3', 4),
-('2012-12-16 01:13:57', NULL, 'sdafadsf', NULL, 'Opcion 2', 5);
 
 --
 -- Constraints for dumped tables
@@ -284,3 +350,9 @@ ALTER TABLE `emp_calif`
 --
 ALTER TABLE `escolaridad`
   ADD CONSTRAINT `escolaridad_ibfk_1` FOREIGN KEY (`clave`) REFERENCES `empleado` (`clave_escolaridad`);
+
+--
+-- Constraints for table `gestiones`
+--
+ALTER TABLE `gestiones`
+  ADD CONSTRAINT `gestiones_ibfk_1` FOREIGN KEY (`curp`) REFERENCES `vw` (`curp`);

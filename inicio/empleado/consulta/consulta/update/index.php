@@ -151,7 +151,7 @@ $(function(){
 
 while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 
-		<input checked="true" style="visibility:hidden;" name="consulta[]" type="checkbox" value="<?php echo htmlentities($row['curp']) ?>">
+		<input checked="true" style="visibility:hidden;" name="consulta[]" type="checkbox" value="<?php echo $row['curp'] ?>">
 
 			<div id="infoarrendados<?php echo $k;?>" class="infoarrendados">
 		
@@ -161,61 +161,61 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 								<table>
 									<tr>
 										<td>Nombre: </td>
-										<td><?php echo htmlentities($row["nombres"])." ".$row["apellido_paterno"]." ".$row["apellido_materno"]?></td>
+										<td><?php echo $row["nombres"]." ".$row["apellido_paterno"]." ".$row["apellido_materno"]?></td>
 									</tr>
 									
 									<tr>
 										<td>Curp:</td>
-										<td><?php echo htmlentities($row["curp"]) ?></td>
+										<td><?php echo $row["curp"] ?></td>
 									</tr>
 <?php if (!empty($row["domicilio_actual"])) { ?>
 									<tr>
 										<td>Domicilio Actual:</td>
-										<td><?php echo htmlentities($row["domicilio"]) ?></td>
+										<td><?php echo $row["domicilio"] ?></td>
 									</tr>
 <?php } if (!empty($row["telefono_particular"]) && !empty($row["telefono_personal"])) { ?>			
 									<tr>
 			<?php if (!empty($row["estado_civil"])) { ?>							
 										<td>Telefono Personal:</td>
-										<td><?php echo htmlentities($row["telefono_personal"]) ?></td>
+										<td><?php echo $row["telefono_personal"] ?></td>
 			<?php } ?>						
 				
 			<?php if (!empty($row["telefono_particular"])) { ?>		
 										<td>Telefono Particular:</td>
-										<td><?php echo htmlentities($row["telefono_particular"]) ?></td>
+										<td><?php echo $row["telefono_particular"] ?></td>
 										<?php } ?>
 									</tr>
 									
 									<?php } if (!empty($row["estado_civil"])) { ?>										
 									<tr>
 										<td>Estado Civil:</td>
-										<td><?php echo htmlentities($row["estado_civil"]) ?></td>
+										<td><?php echo $row["estado_civil"] ?></td>
 									</tr>
 <?php } if (!empty($row["nombre_conyuge"])) { ?>										
 									<tr>
 										<td>Conyuge:</td>
-										<td><?php echo htmlentities($row["nombre_conyuge"]) ?></td>
+										<td><?php echo $row["nombre_conyuge"] ?></td>
 									</tr>
 <?php } if (!empty($row["responsable_actual"])) { ?>										
 									<tr>
 										<td>Responsable Actual:</td>
-										<td><?php echo htmlentities($row["responsable_actual"]) ?></td>
+										<td><?php echo $row["responsable_actual"] ?></td>
 									</tr>
 										
 <?php } if (!empty($row["empleo_anterior"])) { ?>										
 									<tr>
 										<td>Empleo Anterior:</td>
-										<td><?php echo htmlentities($row["empleo_anterior"]) ?></td>
+										<td><?php echo $row["empleo_anterior"] ?></td>
 									</tr>
 <?php } if (!empty($row["tiempo_trabajoanterior"])){ ?>										
 									<tr>
 										<td>Tiempo del Trabajo Anterior:</td>
-										<td><?php echo htmlentities($row["tiempo_trabajoanterior"]) ?></td>
+										<td><?php echo $row["tiempo_trabajoanterior"] ?></td>
 									</tr>
 <?php } if (!empty($row["tiempo_trabajoanterior"])){ ?>										
 									<tr>
 										<td>Habilidades:</td>
-										<td><?php echo htmlentities($row["habilidades"]) ?></td>
+										<td><?php echo $row["habilidades"] ?></td>
 									</tr>
 <? } ?>
 							</table>
@@ -229,7 +229,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<td>
 										<p>Foto</p>
 <?php if (!empty($row["img_foto"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo htmlentities($row["img_foto"])?>"/>
+										<img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/>
 <?php } else {?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 								
@@ -240,7 +240,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<td>
 										<p>IFE</p>
 									<?php if (!empty($row["img_ife"])) { ?>	
-										<a class="imagengrande" href="<?php echo $row["img_ife"]?>"<img height="100px" width="150px" src="<?php echo htmlentities($row["img_ife"])?>"/></a>
+										<a class="imagengrande" href="<?php echo $row["img_ife"]?>"<img height="100px" width="150px" src="<?php echo $row["img_ife"]?>"/></a>
 <?php } else {?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 								
@@ -252,7 +252,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<td>
 										<p>Comprobante Domiciliario</p>
 										<?php if (!empty($row["img_comprobante_domicilio"])) { ?>	
-										<a class="imagengrande" href="<?php echo $row["img_comprobante_domicilio"]?>"<img height="100px" width="150px" src="<?php echo htmlentities($row["img_comprobante_domicilio"])?>"/></a>
+										<a class="imagengrande" href="<?php echo $row["img_comprobante_domicilio"]?>"<img height="100px" width="150px" src="<?php echo $row["img_comprobante_domicilio"]?>"/></a>
 <?php } else { ?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 <?php  }?>
@@ -262,7 +262,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<td>
 										<p>Comprobante de Trabajo</p>
 										<?php if (!empty($row["img_comprobante_trabajo"])) { ?>	
-										<a class="imagengrande" href="<?php echo $row["img_comprobante_trabajo"]?>"<img height="100px" width="150px" src="<?php echo htmlentities($row["img_comprobante_trabajo"])?>"/>
+										<a class="imagengrande" href="<?php echo $row["img_comprobante_trabajo"]?>"<img height="100px" width="150px" src="<?php echo $row["img_comprobante_trabajo"]?>"/>
 <?php } else { ?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 <?php  }?>
@@ -279,33 +279,33 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 <?php if (!empty($row["patron_actual"])) { ?>	
 									<tr>
 										<td>Patron Actual:</td>
-										<td><?php echo htmlentities($row["patron_actual"]) ?></td>
+										<td><?php echo $row["patron_actual"] ?></td>
 									</tr>
 <?php } if (!empty($row["domicilio_patronactual"])) { ?>									
 									<tr>
 										<td>Domicilio Patron Actual:</td>
-										<td><?php echo htmlentities($row["domicilio_patronactual"]) ?></td>
+										<td><?php echo $row["domicilio_patronactual"] ?></td>
 									</tr>
 <?php } if (!empty($row["domicilio_patronactual"])) { ?>									
 									<tr>
 										<td>Teléfono Patron Actual:</td>
-										<td><?php echo htmlentities($row["telefono_patronactual"]) ?></td>
+										<td><?php echo $row["telefono_patronactual"] ?></td>
 									</tr>
 <?php } 
 	if (!empty($row["patron_anterior"])) { ?>
 									<tr>
 										<td>Patron Anterior:</td>
-										<td><?php echo htmlentities($row["patron_anterior"]) ?></td>
+										<td><?php echo $row["patron_anterior"] ?></td>
 									</tr>
 <?php } if (!empty($row["domicilio_patronanterior"])) { ?>
 									<tr>
 										<td>Domicilio Patron Anterior:</td>
-										<td><?php echo htmlentities($row["domicilio_patronanterior"]) ?></td>
+										<td><?php echo $row["domicilio_patronanterior"] ?></td>
 									</tr>
 <?php } if (!empty($row["telefono_patronanterior"])) { ?>
 									<tr>
 										<td>Teléfono Patron Anterior:</td>
-										<td><?php echo htmlentities($row["telefono_patronanterior"]) ?></td>
+										<td><?php echo $row["telefono_patronanterior"] ?></td>
 									</tr>
 <?php } ?>
 								</table>
@@ -319,25 +319,25 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 <?php  if (!empty($row["grado_escolar"])) { ?>
 									<tr>
 										<td>Grado Escolar</td>
-										<td><?php echo htmlentities($row['grado_escolar'])?></td>
+										<td><?php echo $row['grado_escolar']?></td>
 									</tr>
 <?php } if (!empty($row["lugar_estudio"])) { ?>
 									<tr>
 										<td>Lugar de Estudio</td>
-										<td><?php echo htmlentities($row['lugar_estudio'])?></td>
+										<td><?php echo $row['lugar_estudio']?></td>
 										
 									</tr>
 <?php } ?>
 									<tr>
 <?php if(!empty($row['img_cedula_profesional'])) {?>
 										<td><label>Cedula Profesional</label>
-											 <a class="imagengrande" href="<?php echo htmlentities($row['img_cedula_profesional'])?>"> <img height="100px" width="150px" src="<?php echo htmlentities($row['img_cedula_profesional'])?>"></td>
+											 <a class="imagengrande" href="<?php echo $row['img_cedula_profesional']?>"> <img height="100px" width="150px" src="<?php echo $row['img_cedula_profesional']?>"></td>
 <?php } else { ?>
 										<td><img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/></td>
 										
 <?php }if(!empty($row['img_certificado_escolar'])) {?>
 										<td><lable>Certificado Escolar</lable>
-											<a class="imagengrande" href="<?php echo htmlentities($row['img_certificado_escolar'])?>"><img height="100px" width="150px" src="<?php echo htmlentities($row['img_certificado_escolar'])?>"></td>			
+											<a class="imagengrande" href="<?php echo $row['img_certificado_escolar']?>"><img height="100px" width="150px" src="<?php echo $row['img_certificado_escolar']?>"></td>			
 <?php } else { ?>
 										<td><img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/></td>
 									</tr>
@@ -355,7 +355,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 <?php if (!empty($row["fecha"])) { ?>
 								<tr>
 								<td>Fecha:</td>
-								<td> <?php echo htmlentities($row["fecha"]) ?></td>
+								<td> <?php echo $row["fecha"] ?></td>
 								</tr>
 <?php } ?>
 								<?php if (!empty($row["emp_desempeno"])) { ?>
@@ -424,7 +424,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 								<tr>
 								 
 								<td class="comment">Comentarios: </br>
-										<?php echo htmlentities($row["comentario"]);?></td>
+										<?php echo $row["comentario"];?></td>
 								
 								</tr>
 								</table>
