@@ -30,10 +30,10 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 	   		<div id="inputss">
 
-		   		<form method="post" onsubmit="return verifica()" action="consulta/" enctype="multipart/form-data">
+		   		<form method="get" action="consulta/">
 
 				<div id="primerrow">
-					<label>Nombres</label><input type="text" name="nombre" id="nombre">	</br>
+					<label>Introduzca su búsqueda</label><input type="text" name="nombre" id="nombre">	</br>
 				</div>
 		
 
