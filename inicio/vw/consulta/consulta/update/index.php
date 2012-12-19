@@ -67,6 +67,14 @@ $sql="SELECT * from vw WHERE curp='".$_SESSION['curp']."'";
 
 	
 	
+
+	</div>
+	<div id="botonesrow">
+	</div>
+				<div id="modificarrow">
+
+
+		</div>
 	<div id="imagenesrow" >
 	
 	<!-- DIV DE GESTIONES -->
@@ -118,15 +126,8 @@ while($row2 = mysql_fetch_array($resultado2)){
 
 echo "</tbody>
 </table>"?>
-	</div>
-	<div id="botonesrow">
-	
-				<div id="modificarrow">
-
-
 		</div>
 
-		</div>
         </div>
         </div>
     </div>
