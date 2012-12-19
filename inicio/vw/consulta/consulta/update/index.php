@@ -49,31 +49,28 @@ if(!($result=mysql_query($sql,$con)))
 
 
 	<div id="primerrow">
-		<label>Nombres</label>
-		<p><?php echo $row['nombre']?></p>
-	<br>
-		<labe>Apellido Paterno</label>
-		<p><?php echo $row['apellido_paterno']?></p>
-			</br>
+		<ul>
 
-		<label>Apellido Materno</label>
-		<p><?php echo $row['apellido_materno']?></p>
-			</br>
+		<li><p>Nombres</p>
+		<p><?php echo $row['nombre']?></p></li>
+		
+		<li><labe>Apellido Paterno</label>
+		<p><?php echo $row['apellido_paterno']?></p></li>
+
+		<li><label>Apellido Materno</label>
+		<p><?php echo $row['apellido_materno']?></p></li>
 
 			
-		<br><label>CURP</label>
-		<p><?php echo $row['curp'] ?></p>
-			</br>
+		<li><label>CURP</label>
+		<p><?php echo $row['curp'] ?></p></li>
 			
-			<label>Telefono</label>
-		<p><?php echo $row['telefono_casa']?></p> 
-			</br>
+		<li><label>Teléfono</label>
+		<p><?php echo $row['telefono']?></p></li>
 
-		<label>Domicilio</label>
-		<p><?php echo $row['domicilio']?></p>
-			</br>
+		<li><label>Domicilio</label>
+		<p><?php echo $row['domicilio']?></p></li>
 
-	
+	</ul>
 	
 
 	</div>
@@ -97,7 +94,7 @@ if(!($resultado2=mysql_query($sql2,$con)))
 	die ('<br>ERROR '.mysql_error());
 }
 	echo "	
-		 <table id ='tabla1'>
+		 <table id ='tabla1' width='100%'>
 		<thead>	
 					<tr role='row'>
 		<th class='sorting' role='columnheader' tabindex='0'>Tipo de Gestión</th>
@@ -134,7 +131,7 @@ while($row2 = mysql_fetch_array($resultado2)){
 
 echo "</tbody>
 </table>"?>
-<div id="botonesrow">
+<div id="botongestion">
 
 <?php echo "<br><a class='boton' href='../../../insercion_consulta/' /> Insertar Gestion </a>" ?>
 		</div>

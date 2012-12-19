@@ -60,24 +60,26 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 <form method="post" onsubmit="return verifica ()" action="consulta/" enctype="multipart/form-data">
 
 		<div id="primerrow">
-			<label>Nombres</label><input type="text" name="nombre" id="nombre">	</br>
+			<ul style="    list-style-type: none;
+">
+			<li><label>Nombres</label><input type="text" name="nombre" id="nombre">	</li>
 
 			
-			<label>Apellido Paterno</label><input type="text" name="apellido_paterno"    id="apellido_paterno">	</br>
+			<li><label>Apellido Paterno</label><input type="text" name="apellido_paterno"    id="apellido_paterno">	</li>
 
 			
-			<label>Apellido Materno</label><input type="text" name="apellido_materno"    id="apellido_materno">	</br>
+			<li><label>Apellido Materno</label><input type="text" name="apellido_materno"    id="apellido_materno">	</li>
 
 			
-			<label>Domicilio</label><input type="text" name="domicilio"    id="domicilio">	</br>
+			<li><label>Domicilio</label><input type="text" name="domicilio"    id="domicilio">	</li>
 
 			
-			<label>Telefono</label><input type="text" name="telefono"       id="telefono"> 	</br>
+			<li><label>Telefono</label><input type="text" name="telefono"       id="telefono"> 	</li>
 
 			
-			<label>Curp</label>
-			<input type="text" name="curp"        id="curp">
+			<li><label>Curp</label><input type="text" name="curp"        id="curp"></li>
 			
+			</ul>
 			
 		</div>
 
