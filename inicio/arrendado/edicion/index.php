@@ -35,7 +35,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 <br>
 		<div id="busqueda">
-		<form action="consulta/"  method="GET">
+		<form action="consulta/" onsubmit="return verifica();" method="GET">
 			<label>Indique su b&uacute;squeda:</label>
 			<input type="text" name="query" id="query" class="busquedatexto">
 			<div class="submitquery">
