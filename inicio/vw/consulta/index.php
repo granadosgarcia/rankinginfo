@@ -33,7 +33,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 		   		<form method="post" onsubmit="return verifica()" action="consulta/" enctype="multipart/form-data">
 
 				<div id="primerrow">
-					<label>Nombres</label><input type="text" name="nombre" id="nombre">	</br>
+					<label>Instroduzca su búsqueda</label>
+					<br><input type="text" name="nombre" id="nombre">	</br>
 				</div>
 		
 
