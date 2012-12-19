@@ -5,9 +5,14 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
 
 
 $_SESSION['curp']= $_REQUEST['consulta'];
-
+echo $_SESSION['curp'];
 $sql="SELECT * from vw WHERE curp='".$_SESSION['curp']."'";
+
 	$result=mysql_query($sql);
+if(!($result=mysql_query($sql,$con)))
+{
+	die ('<br>ERROR '.mysql_error());
+}	
 	while($row = mysql_fetch_array($result)){?>
 <html>
 <head>
