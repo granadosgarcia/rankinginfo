@@ -111,7 +111,7 @@ $(function(){
 					<div id='contenedortabla'>";
 					
 		include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";
-		echo "<input type='checkbox' id='selectall'/>";		
+		echo "<label>Seleccionar Todo</label><input type='checkbox' id='selectall'/>";		
 echo " 	<form method='GET' action='update/'>
 
 		 <table id ='tabla'>

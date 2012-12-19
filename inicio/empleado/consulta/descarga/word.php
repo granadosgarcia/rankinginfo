@@ -61,7 +61,6 @@ $PHPWord = new PHPWord();
 
 
 
-$section = $PHPWord->createSection();
 
 
 
@@ -73,6 +72,8 @@ $styleCell = array('valign'=>'center');
 
  while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) 
  { 
+ 	$section = $PHPWord->createSection();
+
 		$section->addText("Consulta Ranking Information",'titulo');
 		$section->addTextBreak(1);
 		$table = $section->addTable();
@@ -207,107 +208,18 @@ $styleCell = array('valign'=>'center');
 	 	 	$table->addCell(3000)->addText("Lugar de Estudio:",'StyleR');
 	 	 	$table->addCell(9000)->addText($row['lugar_estudio'],'StyleC');
  	 	} 
-	
- 	 	
- 	 	if(!empty($row['img_foto']) || !empty($row['img_comprobante_domicilio']) || !empty($row['img_ife'])|| !empty($row['img_comprobante_trabajo'])|| !empty($row['img_certificado_escolar'])|| !empty($row['img_cedula_profesional']))
- 	 	{
- 	 		
- 	 		$section->addTextBreak(2);
-
- 	 		$section->addText("Imagenes",'titulo');
- 	 		
- 	 		$section->addTextBreak(1);
-
- 	 		$table = $section->addTable();
- 	 	
- 	 		$table->addRow();
-	
-	 	 	
-		 	 	$table->addCell(3000,$styleCell)->addText("Foto:",'StyleR');
-	 	 	
-		 	 	$table->addCell(3000,$styleCell)->addText("Comprobante Domicilio:",'StyleR');
-	 	 	
-		 	 	$table->addCell(3000,$styleCell)->addText("IFE:",'StyleR');
-		 	 	
-		 	 	$table->addCell(3000,$styleCell)->addText("Comprobante de Trabajo:",'StyleR');
-		 	 	
-		 	 	$table->addCell(3000,$styleCell)->addText("Certificado Escolar:",'StyleR');
-		 	 	
-		 	 	$table->addCell(3000,$styleCell)->addText("Cédula Profesional:",'StyleR');
-	 	 	
-	 	 	
-	 	 	
-	 	 	
-	 	 	$table->addRow();
-	 	 	
-	 	 	
-		 	 //IMG IFE
-	 	 	if(!empty($row['img_foto']))
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_foto'], array('width'=>150, 'height'=>100, 'align'=>'center'));
-	 	 	}
-	 	 	else
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
-		 	 }
-		 	 //IMG COMPROBANTE Domicilio
-	 	 	if(!empty($row['img_comprobante_domicilio']))
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_comprobante_domicilio'], array('width'=>150, 'height'=>100, 'align'=>'center'));
-	 	 	}
-	 	 	else
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
-		 	 }
-		 	 //IMG IFE
-	 	 	if(!empty($row['img_ife']))
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_ife'], array('width'=>150, 'height'=>100, 'align'=>'center'));
-	 	 	}
-	 	 	else
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
-		 	 }
-	 	 	if(!empty($row['img_cedula_profesional']))
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_cedula_profesional'], array('width'=>150, 'height'=>100, 'align'=>'center'));
-	 	 	}
-	 	 	else
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
-		 	 }
-		 	 
-	 	 	if(!empty($row['img_comprobante_trabajo']))
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_comprobante_trabajo'], array('width'=>150, 'height'=>100, 'align'=>'center'));
-	 	 	}
-	 	 	else
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
-		 	 }
-		 	 
-	 	 	if(!empty($row['img_certificado_escolar']))
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_certificado_escolar'], array('width'=>150, 'height'=>100, 'align'=>'center'));
-	 	 	}
-	 	 	else
-	 	 	{
-		 	 	$table->addCell(9000,$styleCell)->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
-		 	 }
-
-	 	 }
 
  
  	
- $k=0; $o=0;
+  $o=0;
  	
  $section->addTextBreak(2);
 
- while($row=mysql_fetch_array($resultado1[$k])) 
+ while($row1=mysql_fetch_array($resultado1[$k])) 
  {
 
  
- 	 if(!empty($row['emp_desempeno'])||!empty($row['emp_calif_anterior'])||!empty($row['comentario']))
+ 	 if(!empty($row['emp_desempeno'])||!empty($row1['emp_calif_anterior'])||!empty($row1['comentario']))
  	 {
  	 	 $section->addText("Calificacion",'titulo');
  	 	 $section->addTextBreak(1);
@@ -325,11 +237,11 @@ $styleCell = array('valign'=>'center');
  	 	
  	 	$table->addRow();
  	 	
- 	 	$table->addCell(3000,$styleCell)->addText($row["fecha"],'StyleR');
+ 	 	$table->addCell(3000,$styleCell)->addText($row1["fecha"],'StyleR');
 
 
 
-	 		switch($row["emp_desempeno"])
+	 		switch($row1["emp_desempeno"])
 	 		{
 										
 				case 1:
@@ -359,7 +271,7 @@ $styleCell = array('valign'=>'center');
 	 	
 	 	
 
-			switch($row["emp_calif_anterior"])
+			switch($row1["emp_calif_anterior"])
 			{
 				case 1:
 				$table->addCell(3000,$styleCell)->addText("Muy Bueno",'StyleC');
@@ -387,23 +299,106 @@ $styleCell = array('valign'=>'center');
 		
 
 						
-			if (!empty($row["fecha"])) 
+			if (!empty($row1["fecha"])) 
 			{
 				$section->addTextBreak(1);
 				$table = $section->addTable();
 				$table->addRow();
 				$table->addCell(3000,$styleCell)->addText("Comentario",'StyleC');
 				$table->addRow();
-				$table->addCell(9000,array('valign'=>'center'))->addText($row["comentario"],'StyleR');
+				$table->addCell(9000,array('valign'=>'center'))->addText($row1["comentario"],'StyleR');
 			}
 	 } 
 	 $o++;
 
  }
+ 
+ $section = $PHPWord->createSection();
+
+ 
+   	 	if(!empty($row['img_foto']) || !empty($row['img_comprobante_domicilio']) || !empty($row['img_ife'])|| !empty($row['img_comprobante_trabajo'])|| !empty($row['img_certificado_escolar'])|| !empty($row['img_cedula_profesional']))
+ 	 	{
+ 	 		
+ 	 		$section->addTextBreak(2);
+
+ 	 		$section->addText("Imagenes",'titulo');
+ 	 		
+ 	 		$section->addTextBreak(1);
+
+
+	 	 	
+	 	 	$section->addText("Foto:",'StyleR');
+
+		 	 //IMG IFE
+	 	 	if(!empty($row['img_foto']))
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_foto'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+		 	 
+		 	 $section->addText("Comprobante Domicilio:",'StyleR');
+
+		 	 //IMG COMPROBANTE Domicilio
+	 	 	if(!empty($row['img_comprobante_domicilio']))
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_comprobante_domicilio'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+		 	 
+		 	 	$section->addText("IFE:",'StyleR');
+
+		 	 //IMG IFE
+	 	 	if(!empty($row['img_ife']))
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_ife'], array('width'=>100, 'height'=>150, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+		 	 
+		 	 $section->addText("Cédula Profesional:",'StyleR');
+		 	 
+	 	 	if(!empty($row['img_cedula_profesional']))
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_cedula_profesional'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+		 	 
+		 	 $section->addText("Comprobante de Trabajo:",'StyleR');
+		 	 
+	 	 	if(!empty($row['img_comprobante_trabajo']))
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_comprobante_trabajo'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+		 	 
+		 	 $section->addText("Certificado Escolar:",'StyleR');
+		 	 	
+	 	 	if(!empty($row['img_certificado_escolar']))
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT'].$row['img_certificado_escolar'], array('width'=>150, 'height'=>100, 'align'=>'center'));
+	 	 	}
+	 	 	else
+	 	 	{
+		 	 	$section->addImage($_SERVER['DOCUMENT_ROOT']."/rankinginfo/img/default.jpg", array('width'=>150, 'height'=>100, 'align'=>'center'));
+		 	 }
+
+	 	 } 
 	 $k++;
-
-
-}
+	 }
 
 
 
