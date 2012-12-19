@@ -137,7 +137,7 @@ while($row = mysql_fetch_array($resultado)){
 			
 		echo "<tr class='infooo'>";
 
-				echo "<td><input type='radio' name='consulta[]' class='case' value='".$row['curp']."'> </td>";
+				echo "<td><input type='radio' name='consulta' class='case' value='".$row['curp']."'> </td>";
 			
 				echo "<td>". $row['nombre']. " </td>";
 				echo "<td>". $row['apellido_paterno']. "</td>";
