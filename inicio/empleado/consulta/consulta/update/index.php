@@ -232,7 +232,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<td>
 										<p>Foto</p>
 <?php if (!empty($row["img_foto"])) { ?>	
-										<img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/>
+										<a class="imagengrande" href="<?php echo $row["img_foto"]?>"><img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/></a>
 <?php } else {?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 								
