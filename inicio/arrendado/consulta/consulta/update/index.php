@@ -72,9 +72,9 @@ foreach($consultas as $consulta)
 
 				closeClick : true,
 
-				helpers : {
-					overlay : null
-				}
+				// helpers : {
+				// 	overlay : null
+				// }
 			});
 		});
 </script>

@@ -94,9 +94,9 @@ foreach($consultas as $consulta)
 
 				closeClick : true,
 
-				helpers : {
+				/*helpers : {
 					overlay : null
-				}
+				}*/
 			});
 		});
 </script>
