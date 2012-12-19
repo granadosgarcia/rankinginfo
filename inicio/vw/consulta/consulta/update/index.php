@@ -135,7 +135,7 @@ while($row2 = mysql_fetch_array($resultado2)){
 echo "</tbody>
 </table>"?>
 
-<?php echo "<a href='../../../insercion_consulta/' /> Insertar Gestion </a>" ?>
+<?php echo "<br><a class='boton' href='../../../insercion_consulta/' /> Insertar Gestion </a>" ?>
 		</div>
 
         </div>
