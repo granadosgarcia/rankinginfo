@@ -11,6 +11,19 @@
 }
 }
 
+#primerrow ul li{
+	margin: 2px 0px;
+}
+#arrendadorrow ul li{
+	margin: 2px 0px;
+}
+#patronrow ul li{
+	margin: 2px 0px;
+}
+#escolaridad ul li{
+	margin: 2px 0px;
+}
+
 #botongestion{
 	width: 170px;
 margin: 14px auto;
@@ -48,9 +61,9 @@ margin: 0px auto;
 #primerrow{
 	border: 1px solid;
 border-radius: 15px;
-width: 300px;
+width: 320px;
 margin: 30px auto;
-padding: 10px 15px;
+padding: 15px 25px 20px 10px;
 }
 
 #imagenesrow{
@@ -72,17 +85,17 @@ padding: 10px 15px;
 #arrendadorrow{
 	border: 1px solid;
 border-radius: 15px;
-width: 280px;
+width: 330px;
 margin: 30px auto;
-padding: 10px 15px;
+padding: 10px 25px 15px 5px;
 }
 
 #patronrow{
 	border: 1px solid;
 border-radius: 15px;
-width: 310px;
+width: 360px;
 margin: 30px auto;
-padding: 10px 15px;
+padding: 15px 25px 20px 10px;
 }
 
 #escolaridad{

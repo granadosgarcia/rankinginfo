@@ -64,56 +64,57 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 <form method="post" onsubmit="return verifica ()" action="consulta/" enctype="multipart/form-data">
 
 		<div id="primerrow">
-			<label>Nombres</label><input type="text" name="nombre" id="nombre">	</br>
+		<ul style="  list-style-type: none;">
+			<li><label>Nombres</label><input type="text" name="nombre" id="nombre">	</li>
 
 			
-			<label>Apellido Paterno</label><input type="text" name="apellido_paterno"    id="apellido_paterno">	</br>
+			<li><label>Apellido Paterno</label><input type="text" name="apellido_paterno"    id="apellido_paterno">	</li>
 
 			
-			<label>Apellido Materno</label><input type="text" name="apellido_materno"    id="apellido_materno">	</br>
+			<li><label>Apellido Materno</label><input type="text" name="apellido_materno"    id="apellido_materno">	</li>
 
 			
-			<label>Domicilio Actual</label><input type="text" name="domicilio_actual"    id="domicilio_actual">	</br>
+			<li><label>Domicilio Actual</label><input type="text" name="domicilio_actual"    id="domicilio_actual">	</li>
 
 			
-			<label>Telefono de casa</label><input type="text" name="telefono_casa"       id="telefono_casa"> 	</br>
+			<li><label>Telefono de casa</label><input type="text" name="telefono_casa"       id="telefono_casa"> 	</li>
 
 			
-			<label>Estado Civil</label>
-			<input type="text" name="estado_civil"        id="estado_civil">
+			<li><label>Estado Civil</label><input type="text" name="estado_civil"        id="estado_civil"></li>
+		</ul>
 		</div>
 		
 		<div id="arrendadorrow">
-
-			<label>Arrendador Actual</label>
-			<input type="text" name="arrendador_actual"   id="arrendador_actual">	</br>
-
-			
-			<label>Arrendador Anterior</label>
-			<input type="text" name="arrendador_anterior" id="arrendador_anterior">	</br>
+			<ul style="  list-style-type: none;">
+			<li><label>Arrendador Actual</label>
+			<input type="text" name="arrendador_actual"   id="arrendador_actual">	</li>
 
 			
-			<label>Domicilio Anterior</label>
-			<input type="text" name="domicilio_anterior" id="domicilio_anterior"></br>
-			
-			<label>CURP</label>
-			<input type="text" name="curp"               id="curp">	</br>
+			<li><label>Arrendador Anterior</label>
+			<input type="text" name="arrendador_anterior" id="arrendador_anterior">	</li>
 
 			
-			<label>Nombre del Aval</label>
-			<input type="text" name="nombre_aval"        id="nombre_aval">	</br>
+			<li><label>Domicilio Anterior</label>
+			<input type="text" name="domicilio_anterior" id="domicilio_anterior"></li>
+			
+			<li><label>CURP</label>
+			<input type="text" name="curp"               id="curp">	</li>
 
 			
-			<label>Domicilio del Aval</label>
-			<input type="text" name="domicilio_aval"     id="domicilio_aval">	</br>
+			<li><label>Nombre del Aval</label>
+			<input type="text" name="nombre_aval"        id="nombre_aval">	</li>
 
 			
-			<label>T&eacute;lefono del Aval</label>
-			<input type="text" name="telefono_aval"      id="telefono_aval"> </br>
-			
-			<label>Nombre del Conyuge</label>
-				<input type="text" name="nombre_conyuge"     id="nombre_conyuge"></br>
+			<li><label>Domicilio del Aval</label>
+			<input type="text" name="domicilio_aval"     id="domicilio_aval">	</li>
 
+			
+			<li><label>T&eacute;lefono del Aval</label>
+			<input type="text" name="telefono_aval"      id="telefono_aval"> </li>
+			
+			<li><label>Nombre del Conyuge</label>
+				<input type="text" name="nombre_conyuge"     id="nombre_conyuge"></li>
+			</ul>
 		</div>
 		
 			<div id="imagenesrow">

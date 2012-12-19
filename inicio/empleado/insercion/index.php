@@ -76,74 +76,84 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 <form method="post" onsubmit="return verifica ()" action="consulta/" enctype="multipart/form-data">
 
 		<div id="primerrow">
-			<label>Nombres</label><input type="text" name="nombres" id="nombres">	</br>
+			<ul style=" list-style: none;">
+			<li><label>Nombres</label><input type="text" name="nombres" id="nombres">	</li>
 
 			
-			<label>Apellido Paterno</label><input type="text" name="apellido_paterno"    id="apellido_paterno">	</br>
+			<li><label>Apellido Paterno</label><input type="text" name="apellido_paterno"    id="apellido_paterno">	</li>
 
 			
-			<label>Apellido Materno</label><input type="text" name="apellido_materno"    id="apellido_materno">	</br>
+			<li><label>Apellido Materno</label><input type="text" name="apellido_materno"    id="apellido_materno">	</li>
 
 			
-			<label>Domicilio</label><input type="text" name="domicilio"    id="domicilio">	</br>
+			<li><label>Domicilio</label><input type="text" name="domicilio"    id="domicilio">	</li>
 
 			
-			<label>Telefono Particular</label><input type="text" name="telefono_particular"       id="telefono_particular"> 	</br>
+			<li><label>Telefono Particular</label><input type="text" name="telefono_particular"       id="telefono_particular"> 	</li>
 
-			<label>Telefono Personal</label><input type="text" name="telefono_personal"       id="telefono_personal"> 	</br>
+			<li><label>Telefono Personal</label><input type="text" name="telefono_personal"       id="telefono_personal"> 	</li>
 					
-			<label>Estado Civil</label>
-			<input type="text" name="estado_civil"        id="estado_civil">
+			<li><label>Estado Civil</label><input type="text" name="estado_civil"        id="estado_civil"></li>
+
+			</ul>
+
 		</div>
 		
 		<div id="patronrow">
 
-			<label>Patron Actual</label>
-			<input type="text" name="patron_actual"   id="patron_actual">	</br>
+			<ul style=" list-style: none;">
 
-			<label>Telefono Patron Actual</label>
-			<input type="text" name="telefono_patronactual"   id="telefono_patronactual">	</br>
+			<li><label>Patron Actual</label>
+			<input type="text" name="patron_actual"   id="patron_actual">	</li>
 
-			<label>Domicilio Patron Actual</label>
-			<input type="text" name="domicilio_patronactual"   id="domicilio_patronactual">	</br>
-			
-			<label>Patron Anterior</label>
-			<input type="text" name="patron_anterior"   id="patron_anterior">	</br>
+			<li><label>Telefono Patron Actual</label>
+			<input type="text" name="telefono_patronactual"   id="telefono_patronactual">	</li>
 
-			<label>Telefono Patron Anterior</label>
-			<input type="text" name="telefono_patronanterior" id="telefono_patronanterior">	</br>
+			<li><label>Domicilio Patron Actual</label>
+			<input type="text" name="domicilio_patronactual"   id="domicilio_patronactual">	</li>
 			
-			<label>Domicilio Patron Anterior</label>
-			<input type="text" name="domicilio_patronanterior"   id="domicilio_patronanterior">	</br>
+			<li><label>Patron Anterior</label>
+			<input type="text" name="patron_anterior"   id="patron_anterior">	</li>
 
+			<li><label>Telefono Patron Anterior</label>
+			<input type="text" name="telefono_patronanterior" id="telefono_patronanterior">	</li>
 			
-			<label>Responsable Actual</label>
-			<input type="text" name="responsable_actual" id="responsable_actual"></br>
-			
-			<label>CURP</label>
-			<input type="text" name="curp"               id="curp">	</br>
+			<li><label>Domicilio Patron Anterior</label>
+			<input type="text" name="domicilio_patronanterior"   id="domicilio_patronanterior">	</li>
 
 			
-			<label>Nombre del Conyuge</label>
-			<input type="text" name="nombre_conyuge"     id="nombre_conyuge"></br>
+			<li><label>Responsable Actual</label>
+			<input type="text" name="responsable_actual" id="responsable_actual"></li>
 			
-			<label>Empleo Anterior</label>
-			<input type="text" name="empleo_anterior"     id="empleo_anterior"></br>
-			
-			<label>Tiempo Trabajo Anterior</label>
-			<input type="text" name="tiempo_trabajoanterior"     id="tiempo_trabajoanterior"></br>
-			
-			<label>Habilidades</label>
-			<input type="text" name="habilidades"     id="habilidades"></br>
+			<li><label>CURP</label>
+			<input type="text" name="curp"               id="curp">	</li>
 
+			
+			<li><label>Nombre del Conyuge</label>
+			<input type="text" name="nombre_conyuge"     id="nombre_conyuge"></li>
+			
+			<li><label>Empleo Anterior</label>
+			<input type="text" name="empleo_anterior"     id="empleo_anterior"></li>
+			
+			<li><label>Tiempo Trabajo Anterior</label>
+			<input type="text" name="tiempo_trabajoanterior"     id="tiempo_trabajoanterior"></li>
+			
+			<li><label>Habilidades</label>
+			<input type="text" name="habilidades"     id="habilidades"></li>
+
+		</ul>
 		</div>
 		
 		<div id="escolaridad">
-			<label>Lugar de estudio</label>
-			<input type="text" name="lugar_estudio"     id="lugar_estudio"></br>
+			<ul style=" list-style: none;">
+			<li><label>Lugar de estudio</label>
+			<input type="text" name="lugar_estudio"     id="lugar_estudio"></li>
 			
-			<label>Grado Escolar</label>
-			<input type="text" name="grado_escolar"     id="grado_escolar"></br>
+			<li><label>Grado Escolar</label>
+			<input type="text" name="grado_escolar"     id="grado_escolar"></li>
+		
+			</ul>
+
 		</div>
 		
 			<div id="imagenessrow">

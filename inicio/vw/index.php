@@ -22,10 +22,9 @@ margin: -200px 0px 0px -160px;">
    				
 		   			<div id="contenido">
 	   					<p class="bienvenida"><?php echo "Bienvenido ". $_SESSION['nombreusuario'];?></p>
-		   				
-	   					<div class="salida">
-	   						<a href="/rankinginfo/cerrar_sesion.php" ><input type="button" value="Cerrar sesi&oacute;n" class="logout"></a>
-	   					</div>
+		   				                  <?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_inicio.php";?>
+
+	   					
     	
 	   					<div class="botonera">
 		   					<a href="insercion/"><input type="button" value="Inserción" class="inserta"></a>
