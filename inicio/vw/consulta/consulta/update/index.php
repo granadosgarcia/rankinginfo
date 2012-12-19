@@ -77,7 +77,7 @@ if(!($result=mysql_query($sql,$con)))
 	
 
 	</div>
-	<div id="botonesrow">
+	<div id="botonesrow1">
 	</div>
 				<div id="modificarrow">
 
@@ -134,8 +134,10 @@ while($row2 = mysql_fetch_array($resultado2)){
 
 echo "</tbody>
 </table>"?>
+<div id="botonesrow">
 
 <?php echo "<br><a class='boton' href='../../../insercion_consulta/' /> Insertar Gestion </a>" ?>
+		</div>
 		</div>
 
         </div>
