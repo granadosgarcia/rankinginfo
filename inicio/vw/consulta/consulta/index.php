@@ -6,7 +6,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 
 
-$querybusqueda = $_GET['query'];
+$querybusqueda = $_GET['nombre'];
 $querybusqueda = mysql_real_escape_string($querybusqueda);
 $palabrasquery1 = $querybusqueda;
 $palabrasquery = array_unique(explode(" ", $querybusqueda));
