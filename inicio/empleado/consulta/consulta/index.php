@@ -105,7 +105,7 @@ $(function(){
   
    			<div id='wrapper'>
 	   				<div id='header'>
-	   					<h1>Usuario a Consultar</h1>
+	   					<h1>Empleado a Consultar</h1>
 					</div>
 					
 					<div id='contenedortabla'>";
