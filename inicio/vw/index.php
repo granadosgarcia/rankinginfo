@@ -31,6 +31,9 @@ margin: -200px 0px 0px -160px;">
 		   					<a href="insercion/"><input type="button" value="Inserción" class="inserta"></a>
 
 		   					<a href="consulta/"><input type="button" value="Consulta" class="edita"></a>
+		   					
+		   					<a href="insercion_consulta/"><input type="button" value="Consulta" class="edita"></a>
+
 
 		   				
 		   				</div>

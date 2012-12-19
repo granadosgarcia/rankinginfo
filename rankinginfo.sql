@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 19, 2012 at 03:03 AM
+-- Generation Time: Dec 19, 2012 at 06:51 AM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=200 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=236 ;
 
 --
 -- Dumping data for table `actividades`
@@ -95,7 +95,43 @@ INSERT INTO `actividades` (`id_usuario`, `fecha`, `actividad`, `id`) VALUES
 (8, '2012-12-18 20:58:41', 'Consulta Empleado', 196),
 (8, '2012-12-18 21:00:03', 'Consulta Empleado', 197),
 (8, '2012-12-18 21:00:45', 'Consulta Empleado', 198),
-(8, '2012-12-18 21:02:13', 'Consulta Empleado', 199);
+(8, '2012-12-18 21:02:13', 'Consulta Empleado', 199),
+(8, '2012-12-18 21:16:21', 'Consulta Empleado', 200),
+(8, '2012-12-18 21:21:44', 'Consulta Empleado', 201),
+(8, '2012-12-18 21:27:03', 'Consulta Empleado', 202),
+(8, '2012-12-18 21:28:16', 'Consulta Empleado', 203),
+(8, '2012-12-18 21:29:32', 'Consulta Empleado', 204),
+(8, '2012-12-18 21:31:20', 'Consulta Empleado', 205),
+(8, '2012-12-18 21:31:49', 'Consulta Empleado', 206),
+(8, '2012-12-18 21:32:30', 'Consulta Empleado', 207),
+(8, '2012-12-18 21:34:12', 'Consulta Empleado', 208),
+(8, '2012-12-18 21:35:48', 'Consulta Empleado', 209),
+(8, '2012-12-18 21:36:56', 'Consulta Empleado', 210),
+(8, '2012-12-18 21:37:17', 'Consulta Empleado', 211),
+(8, '2012-12-18 21:38:02', 'Consulta Empleado', 212),
+(8, '2012-12-18 21:40:44', 'Consulta Empleado', 213),
+(8, '2012-12-18 21:41:10', 'Consulta Empleado', 214),
+(8, '2012-12-18 21:44:42', 'Consulta Empleado', 215),
+(8, '2012-12-18 21:45:15', 'Consulta Empleado', 216),
+(8, '2012-12-18 21:46:06', 'Consulta Empleado', 217),
+(8, '2012-12-18 21:59:31', 'Consulta Empleado', 218),
+(8, '2012-12-18 21:59:53', 'Consulta Empleado', 219),
+(8, '2012-12-18 22:00:44', 'Consulta Empleado', 220),
+(8, '2012-12-18 22:01:57', 'Consulta Empleado', 221),
+(8, '2012-12-18 22:02:40', 'Consulta Empleado', 222),
+(8, '2012-12-18 22:08:13', 'Consulta Empleado', 223),
+(8, '2012-12-18 22:45:46', 'Consulta Empleado', 224),
+(8, '2012-12-18 22:46:29', 'Consulta Empleado', 225),
+(8, '2012-12-18 22:47:24', 'Consulta Empleado', 226),
+(8, '2012-12-18 22:47:58', 'Consulta Empleado', 227),
+(8, '2012-12-18 22:51:30', 'Consulta Empleado', 228),
+(8, '2012-12-18 23:46:28', 'Insercion Arrendado', 229),
+(8, '2012-12-18 23:48:34', 'Insercion Deudor VW', 230),
+(8, '2012-12-18 23:49:11', 'Insercion Deudor VW', 231),
+(8, '2012-12-19 00:02:35', 'Insercion Deudor VW', 232),
+(8, '2012-12-19 00:03:26', 'Insercion Deudor VW', 233),
+(8, '2012-12-19 00:04:47', 'Insercion Deudor VW', 234),
+(8, '2012-12-19 00:05:26', 'Insercion Deudor VW', 235);
 
 -- --------------------------------------------------------
 
@@ -133,6 +169,7 @@ CREATE TABLE IF NOT EXISTS `arrendado` (
 --
 
 INSERT INTO `arrendado` (`nombre`, `apellido_paterno`, `apellido_materno`, `domicilio_actual`, `telefono_casa`, `estado_civil`, `img_ife`, `arrendador_actual`, `arrendador_anterior`, `domicilio_arrendador_actual`, `telefono_arrendador_actual`, `telefono_arrendador_anterior`, `domicilio_arrendador_anterior`, `domicilio_anterior`, `curp`, `nombre_aval`, `domicilio_aval`, `telefono_aval`, `nombre_conyuge`, `img_comprobante_domicilio`, `img_foto`) VALUES
+('Abraham', 'Gonzalez', 'FarÃ­as', '', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2308curAbraham', NULL, NULL, NULL, NULL, NULL, NULL),
 ('Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 8884589, 'Ã¡cÃ©ntÃ³', '/rankinginfo/uploads/img12/Ã¡cÃ©ntÃ³/ife.jpg', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', NULL, NULL, NULL, NULL, 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 9995499, 'Ã¡cÃ©ntÃ³', '/rankinginfo/uploads/img12/Ã¡cÃ©ntÃ³/comprobante_domicilio.jpg', '/rankinginfo/uploads/img12/Ã¡cÃ©ntÃ³/foto.jpg'),
 ('Kevin', 'Mendez', 'Tellez', '13 B sur 7737 San Jose Mayorazgo', 8884588, 'Casado', '/rankinginfo/uploads/img12/BEML920313HCMLNS09/ife.jpg', 'Abraham GonzÃ¡lez FarÃ­as', 'Martin Granados GarcÃ­a', NULL, NULL, NULL, NULL, '13 B sur 7737 San Jose Mayorazgo', 'BEML920313HCMLNS09', 'Irvin Mendez Tellez', '13 B sur 7737 San Jose Mayorazgo', 8884588, 'Maria Martita Jimenez', '/rankinginfo/uploads/img12/BEML920313HCMLNS09/comprobante_domicilio.jpg', '/rankinginfo/uploads/img12/BEML920313HCMLNS09/foto.jpg'),
 ('JÃ³LOÃ¡Ã©l', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'nerfnow', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -270,6 +307,9 @@ CREATE TABLE IF NOT EXISTS `gestiones` (
   `etapa_juicio` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `curp` varchar(30) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `fecha` datetime NOT NULL,
+  `saldo_atrasado` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `semanas_atraso` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `ultimo_abono` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -311,9 +351,9 @@ INSERT INTO `usuario` (`id`, `nombre`, `nombre_usuario`, `password`, `privilegio
 CREATE TABLE IF NOT EXISTS `vw` (
   `nombre` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `apellido_paterno` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
-  `appellido_materno` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `apellido_materno` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   `curp` varchar(30) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `telefono` int(20) DEFAULT NULL,
+  `telefono` int(30) DEFAULT NULL,
   `domicilio` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`curp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
