@@ -208,7 +208,7 @@ $styleCell = array('valign'=>'center');
 
  
  	
- $k=0; $o=0;
+ $o=0;
  	
  $section->addTextBreak(2);
 
