@@ -14,7 +14,14 @@ $sql="SELECT * from vw WHERE curp='".$_SESSION['curp']."'";
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 
         <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";?>
-
+<link rel='stylesheet' href='/rankinginfo/css/jquery.dataTables.css' type='text/css' charset='utf-8'>
+<script type='text/javascript' language='javascript' src='/rankinginfo/js/jquery.js'></script>
+<script type='text/javascript' language='javascript' src='/rankinginfo/js/jquery.dataTables.js'></script>
+<script type='text/javascript' charset='utf-8'>
+			$(document).ready(function() {
+				$('#tabla1').dataTable();
+			} );
+		</script>
 
 <title> Consulta VW </title>
 
@@ -31,61 +38,93 @@ $sql="SELECT * from vw WHERE curp='".$_SESSION['curp']."'";
 <input style="visibility:hidden; display: none;"type="text" name="consulta" value="<?php echo $row['curp']?>">
     <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";?>
 
-<form method="POST" onsubmit="return verifica ()" action="update.php" enctype="multipart/form-data">
 
 
 	<div id="primerrow">
-		<label>Nombres</label><input type="text" name="nombre" id="nombre"				value="<?php echo $row['nombre']?>" class="inputderecha">
+		<label>Nombres</label>
+		<p><?php echo $row['nombre']?></p>
 	<br>
 		<labe>Apellido Paterno</label>
-		<input type="text" name="apellido_paterno"    id="apellido_paterno"		value="<?php echo $row['apellido_paterno']?>" class="inputderecha">
+		<p><?php echo $row['apellido_paterno']?></p>
 			</br>
 
 		<label>Apellido Materno</label>
-		<input type="text" name="apellido_materno"    id="apellido_materno"		value="<?php echo $row['apellido_materno']?>" class="inputderecha">
+		<p><?php echo $row['apellido_materno']?></p>
 			</br>
 
 			
 		<br><label>CURP</label>
-		<input type="text" name="curp"           id="curp"					value="<?php echo $row['curp'] ?>" class="inputderecha">
+		<p><?php echo $row['curp'] ?></p>
 			</br>
 			
 			<label>Telefono</label>
-		<input type="text" name="telefono"       id="telefono"		value="<?php echo $row['telefono_casa']?>" class="inputderecha"> 
+		<p><?php echo $row['telefono_casa']?></p> 
 			</br>
 
 		<label>Domicilio</label>
-		<input type="text" name="domicilio"    id="domilicio"		value="<?php echo $row['domicilio']?>" class="inputderecha">
+		<p><?php echo $row['domicilio']?></p>
 			</br>
 
 	
 	
-	<div id="imagenesrow">
+	<div id="imagenesrow" >
 	
 	<!-- DIV DE GESTIONES -->
-	
-		
-		<?php
-		/*
-<label>Saldo Atrasado</label>
-		<input type="text" name="saldo_atrasado"        id="saldo_atrasado"			value="<?php echo $row['saldo_atrasado']?>" class="inputderecha">
-			</div>
-			<div id="arrendadorrow">
-		<label>Semanas de atraso</label>
-		<input type="text" name="semanas_atraso"   id="semanas_atraso"	value="<?php echo $row['semanas_atraso']?>" class="inputderecha">
-			</br>
+	<?php /* Comprobación de error y ejecución del query */
+	//Query todas las actividades
+$sql2= "SELECT  *
+FROM gestiones 
+WHERE curp='$_SESSION[curp]'";
 
-		<label>Último Abono</label>
-		<input type="text" name="ultimo_abono" id="ultimo_abono"	value="<?php echo $row['ultimo_abono'] ?>" class="inputderecha">
-			</br>
-*/
-?>		
+if(!($resultado2=mysql_query($sql2,$con)))
+{
+	die ('<br>ERROR '.mysql_error());
+}
+	echo "	
+		 <table id ='tabla1'>
+		<thead>	
+					<tr role='row'>
+		<th class='sorting' role='columnheader' tabindex='0'>Tipo de Gestión</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Etapa Procesal</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Etapa Juicio</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Semanas Atraso</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Ultimo Abono</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Saldo Atrasado</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Comentario</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Fecha</th>
+
+					</tr>
+		</thead>
+		<tbody>";
+
+
+while($row2 = mysql_fetch_array($resultado2)){ 
+			
+		echo "<tr class='infooo'>";
+			
+				echo "<td>". htmlentities($row2['tipo_gestion']). "</td>";
+				echo "<td>". htmlentities($row2['etapa_procesal']). "</td>";
+				echo "<td>". htmlentities($row2['etapa_juicio']). "</td>";
+				echo "<td>". htmlentities($row2['semanas_atraso']). "</td>";
+				echo "<td>". htmlentities($row2['ultimo_abono']). "</td>";
+				echo "<td>". htmlentities($row2['saldo_atrasado']). "</td>";
+				echo "<td>". htmlentities($row2['comentario']). "</td>";
+				echo "<td>". htmlentities($row2['fecha']). "</td>";
+
+				
+		echo "</tr>";
+		}
+
+
+echo "</tbody>
+</table>"?>
 	</div>
 	<div id="botonesrow">
 	
 				<div id="modificarrow">
-		<input type="submit" name="ok" value="Modificar" class="inserta">
-		</div></form>
+
+
+		</div>
 
 		</div>
         </div>
