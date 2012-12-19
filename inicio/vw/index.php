@@ -32,7 +32,6 @@ margin: -200px 0px 0px -160px;">
 
 		   					<a href="consulta/"><input type="button" value="Consulta" class="edita"></a>
 		   					
-		   					<a href="insercion_consulta/"><input type="button" value="Consulta" class="edita"></a>
 
 
 		   				

@@ -56,7 +56,7 @@ $sql.=",ultimo_abono";
 $sql.=")";
 
 
-$sql.="VALUES ( NOW(), $_SESSION[curp]";
+$sql.="VALUES ( NOW(), '$_SESSION[curp]'";
 if(!empty($_POST['tipo_gestion']))
 $sql.=",'$tipo_gestion'";
 if(!empty($_POST['etapa_procesal']))
@@ -87,7 +87,7 @@ $sql.=")";
 
 
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
-  echo '<script> alert("Agregado Exitosamente"); window.location = "../"; </script>';
+  echo '<script> alert("Agregado Exitosamente"); history.go(-2); </script>';
 
  mysql_close($con);
 ?>

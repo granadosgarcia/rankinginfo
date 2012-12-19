@@ -3,6 +3,10 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
 
+$sqlact="
+INSERT INTO actividades (id_usuario, fecha, actividad)
+VALUES ('$_SESSION[usuario_id]', NOW(), ' Consulta VW')";
+mysql_query($sqlact, $con);
 
 $_SESSION['curp']= $_REQUEST['consulta'];
 $sql="SELECT * from vw WHERE curp='".$_SESSION['curp']."'";
