@@ -27,31 +27,31 @@ OR domicilio='".$palabrasquery1."'";
 }
 
 
-else
-{
-/* Query para seleccionar a más de un cliente vw */
-	$sql.= " SELECT DISTINCT *
-		FROM vw
-		WHERE ";
+// else
+// {
+// /* Query para seleccionar a más de un cliente vw */
+// 	$sql.= " SELECT DISTINCT *
+// 		FROM vw
+// 		WHERE ";
 
 
-	for($i=0; $i<$numeropalabras; $i++)
-	{
-		if($i==0)
-			$sql.=" (";
-		else 
-			$sql.=" AND (";
+// 	for($i=0; $i<$numeropalabras; $i++)
+// 	{
+// 		if($i==0)
+// 			$sql.=" (";
+// 		else 
+// 			$sql.=" AND (";
 
 
-		$sql.= "
-			nombre regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]'
-			OR apellido_paterno regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]' 
-			OR apellido_materno = '".$palabrasquery[$i]."'
-			OR curp ='".$palabrasquery[$i]."'
-			OR telefono ='".$palabrasquery[$i]."'
-			OR domicilio='".$palabrasquery[$i]."')";		
-	}
-}
+// 		$sql.= "
+// 			nombre regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]'
+// 			OR apellido_paterno regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]' 
+// 			OR apellido_materno = '".$palabrasquery[$i]."'
+// 			OR curp ='".$palabrasquery[$i]."'
+// 			OR telefono ='".$palabrasquery[$i]."'
+// 			OR domicilio='".$palabrasquery[$i]."')";		
+// 	}
+// }
 
 
 /* Comprobación de error y ejecución del query */
@@ -112,12 +112,12 @@ $(function(){
 					<div id='contenedortabla'>";
 					
 		include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";
-		echo "<input type='checkbox' id='selectall'/>";		
 echo " 	<form method='GET' action='update/'>
 
 		 <table id ='tabla'>
 		<thead>	
 					<tr role='row'>
+							<th class='sorting' role='columnheader' tabindex='0'> </th>
 		<th class='sorting' role='columnheader' tabindex='0'>Nombre</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Paterno</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Materno</th>
@@ -136,7 +136,8 @@ echo " 	<form method='GET' action='update/'>
 while($row = mysql_fetch_array($resultado)){ 
 			
 		echo "<tr class='infooo'>";
-				echo "<td><input type='' name='consulta[]' class='case' value='".$row['curp']."'> </td>";
+
+				echo "<td><input type='radio' name='consulta[]' class='case' value='".$row['curp']."'> </td>";
 			
 				echo "<td>". $row['nombre']. " </td>";
 				echo "<td>". $row['apellido_paterno']. "</td>";

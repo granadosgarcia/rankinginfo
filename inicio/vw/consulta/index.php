@@ -32,8 +32,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 		   		<form method="get" action="consulta/">
 
 				<div id="primerrow">
-					<label>Introduzca su búsqueda</label><input type="text" name="nombre" id="nombre">	</br>
-				</div>
+					<label>Introduzca su búsqueda</label><input type="text" name="nombre" id="nombre">				</div>
 		
 
 				<div id="botonesrow">
