@@ -75,7 +75,7 @@ $sql="SELECT * from vw WHERE curp='".$_SESSION['curp']."'";
 
 
 		</div>
-	<div id="imagenesrow" >
+	<div id="gestiones" >
 	
 	<!-- DIV DE GESTIONES -->
 	<?php /* Comprobación de error y ejecución del query */
