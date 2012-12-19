@@ -30,7 +30,7 @@ VALUES ('$_SESSION[usuario_id]', NOW(), 'Gestion VW')";
 
 
 $sql="
-INSERT INTO vw (fecha";
+INSERT INTO vw (fecha , curp";
 
 if(!empty($_POST['tipo_gestion']))
 $sql.=",tipo_gestion";
@@ -56,7 +56,7 @@ $sql.=",ultimo_abono";
 $sql.=")";
 
 
-$sql.="VALUES ( NOW()";
+$sql.="VALUES ( NOW(), $_SESSION[curp]";
 if(!empty($_POST['tipo_gestion']))
 $sql.=",'$tipo_gestion'";
 if(!empty($_POST['etapa_procesal']))
