@@ -5,7 +5,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
 
 
 $_SESSION['curp']= $_REQUEST['consulta'];
-echo $_SESSION['curp'];
 $sql="SELECT * from vw WHERE curp='".$_SESSION['curp']."'";
 
 	$result=mysql_query($sql);
@@ -131,6 +130,8 @@ while($row2 = mysql_fetch_array($resultado2)){
 
 echo "</tbody>
 </table>"?>
+
+<?php echo "<a href='../../../insercion_consulta/' /> Insertar Gestion </a>" ?>
 		</div>
 
         </div>
