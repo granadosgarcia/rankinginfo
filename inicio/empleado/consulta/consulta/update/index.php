@@ -69,6 +69,9 @@ foreach($consultas as $consulta)
 	<link rel="stylesheet" type="text/css" href="/rankinginfo/js/fancybox/source/jquery.fancybox.css?v=2.1.2" media="screen" />
 
 
+
+
+
 <link rel="icon" href="/rankinginfo/img/favicon.ico" >
 
 			
@@ -240,7 +243,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<td>
 										<p>IFE</p>
 									<?php if (!empty($row["img_ife"])) { ?>	
-										<a class="imagengrande" href="<?php echo $row["img_ife"]?>"<img height="100px" width="150px" src="<?php echo $row["img_ife"]?>"/></a>
+										<a class="imagengrande" href="<?php echo $row["img_ife"]?>"><img height="100px" width="150px" src="<?php echo $row["img_ife"]?>"/></a>
 <?php } else {?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 								
@@ -252,7 +255,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<td>
 										<p>Comprobante Domiciliario</p>
 										<?php if (!empty($row["img_comprobante_domicilio"])) { ?>	
-										<a class="imagengrande" href="<?php echo $row["img_comprobante_domicilio"]?>"<img height="100px" width="150px" src="<?php echo $row["img_comprobante_domicilio"]?>"/></a>
+										<a class="imagengrande" href="<?php echo $row["img_comprobante_domicilio"]?>"><img height="100px" width="150px" src="<?php echo $row["img_comprobante_domicilio"]?>"/></a>
 <?php } else { ?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 <?php  }?>
@@ -262,7 +265,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									<td>
 										<p>Comprobante de Trabajo</p>
 										<?php if (!empty($row["img_comprobante_trabajo"])) { ?>	
-										<a class="imagengrande" href="<?php echo $row["img_comprobante_trabajo"]?>"<img height="100px" width="150px" src="<?php echo $row["img_comprobante_trabajo"]?>"/>
+										<a class="imagengrande" href="<?php echo $row["img_comprobante_trabajo"]?>"><img height="100px" width="150px" src="<?php echo $row["img_comprobante_trabajo"]?>"/>
 <?php } else { ?>
 										<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 <?php  }?>
