@@ -36,9 +36,13 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
     	
     	<div class="botonera">
 <a href="insercion/"><input type="button" value="Insertar" class="inserta"></a>
+
+                <?php if(isset($_SESSION['privilegios'])&&$_SESSION['privilegios']>=10){ ?>
 <div id="edicion">
 <a href="edicion/"><input type="button" value="Editar" class="edita"></a>
 </div>
+<?php } ?>
+
 <a href="calificacion/"><input type="button" value="Calificar" class="califica"></a>
 
 <a href="consulta/"><input type="button" value="Consultar" class="consulta"></a>

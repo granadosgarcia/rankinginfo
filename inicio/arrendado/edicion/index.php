@@ -1,5 +1,8 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
+
+if(isset($_SESSION['privilegios'])&&$_SESSION['privilegios']>=10){
+
 ?>
 
 <html>
@@ -52,3 +55,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
    </div>
 </body>
 		</html>
+		<?php }
+
+		else{
+	echo "<script>window.location='../index.php'; </script>";
+}?>
