@@ -79,7 +79,7 @@ if(!($result=mysql_query($sql,$con)))
 
 
 		</div>
-	<div id="imagenesrow" >
+	<div id="gestiones" >
 	
 	<!-- DIV DE GESTIONES -->
 	<?php /* Comprobación de error y ejecución del query */
