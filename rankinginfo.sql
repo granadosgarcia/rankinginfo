@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 19, 2012 at 06:51 AM
+-- Generation Time: Jan 10, 2013 at 01:06 AM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=236 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=261 ;
 
 --
 -- Dumping data for table `actividades`
@@ -68,70 +68,7 @@ INSERT INTO `actividades` (`id_usuario`, `fecha`, `actividad`, `id`) VALUES
 (8, '2012-12-16 18:00:47', 'Consulta Arrendado', 169),
 (8, '2012-12-16 18:01:21', 'Edición Arrendado', 170),
 (8, '2012-12-16 18:04:50', 'Edición Arrendado', 171),
-(8, '2012-12-16 18:05:09', 'Consulta Arrendado', 172),
-(8, '2012-12-16 18:22:01', 'Consulta Arrendado', 173),
-(8, '2012-12-16 18:23:59', 'Consulta Arrendado', 174),
-(8, '2012-12-16 18:24:10', 'Consulta Arrendado', 175),
-(8, '2012-12-16 23:31:07', 'Insercion Arrendado', 176),
-(8, '2012-12-16 23:36:35', 'Consulta Arrendado', 177),
-(8, '2012-12-16 23:39:50', 'Consulta Arrendado', 178),
-(8, '2012-12-16 23:39:52', 'Consulta Arrendado', 179),
-(8, '2012-12-16 23:42:16', 'Consulta Arrendado', 180),
-(8, '2012-12-16 23:43:26', 'Consulta Arrendado', 181),
-(8, '2012-12-16 23:43:36', 'Consulta Arrendado', 182),
-(8, '2012-12-16 23:51:10', 'Consulta Arrendado', 183),
-(8, '2012-12-16 23:56:02', 'Consulta Arrendado', 184),
-(8, '2012-12-16 23:56:40', 'Consulta Arrendado', 185),
-(8, '2012-12-16 23:59:03', 'Consulta Arrendado', 186),
-(8, '2012-12-18 20:45:37', 'Insercion Empleado', 187),
-(8, '2012-12-18 20:47:09', 'Edicion Empleado', 188),
-(8, '2012-12-18 20:52:37', 'Edicion Empleado', 189),
-(8, '2012-12-18 20:55:45', 'Calificacion Empleado', 190),
-(8, '2012-12-18 20:55:59', 'Consulta Empleado', 191),
-(8, '2012-12-18 20:56:01', 'Consulta Empleado', 192),
-(8, '2012-12-18 20:56:07', 'Consulta Empleado', 193),
-(8, '2012-12-18 20:56:40', 'Consulta Empleado', 194),
-(8, '2012-12-18 20:58:12', 'Consulta Empleado', 195),
-(8, '2012-12-18 20:58:41', 'Consulta Empleado', 196),
-(8, '2012-12-18 21:00:03', 'Consulta Empleado', 197),
-(8, '2012-12-18 21:00:45', 'Consulta Empleado', 198),
-(8, '2012-12-18 21:02:13', 'Consulta Empleado', 199),
-(8, '2012-12-18 21:16:21', 'Consulta Empleado', 200),
-(8, '2012-12-18 21:21:44', 'Consulta Empleado', 201),
-(8, '2012-12-18 21:27:03', 'Consulta Empleado', 202),
-(8, '2012-12-18 21:28:16', 'Consulta Empleado', 203),
-(8, '2012-12-18 21:29:32', 'Consulta Empleado', 204),
-(8, '2012-12-18 21:31:20', 'Consulta Empleado', 205),
-(8, '2012-12-18 21:31:49', 'Consulta Empleado', 206),
-(8, '2012-12-18 21:32:30', 'Consulta Empleado', 207),
-(8, '2012-12-18 21:34:12', 'Consulta Empleado', 208),
-(8, '2012-12-18 21:35:48', 'Consulta Empleado', 209),
-(8, '2012-12-18 21:36:56', 'Consulta Empleado', 210),
-(8, '2012-12-18 21:37:17', 'Consulta Empleado', 211),
-(8, '2012-12-18 21:38:02', 'Consulta Empleado', 212),
-(8, '2012-12-18 21:40:44', 'Consulta Empleado', 213),
-(8, '2012-12-18 21:41:10', 'Consulta Empleado', 214),
-(8, '2012-12-18 21:44:42', 'Consulta Empleado', 215),
-(8, '2012-12-18 21:45:15', 'Consulta Empleado', 216),
-(8, '2012-12-18 21:46:06', 'Consulta Empleado', 217),
-(8, '2012-12-18 21:59:31', 'Consulta Empleado', 218),
-(8, '2012-12-18 21:59:53', 'Consulta Empleado', 219),
-(8, '2012-12-18 22:00:44', 'Consulta Empleado', 220),
-(8, '2012-12-18 22:01:57', 'Consulta Empleado', 221),
-(8, '2012-12-18 22:02:40', 'Consulta Empleado', 222),
-(8, '2012-12-18 22:08:13', 'Consulta Empleado', 223),
-(8, '2012-12-18 22:45:46', 'Consulta Empleado', 224),
-(8, '2012-12-18 22:46:29', 'Consulta Empleado', 225),
-(8, '2012-12-18 22:47:24', 'Consulta Empleado', 226),
-(8, '2012-12-18 22:47:58', 'Consulta Empleado', 227),
-(8, '2012-12-18 22:51:30', 'Consulta Empleado', 228),
-(8, '2012-12-18 23:46:28', 'Insercion Arrendado', 229),
-(8, '2012-12-18 23:48:34', 'Insercion Deudor VW', 230),
-(8, '2012-12-18 23:49:11', 'Insercion Deudor VW', 231),
-(8, '2012-12-19 00:02:35', 'Insercion Deudor VW', 232),
-(8, '2012-12-19 00:03:26', 'Insercion Deudor VW', 233),
-(8, '2012-12-19 00:04:47', 'Insercion Deudor VW', 234),
-(8, '2012-12-19 00:05:26', 'Insercion Deudor VW', 235);
+(8, '2012-12-16 18:05:09', 'Consulta Arrendado', 172);
 
 -- --------------------------------------------------------
 
@@ -168,12 +105,6 @@ CREATE TABLE IF NOT EXISTS `arrendado` (
 -- Dumping data for table `arrendado`
 --
 
-INSERT INTO `arrendado` (`nombre`, `apellido_paterno`, `apellido_materno`, `domicilio_actual`, `telefono_casa`, `estado_civil`, `img_ife`, `arrendador_actual`, `arrendador_anterior`, `domicilio_arrendador_actual`, `telefono_arrendador_actual`, `telefono_arrendador_anterior`, `domicilio_arrendador_anterior`, `domicilio_anterior`, `curp`, `nombre_aval`, `domicilio_aval`, `telefono_aval`, `nombre_conyuge`, `img_comprobante_domicilio`, `img_foto`) VALUES
-('Abraham', 'Gonzalez', 'FarÃ­as', '', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2308curAbraham', NULL, NULL, NULL, NULL, NULL, NULL),
-('Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 8884589, 'Ã¡cÃ©ntÃ³', '/rankinginfo/uploads/img12/Ã¡cÃ©ntÃ³/ife.jpg', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', NULL, NULL, NULL, NULL, 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 'Ã¡cÃ©ntÃ³', 9995499, 'Ã¡cÃ©ntÃ³', '/rankinginfo/uploads/img12/Ã¡cÃ©ntÃ³/comprobante_domicilio.jpg', '/rankinginfo/uploads/img12/Ã¡cÃ©ntÃ³/foto.jpg'),
-('Kevin', 'Mendez', 'Tellez', '13 B sur 7737 San Jose Mayorazgo', 8884588, 'Casado', '/rankinginfo/uploads/img12/BEML920313HCMLNS09/ife.jpg', 'Abraham GonzÃ¡lez FarÃ­as', 'Martin Granados GarcÃ­a', NULL, NULL, NULL, NULL, '13 B sur 7737 San Jose Mayorazgo', 'BEML920313HCMLNS09', 'Irvin Mendez Tellez', '13 B sur 7737 San Jose Mayorazgo', 8884588, 'Maria Martita Jimenez', '/rankinginfo/uploads/img12/BEML920313HCMLNS09/comprobante_domicilio.jpg', '/rankinginfo/uploads/img12/BEML920313HCMLNS09/foto.jpg'),
-('JÃ³LOÃ¡Ã©l', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'nerfnow', NULL, NULL, NULL, NULL, NULL, NULL),
-('Prueba1', 'Prueba1', 'Prueba1', 'Prueba1', 23452, 'Prueba1', '/rankinginfo/uploads/img12/Prueba1/ife.jpg', 'Prueba1', 'Prueba1', NULL, NULL, NULL, NULL, 'Prueba1', 'Prueba1', 'Prueba1', 'Prueba1', 23423, 'Prueba1', '/rankinginfo/uploads/img12/Prueba1/comprobante_domicilio.jpg', '/rankinginfo/uploads/img12/Prueba1/foto.jpg');
 
 -- --------------------------------------------------------
 
@@ -198,12 +129,6 @@ CREATE TABLE IF NOT EXISTS `arr_calif` (
 -- Dumping data for table `arr_calif`
 --
 
-INSERT INTO `arr_calif` (`curp`, `arr_pagos`, `arr_propiedad_actual`, `arr_propiedad_anterior`, `arr_general`, `comentario`, `fecha`, `id`) VALUES
-('BEML920313HCMLNS09', 2, 4, 2, 3, 'sdfjk acetÃ³ Ã¡cÃ©ntÃ³ jo jojo deberia de terner mas experiencia, pero no me gusto entonces y por eso bla bla bal bla lbalblaldsklfjsadÃ±klfjÃ±skdljfklÃ±adjsfklÃ±jiohji0`', '2012-12-16', 5),
-('BEML920313HCMLNS09', 4, 1, 1, 5, 'espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera espera ', '2012-12-16', 6),
-('BEML920313HCMLNS09', 0, 0, 0, 0, 'no tengo opinion', '2012-12-16', 7),
-('Ã¡cÃ©ntÃ³', 3, 0, 0, 0, '', '2012-12-16', 8),
-('Ã¡cÃ©ntÃ³', 0, 0, 0, 0, 'asdf', '2012-12-16', 9);
 
 -- --------------------------------------------------------
 
@@ -244,8 +169,6 @@ CREATE TABLE IF NOT EXISTS `empleado` (
 -- Dumping data for table `empleado`
 --
 
-INSERT INTO `empleado` (`curp`, `nombres`, `apellido_paterno`, `apellido_materno`, `domicilio`, `telefono_particular`, `telefono_personal`, `estado_civil`, `img_ife`, `img_comprobante_domicilio`, `img_comprobante_trabajo`, `clave_escolaridad`, `nombre_conyuge`, `patron_anterior`, `patron_actual`, `responsable_actual`, `telefono_patronactual`, `domicilio_patronactual`, `telefono_patronanterior`, `domicilio_patronanterior`, `img_foto`, `empleo_anterior`, `tiempo_trabajoanterior`, `habilidades`) VALUES
-('kasdcurpkevinsadÃ±lkfj', 'Kevin', 'Mendez', 'Tellez', '13 B sur 7737 San Jose Mayorazgo', 8884588, 8884588, 'Casado', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/ife.jpg', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/comprobante_domicilio.jpg', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/comprobante_trabajo.jpg', 1, 'Maria Martita Jimenez', 'Abraham GonzÃ¡lez FarÃ­as', 'Martin Granados GarcÃ­a', 'Irvin Mendez Tellez', 8884588, 'Atlixcayotl numero 4d bla bla', 8884588, '13 B sur 7737 San Jose Mayorazgo', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/foto.jpg', 'Arrendador', '2 aÃ±os', 'Todas las hablidades posibles por existir y por haber en un empleado');
 
 -- --------------------------------------------------------
 
@@ -268,8 +191,6 @@ CREATE TABLE IF NOT EXISTS `emp_calif` (
 -- Dumping data for table `emp_calif`
 --
 
-INSERT INTO `emp_calif` (`id`, `curp`, `emp_desempeno`, `emp_calif_anterior`, `comentario`, `fecha`) VALUES
-(1, 'kasdcurpkevinsadÃ±lkfj', 4, 2, 'safdsaf', '2012-12-18');
 
 -- --------------------------------------------------------
 
@@ -290,8 +211,6 @@ CREATE TABLE IF NOT EXISTS `escolaridad` (
 -- Dumping data for table `escolaridad`
 --
 
-INSERT INTO `escolaridad` (`clave`, `grado_escolar`, `lugar_estudio`, `img_certificado_escolar`, `img_cedula_profesional`) VALUES
-(1, 'Ingeniero en Ciencias de la ComputaciÃ³n', 'Finlandia ITESM etc', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/img_certificado_escolar.jpg', '/rankinginfo/uploads/img21/kasdcurpkevinsadÃ±lkfj/img_cedula_profesional.jpg');
 
 -- --------------------------------------------------------
 
@@ -312,7 +231,7 @@ CREATE TABLE IF NOT EXISTS `gestiones` (
   `ultimo_abono` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `gestiones`
