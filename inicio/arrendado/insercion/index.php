@@ -6,9 +6,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 <title> Insertar Arrendado </title>
 <link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
-
-</head>
-
 <script> 
     function verifica (){
         if(document.getElementById("nombre").value=="")
@@ -43,6 +40,18 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 
 </script>
+<script>
+
+
+	function conyuge () 
+	{
+		var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+	}
+</script>
+</head>
+
+
 
 	<body>
 	<div id="entero">
@@ -81,7 +90,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 			
 			<li><label>Estado Civil</label>
-				<select name="estado_civil" id="estado_civil" style="float:right;">
+				<select name="estado_civil" id="estado_civil" style="float:right;" onchange="conyuge ()">
 					<option>-----</option>
 
 					<option>Soltero</option>
@@ -96,7 +105,12 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 					<option>Juntada</option>
 				</select>
 			</li>
-		</ul>
+					<div id="hidden" style=" visibility:hidden;">
+
+		<li><label>Nombre del Conyuge</label>
+				<input type="text" name="nombre_conyuge"     id="nombre_conyuge"></li>
+					</div></ul>
+
 		</div>
 		
 		<div id="arrendadorrow">
@@ -127,8 +141,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			<li><label>T&eacute;lefono del Aval</label>
 			<input type="text" name="telefono_aval"      id="telefono_aval"> </li>
 			
-			<li><label>Nombre del Conyuge</label>
-				<input type="text" name="nombre_conyuge"     id="nombre_conyuge"></li>
 			</ul>
 		</div>
 		

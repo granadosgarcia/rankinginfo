@@ -6,9 +6,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 <title> Insertar Empleado </title>
 <link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
-
-</head>
-
 <script> 
 
     function verifica ()
@@ -66,6 +63,9 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 		x.style.visibility="visible";
 	}
 </script>
+</head>
+
+
 
 	<body>
 	<div id="entero">
