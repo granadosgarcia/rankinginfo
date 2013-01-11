@@ -100,14 +100,41 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
 			</br>
 
 		<label>Domicilio</label>
-		<input type="text" name="domicilio"    id="domicilio"		value="<?php echo $row['domicilio']?>" class="inputderecha">
+			</br>
+			
+		<label>Calle</label>
+		<input type="text" name="calle"    id="calle"		value="<?php echo $row['calle']?>" class="inputderecha">
+			</br>
+		<label>No. Interior</label>
+		<input type="text" name="no_interior"    id="no_interior"		value="<?php echo $row['no_interior']?>" class="inputderecha">
+			</br>
+		<label>No. Exterior</label>
+		<input type="text" name="no_exterior"    id="no_exterior"		value="<?php echo $row['no_exterior']?>" class="inputderecha">
+			</br>
+		<label>Colonia</label>
+		<input type="text" name="colonia"    id="colonia"		value="<?php echo $row['colonia']?>" class="inputderecha">
+			</br>
+		<label>Ciudad</label>
+		<input type="text" name="Ciudad"    id="ciudad"		value="<?php echo $row['ciudad']?>" class="inputderecha">
+			</br>
+		<label>Estado</label>
+		<input type="text" name="estado"    id="estado"		value="<?php echo $row['estado']?>" class="inputderecha">
+			</br>
+		<label>Codigo Postal</label>
+		<input type="text" name="codigo_postal"    id="codigo_postal"		value="<?php echo $row['codigo_postal']?>" class="inputderecha">
+			</br>
+		<label>Municipio</label>
+		<input type="text" name="municipio"    id="municipio"		value="<?php echo $row['municipio']?>" class="inputderecha">
+			</br>
+		<label>Delegación</label>
+		<input type="text" name="delegacion"    id="delegacion"		value="<?php echo $row['delegacion']?>" class="inputderecha">
 			</br>
 
 		<label>Telefono Particular</label>
 		<input type="text" name="telefono_particular"       id="telefono_particular"		value="<?php echo $row['telefono_particular']?>" class="inputderecha"> 
 			</br>
 
-		<label>Telefono Personal</label>
+		<label>Telefono de Casa</label>
 		<input type="text" name="telefono_personal"        id="telefono_personal"			value="<?php echo $row['telefono_personal']?>" class="inputderecha">
 			</br>
 		<label>Estado Civil</label>
@@ -157,9 +184,23 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
 		<label>Domicilio Patron Anterior</label>
 		<input type="text" name="domicilio_patronanterior"      id="domicilio_patronanterior"			value="<?php echo $row['domicilio_patronanterior'] ?>" class="inputderecha">
 			</br>
-
-		
-	</div>
+			
+		<label>Grado Escolar</label>
+		<input type="text" name="grado_escolar"      id="grado_escolar"			value="<?php echo $row['grado_escolar'] ?>" class="inputderecha">
+			</br>
+			
+		<label>Lugar de Estudio</label>
+		<input type="text" name="lugar_estudio"      id="lugar_estudio"			value="<?php echo $row['lugar_estudio'] ?>" class="inputderecha">
+			</br>
+			
+		<input type="text" name="lugar_estudio2"      id="lugar_estudio2"			value="<?php echo $row['lugar_estudio2'] ?>" class="inputderecha">
+			</br>			
+		<input type="text" name="lugar_estudio3"      id="lugar_estudio3"			value="<?php echo $row['lugar_estudio3'] ?>" class="inputderecha">
+			</br>
+		<input type="text" name="lugar_estudio4"      id="lugar_estudio4"			value="<?php echo $row['lugar_estudio4'] ?>" class="inputderecha">
+			</br>	
+		<input type="text" name="lugar_estudio5"      id="lugar_estudio5"			value="<?php echo $row['lugar_estudio5'] ?>" class="inputderecha">
+			</br>	</div>
 	
 	<div id="imagenesrow">
 		<p>Detalles Personales</p>

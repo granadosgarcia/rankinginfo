@@ -174,12 +174,50 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 <?php if (!empty($row["calle"])||!empty($row["no_exterior"])) { ?>
 									<tr>
 										<td>Domicilio Actual:</td>
-										<td><?php echo $row["domicilio"] ?></td>
-									</tr>
+<?php if (!empty($row["calle"])) { ?>							
+										<td><label>Calle: </label><?php echo $row["calle"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["no_interior"])) { ?>							
+										<td><label>No. Interior: </label><?php echo $row["no_interior"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["no_exterior"])) { ?>							
+										<td><label>No. Exterior: </label><?php echo $row["no_exterior"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["colonia"])) { ?>							
+										<td><label>Colonia: </label><?php echo $row["colonia"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["ciudad"])) { ?>							
+										<td><label>Ciudad: </label><?php echo $row["ciudad"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["estado"])) { ?>							
+										<td><label>Estado: </label><?php echo $row["estado"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["codigo_postal"])) { ?>							
+										<td><label>Codigo Postal: </label><?php echo $row["codigo_postal"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["municipio"])) { ?>							
+										<td><label>Municipio: </label><?php echo $row["municipio"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["delegacion"])) { ?>							
+										<td><label>Delegación: </label><?php echo $row["delegacion"] ?></td>
+<?php } ?>
+				</tr>
+									
+									
+									
+									
 <?php } if (!empty($row["telefono_particular"]) && !empty($row["telefono_personal"])) { ?>			
 									<tr>
 			<?php if (!empty($row["estado_civil"])) { ?>							
-										<td>Telefono Personal:</td>
+										<td>Telefono de Casa:</td>
 										<td><?php echo $row["telefono_personal"] ?></td>
 			<?php } ?>						
 				
@@ -329,7 +367,22 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 										<td>Lugar de Estudio</td>
 										<td><?php echo $row['lugar_estudio']?></td>
 										
-									</tr>
+									<?php if (!empty($row["lugar_estudio2"])) { ?>
+										<td><?php echo $row['lugar_estudio2']?></td>
+									<?php } ?>
+									
+									<?php if (!empty($row["lugar_estudio3"])) { ?>
+										<td><?php echo $row['lugar_estudio3']?></td>
+									<?php } ?>
+									
+									<?php if (!empty($row["lugar_estudio4"])) { ?>
+										<td><?php echo $row['lugar_estudio4']?></td>
+									<?php } ?>
+									
+									
+									<?php if (!empty($row["lugar_estudio5"])) { ?>
+										<td><?php echo $row['lugar_estudio5']?></td>
+									<?php } ?>									</tr>
 <?php } ?>
 									<tr>
 <?php if(!empty($row['img_cedula_profesional'])) {?>

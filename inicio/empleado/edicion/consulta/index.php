@@ -127,6 +127,8 @@ while($row = mysql_fetch_array($resultado)){
 				echo "<td>". $row['apellido_materno']. "</td>";
 				echo "<td>". $row['curp']. "</td>";
 				echo "<td>". $row['telefono_particular']. " </td>";
+/* 				echo "<td>". $row['lugar_trabajo']. " </td>"; */
+
 				
 				
 				

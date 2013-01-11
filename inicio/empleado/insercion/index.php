@@ -100,7 +100,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 			<li><label>Telefono Particular</label><input type="text" name="telefono_particular"       id="telefono_particular"> 	</li>
 
-			<li><label>Telefono Personal</label><input type="text" name="telefono_personal"       id="telefono_personal"> 	</li>
+			<li><label>Telefono de Casa</label><input type="text" name="telefono_personal"       id="telefono_personal"> 	</li>
 					
 			<li><label>Estado Civil</label><input type="text" name="estado_civil"        id="estado_civil"></li>
 
@@ -157,6 +157,14 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			<ul style=" list-style: none;">
 			<li><label>Lugar de estudio</label>
 			<input type="text" name="lugar_estudio"     id="lugar_estudio"></li>
+			<li><label>Lugar de estudio</label>
+			<input type="text" name="lugar_estudio2"     id="lugar_estudio"></li>
+			<li><label>Lugar de estudio</label>
+			<input type="text" name="lugar_estudio3"     id="lugar_estudio"></li>
+			<li><label>Lugar de estudio</label>
+			<input type="text" name="lugar_estudio4"     id="lugar_estudio"></li>
+			<li><label>Lugar de estudio</label>
+			<input type="text" name="lugar_estudio5"     id="lugar_estudio"></li>
 			
 			<li><label>Grado Escolar</label>
 			<input type="text" name="grado_escolar"     id="grado_escolar"></li>
