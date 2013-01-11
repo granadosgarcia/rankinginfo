@@ -80,7 +80,22 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			<li><label>Telefono de casa</label><input type="text" name="telefono_casa"       id="telefono_casa"> 	</li>
 
 			
-			<li><label>Estado Civil</label><input type="text" name="estado_civil"        id="estado_civil"></li>
+			<li><label>Estado Civil</label>
+				<select name="estado_civil" id="estado_civil" style="float:right;">
+					<option>-----</option>
+
+					<option>Soltero</option>
+					<option>Soltera</option>
+					<option>Casado</option>
+					<option>Casada</option>
+					<option>Divorciado</option>
+					<option>Divorciada</option>
+					<option>Viudo</option>
+					<option>Viuda</option>
+					<option>Juntado</option>
+					<option>Juntada</option>
+				</select>
+			</li>
 		</ul>
 		</div>
 		
