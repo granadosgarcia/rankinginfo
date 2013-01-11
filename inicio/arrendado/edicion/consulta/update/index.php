@@ -98,7 +98,181 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 			</br>
 
 		<label>Estado Civil</label>
-		<input type="text" name="estado_civil"        id="estado_civil"			value="<?php echo $row['estado_civil']?>" class="inputderecha">
+		<?php switch ($row['estado_civil']) {
+			case "Soltero":
+				# code...
+			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+					<option>Soltero</option>
+					<option>Soltera</option>
+					<option>Casado</option>
+					<option>Casada</option>
+					<option>Divorciado</option>
+					<option>Divorciada</option>
+					<option>Viudo</option>
+					<option>Viuda</option>
+					<option>Juntado</option>
+					<option>Juntada</option>
+				</select>";
+				break;
+			case "Soltera":
+				# code...
+				echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+					<option>Soltera</option>
+					<option>Soltero</option>
+					<option>Casado</option>
+					<option>Casada</option>
+					<option>Divorciado</option>
+					<option>Divorciada</option>
+					<option>Viudo</option>
+					<option>Viuda</option>
+					<option>Juntado</option>
+					<option>Juntada</option>
+				</select>";
+				break;
+			case "Casado":
+				# code...
+				echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+					<option>Casado</option>
+					<option>Casada</option>					
+					<option>Soltera</option>
+					<option>Soltero</option>
+					<option>Divorciado</option>
+					<option>Divorciada</option>
+					<option>Viudo</option>
+					<option>Viuda</option>
+					<option>Juntado</option>
+					<option>Juntada</option>
+				</select>";
+				break;
+			case "Casada":
+				# code...
+			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+					<option>Casada</option>					
+					<option>Casado</option>
+					<option>Soltera</option>
+					<option>Soltero</option>
+					<option>Divorciado</option>
+					<option>Divorciada</option>
+					<option>Viudo</option>
+					<option>Viuda</option>
+					<option>Juntado</option>
+					<option>Juntada</option>
+				</select>";
+				break;
+			case "Divorciado":
+				# code...
+				echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+					<option>Divorciado</option>
+					<option>Divorciada</option>
+					<option>Casada</option>					
+					<option>Casado</option>
+					<option>Soltera</option>
+					<option>Soltero</option>
+					<option>Viudo</option>
+					<option>Viuda</option>
+					<option>Juntado</option>
+					<option>Juntada</option>
+				</select>";
+				break;
+			case "Divorciada":
+				# code...
+			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+					<option>Divorciada</option>
+					<option>Divorciado</option>
+					<option>Casada</option>					
+					<option>Casado</option>
+					<option>Soltera</option>
+					<option>Soltero</option>
+					<option>Viudo</option>
+					<option>Viuda</option>
+					<option>Juntado</option>
+					<option>Juntada</option>
+				</select>";
+				break;
+			case "Viudo":
+				# code...
+			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+					<option>Viudo</option>
+					<option>Viuda</option>
+					<option>Divorciada</option>
+					<option>Divorciado</option>
+					<option>Casada</option>					
+					<option>Casado</option>
+					<option>Soltera</option>
+					<option>Soltero</option>
+					<option>Juntado</option>
+					<option>Juntada</option>
+				</select>";
+				break;
+			case "Viuda":
+				# code...
+				echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+					<option>Viuda</option>
+					<option>Viudo</option>
+					<option>Divorciada</option>
+					<option>Divorciado</option>
+					<option>Casada</option>					
+					<option>Casado</option>
+					<option>Soltera</option>
+					<option>Soltero</option>
+					<option>Juntado</option>
+					<option>Juntada</option>
+				</select>";
+				break;
+			case "Juntado":
+				# code...
+				echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+					<option>Juntado</option>
+					<option>Juntada</option>
+					<option>Viuda</option>
+					<option>Viudo</option>
+					<option>Divorciada</option>
+					<option>Divorciado</option>
+					<option>Casada</option>					
+					<option>Casado</option>
+					<option>Soltera</option>
+					<option>Soltero</option>
+					
+				</select>";
+				break;
+			case "Juntada":
+				# code...
+			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+					<option>Juntada</option>
+					<option>Juntado</option>
+					<option>Viuda</option>
+					<option>Viudo</option>
+					<option>Divorciada</option>
+					<option>Divorciado</option>
+					<option>Casada</option>					
+					<option>Casado</option>
+					<option>Soltera</option>
+					<option>Soltero</option>
+					
+				</select>";
+				break;
+			case "-----":
+				# code...
+			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+					<option>-----</option>
+					<option>Soltero</option>
+					<option>Soltera</option>
+					<option>Casado</option>
+					<option>Casada</option>
+					<option>Divorciado</option>
+					<option>Divorciada</option>
+					<option>Viudo</option>
+					<option>Viuda</option>
+					<option>Juntado</option>
+					<option>Juntada</option>
+				</select>";
+				break;
+			
+			default:
+				# code...
+				break;
+		} ?>
+			
 			</div>
 			<div id="arrendadorrow">
 		<label>Arrendador Actual</label>
