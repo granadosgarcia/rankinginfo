@@ -7,6 +7,7 @@ error_reporting(E_ERROR);
 /* Includes de php */
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
+
 $sqlact="
 INSERT INTO actividades (id_usuario, fecha, actividad)
 VALUES ('$_SESSION[usuario_id]', NOW(), 'Consulta Empleado')";
@@ -14,7 +15,7 @@ VALUES ('$_SESSION[usuario_id]', NOW(), 'Consulta Empleado')";
 /* Contador para llenar el arreglo de consultas */
 $i=0;
 $k=0;
-$con=1;
+$cont=1;
 /* GET */
 $consultas = $_GET['consulta'];
 $_SESSION['consultadescarga']= $consultas;
@@ -408,9 +409,9 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 										
 
 <?php while($row=mysql_fetch_array($resultado1[$k])){ ?>	
-<?php if (!empty($row["fecha"]) && $con==1) { ?>
+<?php if (!empty($row["fecha"]) && $cont==1) { ?>
 <h2>Calificaciones</h2>	
-<?php $con++; } ?>					
+<?php $cont++; } ?>					
 								<table class="califs">
 <?php if (!empty($row["fecha"])) { ?>
 								<tr>
