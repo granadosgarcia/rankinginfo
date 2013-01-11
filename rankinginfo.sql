@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2013 at 05:01 PM
+-- Generation Time: Jan 11, 2013 at 08:03 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -32,12 +32,14 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=173 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=174 ;
 
 --
 -- Dumping data for table `actividades`
 --
 
+INSERT INTO `actividades` (`id_usuario`, `fecha`, `actividad`, `id`) VALUES
+(8, '2013-01-11 13:33:00', 'Insercion Empleado', 173);
 
 -- --------------------------------------------------------
 
@@ -59,6 +61,7 @@ CREATE TABLE IF NOT EXISTS `arrendado` (
   `municipio` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
   `delegacion` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
   `telefono_casa` int(30) DEFAULT NULL,
+  `telefono_particular` int(30) DEFAULT NULL,
   `estado_civil` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
   `img_ife` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
   `arrendador_actual` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -75,6 +78,7 @@ CREATE TABLE IF NOT EXISTS `arrendado` (
   `nombre_conyuge` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
   `img_comprobante_domicilio` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
   `img_foto` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `clave_ife` int(30) DEFAULT NULL,
   PRIMARY KEY (`curp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
@@ -91,9 +95,11 @@ CREATE TABLE IF NOT EXISTS `arrendado` (
 
 CREATE TABLE IF NOT EXISTS `arr_calif` (
   `curp` varchar(30) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `nombre_evaluador` varchar(200) DEFAULT NULL,
+  `telefono_evaluador` int(30) DEFAULT NULL,
+  `direccion_evaluador` int(200) DEFAULT NULL,
   `arr_pagos` int(1) DEFAULT NULL,
   `arr_propiedad_actual` int(1) DEFAULT NULL,
-  `arr_propiedad_anterior` int(1) DEFAULT NULL,
   `arr_general` int(1) DEFAULT NULL,
   `comentario` varchar(500) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   `fecha` date DEFAULT NULL,
@@ -146,14 +152,17 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   `empleo_anterior` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
   `tiempo_trabajoanterior` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
   `habilidades` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `clave_ife` int(30) DEFAULT NULL,
   PRIMARY KEY (`curp`),
   KEY `clave_escolaridad` (`clave_escolaridad`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `empleado`
 --
 
+INSERT INTO `empleado` (`curp`, `nombres`, `apellido_paterno`, `apellido_materno`, `telefono_particular`, `telefono_personal`, `calle`, `no_interior`, `no_exterior`, `colonia`, `ciudad`, `estado`, `codigo_postal`, `municipio`, `delegacion`, `estado_civil`, `img_ife`, `img_comprobante_domicilio`, `img_comprobante_trabajo`, `clave_escolaridad`, `nombre_conyuge`, `patron_anterior`, `patron_actual`, `responsable_actual`, `telefono_patronactual`, `domicilio_patronactual`, `telefono_patronanterior`, `domicilio_patronanterior`, `img_foto`, `empleo_anterior`, `tiempo_trabajoanterior`, `habilidades`, `clave_ife`) VALUES
+('jojo', 'Abraham', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, 'VW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -165,9 +174,11 @@ CREATE TABLE IF NOT EXISTS `emp_calif` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `curp` varchar(30) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `emp_desempeno` int(1) DEFAULT NULL,
-  `emp_calif_anterior` int(1) DEFAULT NULL,
   `comentario` varchar(500) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   `fecha` date DEFAULT NULL,
+  `nombre_evaluador` varchar(200) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `empresa_evaluador` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `puesto_evaluador` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -185,10 +196,14 @@ CREATE TABLE IF NOT EXISTS `emp_calif` (
 
 CREATE TABLE IF NOT EXISTS `escolaridad` (
   `clave` int(10) NOT NULL,
-  `grado_escolar` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
-  `lugar_estudio` varchar(200) COLLATE latin1_spanish_ci NOT NULL,
-  `img_certificado_escolar` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
-  `img_cedula_profesional` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
+  `grado_escolar` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `lugar_estudio` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `lugar_estudio2` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `lugar_estudio3` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `lugar_estudio4` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `lugar_estudio5` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `img_certificado_escolar` varchar(300) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `img_cedula_profesional` varchar(300) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`clave`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
@@ -196,6 +211,8 @@ CREATE TABLE IF NOT EXISTS `escolaridad` (
 -- Dumping data for table `escolaridad`
 --
 
+INSERT INTO `escolaridad` (`clave`, `grado_escolar`, `lugar_estudio`, `lugar_estudio2`, `lugar_estudio3`, `lugar_estudio4`, `lugar_estudio5`, `img_certificado_escolar`, `img_cedula_profesional`) VALUES
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
