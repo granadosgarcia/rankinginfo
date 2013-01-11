@@ -54,6 +54,17 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
         
         
 }
+
+
+</script>
+<script>
+
+
+	function conyuge () 
+	{
+		var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+	}
 </script>
 
 	<body>
@@ -102,9 +113,10 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 			<li><label>Telefono de Casa</label><input type="text" name="telefono_personal"       id="telefono_personal"> 	</li>
 					
-			<li><label>Estado Civil</label><input type="text" name="estado_civil"        id="estado_civil"></li>
-
-			</ul>
+			<li><label>Estado Civil</label><input type="text" name="estado_civil"        id="estado_civil" onchange="conyuge ()"></li>
+			<div id="hidden" style=" visibility:hidden;">
+			<li><label>Nombre del Conyuge</label>
+			<input type="text" name="nombre_conyuge"     id="nombre_conyuge"></li></div></ul>
 
 		</div>
 		
@@ -138,8 +150,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			<input type="text" name="curp"               id="curp">	</li>
 
 			
-			<li><label>Nombre del Conyuge</label>
-			<input type="text" name="nombre_conyuge"     id="nombre_conyuge"></li>
+			
 			
 			<li><label>Empleo Anterior</label>
 			<input type="text" name="empleo_anterior"     id="empleo_anterior"></li>
