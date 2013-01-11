@@ -7,7 +7,17 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
  $nombres= mysql_real_escape_string($_POST['nombres']);
  $apellido_paterno= mysql_real_escape_string($_POST['apellido_paterno']);
  $apellido_materno= mysql_real_escape_string($_POST['apellido_materno']);
- $domicilio= mysql_real_escape_string($_POST['domicilio']);
+ 
+ $calle= mysql_real_escape_string($_POST['calle']);
+ $no_interior= mysql_real_escape_string($_POST['no_interior']);
+ $no_exterior= mysql_real_escape_string($_POST['no_exterior']);
+ $colonia= mysql_real_escape_string($_POST['colonia']);
+ $ciudad= mysql_real_escape_string($_POST['ciudad']);
+ $estado= mysql_real_escape_string($_POST['estado']);
+ $codigo_postal= mysql_real_escape_string($_POST['codigo_postal']);
+ $municipio= mysql_real_escape_string($_POST['municipio']);
+ $delegacion= mysql_real_escape_string($_POST['delegacion']);
+
  $telefono_particular= mysql_real_escape_string($_POST['telefono_particular']);
  $telefono_personal= mysql_real_escape_string($_POST['telefono_personal']);
  $estado_civil= mysql_real_escape_string($_POST['estado_civil']);
@@ -22,6 +32,14 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
  $empleo_anterior= mysql_real_escape_string($_POST['empleo_anterior']);
  $tiempo_trabajoanterior= mysql_real_escape_string($_POST['tiempo_trabajoanterior']);
  $habilidades= mysql_real_escape_string($_POST['habilidades']);
+ 
+ $grado = mysql_real_escape_string($_POST['grado_escolar']);
+ $lugar_estudio1 = mysql_real_escape_string($_POST['lugar_estudio']);
+ $lugar_estudio2 = mysql_real_escape_string($_POST['lugar_estudio2']);
+ $lugar_estudio3 = mysql_real_escape_string($_POST['lugar_estudio3']);
+ $lugar_estudio4 = mysql_real_escape_string($_POST['lugar_estudio4']);
+ $lugar_estudio5 = mysql_real_escape_string($_POST['lugar_estudio5']);
+
 
 $sqlact="
 INSERT INTO actividades (id_usuario, fecha, actividad)
@@ -41,8 +59,24 @@ $sql.=", apellido_paterno 	= '$apellido_paterno'";
 if(!empty($_POST['apellido_materno']))
 $sql.=", apellido_materno 	= '$apellido_materno'";
 
-if(!empty($_POST['domicilio']))
-$sql.=", domicilio 	= '$domicilio'";
+if(!empty($_POST['calle']))
+$sql.=", calle= '$calle'";
+if(!empty($_POST['no_interior']))
+$sql.=", no_interior ='$no_interior'";
+if(!empty($_POST['no_exterior']))
+$sql.=", no_exterior ='$no_exterior'";
+if(!empty($_POST['colonia']))
+$sql.=", colonia ='$colonia'";
+if(!empty($_POST['ciudad']))
+$sql.=", ciudad ='$ciudad'";
+if(!empty($_POST['estado']))
+$sql.=", estado ='$estado'";
+if(!empty($_POST['codigo_postal']))
+$sql.=", codigo_postal ='$codigo_postal'";
+if(!empty($_POST['municipio']))
+$sql.=", municipio = '$municipio'";
+if(!empty($_POST['delegacion']))
+$sql.=", delegacion = '$delegacion'";
 
 if(!empty($_POST['telefono_particular']))
 $sql.=", telefono_particular    	= '$telefono_particular'";
@@ -110,10 +144,18 @@ curp ='$curp'";
 UPDATE escolaridad SET";
 $sql.=" clave		= '$_POST[clave]'";
 if(!empty($_POST['grado_escolar ']))
-$sql.=", grado_escolar 		= '$_POST[grado_escolar]'";
+$sql.=", grado_escolar 		= '$grado'";
 
-if(!empty($_POST['lugar_estudio ']))
-$sql.=", lugar_estudio 		= '$_POST[lugar_estudio]'";
+if(!empty($_POST['lugar_estudio']))
+$sql.=", lugar_estudio 		= '$lugar_estudio1'";
+if(!empty($_POST['lugar_estudio2']))
+$sql.=", lugar_estudio2 		= '$lugar_estudio2'";
+if(!empty($_POST['lugar_estudio3']))
+$sql.=", lugar_estudio3 		= '$lugar_estudio3'";
+if(!empty($_POST['lugar_estudio4']))
+$sql.=", lugar_estudio4 		= '$lugar_estudio4'";
+if(!empty($_POST['lugar_estudio5']))
+$sql.=", lugar_estudio5 		= '$lugar_estudio5'";
 $sql.="WHERE 
 clave='$_POST[clave]'";
   
