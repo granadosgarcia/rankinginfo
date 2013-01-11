@@ -263,7 +263,48 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 <? } ?>
 							</table>
 	
+
+	<div id="patrones">
+								<table>
+								
+<?php if (!empty($row["patron_actual"])) { ?>	
+									<tr>
+										<td>Patron Actual:</td>
+										<td><?php echo $row["patron_actual"] ?></td>
+									</tr>
+<?php } if (!empty($row["domicilio_patronactual"])) { ?>									
+									<tr>
+										<td>Domicilio Patron Actual:</td>
+										<td><?php echo $row["domicilio_patronactual"] ?></td>
+									</tr>
+<?php } if (!empty($row["domicilio_patronactual"])) { ?>									
+									<tr>
+										<td>Teléfono Patron Actual:</td>
+										<td><?php echo $row["telefono_patronactual"] ?></td>
+									</tr>
+<?php } 
+	if (!empty($row["patron_anterior"])) { ?>
+									<tr>
+										<td>Patron Anterior:</td>
+										<td><?php echo $row["patron_anterior"] ?></td>
+									</tr>
+<?php } if (!empty($row["domicilio_patronanterior"])) { ?>
+									<tr>
+										<td>Domicilio Patron Anterior:</td>
+										<td><?php echo $row["domicilio_patronanterior"] ?></td>
+									</tr>
+<?php } if (!empty($row["telefono_patronanterior"])) { ?>
+									<tr>
+										<td>Teléfono Patron Anterior:</td>
+										<td><?php echo $row["telefono_patronanterior"] ?></td>
+									</tr>
+<?php } ?>
+								</table>
 							</div>
+		
+							</div>
+
+
 		<div class="contain">
 
 							<div id="fotos">
@@ -316,44 +357,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 							</table>
 							</div>
 		
-							<div id="patrones">
-								<table>
-								
-<?php if (!empty($row["patron_actual"])) { ?>	
-									<tr>
-										<td>Patron Actual:</td>
-										<td><?php echo $row["patron_actual"] ?></td>
-									</tr>
-<?php } if (!empty($row["domicilio_patronactual"])) { ?>									
-									<tr>
-										<td>Domicilio Patron Actual:</td>
-										<td><?php echo $row["domicilio_patronactual"] ?></td>
-									</tr>
-<?php } if (!empty($row["domicilio_patronactual"])) { ?>									
-									<tr>
-										<td>Teléfono Patron Actual:</td>
-										<td><?php echo $row["telefono_patronactual"] ?></td>
-									</tr>
-<?php } 
-	if (!empty($row["patron_anterior"])) { ?>
-									<tr>
-										<td>Patron Anterior:</td>
-										<td><?php echo $row["patron_anterior"] ?></td>
-									</tr>
-<?php } if (!empty($row["domicilio_patronanterior"])) { ?>
-									<tr>
-										<td>Domicilio Patron Anterior:</td>
-										<td><?php echo $row["domicilio_patronanterior"] ?></td>
-									</tr>
-<?php } if (!empty($row["telefono_patronanterior"])) { ?>
-									<tr>
-										<td>Teléfono Patron Anterior:</td>
-										<td><?php echo $row["telefono_patronanterior"] ?></td>
-									</tr>
-<?php } ?>
-								</table>
-							</div>
-		
+							
 					</div>
 					
 					<div id="escolaridad">
