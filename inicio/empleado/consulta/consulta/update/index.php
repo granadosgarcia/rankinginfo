@@ -14,6 +14,7 @@ VALUES ('$_SESSION[usuario_id]', NOW(), 'Consulta Empleado')";
 /* Contador para llenar el arreglo de consultas */
 $i=0;
 $k=0;
+$con=1;
 /* GET */
 $consultas = $_GET['consulta'];
 $_SESSION['consultadescarga']= $consultas;
@@ -404,9 +405,12 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 				</div>
 					<div class="calificacionesdiv1">
 
-										<h2>Calificaciones</h2>
+										
 
-<?php while($row=mysql_fetch_array($resultado1[$k])){ ?>							
+<?php while($row=mysql_fetch_array($resultado1[$k])){ ?>	
+<?php if (!empty($row["fecha"]) && $con==1) { ?>
+<h2>Calificaciones</h2>	
+<?php $con++; } ?>					
 								<table class="califs">
 <?php if (!empty($row["fecha"])) { ?>
 								<tr>
@@ -485,7 +489,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 								</tr>
 								</table>
 								<?php } ?>
-<?php }?>					</div>
+<?php  }?>					</div>
 							
 									
 			</div>

@@ -111,6 +111,8 @@ echo " 	<form method='post' action='update/'>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Materno</th>
 		<th class='sorting' role='columnheader' tabindex='0'>CURP</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Telefono</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Empresa</th>
+
 			
 					</tr>
 		</thead>
@@ -127,7 +129,7 @@ while($row = mysql_fetch_array($resultado)){
 				echo "<td>". $row['apellido_materno']. "</td>";
 				echo "<td>". $row['curp']. "</td>";
 				echo "<td>". $row['telefono_particular']. " </td>";
-/* 				echo "<td>". $row['lugar_trabajo']. " </td>"; */
+				echo "<td>". $row['patron_actual']. " </td>";
 
 				
 				

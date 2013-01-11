@@ -97,9 +97,9 @@ else
 					
 					<div id='contenedortabla'>";
 /* 	Botones Menu */
-	include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";
+	include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_empleado.php";
 
-echo " 	<form method='get' action='actualizacion/index.php'>
+echo " 	<form method='post' action='update/'>
 
 		 <table id ='tabla'>
 
@@ -111,6 +111,8 @@ echo " 	<form method='get' action='actualizacion/index.php'>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Materno</th>
 		<th class='sorting' role='columnheader' tabindex='0'>CURP</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Telefono</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Empresa</th>
+
 			
 					</tr>
 		</thead>
@@ -127,6 +129,8 @@ while($row = mysql_fetch_array($resultado)){
 				echo "<td>". $row['apellido_materno']. "</td>";
 				echo "<td>". $row['curp']. "</td>";
 				echo "<td>". $row['telefono_particular']. " </td>";
+				echo "<td>". $row['patron_actual']. " </td>";
+
 				
 				
 				

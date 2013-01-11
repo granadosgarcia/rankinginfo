@@ -122,9 +122,8 @@ echo " 	<form method='GET' action='update/'>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Paterno</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Materno</th>
 		<th class='sorting' role='columnheader' tabindex='0'>CURP</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Arrendador Actual</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Arrendador Anterior</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Telefono</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Empresa</th>
 			
 					</tr>
 		</thead>
@@ -140,9 +139,9 @@ while($row = mysql_fetch_array($resultado)){
 				echo "<td>". $row['apellido_paterno']. "</td>";
 				echo "<td>". $row['apellido_materno']. "</td>";
 				echo "<td>". $row['curp']. "</td>";
-				echo "<td>". $row['arrendador_actual']. " </td>";
-				echo "<td>". $row['arrendador_anterior']. " </td>";
-				echo "<td>". $row['telefono_casa']. " </td>";
+				echo "<td>". $row['telefono_particular']. " </td>";
+				echo "<td>". $row['patron_actual']. " </td>";
+
 				
 				
 				
