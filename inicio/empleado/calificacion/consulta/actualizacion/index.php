@@ -25,6 +25,33 @@ while($row = mysql_fetch_array($result)){ ?>
 				return true;
 			}
 		</script>
+
+		<script type="text/javascript" src="/rankinginfo/js/fancybox/source/jquery.fancybox.js?v=2.1.3"></script>
+	<link rel="stylesheet" type="text/css" href="/rankinginfo/js/fancybox/source/jquery.fancybox.css?v=2.1.2" media="screen" />
+
+
+<link rel="icon" href="/rankinginfo/img/favicon.ico" >
+
+<script type="text/javascript">
+		$(document).ready(function() {
+
+			$(".imagengrande").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				// helpers : {
+				// 	overlay : null
+				// }
+			});
+		});
+</script>
 	</head>
 
 	<body>
@@ -38,7 +65,7 @@ while($row = mysql_fetch_array($result)){ ?>
 				<p>Estas calificando a: <?php echo $row['nombres']." ".$row['apellido_paterno']." ".$row['apellido_materno'];?></p>
 				<?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";?>		
 <?php if (!empty($row["img_foto"])) { ?>	
-				<img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/>
+				<a class="imagengrande" href="<?php echo $row["img_foto"]?>"><img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/></a>
 <? 		} else { ?>
 				<img height="100px" width="150px" src="/rankinginfo/img/default.jpg"/>
 
