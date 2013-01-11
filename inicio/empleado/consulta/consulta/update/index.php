@@ -171,7 +171,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 										<td>Curp:</td>
 										<td><?php echo $row["curp"] ?></td>
 									</tr>
-<?php if (!empty($row["domicilio_actual"])) { ?>
+<?php if (!empty($row["calle"])||!empty($row["no_exterior"])) { ?>
 									<tr>
 										<td>Domicilio Actual:</td>
 										<td><?php echo $row["domicilio"] ?></td>

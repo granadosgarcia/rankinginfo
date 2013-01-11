@@ -86,9 +86,18 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			<li><label>Apellido Materno</label><input type="text" name="apellido_materno"    id="apellido_materno">	</li>
 
 			
-			<li><label>Domicilio</label><input type="text" name="domicilio"    id="domicilio">	</li>
-
+			<li><label>Domicilio</label></li>
 			
+			<li><label>Calle</label><input type="text" name="calle"    id="calle"></li>
+			<li><label>No. Interior</label><input type="text" name="no_interior"    id="no_interior"></li>
+			<li><label>No. Exterior</label><input type="text" name="no_exterior"    id="no_exterior"></li>
+			<li><label>Colonia</label><input type="text" name="colonia"    id="colonia"></li>
+			<li><label>Ciudad</label><input type="text" name="ciudad"    id="ciudad"></li>
+			<li><label>Estado</label><input type="text" name="estado"    id="estado"></li>
+			<li><label>Codigo Postal</label><input type="text" name="codigo_postal"    id="codigo_postal"></li>
+			<li><label>Municipio</label><input type="text" name="municipio"    id="municipio"></li>
+			<li><label>Delegación</label><input type="text" name="delegacion"    id="delegacion"></li>
+
 			<li><label>Telefono Particular</label><input type="text" name="telefono_particular"       id="telefono_particular"> 	</li>
 
 			<li><label>Telefono Personal</label><input type="text" name="telefono_personal"       id="telefono_personal"> 	</li>
@@ -135,7 +144,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			<li><label>Empleo Anterior</label>
 			<input type="text" name="empleo_anterior"     id="empleo_anterior"></li>
 			
-			<li><label>Tiempo Trabajo Anterior</label>
+			<li><label>Tiempo en Trabajo Anterior</label>
 			<input type="text" name="tiempo_trabajoanterior"     id="tiempo_trabajoanterior"></li>
 			
 			<li><label>Habilidades</label>
