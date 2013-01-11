@@ -236,12 +236,12 @@ li.envio{
 }
 
 input.user{
-	font:36px 'NeutonLight', Arial, sans-serif;
+	font:32px 'NeutonLight', Arial, sans-serif;
 	margin: 0px 0px 0px 60px;
 }
 
 input.pass{
-	font:36px 'NeutonLight', Arial, sans-serif;
+	font:32px 'NeutonLight', Arial, sans-serif;
 	margin: 0px 0px 0px 7px;
 }
 
