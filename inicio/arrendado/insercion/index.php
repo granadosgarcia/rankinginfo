@@ -153,7 +153,7 @@ var x=document.getElementById("hidden");
 			<li><label>CURP</label>
 			<input type="text" name="curp"               id="curp">	</li>
 
-			<li><label>Clave de Elector</label>
+			<li><label>Clave del IFE</label>
 			<input type="text" name="clave_ife" id="clave_ife"></li>
 
 			
