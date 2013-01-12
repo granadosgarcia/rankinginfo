@@ -109,11 +109,34 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			<li><label>Municipio</label><input type="text" name="municipio"    id="municipio"></li>
 			<li><label>Delegación</label><input type="text" name="delegacion"    id="delegacion"></li>
 
-			<li><label>Telefono Particular</label><input type="text" name="telefono_particular"       id="telefono_particular"> 	</li>
 
 			<li><label>Telefono de Casa</label><input type="text" name="telefono_personal"       id="telefono_personal"> 	</li>
+				
+			<li><label>Telefono Particular</label><input type="text" name="telefono_particular"       id="telefono_particular"> 	</li>
+
+			<li><label>CURP</label>
+			<input type="text" name="curp"               id="curp">	</li>
+
+			<li><label>Clave de Elector</label>
+			<input type="text" name="clave_ife" id="clave_ife"></li>
+
 					
-			<li><label>Estado Civil</label><input type="text" name="estado_civil"        id="estado_civil" onchange="conyuge ()"></li>
+			<li><label>Estado Civil</label>
+				<select name="estado_civil" id="estado_civil" style="float:right;" onchange="conyuge ()">
+					<option>-----</option>
+
+					<option>Soltero</option>
+					<option>Soltera</option>
+					<option>Casado</option>
+					<option>Casada</option>
+					<option>Divorciado</option>
+					<option>Divorciada</option>
+					<option>Viudo</option>
+					<option>Viuda</option>
+					<option>Juntado</option>
+					<option>Juntada</option>
+				</select>
+			</li>
 			<div id="hidden" style=" visibility:hidden;">
 			<li><label>Nombre del Conyuge</label>
 			<input type="text" name="nombre_conyuge"     id="nombre_conyuge"></li></div></ul>
@@ -145,13 +168,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			
 			<li><label>Responsable Actual</label>
 			<input type="text" name="responsable_actual" id="responsable_actual"></li>
-			
-			<li><label>CURP</label>
-			<input type="text" name="curp"               id="curp">	</li>
-
-			
-			
-			
+						
 			<li><label>Empleo Anterior</label>
 			<input type="text" name="empleo_anterior"     id="empleo_anterior"></li>
 			
