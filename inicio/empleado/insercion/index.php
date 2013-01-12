@@ -55,14 +55,56 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 </script>
 <script>
+ function conyuge(estado_civil){
+//run some code when "onchange" event fires
+ 
+
+    var conesposo = estado_civil.options[estado_civil.selectedIndex].value;
 
 
-	function conyuge () 
-	{
-		var x=document.getElementById("hidden");
+switch(conesposo)
+{
+case 'Soltero':
+  var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+case 'Soltera':
+ var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+case 'Casado':
+  var x=document.getElementById("hidden");
 		x.style.visibility="visible";
+  break;
+case 'Casada':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+case 'Casado':
+  var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+  break;
+case 'Divorciado':
+ var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+case 'Divorciada':
+  var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+case 'Juntado':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+case 'Juntada':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+
+default:
+var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
 	}
-</script>
+
+}
+
+	</script>
 </head>
 
 
@@ -122,9 +164,9 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 					
 			<li><label>Estado Civil</label>
-				<select name="estado_civil" id="estado_civil" style="float:right;" onchange="conyuge ()">
+				<select name="estado_civil" id="estado_civil" style="float:right;" onchange="conyuge(this)">
+					
 					<option>-----</option>
-
 					<option>Soltero</option>
 					<option>Soltera</option>
 					<option>Casado</option>

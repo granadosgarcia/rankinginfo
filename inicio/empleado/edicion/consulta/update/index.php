@@ -70,6 +70,58 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
         
 }
 </script>
+
+<script>
+ function conyuge(estado_civil){
+//run some code when "onchange" event fires
+ 
+
+    var conesposo = estado_civil.options[estado_civil.selectedIndex].value;
+
+
+switch(conesposo)
+{
+case 'Soltero':
+  var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+case 'Soltera':
+ var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+case 'Casado':
+  var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+  break;
+case 'Casada':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+case 'Casado':
+  var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+  break;
+case 'Divorciado':
+ var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+case 'Divorciada':
+  var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+case 'Juntado':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+case 'Juntada':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+
+default:
+var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+	}
+
+}
+
+	</script>
 <meta charset="utf-8"> 
 </head>
 
@@ -137,8 +189,44 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
 		<label>Telefono de Casa</label>
 		<input type="text" name="telefono_personal"        id="telefono_personal"			value="<?php echo $row['telefono_personal']?>" class="inputderecha">
 			</br>
-		<label>Estado Civil</label>
-		<input type="text" name="estado_civil"        id="estado_civil"			value="<?php echo $row['estado_civil']?>" class="inputderecha">
+				
+				<label>Estado Civil</label>
+
+				<select name="estado_civil" id="estado_civil" style="float:right;" onchange="conyuge(this)">
+					<?php if(!empty($row['estado_civil']) && $row['estado_civil'] != '-----') {?>
+					<option><?php echo $row['estado_civil']?></option><?php } 
+						else 
+						{ ?>
+							<option>-----</option>
+
+					<?php } ?>
+					<?php if($row['estado_civil']!='Soltero'){ ?>
+					<option>Soltero</option> <?php } ?>
+					<?php if($row['estado_civil']!='Soltera'){ ?>
+					<option>Soltera</option><?php } ?>
+					<?php if($row['estado_civil']!='Casado'){ ?>
+					<option>Casado</option><?php } ?>
+					<?php if($row['estado_civil']!='Casada'){ ?>
+					<option>Casada</option><?php } ?>
+					<?php if($row['estado_civil']!='Divorciado'){ ?>
+					<option>Divorciado</option><?php } ?>
+					<?php if($row['estado_civil']!='Divorciada'){ ?>
+					<option>Divorciada</option><?php } ?>
+					<?php if($row['estado_civil']!='Viudo'){ ?>
+					<option>Viudo</option><?php } ?>
+					<?php if($row['estado_civil']!='Viuda'){ ?>
+					<option>Viuda</option><?php } ?>
+					<?php if($row['estado_civil']!='Juntado'){ ?>
+					<option>Juntado</option><?php } ?>
+					<?php if($row['estado_civil']!='Juntada'){ ?>
+					<option>Juntada</option><?php } ?>
+					<?php if(!empty($row['estado_civil']) && $row['estado_civil'] != '-----') {?>
+					<option>-----</option>
+					<?php } ?>				
+</select>
+		
+		
+		
 		</br>
 		<label>Nombre del Conyugue</label>
 		<input type="text" name="nombre_conyuge"        id="nombre_conyuge"			value="<?php echo $row['nombre_conyuge']?>" class="inputderecha">		
@@ -146,7 +234,7 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
 		<label>Responsable Actual</label>
 		<input type="text" name="responsable_actual"        id="responsable_actual"			value="<?php echo $row['responsable_actual']?>" class="inputderecha">			
 		</br>
-		<label>Empleo Anteriorl</label>
+		<label>Empleo Anterior</label>
 		<input type="text" name="empleo_anterior"        id="empleo_anterior"			value="<?php echo $row['empleo_anterior']?>" class="inputderecha">
 		</br>
 		<label>Tiempo Empleo Anterior</label>
@@ -173,7 +261,11 @@ $sql="SELECT * from empleado, escolaridad WHERE curp='".$_SESSION['curp']."' GRO
 		<input type="text" name="curp"               id="curp"					value="<?php echo $row['curp'] ?>" class="inputderecha">
 			</br>
 
-		<label>Domicilio Patron Actual</label>
+		<br><label>Clave del IFE</label>
+		<input type="text" name="clave_ife"               id="clave_ife"					value="<?php echo $row['clave_ife'] ?>" class="inputderecha">
+			</br>
+			
+					<label>Domicilio Patron Actual</label>
 		<input type="text" name="domicilio_patronactual"        id="domicilio_patronactual"			value="<?php echo $row['domicilio_patronactual'] ?>" class="inputderecha">
 			</br>
 

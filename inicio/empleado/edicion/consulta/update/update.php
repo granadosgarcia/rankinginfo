@@ -39,6 +39,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
  $lugar_estudio3 = mysql_real_escape_string($_POST['lugar_estudio3']);
  $lugar_estudio4 = mysql_real_escape_string($_POST['lugar_estudio4']);
  $lugar_estudio5 = mysql_real_escape_string($_POST['lugar_estudio5']);
+ $clave_ife = mysql_real_escape_string($_POST['clave_ife']);
 
 
 $sqlact="
@@ -119,6 +120,9 @@ $sql.=", tiempo_trabajoanterior		= '$tiempo_trabajoanterior'";
 
 if(!empty($_POST['habilidades']))
 $sql.=", habilidades		= '$habilidades'";
+
+if(!empty($_POST['clave_ife']))
+$sql.=", clave_ife		= '$clave_ife'";
 
 $sql.=" WHERE 
 curp ='$curp'";
