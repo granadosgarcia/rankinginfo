@@ -22,13 +22,18 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
         
         if(!(document.getElementById("telefono_aval").value.match(/^\d+$/)) && document.getElementById("telefono_aval").value!="")
         {
-	      	alert("El telefono del aval solo admite numeros");
+	      	alert("El télefono del aval sólo admite números");
 	        return false;  
         }
         
-        if(!(document.getElementById("telefono_casa").value.match(/^\d+$/)) && document.getElementById("telefono_casa").value!="")
+        if(!(document.getElementById("telefono_particular").value.match(/^\d+$/)) && document.getElementById("telefono_casa").value!="")
         {
-	      	alert("El telefono de Casa solo admite numeros");
+	      	alert("El télefono de casa sólo admite números");
+	        return false;  
+        }
+          if(!(document.getElementById("telefono_personal").value.match(/^\d+$/)) && document.getElementById("telefono_casa").value!="")
+        {
+	      	alert("El télefono celular sólo admite números");
 	        return false;  
         }
         
@@ -40,15 +45,59 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 
 </script>
+
 <script>
+ function conyuge(estado_civil){
+//run some code when "onchange" event fires
+ 
+
+    var conesposo = estado_civil.options[estado_civil.selectedIndex].value;
 
 
-	function conyuge () 
-	{
-		var x=document.getElementById("hidden");
+switch(conesposo)
+{
+case 'Soltero':
+  var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+case 'Soltera':
+ var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+case 'Casado':
+  var x=document.getElementById("hidden");
 		x.style.visibility="visible";
+  break;
+case 'Casada':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+case 'Casado':
+  var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+  break;
+case 'Divorciado':
+ var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+case 'Divorciada':
+  var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+case 'Juntado':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+case 'Juntada':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+
+default:
+var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
 	}
-</script>
+
+}
+
+	</script>	
+
 </head>
 
 
@@ -83,16 +132,35 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			<li><label>Apellido Materno</label><input type="text" name="apellido_materno"    id="apellido_materno">	</li>
 
 			
-			<li><label>Domicilio Actual</label><input type="text" name="domicilio_actual"    id="domicilio_actual">	</li>
-
+			<li><label>Domicilio</label></li>
 			
-			<li><label>Telefono de casa</label><input type="text" name="telefono_casa"       id="telefono_casa"> 	</li>
+			<li><label>Calle</label><input type="text" name="calle"    id="calle"></li>
+			<li><label>No. Interior</label><input type="text" name="no_interior"    id="no_interior"></li>
+			<li><label>No. Exterior</label><input type="text" name="no_exterior"    id="no_exterior"></li>
+			<li><label>Colonia</label><input type="text" name="colonia"    id="colonia"></li>
+			<li><label>Ciudad</label><input type="text" name="ciudad"    id="ciudad"></li>
+			<li><label>Estado</label><input type="text" name="estado"    id="estado"></li>
+			<li><label>Codigo Postal</label><input type="text" name="codigo_postal"    id="codigo_postal"></li>
+			<li><label>Municipio</label><input type="text" name="municipio"    id="municipio"></li>
+			<li><label>Delegación</label><input type="text" name="delegacion"    id="delegacion"></li>
+			
+
+			<li><label>Telefono de Casa</label><input type="text" name="telefono_particular"       id="telefono_particular"> 	</li>
+
+			<li><label>Telefono Celular</label><input type="text" name="telefono_personal"       id="telefono_personal"> 	</li>
+
+
+			<li><label>CURP</label>
+			<input type="text" name="curp"               id="curp">	</li>
+
+			<li><label>Clave de Elector</label>
+			<input type="text" name="clave_ife" id="clave_ife"></li>
 
 			
 			<li><label>Estado Civil</label>
-				<select name="estado_civil" id="estado_civil" style="float:right;" onchange="conyuge ()">
+				<select name="estado_civil" id="estado_civil" style="float:right;" onchange="conyuge(this)">
+					
 					<option>-----</option>
-
 					<option>Soltero</option>
 					<option>Soltera</option>
 					<option>Casado</option>
@@ -105,6 +173,9 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 					<option>Juntada</option>
 				</select>
 			</li>
+
+
+</script>
 					<div id="hidden" style=" visibility:hidden;">
 
 		<li><label>Nombre del Conyuge</label>
@@ -112,6 +183,9 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 					</div></ul>
 
 		</div>
+
+					
+	
 		
 		<div id="arrendadorrow">
 			<ul style="  list-style-type: none;">
@@ -126,9 +200,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			<li><label>Domicilio Anterior</label>
 			<input type="text" name="domicilio_anterior" id="domicilio_anterior"></li>
 			
-			<li><label>CURP</label>
-			<input type="text" name="curp"               id="curp">	</li>
-
 			
 			<li><label>Nombre del Aval</label>
 			<input type="text" name="nombre_aval"        id="nombre_aval">	</li>

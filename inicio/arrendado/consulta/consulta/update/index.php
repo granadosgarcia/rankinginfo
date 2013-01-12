@@ -112,7 +112,7 @@ $(function(){
 		<div id="botonesdescarga" class="noPrint">
 			<a href="javascript:window.print();"><input type="button" value="Imprimir"></a>
 			<a href="../../descarga/word.php"><input type="submit" value="Word"></a>
-			<a href="../../"><input type="submit" value="Menu"></a>
+			<a href="../../"><input type="submit" value="Atrás"></a>
 <!--
 			<a href="../../descarga/excel.php"><input type="submit" value="Excel"></a>
 			<a href="../../descarga/mail.php"><input type="submit" value="Mail"></a>
