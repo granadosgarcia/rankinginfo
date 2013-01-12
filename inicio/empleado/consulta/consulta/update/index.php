@@ -455,7 +455,6 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 									</tr>
 		<?php }   ?>
 							
-																		<?php } ?>
 								</table>
 								<?php  if (!empty($row["comentario"])) { ?>
 								<table class="comentarios">

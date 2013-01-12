@@ -221,6 +221,9 @@ body{
 	font:42px 'NeutonLight', Arial, sans-serif;
 }
 
+.negritas{
+	font-weight: bold;
+}
 .cuadrologin ul{
 	list-style-type: none;
 }
