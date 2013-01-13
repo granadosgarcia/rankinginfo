@@ -4,7 +4,7 @@
 </a>
 
        	   				<a href="/rankinginfo/inicio/">
-<input type="button" class="logout" value="Inicio">
+<input type="button" class="logout" value="Atras">
 </a>
 
 </div>

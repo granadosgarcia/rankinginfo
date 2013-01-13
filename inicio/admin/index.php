@@ -74,7 +74,7 @@ $(function(){
 					
 					<div id='contenedortabla'>";
 					
-		include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";
+		include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_inicio.php";
 echo " 	
 
 		 <table id ='tabla'>

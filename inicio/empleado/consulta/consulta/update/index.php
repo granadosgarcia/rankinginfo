@@ -173,7 +173,12 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 										<td><label class="negritas">Curp:</label></td>
 										<td><?php echo $row["curp"] ?></td>
 									</tr>
-<?php if (!empty($row["calle"])||!empty($row["no_exterior"])) { ?>
+<?php if (!empty($row["clave_ife"])) { ?>
+									<tr>
+										<td><label class="negritas">Curp:</label></td>
+										<td><?php echo $row["curp"] ?></td>
+									</tr>
+<?php} if (!empty($row["calle"])||!empty($row["no_exterior"])) { ?>
 									<tr>
 										<td>Domicilio Actual:</td>
 <?php if (!empty($row["calle"])) { ?>							

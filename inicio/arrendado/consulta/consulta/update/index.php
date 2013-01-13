@@ -138,11 +138,51 @@ $(function(){
 										<td>Curp:</td>
 										<td><?php echo $row["curp"] ?></td>
 									</tr>
-<?php if (!empty($row["domicilio_actual"])) { ?>
+<?php if (!empty($row["clave_ife"])) { ?>
+									<tr>
+										<td><label class='negritas'>Clave del IFE:</label></td>
+										<td><?php echo $row["clave_ife"] ?></td>
+									</tr>
+<?php} if (!empty($row["calle"])||!empty($row["no_exterior"])) { ?>
 									<tr>
 										<td>Domicilio Actual:</td>
-										<td><?php echo $row["domicilio_actual"] ?></td>
-									</tr>
+<?php if (!empty($row["calle"])) { ?>							
+										<td><label class="negritas">Calle: </label class="negritas"><?php echo $row["calle"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["no_interior"])) { ?>							
+										<td><label class="negritas">No. Interior: </label class="negritas"><?php echo $row["no_interior"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["no_exterior"])) { ?>							
+										<td><label class="negritas">No. Exterior: </label class="negritas"><?php echo $row["no_exterior"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["colonia"])) { ?>							
+										<td><label class="negritas">Colonia: </label class="negritas"><?php echo $row["colonia"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["ciudad"])) { ?>							
+										<td><label class="negritas">Ciudad: </label class="negritas"><?php echo $row["ciudad"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["estado"])) { ?>							
+										<td><label class="negritas">Estado: </label class="negritas"><?php echo $row["estado"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["codigo_postal"])) { ?>							
+										<td><label class="negritas">Codigo Postal: </label class="negritas"><?php echo $row["codigo_postal"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["municipio"])) { ?>							
+										<td><label class="negritas">Municipio: </label class="negritas"><?php echo $row["municipio"] ?></td>
+<?php } ?>
+
+<?php if (!empty($row["delegacion"])) { ?>							
+										<td><label class="negritas">Delegación: </label class="negritas"><?php echo $row["delegacion"] ?></td>
+<?php } ?>
+				</tr>
+
 
 <?php } if (!empty($row["telefono_casa"])) { ?>			
 									<tr>						

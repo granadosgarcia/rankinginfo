@@ -13,6 +13,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
  $apellido_paterno= mysql_real_escape_string($_POST['apellido_paterno']);
  $apellido_materno= mysql_real_escape_string($_POST['apellido_materno']);
  
+ //NEW
+ $clave_ife= mysql_real_escape_string($_POST['clave_ife']);
  $calle= mysql_real_escape_string($_POST['calle']);
  $no_interior= mysql_real_escape_string($_POST['no_interior']);
  $no_exterior= mysql_real_escape_string($_POST['no_exterior']);
@@ -59,6 +61,9 @@ $sql.=",apellido_paterno";
 
 if(!empty($_POST['apellido_materno']))
 $sql.=",apellido_materno";
+
+if(!empty($_POST['clave_ife']))
+$sql.=",clave_ife";
 
 if(!empty($_POST['calle']))
 $sql.=",calle";
@@ -138,6 +143,9 @@ if(!empty($_POST['apellido_paterno']))
 $sql.=",'$apellido_paterno'";
 if(!empty($_POST['apellido_materno']))
 $sql.=",'$apellido_materno'";
+
+if(!empty($_POST['clave_ife']))
+$sql.=",'$clave_ife'";
 
 if(!empty($_POST['calle']))
 $sql.=",'$calle'";
