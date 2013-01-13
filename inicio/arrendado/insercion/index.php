@@ -77,10 +77,10 @@ case 'Casado':
   break;
 case 'Divorciado':
  var x=document.getElementById("hidden");
-		x.style.visibility="hidden";
+		x.style.visibility="visible";
 case 'Divorciada':
   var x=document.getElementById("hidden");
-		x.style.visibility="hidden";
+		x.style.visibility="visible";
   break;
 case 'Juntado':
  var x=document.getElementById("hidden");

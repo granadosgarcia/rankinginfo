@@ -11,6 +11,16 @@
 }
 }
 
+#querycasual{
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  color: #585858;
+width: 180px;
+font-size: 15px;
+}
+
 #primerrow ul li{
 	margin: 2px 0px;
 }

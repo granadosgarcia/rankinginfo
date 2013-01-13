@@ -1,5 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
+
 ?>
 
 <html>
@@ -46,6 +48,15 @@ margin: -130px 0px 0px -160px;'>
 					   			<input type="submit" value="Buscar" class="logout">
 					   		</div><!-- </submitquery> -->
 					   	</form>
+					   	<div id="querycasual">
+<p>Hay <?php $sql= "SELECT * FROM empleado";
+$result=mysql_query($sql, $con);
+$resul = mysql_num_rows($result);
+echo $resul;
+mysql_close($con);
+ ?> empleados registrados</p>
+
+					</div>
 					</div><!-- </busqueda> -->
 	
 	

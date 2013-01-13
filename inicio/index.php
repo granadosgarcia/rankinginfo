@@ -21,6 +21,10 @@ margin: -200px 0px 0px -160px;">
 		   			</div>
    				
 		   			<div id="contenido">
+		   				 <h3 style="color: #808080; margin: -50px 0px -15px 700px;"> <?php 
+                          $imprim  = date("g:i a"); 
+                                          echo $imprim; ?></h3>
+		   				
 	   					<p class="bienvenida"><?php echo "Bienvenido ". $_SESSION['nombreusuario'];?></p>
 		   				
 	   					<div class="salida">

@@ -1,5 +1,6 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 
 if(isset($_SESSION['privilegios'])&&$_SESSION['privilegios']>=10){
 
@@ -48,7 +49,15 @@ margin: -130px 0px 0px -160px;'>
 			<input type="submit" value="Buscar" class="logout">
 			</div>
 		</form>
-		
+		<div id="querycasual">
+<p>Hay <?php $sql= "SELECT * FROM arrendado";
+$result=mysql_query($sql, $con);
+$resul = mysql_num_rows($result);
+echo $resul;
+mysql_close($con);
+ ?> arrendados registrados</p>
+
+					</div>
 		</div>
 
 

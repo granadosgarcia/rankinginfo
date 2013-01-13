@@ -70,7 +70,9 @@ curp='$curp'";
   include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/image_upload.php";
   }
    mysql_query($sqlact,$con);
-  echo '<script> alert("Agregado Exitosamente"); window.location = "../../"; </script>';
+  echo '
+  <html style="background-color: black;">
+  <script> alert("Modificado Exitosamente"); window.location = "../../"; </script>';
 
  mysql_close($con);
 ?>
