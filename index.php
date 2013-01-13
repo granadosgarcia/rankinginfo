@@ -22,8 +22,8 @@
 	   				<div id="header">
 	   			
    <h1 class="titulo">Ranking Information </h1>
-   <img src="/rankinginfo/img/third.jpg" height="150" width="150" style="margin: -180px 20px 0px -160px;
-">
+   <img src="/rankinginfo/img/third1.jpg" height="150" width="150" style="float: left;
+margin: -200px 0px 0px -160px;">
    					</div>
    				
    					<div id="contenido">

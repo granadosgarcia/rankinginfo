@@ -85,10 +85,10 @@ case 'Casado':
   break;
 case 'Divorciado':
  var x=document.getElementById("hidden");
-		x.style.visibility="hidden";
+		x.style.visibility="visible";
 case 'Divorciada':
   var x=document.getElementById("hidden");
-		x.style.visibility="hidden";
+		x.style.visibility="visible";
   break;
 case 'Juntado':
  var x=document.getElementById("hidden");
@@ -115,10 +115,15 @@ var x=document.getElementById("hidden");
    			<div id="wrapper">
 	   				<div id="header">
 <h1 class="titulo2">Agregar Empleado</h1>
-
+   
+<img src='/rankinginfo/img/third1.jpg' height='150' width='150' style='float: left;
+margin: -130px 0px 0px -153px;'>
 </div>
 	   				<div id="calificacion">
-	   				
+	   				<h3 style="color: #808080; margin: -30px 0px 20px 30px;"> Estás en <?php 
+                          $imprim = str_replace('rankinginfo/inicio/', "", $_SERVER["REQUEST_URI"]);
+                        $imprim = str_replace(' /', "",$imprim);
+                                          echo $imprim; ?></h3>
 	   				<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_empleado.php";?>
 
 

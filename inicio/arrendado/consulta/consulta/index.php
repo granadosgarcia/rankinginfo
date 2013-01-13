@@ -157,7 +157,9 @@ while($row = mysql_fetch_array($resultado)){
 
 echo "</tbody>
 </table>
+<div id='ko'>
 <input type='submit' name='ok' value='Selecci&oacute;n' class='califica'>
+</div>
 </form>
 	
 </div>

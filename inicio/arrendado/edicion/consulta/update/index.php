@@ -63,6 +63,65 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 
 
 </script>
+
+<script>
+ function conyuge(estado_civil){
+//run some code when "onchange" event fires
+ 
+
+    var conesposo = estado_civil.options[estado_civil.selectedIndex].value;
+
+
+switch(conesposo)
+{
+case 'Soltero':
+  var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+case 'Soltera':
+ var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+case 'Casado':
+  var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+  break;
+case 'Casada':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+case 'Casado':
+  var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+  break;
+case 'Divorciado':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+case 'Divorciada':
+  var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+  break;
+case 'Juntado':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+		break;
+case 'Juntada':
+ var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+		break;
+case '-----':
+ var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+		break;
+
+default:
+var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+		break;
+	}
+
+}
+
+	</script>
 </head>
 
 	<body>
@@ -81,7 +140,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 	<div id="primerrow">
 		<label>Nombres</label><input type="text" name="nombre" id="nombre"				value="<?php echo $row['nombre']?>" class="inputderecha">
 	<br>
-		<labe>Apellido Paterno</label>
+		<label>Apellido Paterno</label>
 		<input type="text" name="apellido_paterno"    id="apellido_paterno"		value="<?php echo $row['apellido_paterno']?>" class="inputderecha">
 			</br>
 
@@ -98,10 +157,11 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 			</br>
 
 		<label>Estado Civil</label>
+		<select name='estado_civil' id='estado_civil' style='float:right;' onchange='conyuge(this)' onload="conyuge(this)">
 		<?php switch ($row['estado_civil']) {
 			case "Soltero":
 				# code...
-			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+			echo "	
 					<option>Soltero</option>
 					<option>Soltera</option>
 					<option>Casado</option>
@@ -116,7 +176,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 				break;
 			case "Soltera":
 				# code...
-				echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+				echo "	
 					<option>Soltera</option>
 					<option>Soltero</option>
 					<option>Casado</option>
@@ -131,7 +191,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 				break;
 			case "Casado":
 				# code...
-				echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+				echo "	
 					<option>Casado</option>
 					<option>Casada</option>					
 					<option>Soltera</option>
@@ -146,7 +206,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 				break;
 			case "Casada":
 				# code...
-			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+			echo "	
 					<option>Casada</option>					
 					<option>Casado</option>
 					<option>Soltera</option>
@@ -161,7 +221,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 				break;
 			case "Divorciado":
 				# code...
-				echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+				echo "	
 					<option>Divorciado</option>
 					<option>Divorciada</option>
 					<option>Casada</option>					
@@ -176,7 +236,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 				break;
 			case "Divorciada":
 				# code...
-			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+			echo "	
 					<option>Divorciada</option>
 					<option>Divorciado</option>
 					<option>Casada</option>					
@@ -191,7 +251,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 				break;
 			case "Viudo":
 				# code...
-			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+			echo "	
 					<option>Viudo</option>
 					<option>Viuda</option>
 					<option>Divorciada</option>
@@ -206,7 +266,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 				break;
 			case "Viuda":
 				# code...
-				echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+				echo "	
 					<option>Viuda</option>
 					<option>Viudo</option>
 					<option>Divorciada</option>
@@ -221,7 +281,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 				break;
 			case "Juntado":
 				# code...
-				echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+				echo "	
 					<option>Juntado</option>
 					<option>Juntada</option>
 					<option>Viuda</option>
@@ -237,7 +297,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 				break;
 			case "Juntada":
 				# code...
-			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+			echo "	
 					<option>Juntada</option>
 					<option>Juntado</option>
 					<option>Viuda</option>
@@ -253,7 +313,7 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 				break;
 			case "-----":
 				# code...
-			echo "	<select name='estado_civil' id='estado_civil' style='float:right;'>
+			echo "	
 					<option>-----</option>
 					<option>Soltero</option>
 					<option>Soltera</option>
@@ -271,8 +331,11 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 			default:
 				# code...
 				break;
-		} ?>
-			
+		} ?><br>
+		<div id="hidden" style="">
+		<label style="float:left;">Nombre del Conyuge</label>
+		<input style="float:right;" type="text" name="nombre_conyuge"     id="nombre_conyuge"		value="<? echo $row['nombre_conyuge'] ?>" class="inputderecha">
+		</div><br>
 			</div>
 			<div id="arrendadorrow">
 		<label>Arrendador Actual</label>
@@ -303,8 +366,6 @@ $sql="SELECT * from arrendado WHERE curp='".$_SESSION['curp']."'";
 		<input type="text" name="telefono_aval"      id="telefono_aval"			value="<?php echo $row['telefono_aval'] ?>" class="inputderecha">
 			</br>
 
-		<label>Nombre del Conyuge</label>
-		<input type="text" name="nombre_conyuge"     id="nombre_conyuge"		value="<? echo $row['nombre_conyuge'] ?>" class="inputderecha">
 	</div>
 	
 	<div id="imagenesrow">

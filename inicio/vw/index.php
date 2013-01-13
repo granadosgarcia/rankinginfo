@@ -15,12 +15,16 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
      			<div id="wrapper">
 	   				<div id="header">
 		   				<h1 class="titulo">Ranking Information </h1>
-		   				   <img src="/rankinginfo/img/third.jpg" height="150" width="150" style="float: left;
+		   				   <img src="/rankinginfo/img/third1.jpg" height="150" width="150" style="float: left;
 margin: -200px 0px 0px -160px;">
 
 		   			</div>
    				
 		   			<div id="contenido">
+		   				  <h3 style="color: #808080; margin: -40px 0px 15px 30px;"> Estás en <?php 
+                          $imprim = str_replace('rankinginfo/inicio/', "", $_SERVER["REQUEST_URI"]);
+                        $imprim = str_replace(' /', "",$imprim);
+                                          echo $imprim; ?></h3>
 	   					<p class="bienvenida"><?php echo "Bienvenido ". $_SESSION['nombreusuario'];?></p>
 		   				                  <?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_inicio.php";?>
 

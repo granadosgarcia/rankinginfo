@@ -27,7 +27,7 @@ else echo
 		<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>  
 	   
-	   <title>Consulta de Arrendados</title>
+	   <title>Administración del Sistema</title>
 <link rel='stylesheet' href='/rankinginfo/css/estilo.css' type='text/css' charset='utf-8'>
 <link rel='stylesheet' href='/rankinginfo/css/jquery.dataTables.css' type='text/css' charset='utf-8'>
 <script type='text/javascript' language='javascript' src='/rankinginfo/js/jquery.js'></script>
@@ -70,6 +70,9 @@ $(function(){
    			<div id='wrapper'>
 	   				<div id='header'>
 	   					<h1>Actividades Realizadas en el Sistema</h1>
+					 <img src='/rankinginfo/img/third1.jpg' height='150' width='150' style='float: left;
+margin: -68px 0px 0px -160px;'>
+						<h3> Estás en ".str_replace('rankinginfo/inicio/', "", $_SERVER["REQUEST_URI"])."</h3>
 					</div>
 					
 					<div id='contenedortabla'>";
