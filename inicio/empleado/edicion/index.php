@@ -31,6 +31,8 @@ if(isset($_SESSION['privilegios'])&&$_SESSION['privilegios']>=10){
 	   				<div id="header">
 
     <h1 class="titulo2">Busque Para Editar</h1>
+    <img src='/rankinginfo/img/third1.jpg' height='150' width='150' style='float: left;
+margin: -130px 0px 0px -160px;'>
     </div>
 	   				<div id="calificacion">
 	   				<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_empleado.php";?>

@@ -29,6 +29,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 		   		
 		   		<div id="header">
 			   		<h1 class="titulo2">Busque Para Calificar</h1>
+			   		<img src='/rankinginfo/img/third1.jpg' height='150' width='150' style='float: left;
+margin: -130px 0px 0px -160px;'>
 			   	</div><!-- </header> -->
 		   		
 		   		<div id="calificacion">
