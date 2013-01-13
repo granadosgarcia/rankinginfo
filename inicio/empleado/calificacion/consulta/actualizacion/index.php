@@ -86,15 +86,7 @@ while($row = mysql_fetch_array($result)){ ?>
 						<option value="5">Muy Malo</option>
 					</select>
 		
-					<label class="lab">Empleado calificación trabajo anterior</label>
-					<select name="emp_calif_anterior" id="emp_calif_anterior">
-						<option value="0">---</option>
-						<option value="1">Muy Bueno</option>
-						<option value="2">Bueno</option>
-						<option value="3">Normal</option>
-						<option value="4">Malo</option>
-						<option value="5">Muy Malo</option>
-					</select>
+					
 					
 					<br>
 						</div>
@@ -104,6 +96,24 @@ while($row = mysql_fetch_array($result)){ ?>
 							<textarea rows="3" cols="35" name="coment" id="coment" ></textarea>
 				<br><div id="ni">
 							<input type="submit" name="ok" value="Enviar" class="edita">
+				</div>
+				
+				<div id="info_calif">
+					
+					<label class="lab"> Evaluador </label>
+					
+					<label class="lab"> Nombre Completo </label>
+		
+					<input type="text" name="nombre_evaluador"   id="nombre_evaluador">
+					
+					<label class="lab"> Empresa </label>
+		
+					<input type="text" name="empresa_evaluador"   id="empresa_evaluador">
+					
+					<label class="lab"> Puesto </label>
+		
+					<input type="text" name="puesto_evaluador"   id="puesto_evaluador">
+			
 				</div>
 						</div>
 					
