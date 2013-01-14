@@ -99,7 +99,7 @@ else
 /* 	Botones Menu */
 	include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_empleado.php";
 
-echo " 	<form method='post' action='update/'>
+echo " 	<form method='POST' action='update/index.php'>
 
 		 <table id ='tabla'>
 

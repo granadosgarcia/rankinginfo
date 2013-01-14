@@ -313,6 +313,18 @@ while($row=mysql_fetch_array($resultado1[$k])){ ?>
 			<h2>Calificaciones</h2>
 <?php } ?>
 								<table class="califs">
+<?php if (!empty($row["nombre_evaluador"])) { ?>
+								<tr>
+									<td><label>Nombre del Evaluador</label></td>
+									<td><?php echo $row["nombre_evaluador"] ?></td>
+<?php if (!empty($row["telefono_evaluador"])) { ?>
+									<td><label>Telefono del Evaluador</label></td>
+									<td><?php echo $row["telefono_evaluador"] ?></td>
+<?php} if (!empty($row["direccion_evaluador"])) { ?>
+									<td><label>Dirección del Evaluador</label></td>
+									<td><?php echo $row["direccion_evaluador"] ?></td>
+								</tr>
+<?php} }?>
 <?php if (!empty($row["fecha"])) { ?>
 								<tr>
 								<td>Fecha:</td>
