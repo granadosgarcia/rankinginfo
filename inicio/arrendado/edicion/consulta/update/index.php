@@ -1,8 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
-include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
-
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios5.php";
 
 $_SESSION['curp']= $_REQUEST['consulta'];
 
@@ -386,10 +385,12 @@ var x=document.getElementById("hidden");
 		<input type='file' name='file[]' id='file'  />
 	</div>
 	<div id="botonesrow">
-	
+	<?php if($_SESSION['privilegios']>=10){ ?>
 	<div id="borrado">
 		<a href="delete.php" onclick="return borrar ()" class="rojo">Borrar Registro</a>
 	</div>
+	<?php } ?>
+	
 			<div id="modificarrow">
 		<input type="submit" name="ok" value="Modificar" class="inserta">
 		</div></form>

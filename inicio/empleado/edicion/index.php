@@ -1,8 +1,9 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios5.php";
 
-if(isset($_SESSION['privilegios'])&&$_SESSION['privilegios']>=10){
+if(isset($_SESSION['privilegios'])){
 
 ?>
 

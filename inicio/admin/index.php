@@ -4,9 +4,11 @@
 /* Includes de PHP */
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios10.php";
 
 
-if(isset($_SESSION['privilegios'])&&$_SESSION['privilegios']>=10){
+
+if(isset($_SESSION['privilegios'])){
 
 //Query todas las actividades
 $sql= "SELECT  a.fecha, a.actividad, u.nombre

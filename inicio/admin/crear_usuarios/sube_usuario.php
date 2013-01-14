@@ -2,6 +2,7 @@
 
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios10.php";
 
  $user= mysql_real_escape_string($_POST['usuario']);
  $password_nice= crypt($_POST['contrasena']);

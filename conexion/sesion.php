@@ -5,4 +5,6 @@ session_start();
     echo '<script> window.location = "/rankinginfo/index.php"; </script>';
 	}
 	
+	
+	
 ?> 

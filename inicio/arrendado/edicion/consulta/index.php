@@ -2,7 +2,7 @@
 
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
-
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios5.php";
 
 
 $querybusqueda = $_GET['query'];

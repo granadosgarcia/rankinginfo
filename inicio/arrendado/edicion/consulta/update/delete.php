@@ -1,7 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
-include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios5.php";
 $fecha =date("F j, Y, g:i a");
 
 $dir="".$_SERVER['DOCUMENT_ROOT']."/rankinginfo/uploads/img12/"."$_SESSION[curp]";

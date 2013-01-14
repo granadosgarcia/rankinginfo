@@ -1,6 +1,6 @@
 <?php 
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
-
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/privilegios10.php";
 ?>
  <html>
 
@@ -51,7 +51,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
    <form action="sube_usuario.php" onsubmit="return verifica ()" method="post">
    
-   		<div id="primerrow">
+   		<div id="primerrow2">
 
    		<ul style="  list-style-type: none;">
 
