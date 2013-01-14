@@ -10,7 +10,10 @@
     display:none;
 }
 }
-
+#usuario {
+    margin: 32px 0 0 796px;
+    width: 200px;
+}
 #querycasual{
   margin-top: 40px;
   margin-right: auto;

@@ -75,7 +75,7 @@ margin: -68px 0px 0px -160px;'>
 						<h3> Estás en ".str_replace('rankinginfo/inicio/', "", $_SERVER["REQUEST_URI"])."</h3>
 					</div>
 					
-						<div id='borrado'>
+						<div id='usuario'>
 		<a href='crear_usuarios/'  class='inserta'> Crear Usuarios </a>
 	</div>
 					

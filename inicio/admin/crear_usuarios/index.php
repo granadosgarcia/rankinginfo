@@ -12,8 +12,27 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 	   
 	   <title>Ranking Information</title>
 <link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
-   
-   
+   <script>
+	   function verifica () {
+		   var x = document.getElementById('contrasena').value;
+		   var y = document.getElementById('contrasena1').value;
+		   var a = document.getElementById('nombre').value;
+		   var b = document.getElementById('privilegios').value;
+		   if(x != y){
+		   alert("Las Contraseñas no Coinciden")
+		   return false;}
+		  		   
+		   if(a == "" || b == "" || x=="" || y=="")
+		   	{
+			  alert("No puede haber campos vacios")
+			  return false;
+		   	}
+		   	
+		   	 else
+		   return true;
+
+	   }
+</script>   
    </head>
    
 
@@ -28,8 +47,9 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 	   				</div>
 	   				<div id="calificacion">
 	   				<div id="inputsss">
+		<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_admin.php"; ?>
 
-   <form action="sube_usuario.php" method="post">
+   <form action="sube_usuario.php" onsubmit="return verifica ()" method="post">
    
    		<div id="primerrow">
 
@@ -39,13 +59,13 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 <input type="text" name="usuario" /></li>
 
 <li><label>Nombre completo:</label>
-<input type="text" name="nombre" /></li>
+<input type="text" name="nombre" id="nombre" /></li>
 <li><label>Contraseña: </label>
-<input type="password" name="contrasena" /></li>
+<input type="password" name="contrasena" id="contrasena" /></li>
 <li><label>Verificar Contraseña:</label>
-<input type="password" name="contrasena1" /></li>
+<input type="password" name="contrasena1" id="contrasena1" /></li>
 <li><label>Privilegios: </label>
-<select name="privilegios" />
+<select name="privilegios" id="privilegios" />
 <option value="1">Opcion1</option>
 <option value="1">Opcion1</option>
 <option value="1">Opcion1</option>

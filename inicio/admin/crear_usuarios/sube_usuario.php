@@ -2,10 +2,12 @@
 
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
-$user = $_POST['usuario'];
-$password_nice = crypt($_POST['contrasena']);
-$nombre = $_POST['nombre'];
-$privi= $_POST['privilegios'];
+
+ $user= mysql_real_escape_string($_POST['usuario']);
+ $password_nice= crypt($_POST['contrasena']);
+ $nombre= mysql_real_escape_string($_POST['nombre']);
+ $privi= mysql_real_escape_string($_POST['privilegios']);
+
 
 
 
@@ -18,7 +20,7 @@ if (!mysql_query($sql,$con))
   die('Error: ' . mysql_error());
   }
 
-echo "Usuario creado";
+  echo '<script> alert("Usuario Creado Exitosamente"); window.location = "../"; </script>';
 mysql_close($con)
 
 
