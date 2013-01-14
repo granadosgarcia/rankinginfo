@@ -1,10 +1,10 @@
 <div id="botonera_menu">
 
-<a href="javascript:history.back();">
+<a href="../">
 <input type="button" class="logout" value="Atr&aacute;s" onclick="return confirm('¿Los cambios no se han guardado seguro que quieres retroceder?')">
 </a>
 
-<a href="/rankinginfo/inicio/arrendado/">
+<a href="/rankinginfo/inicio/empleado/">
 <input type="button" class="logout" value="Menu" onclick="return confirm('¿Los cambios no se han guardado seguro que quieres continuar?')">
 </a>
 

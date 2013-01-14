@@ -66,11 +66,9 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 <input type="password" name="contrasena1" id="contrasena1" /></li>
 <li><label>Privilegios: </label>
 <select name="privilegios" id="privilegios" />
-<option value="1">Opcion1</option>
-<option value="1">Opcion1</option>
-<option value="1">Opcion1</option>
-<option value="1">Opcion1</option>
-<option value="1">Opcion1</option>
+<option value="1">Insercion, Consulta y Calificacion</option>
+<option value="5">Insercion, Consulta Calificacion y Edición (sin borrar)</option>
+<option value="10">Edición (puede borrar), Crear usuarios, Admin (Todos los privilegios)</option>
 </select></li>
 
 

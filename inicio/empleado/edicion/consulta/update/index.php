@@ -252,68 +252,64 @@ var x=document.getElementById("hidden");
 		</div>
 			<div id="patronrow">
 		<label>Patron Actual</label>
-					</br>			
+								
 
 		<input type="text" name="patron_actual"   id="patron_actual"	value="<?php echo $row['patron_actual']?>" class="inputderecha">
 			</br>
 
 		<label>Patron Anterior</label>
-					</br>			
 
 		<input type="text" name="patron_anterior" id="patron_anterior"	value="<?php echo $row['patron_anterior'] ?>" class="inputderecha">
 					</br>			
 
 
 		<label>Telefono Patron Actual</label>
-					</br>			
 
 		<input type="text" name="telefono_patronactual" id="telefono_patronactual" 	value="<?php echo $row['telefono_patronactual'] ?>" class="inputderecha">
 		
 			</br>			
 
 		<label>CURP</label>
-					</br>			
 
 		<input type="text" name="curp"               id="curp"					value="<?php echo $row['curp'] ?>" class="inputderecha">
 			</br>			
 
 		<label>Clave del IFE</label>
-					</br>			
 
 		<input type="text" name="clave_ife"               id="clave_ife"					value="<?php echo $row['clave_ife'] ?>" class="inputderecha">
 						</br>			
 
 					<label>Domicilio Patron Actual</label>
-								</br>			
 
 		<input type="text" name="domicilio_patronactual"        id="domicilio_patronactual"			value="<?php echo $row['domicilio_patronactual'] ?>" class="inputderecha">
 			</br>			
 
 		<label>Telefono Patron Anterior</label>		
-			</br>			
 
 		<input type="text" name="telefono_patronanterior"     id="telefono_patronanterior"		value="<?php echo $row['telefono_patronanterior'] ?>" class="inputderecha">
 			</br>			
 
 		<label>Domicilio Patron Anterior</label>
-					</br>			
 		<input type="text" name="domicilio_patronanterior"      id="domicilio_patronanterior"			value="<?php echo $row['domicilio_patronanterior'] ?>" class="inputderecha">
 						</br>			
 
 		<label>Grado Escolar</label>
-					</br>			
 		<input type="text" name="grado_escolar"      id="grado_escolar"			value="<?php echo $row['grado_escolar'] ?>" class="inputderecha">
 						</br>			
 
-		<label>Lugar de Estudio</label>
+		<label>Lugar de Estudio 1</label>
 		<input type="text" name="lugar_estudio"      id="lugar_estudio"			value="<?php echo $row['lugar_estudio'] ?>" class="inputderecha">
-			
+		</br>
+		<label>Lugar de Estudio 2</label>
 		<input type="text" name="lugar_estudio2"      id="lugar_estudio2"			value="<?php echo $row['lugar_estudio2'] ?>" class="inputderecha">
-			</br>			
+			</br>	
+		<label>Lugar de Estudio 3</label>
 		<input type="text" name="lugar_estudio3"      id="lugar_estudio3"			value="<?php echo $row['lugar_estudio3'] ?>" class="inputderecha">
 			</br>
+		<label>Lugar de Estudio 4</label>
 		<input type="text" name="lugar_estudio4"      id="lugar_estudio4"			value="<?php echo $row['lugar_estudio4'] ?>" class="inputderecha">
-			</br>	
+			</br>
+		<label>Lugar de Estudio 5</label>
 		<input type="text" name="lugar_estudio5"      id="lugar_estudio5"			value="<?php echo $row['lugar_estudio5'] ?>" class="inputderecha">
 			</br>	</div>
 	
@@ -329,7 +325,7 @@ var x=document.getElementById("hidden");
 		<img width=150px height=100px src='<?php echo $row['img_foto'] ?>'/></br>
 		<?php } ?>
 		<input type='file' name='file[]' id='file' /></br>
-		<label>Comprobante Domiciliario</label>
+		<label>Comprobante Domiciliario</label><br>
 		<?php if(!empty($row['img_comprobante_domicilio'])) {?>
 		<img width=150px height=100px src='<?php echo $row['img_comprobante_domicilio'] ?>'/>
 		<?php } ?>
@@ -340,8 +336,8 @@ var x=document.getElementById("hidden");
 		<?php } ?>
 		<input type='file' name='file[]' id='file'  /></br>
 		
-		<Label>Escolaridad</label>
-		<label>Cedula Profesional </label>
+		<Label>Escolaridad</label><br>
+		<label>Cedula Profesional </label><br>
 		<?php if(!empty($row['img_cedula_profesional'])) {?>
 		<img width=150px height=100px src='<?php echo $row['img_cedula_profesional'] ?>'/>
 		<?php } ?>
