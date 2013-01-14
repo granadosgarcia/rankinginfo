@@ -130,12 +130,12 @@ $(function(){
 							<div id="detallespers">
 								<table>
 									<tr>
-										<td>Nombre: </td>
+										<td><label class="negritas">Nombre: </label></td>
 										<td><?php echo $row["nombre"]." ".$row["apellido_paterno"]." ".$row["apellido_materno"]?></td>
 									</tr>
 									
 									<tr>
-										<td>Curp:</td>
+										<td><label class="negritas">Curp:</label></td>
 										<td><?php echo $row["curp"] ?></td>
 									</tr>
 <?php if (!empty($row["clave_ife"])) { ?>
@@ -143,10 +143,10 @@ $(function(){
 										<td><label class='negritas'>Clave del IFE:</label></td>
 										<td><?php echo $row["clave_ife"] ?></td>
 									</tr>
-<?php} if (!empty($row["calle"])||!empty($row["no_exterior"])) { ?>
+<?php } if (!empty($row["calle"]) || !empty($row["no_exterior"])) { ?>
 									<tr>
 										<td>Domicilio Actual:</td>
-<?php if (!empty($row["calle"])) { ?>							
+<?php if (!empty($row["calle"])) {?>							
 										<td><label class="negritas">Calle: </label class="negritas"><?php echo $row["calle"] ?></td>
 <?php } ?>
 
@@ -186,38 +186,45 @@ $(function(){
 
 <?php } if (!empty($row["telefono_casa"])) { ?>			
 									<tr>						
-										<td>Telefono Personal:</td>
+										<td><label class="negritas">Telefono Casa:</label></td>
 										<td><?php echo $row["telefono_casa"] ?></td>
-							
+									</tr>s
+									
+<?php } if (!empty($row["telefono_particular"])) { ?>			
+									<tr>						
+										<td><label class="negritas">Telefono Particular:</label></td>
+										<td><?php echo $row["telefono_particular"] ?></td>
+									</tr>
+																
 <?php } if (!empty($row["estado_civil"])) { ?>										
 									<tr>
-										<td>Estado Civil:</td>
+										<td><label class="negritas">Estado Civil:</label></td>
 										<td><?php echo $row["estado_civil"] ?></td>
 									</tr>
 <?php } if (!empty($row["nombre_conyuge"])) { ?>										
 									<tr>
-										<td>Conyuge:</td>
+										<td><label class="negritas">Conyuge:</label></td>
 										<td><?php echo $row["nombre_conyuge"] ?></td>
 									</tr>
 <?php } if (!empty($row["domicilio_anterior"])) { ?>										
 									<tr>
-										<td>Domicilio Anterior:</td>
+										<td><label class="negritas">Domicilio Anterior:</label></td>
 										<td><?php echo $row["domicilio_anterior"] ?></td>
 									</tr>
 										
 <?php } if (!empty($row["nombre_aval"])) { ?>										
 									<tr>
-										<td>Nombre Aval:</td>
+										<td><label class="negritas">Nombre Aval:</label></td>
 										<td><?php echo $row["nombre_aval"] ?></td>
 									</tr>
 <?php } if (!empty($row["domicilio_aval"])){ ?>										
 									<tr>
-										<td>Domicilio Aval:</td>
+										<td><label class="negritas">Domicilio Aval:</label></td>
 										<td><?php echo $row["domicilio_aval"] ?></td>
 									</tr>
 <?php } if (!empty($row["telefono_aval"])){?>										
 									<tr>
-										<td>Telefono Aval:</td>
+										<td><label class="negritas">Telefono Aval</label>:</td>
 										<td><?php echo $row["telefono_aval"] ?></td>
 									</tr>
 <?php } ?>
@@ -229,7 +236,7 @@ $(function(){
 							<table>
 								<tr>
 									<td>
-										<p>Foto</p>
+										<p><label class="negritas">Foto</label></p>
 <?php if (!empty($row["img_foto"])) { ?>	
 										<a class="imagengrande" href="<?php echo $row["img_foto"]?>"><img height="100px" width="150px" src="<?php echo $row["img_foto"]?>"/></a>
 <?php } else {?>
@@ -240,7 +247,7 @@ $(function(){
 								
 								
 									<td>
-										<p>IFE</p>
+										<p><label class="negritas">IFE</label></p>
 									<?php if (!empty($row["img_ife"])) { ?>	
 										<a class="imagengrande" href="<?php echo $row["img_ife"]?>"><img height="100px" width="150px" src="<?php echo $row["img_ife"]?>"/></a>
 <?php } else {?>
@@ -252,7 +259,7 @@ $(function(){
 								
 								
 									<td>
-										<p>Comprobante Domiciliario</p>
+										<p><label class="negritas">Comprobante Domiciliario</label></p>
 										<?php if (!empty($row["img_comprobante_domicilio"])) { ?>	
 										<a class="imagengrande" href="<?php echo $row["img_comprobante_domicilio"]?>"><img height="100px" width="150px" src="<?php echo $row["img_comprobante_domicilio"]?>"/></a>
 <?php } else { ?>
@@ -268,33 +275,33 @@ $(function(){
 								
 <?php if (!empty($row["arrendador_actual"])) { ?>	
 									<tr>
-										<td>Arrendador Actual:</td>
+										<td><label class="negritas">Arrendador Actual:</td>
 										<td><?php echo $row["arrendador_actual"] ?></td>
 									</tr>
 <?php } if (!empty($row["domicilio_arrendador_actual"])) { ?>									
 									<tr>
-										<td>Domicilio Arrendador Actual:</td>
+										<td><label class="negritas">Domicilio Arrendador Actual:</td>
 										<td><?php echo $row["domicilio_arrendador_actual"] ?></td>
 									</tr>
 <?php } if (!empty($row["telefono_arrendador_actual"])) { ?>									
 									<tr>
-										<td>Teléfono Arrendador Actual:</td>
+										<td><label class="negritas">Teléfono Arrendador Actual:</td>
 										<td><?php echo $row["telefono_arrendador_actual"] ?></td>
 									</tr>
 <?php } 
 	if (!empty($row["arrendador_anterior"])) { ?>
 										<tr>
-										<td>Arrendador Anterior:</td>
+										<td><label class="negritas">Arrendador Anterior:</td>
 										<td><?php echo $row["arrendador_anterior"] ?></td>
 									</tr>
 <?php } if (!empty($row["domicilio_arrendador_anterior"])) { ?>
 									<tr>
-										<td>Domicilio Arrendador Anterior:</td>
+										<td><label class="negritas">Domicilio Arrendador Anterior:</td>
 										<td><?php echo $row["domicilio_arrendador_anterior"] ?></td>
 									</tr>
 <?php } if (!empty($row["telefono_arrendador_anterior"])) { ?>
 									<tr>
-										<td>Teléfono Arrendador Anterior:</td>
+										<td><label class="negritas">Teléfono Arrendador Anterior:</td>
 										<td><?php echo $row["telefono_arrendador_anterior"] ?></td>
 									</tr>
 <?php } ?>
@@ -315,25 +322,25 @@ while($row=mysql_fetch_array($resultado1[$k])){ ?>
 								<table class="califs">
 <?php if (!empty($row["nombre_evaluador"])) { ?>
 								<tr>
-									<td><label>Nombre del Evaluador</label></td>
-									<td><?php echo $row["nombre_evaluador"] ?></td>
+									<td><label class="negritas">Nombre del Evaluador</label></td>
+									<td><?php echo $row["nombre_evaluador"] ?></td></tr>
 <?php if (!empty($row["telefono_evaluador"])) { ?>
-									<td><label>Telefono del Evaluador</label></td>
-									<td><?php echo $row["telefono_evaluador"] ?></td>
-<?php} if (!empty($row["direccion_evaluador"])) { ?>
-									<td><label>Dirección del Evaluador</label></td>
+									<tr><td><label class="negritas">Telefono del Evaluador</label></td>
+									<td><?php echo $row["telefono_evaluador"] ?></td></tr>
+<?php } if (!empty($row["direccion_evaluador"])) { ?>
+									<tr><td><label class="negritas">Dirección del Evaluador</label></td>
 									<td><?php echo $row["direccion_evaluador"] ?></td>
 								</tr>
-<?php} }?>
+<?php } }?>
 <?php if (!empty($row["fecha"])) { ?>
 								<tr>
-								<td>Fecha:</td>
+								<td><label class="negritas">Fecha:</label></td>
 								<td> <?php echo $row["fecha"] ?></td>
 								</tr>
 <?php } ?>
 								<?php if (!empty($row["arr_pagos"])) { ?>
 									<tr>
-										<td>Pagos:</td>
+										<td><label class="negritas">Pagos:</label></td>
 										<td><?php
 										switch($row["arr_pagos"]){
 										
@@ -364,7 +371,7 @@ while($row=mysql_fetch_array($resultado1[$k])){ ?>
 		<?php  if (!empty($row["arr_propiedad_anterior"])) { ?>
 							
 									<tr>
-										<td>Propiedad Anterior:</td>
+										<td><label class="negritas">Propiedad Anterior:</label></td>
 										<td><?php
 										switch($row["arr_propiedad_anterior"]){
 										
@@ -393,7 +400,7 @@ while($row=mysql_fetch_array($resultado1[$k])){ ?>
 		<?php } if (!empty($row["arr_propiedad_actual"])) { ?>
 
 									<tr>
-										<td>Propiedad Actual</td>
+										<td><label class="negritas">Propiedad Actual</label></td>
 										<td><?php
 										switch($row["arr_propiedad_actual"]){
 										
@@ -422,7 +429,7 @@ while($row=mysql_fetch_array($resultado1[$k])){ ?>
 					<?php } if (!empty($row["arr_general"])) { ?>
 
 									<tr>
-										<td>General:</td>
+										<td><label class="negritas">General:</label></td>
 										<td><?php
 										switch($row["arr_general"]){
 										
@@ -456,7 +463,7 @@ while($row=mysql_fetch_array($resultado1[$k])){ ?>
 								 
 				
 
-								<td class="comment">Comentarios: </br>
+								<td class="comment"><label class="negritas">Comentarios: </label></br>
 										<?php echo $row["comentario"];?></td>
 								
 								</tr>

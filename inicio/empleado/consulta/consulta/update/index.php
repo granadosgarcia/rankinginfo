@@ -178,7 +178,7 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 										<td><label class="negritas">Curp:</label></td>
 										<td><?php echo $row["curp"] ?></td>
 									</tr>
-<?php} if (!empty($row["calle"])||!empty($row["no_exterior"])) { ?>
+<?php } if (!empty($row["calle"])||!empty($row["no_exterior"])) { ?>
 									<tr>
 										<td>Domicilio Actual:</td>
 <?php if (!empty($row["calle"])) { ?>							
@@ -422,6 +422,18 @@ while($row=mysql_fetch_array($resultado[$k], MYSQL_BOTH)) { ?>
 <h2><label class="negritas">Calificaciones</label></h2>	
 <?php $cont++; } ?>					
 								<table class="califs">
+								<?php if (!empty($row["nombre_evaluador"])) { ?>
+									<tr><td><label class="negritas">Nombre del Evaluador: </label></td>
+									<td><?php echo $row["nombre_evaluador"] ?></td>
+									</tr>
+<?php if (!empty($row["empresa_evaluador"])) { ?>
+									<tr><td><label class="negritas">Empresa del Evaluador: </label></td>
+									<td><?php echo $row["empresa_evaluador"] ?></td></tr>
+<?php } if (!empty($row["puesto_evaluador"])) { ?>
+									<tr><td><label class="negritas">Puesto del Evaluador: </label></td>
+									<td><?php echo $row["puesto_evaluador"] ?></td></tr>
+								
+<?php } }?>
 <?php if (!empty($row["fecha"])) { ?>
 								<tr>
 								<td><label class="negritas">Fecha:</label></td>

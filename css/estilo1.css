@@ -9,7 +9,9 @@ body{
     display:none;
 }
 }
-
+.negritas{
+	font-weight: bold;
+}
 #entero{
 	width: 100%;
 			margin-left: auto;
