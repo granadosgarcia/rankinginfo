@@ -122,6 +122,21 @@ margin: 0px 3px;
 	
 }
 
+#inputss input[type="password"] { float: right;
+margin: 0px 3px;
+	
+}
+
+#inputsss input[type="text"] { float: right;
+margin: 0px -15px;
+	
+}
+
+#inputsss input[type="password"] { float: right;
+margin: 0px -15px;
+	
+}
+
 #botonesrow{
 	width: 830px;
 	margin: 15px auto;
@@ -413,6 +428,27 @@ width: 120px;
   width: 150px; 
 }
 
+.crea{
+	background-color: #7fbf4d;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
+  background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: linear-gradient(top, #7fbf4d, #63a62f);
+  border: 1px solid #63a62f;
+  border-bottom: 1px solid #5b992b;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+  box-shadow: inset 0 1px 0 0 #96ca6d;
+  color: #fff;
+  font: bold 18px/1 "NeutonBold", Geneva, Verdana, sans-serif;
+  padding: 7px 0 8px 0;
+  text-align: center;
+  text-shadow: 0 -1px 0 #4c9021;
+  width: 150px; 
+ margin: 0 0 0 90px;
+}
 .edita:hover{
 	background-color: #76b347;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76b347), color-stop(100%, #5e9e2e));
