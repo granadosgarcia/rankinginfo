@@ -23,6 +23,9 @@ nombres regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
 OR apellido_paterno regexp'[[:<:]]".$palabrasquery1."[[:>:]]' 
 OR apellido_materno regexp'[[:<:]]".$palabrasquery1."[[:>:]]' 
 OR curp = '".$palabrasquery1."'
+OR patron_actual = '".$palabrasquery1."'
+OR patron_anterior = '".$palabrasquery1."'
+OR telefono_personal ='".$palabrasquery1."'
 OR telefono_particular ='".$palabrasquery1."'";
 }
 
