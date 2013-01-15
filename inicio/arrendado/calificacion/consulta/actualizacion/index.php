@@ -131,19 +131,19 @@ while($row = mysql_fetch_array($result)){ ?>
 				
 								<div id="info_calif">
 					
-					<label class="lab"> Evaluador </label>
+					<p class="lab"> Evaluador </p> <br>
 					
 					<label class="lab"> Nombre Completo </label>
 		
-					<input type="text" name="nombre_evaluador"   id="nombre_evaluador">
+					<input type="text" name="nombre_evaluador"   id="nombre_evaluador"><br>
 					
 					<label class="lab"> Telefono </label>
 		
-					<input type="text" name="telefono_evaluador"   id="telefono_evaluador">
+					<input type="text" name="telefono_evaluador"   id="telefono_evaluador"><br>
 					
 					<label class="lab"> Dirección Completa </label>
 		
-					<input type="text" name="direccion_evaluador"   id="direccion_evaluador">
+					<input type="text" name="direccion_evaluador"   id="direccion_evaluador"><br>
 			
 				</div><div id="ni">
 							<input type="submit" name="ok" value="Enviar" class="edita">
