@@ -53,7 +53,9 @@ else
 			OR apellido_materno regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]' 
 			OR curp = '".$palabrasquery[$i]."'
 			OR arrendador_actual ='".$palabrasquery[$i]."'
+			OR arrendador_anterior ='".$palabrasquery[$i]."'
 			OR telefono_casa ='".$palabrasquery[$i]."'
+			OR telefono_particular ='".$palabrasquery[$i]."'
 			OR nombre_aval='".$palabrasquery[$i]."')";		
 	}
 }

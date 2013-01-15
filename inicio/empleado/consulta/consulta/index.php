@@ -52,6 +52,9 @@ else
 			OR apellido_paterno regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]' 
 			OR apellido_materno regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]' 
 			OR curp = '".$palabrasquery[$i]."'
+			OR patron_actual = '".$palabrasquery[$i]."'
+			OR patron_anterior = '".$palabrasquery[$i]."'
+			OR telefono_personal ='".$palabrasquery[$i]."'
 			OR telefono_particular ='".$palabrasquery[$i]."')";	}
 }
 
