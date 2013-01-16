@@ -113,7 +113,9 @@ $sql.="ORDER BY LENGTH(apellido_paterno) DESC";
 	   					<h1>Arrendado a Editar</h1>
 					</div>
 					
-					<div id='contenedortabla'>";
+					<div id='contenedortabla'>
+<h3 style='color: #808080; margin: -30px 0px 20px 30px;'>
+					Estás en arrendado/edicion</h3>";
 /* 	Botones Menu */
 	include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";
 

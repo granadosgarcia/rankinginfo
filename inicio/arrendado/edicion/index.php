@@ -39,6 +39,10 @@ if(isset($_SESSION['privilegios'])){
 margin: -130px 0px 0px -160px;'>
     </div>
 	   				<div id="calificacion">
+ <h3 style="color: #808080; margin: -30px 0px 20px 30px;"> Estás en <?php 
+                          $imprim = str_replace('rankinginfo/inicio/', "", $_SERVER["REQUEST_URI"]);
+                        $imprim = str_replace(' /', "",$imprim);
+                                          echo $imprim; ?></h3>
 	   				<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";?>
 
 

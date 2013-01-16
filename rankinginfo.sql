@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2013 at 08:03 PM
+-- Generation Time: Jan 15, 2013 at 01:46 AM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -32,14 +32,12 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=174 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=221 ;
 
 --
 -- Dumping data for table `actividades`
 --
 
-INSERT INTO `actividades` (`id_usuario`, `fecha`, `actividad`, `id`) VALUES
-(8, '2013-01-11 13:33:00', 'Insercion Empleado', 173);
 
 -- --------------------------------------------------------
 
@@ -106,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `arr_calif` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `arr_calif`
@@ -155,14 +153,12 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   `clave_ife` int(30) DEFAULT NULL,
   PRIMARY KEY (`curp`),
   KEY `clave_escolaridad` (`clave_escolaridad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `empleado`
 --
 
-INSERT INTO `empleado` (`curp`, `nombres`, `apellido_paterno`, `apellido_materno`, `telefono_particular`, `telefono_personal`, `calle`, `no_interior`, `no_exterior`, `colonia`, `ciudad`, `estado`, `codigo_postal`, `municipio`, `delegacion`, `estado_civil`, `img_ife`, `img_comprobante_domicilio`, `img_comprobante_trabajo`, `clave_escolaridad`, `nombre_conyuge`, `patron_anterior`, `patron_actual`, `responsable_actual`, `telefono_patronactual`, `domicilio_patronactual`, `telefono_patronanterior`, `domicilio_patronanterior`, `img_foto`, `empleo_anterior`, `tiempo_trabajoanterior`, `habilidades`, `clave_ife`) VALUES
-('jojo', 'Abraham', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, 'VW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -181,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `emp_calif` (
   `puesto_evaluador` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `emp_calif`
@@ -211,8 +207,6 @@ CREATE TABLE IF NOT EXISTS `escolaridad` (
 -- Dumping data for table `escolaridad`
 --
 
-INSERT INTO `escolaridad` (`clave`, `grado_escolar`, `lugar_estudio`, `lugar_estudio2`, `lugar_estudio3`, `lugar_estudio4`, `lugar_estudio5`, `img_certificado_escolar`, `img_cedula_profesional`) VALUES
-(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -254,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `privilegios` int(2) NOT NULL,
   `img_foto` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `usuario`

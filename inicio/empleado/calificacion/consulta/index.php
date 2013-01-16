@@ -95,7 +95,9 @@ else
 	   					<h1>Empleado a Calificar</h1>
 					</div>
 					
-					<div id='contenedortabla'>";
+					<div id='contenedortabla'>
+<h3 style='color: #808080; margin: -30px 0px 20px 30px;'>
+					Estás en empleado/calificacion</h3>";
 /* 	Botones Menu */
 	include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_empleado.php";
 

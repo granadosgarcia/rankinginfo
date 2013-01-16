@@ -114,7 +114,9 @@ $(function(){
 	   					<h1>Empleado a Consultar</h1>
 					</div>
 					
-					<div id='contenedortabla'>";
+					<div id='contenedortabla'>
+<h3 style='color: #808080; margin: -30px 0px 20px 30px;'>
+					Estás en empleado/consulta</h3>";
 					
 		include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";
 		echo "<label>Seleccionar Todo</label><input type='checkbox' id='selectall'/>";		

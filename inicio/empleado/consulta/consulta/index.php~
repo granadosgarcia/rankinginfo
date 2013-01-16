@@ -17,30 +17,30 @@ $numeropalabras = count($palabrasquery);
 if($numeropalabras == 1)
 {
 $sql= "SELECT DISTINCT *
-FROM arrendado
+FROM empleado
 WHERE 
-nombre regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
+nombres regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
 OR apellido_paterno regexp'[[:<:]]".$palabrasquery1."[[:>:]]' 
 OR apellido_materno regexp'[[:<:]]".$palabrasquery1."[[:>:]]' 
 OR curp = '".$palabrasquery1."'
-OR arrendador_actual ='".$palabrasquery1."'
-OR arrendador_anterior ='".$palabrasquery1."'
-OR telefono_casa ='".$palabrasquery1."'
-OR telefono_particular ='".$palabrasquery1."'
-OR nombre_aval='".$palabrasquery1."'";
+OR patron_actual = '".$palabrasquery1."'
+OR patron_anterior = '".$palabrasquery1."'
+OR telefono_personal ='".$palabrasquery1."'
+OR telefono_particular ='".$palabrasquery1."'";
 }
 
 
 else
 {
-/* Query para seleccionar a más de un arrendado */
+
 	$sql.= " SELECT DISTINCT *
-		FROM arrendado
+		FROM empleado
 		WHERE ";
 
 
 	for($i=0; $i<$numeropalabras; $i++)
 	{
+		
 		if($i==0)
 			$sql.=" (";
 		else 
@@ -48,16 +48,14 @@ else
 
 
 		$sql.= "
-			nombre regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]'
+			nombres regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]'
 			OR apellido_paterno regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]' 
 			OR apellido_materno regexp '[[:<:]]".$palabrasquery[$i]."[[:>:]]' 
 			OR curp = '".$palabrasquery[$i]."'
-			OR arrendador_actual ='".$palabrasquery[$i]."'
-			OR arrendador_anterior ='".$palabrasquery[$i]."'
-			OR telefono_casa ='".$palabrasquery[$i]."'
-			OR telefono_particular ='".$palabrasquery[$i]."'
-			OR nombre_aval='".$palabrasquery[$i]."')";		
-	}
+			OR patron_actual = '".$palabrasquery[$i]."'
+			OR patron_anterior = '".$palabrasquery[$i]."'
+			OR telefono_personal ='".$palabrasquery[$i]."'
+			OR telefono_particular ='".$palabrasquery[$i]."')";	}
 }
 
 
@@ -113,15 +111,13 @@ $(function(){
   
    			<div id='wrapper'>
 	   				<div id='header'>
-	   					<h1>Arrendado a Consultar</h1>
+	   					<h1>Empleado a Consultar</h1>
 					</div>
 					
-					<div id='contenedortabla'>
-					<h3 style='color: #808080; margin: -30px 0px 20px 30px;'>
-					Estás en arrendado/consulta</h3>";
+					<div id='contenedortabla'>";
+					
 		include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu.php";
-		echo "<label>Seleccionar Todo</label>
-		<input type='checkbox' id='selectall'/><br><br>";		
+		echo "<label>Seleccionar Todo</label><input type='checkbox' id='selectall'/>";		
 echo " 	<form method='GET' action='update/'>
 
 		 <table id ='tabla'>
@@ -132,9 +128,8 @@ echo " 	<form method='GET' action='update/'>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Paterno</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Materno</th>
 		<th class='sorting' role='columnheader' tabindex='0'>CURP</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Arrendador Actual</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Arrendador Anterior</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Telefono</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Empresa</th>
 			
 					</tr>
 		</thead>
@@ -146,13 +141,13 @@ while($row = mysql_fetch_array($resultado)){
 		echo "<tr class='infooo'>";
 				echo "<td><input type='checkbox' name='consulta[]' class='case' value='".$row['curp']."'> </td>";
 			
-				echo "<td>". $row['nombre']. " </td>";
+				echo "<td>". $row['nombres']. " </td>";
 				echo "<td>". $row['apellido_paterno']. "</td>";
 				echo "<td>". $row['apellido_materno']. "</td>";
 				echo "<td>". $row['curp']. "</td>";
-				echo "<td>". $row['arrendador_actual']. " </td>";
-				echo "<td>". $row['arrendador_anterior']. " </td>";
-				echo "<td>". $row['telefono_casa']. " </td>";
+				echo "<td>". $row['telefono_particular']. " </td>";
+				echo "<td>". $row['patron_actual']. " </td>";
+
 				
 				
 				
