@@ -63,6 +63,9 @@ if(!($result=mysql_query($sql,$con)))
 			
 		<li><label>CURP</label>
 		<p><?php echo $row['curp'] ?></p></li>
+				
+		<li><label>No. Cliente</label>
+		<p><?php echo $row['no_cliente'] ?></p></li>
 			
 		<li><label>Teléfono</label>
 		<p><?php echo $row['telefono']?></p></li>
@@ -133,7 +136,7 @@ echo '<div id="botongestion">';
 		<th class='sorting' role='columnheader' tabindex='0'>Ultimo Abono</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Saldo Atrasado</th>
 		<th class='sorting' role='columnheader' tabindex='0'> Monto Deuda</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Comentario</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Gestion</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Fecha</th>
 
 					</tr>

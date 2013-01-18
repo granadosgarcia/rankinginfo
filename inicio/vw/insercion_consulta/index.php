@@ -36,29 +36,17 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 					<label>Tipo</label><br>
 					<select name="tipo_gestion" id="tipo_gestion">
 					<option value="" >---</option>
-					<option value="Opcion 1" >Opción 1</option>
-					<option value="Opcion 2" >Opción 2</option>
-					<option value="Opcion 3" >Opción 3</option>
+					<option value="Opcion 1" >Telefonica 1</option>
+					<option value="Opcion 2" >Presencial</option>
+					<option value="Opcion 3" >Juicio</option>
 					<option value="Opcion 4" >Opción 4</option>
 					</select>
 					<br>
-						<label>Etapa del Juicio</label><br>
-					<select name="etapa_juicio" id="etapa_juicio">
-					<option value="" >---</option>
-					<option value="Opcion 1" >Opción 1</option>
-					<option value="Opcion 2" >Opción 2</option>
-					<option value="Opcion 3" >Opción 3</option>
-					<option value="Opcion 4" >Opción 4</option>
-					</select>
-					<br>
+	
 						<label>Etapa Procesal</label><br>
-					<select name="etapa_procesal" id="etapa_procesal">
-					<option value="" >---</option>
-					<option value="Opcion 1" >Opción 1</option>
-					<option value="Opcion 2" >Opción 2</option>
-					<option value="Opcion 3" >Opción 3</option>
-					<option value="Opcion 4" >Opción 4</option>
-					</select>
+					<input name="etapa_procesal" id="etapa_procesal" type="text"><br>
+
+		
 					<br>
 					
 					<label>Monto de Deuda</label>
@@ -73,7 +61,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 					 <label>Ultimo Abono</label>
 					 <input name="ultimo_abono" id="ultimo_abono" type="text">	<br><br>
 					 	
-					<label>Comentario</label>
+					<label>Gestion</label>
 					<textarea rows="3" cols="35" name="comentario" id="comentario" ></textarea>
 
 				
