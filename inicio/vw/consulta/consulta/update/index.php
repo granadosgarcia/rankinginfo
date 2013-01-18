@@ -117,6 +117,11 @@ if(!($resultado2=mysql_query($sql2,$con)))
 {
 	die ('<br>ERROR '.mysql_error());
 }
+
+echo '<div id="botongestion">';
+
+ echo "<br><a class='edita' href='../../../insercion_consulta/' /> Insertar Gestion </a>";
+	echo '	</div>';
 	echo "	
 		 <table id ='tabla1' width='100%'>
 		<thead>	
@@ -127,7 +132,7 @@ if(!($resultado2=mysql_query($sql2,$con)))
 		<th class='sorting' role='columnheader' tabindex='0'>Semanas Atraso</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Ultimo Abono</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Saldo Atrasado</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Monto de Deuda</th>
+		<th class='sorting' role='columnheader' tabindex='0'> Monto Deuda</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Comentario</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Fecha</th>
 
@@ -158,10 +163,7 @@ while($row2 = mysql_fetch_array($resultado2)){
 
 echo "</tbody>
 </table>"?>
-<div id="botongestion">
 
-<?php echo "<br><a class='boton' href='../../../insercion_consulta/' /> Insertar Gestion </a>" ?>
-		</div>
 		</div>
 
         </div>

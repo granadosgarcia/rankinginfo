@@ -39,11 +39,10 @@ font-size: 15px;
 
 #botongestion{
 	width: 170px;
-margin: 14px auto;
-}
+margin: 0 auto 23px}
 #gestiones{
 width: 800px;
-margin: 100px auto;
+margin: 26px auto;
 float: right;
 }
 
