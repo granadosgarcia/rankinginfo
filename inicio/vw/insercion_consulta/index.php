@@ -18,6 +18,38 @@ if(!($resultado2=mysql_query($sql2,$con)))
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 <title> Insertar Arrendado </title>
 <link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
+<script>
+ function conyuge(tipo_gestion){
+//run some code when "onchange" event fires
+ 
+
+    var conesposo = tipo_gestion.options[tipo_gestion.selectedIndex].value;
+
+
+switch(conesposo)
+{
+case 'Juicio':
+  var x=document.getElementById("hidden");
+		x.style.visibility="visible";
+  break;
+case 'Telefonica':
+ var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+  
+  case 'Presencial':
+ var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+  break;
+  
+default:
+var x=document.getElementById("hidden");
+		x.style.visibility="hidden";
+	}
+
+}
+
+	</script>	
 
 </head>
 
@@ -46,20 +78,19 @@ if(!($resultado2=mysql_query($sql2,$con)))
 
 				<div id="primerrow">
 					<label>Tipo</label><br>
-					<select name="tipo_gestion" id="tipo_gestion">
-					<option value="" >---</option>
-					<option value="Opcion 1" >Telefonica 1</option>
-					<option value="Opcion 2" >Presencial</option>
-					<option value="Opcion 3" >Juicio</option>
-					<option value="Opcion 4" >Opción 4</option>
+					<select name="tipo_gestion" id="tipo_gestion" onchange="conyuge(this)">
+					<option >---</option>
+					<option >Telefonica</option>
+					<option >Presencial</option>
+					<option >Juicio</option>
 					</select>
 					<br>
-	
-						<label>Etapa Procesal</label><br>
-					<input name="etapa_procesal" id="etapa_procesal" type="text"><br>
+						<div id="hidden" style=" visibility:hidden;">
 
+						<label>Etapa Procesal</label>
+					<input name="etapa_procesal" id="etapa_procesal" type="text"><br>
+						</div>
 		
-					<br>
 					<?php
 					
 					if(mysql_num_rows ($resultado2 )>0){
