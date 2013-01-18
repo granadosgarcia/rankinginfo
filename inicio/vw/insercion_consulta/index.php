@@ -1,5 +1,17 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
+
+$sql2= "SELECT  monto_deuda
+FROM gestiones 
+WHERE curp='$_SESSION[curp]'";
+
+if(!($resultado2=mysql_query($sql2,$con)))
+{
+	die ('<br>ERROR '.mysql_error());
+}
+
 ?>
 <html>
 <head>
@@ -48,10 +60,20 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 		
 					<br>
+					<?php
 					
+					if(mysql_num_rows ($resultado2 )>0){
+					 while($row2 = mysql_fetch_array($resultado2)){ ?>
+					 					<label>Monto de Deuda</label>
+
+					 <input name="monto_deuda" id="monto_deuda" type="text" value="<?php echo $row2['monto_deuda']?>"><br>
+					
+				<?php	}}
+					else {
+?>
 					<label>Monto de Deuda</label>
 					 <input name="monto_deuda" id="monto_deuda" type="text"><br>
-					
+					<?php } ?>
 					<label>Saldo Atrasado</label>
 					 <input name="saldo_atrasado" id="saldo_atrasado" type="text"><br>
 					 
@@ -61,7 +83,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 					 <label>Ultimo Abono</label>
 					 <input name="ultimo_abono" id="ultimo_abono" type="text">	<br><br>
 					 	
-					<label>Gestion</label>
+					<label>Gestion</label><br>
 					<textarea rows="3" cols="35" name="comentario" id="comentario" ></textarea>
 
 				
