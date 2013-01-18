@@ -22,8 +22,7 @@ nombre regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
 OR apellido_paterno regexp'[[:<:]]".$palabrasquery1."[[:>:]]' 
 OR apellido_materno = '".$palabrasquery1."'
 OR curp ='".$palabrasquery1."'
-OR telefono ='".$palabrasquery1."'
-OR domicilio='".$palabrasquery1."'";
+OR telefono ='".$palabrasquery1."'";
 }
 
 

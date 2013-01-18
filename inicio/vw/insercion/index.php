@@ -70,14 +70,28 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			
 			<li><label>Apellido Materno</label><input type="text" name="apellido_materno"    id="apellido_materno">	</li>
 
-			
-			<li><label>Domicilio</label><input type="text" name="domicilio"    id="domicilio">	</li>
-
-			
-			<li><label>Telefono</label><input type="text" name="telefono"       id="telefono"> 	</li>
-
-			
-			<li><label>Curp</label><input type="text" name="curp"        id="curp"></li>
+<!-- 	New elements		 -->
+			<li><label>Calle</label>
+			<input type="text" name="calle"    id="calle"></li>
+			<li><label>Numéro Interior</label>
+			<input type="text" name="no_interior"    id="no_interior"></li>
+			<li><label>Numéro Exterior</label>
+			<input type="text" name="no_exterior"    id="no_exterior"></li>
+			<li><label>Colonia</label>
+			<input type="text" name="colonia"    id="colonia"></li>
+			<li><label>Ciudad</label>
+			<input type="text" name="ciudad"    id="ciudad"></li>
+			<li><label>Municipio</label>
+			<input type="text" name="municipio"    id="municipio"></li>
+			<li><label>Delegación</label>
+			<input type="text" name="delegacion"    id="delegacion"></li>
+			<li><label>Estado</label>
+			<input type="text" name="estado"    id="estado"></li>
+<!-- 	New elements			 -->
+			<li><label>Telefono</label>
+			<input type="text" name="telefono"       id="telefono"> 	</li>
+			<li><label>Curp</label>
+			<input type="text" name="curp"        id="curp"></li>
 			
 			</ul>
 			

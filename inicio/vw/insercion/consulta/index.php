@@ -12,7 +12,16 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
  $apellido_materno= mysql_real_escape_string($_POST['apellido_materno']);
  $domicilio= mysql_real_escape_string($_POST['domicilio']);
  $telefono= mysql_real_escape_string($_POST['telefono']);
- $curp= mysql_real_escape_string($_POST['curp']);
+ $calle= mysql_real_escape_string($_POST['calle']);
+ $no_interior= mysql_real_escape_string($_POST['no_interior']);
+ $no_exterior= mysql_real_escape_string($_POST['no_exterior']);
+ $colonia= mysql_real_escape_string($_POST['colonia']);
+ $ciudad= mysql_real_escape_string($_POST['ciudad']);
+ $municipio= mysql_real_escape_string($_POST['municipio']);
+ $delegacion= mysql_real_escape_string($_POST['delegacion']);
+ $estado= mysql_real_escape_string($_POST['estado']);
+ $codigo_postal= mysql_real_escape_string($_POST['codigo_postal']);
+
 
 $sqlact="
 INSERT INTO actividades (id_usuario, fecha, actividad)
@@ -22,34 +31,69 @@ VALUES ('$_SESSION[usuario_id]', NOW(), 'Insercion Deudor VW')";
 <?php
 $sql="INSERT INTO vw(
 nombre";
-$sql.=",curp";
 
 if(!empty($_POST['apellido_paterno']))
 $sql.=",apellido_paterno";
 
 if(!empty($_POST['apellido_materno']))
 $sql.=",apellido_materno";
-
-if(!empty($_POST['domicilio']))
-$sql.=",domicilio";
-
+/* New */
+if(!empty($_POST['calle']))
+$sql.=",calle";
+if(!empty($_POST['no_interior']))
+$sql.=",no_interior";
+if(!empty($_POST['no_exterior']))
+$sql.=",no_exterior";
+if(!empty($_POST['colonia']))
+$sql.=",colonia";
+if(!empty($_POST['ciudad']))
+$sql.=",ciudad";
+if(!empty($_POST['municipio']))
+$sql.=",municipio";
+if(!empty($_POST['delegacion']))
+$sql.=",delegacion";
+if(!empty($_POST['estado']))
+$sql.=",estado";
+if(!empty($_POST['codigo_postal']))
+$sql.=",codigo_postal";
+/* New */
 if(!empty($_POST['telefono']))
 $sql.=",telefono";
-
+$sql.=",curp";
 
 $sql.=")
 
 VALUES(
 '$nombre'";
-$sql.=",'$curp'";
 if(!empty($_POST['apellido_paterno']))
 $sql.=",'$apellido_paterno'";
 if(!empty($_POST['apellido_materno']))
 $sql.=",'$apellido_materno'";
-if(!empty($_POST['domicilio']))
-$sql.=",'$domicilio'";
+
+
+if(!empty($_POST['calle']))
+$sql.=",'$calle'";
+if(!empty($_POST['no_interior']))
+$sql.=",'$no_interior'";
+if(!empty($_POST['no_exterior']))
+$sql.=",'$no_exterior'";
+if(!empty($_POST['colonia']))
+$sql.=",'$colonia'";
+if(!empty($_POST['ciudad']))
+$sql.=",'$ciudad'";
+if(!empty($_POST['municipio']))
+$sql.=",'$municipio'";
+if(!empty($_POST['delegacion']))
+$sql.=",'$delegacion'";
+if(!empty($_POST['estado']))
+$sql.=",'$estado'";
+
+
 if(!empty($_POST['telefono']))
-$sql.=",'$telefono'";$sql.=")";	
+$sql.=",'$telefono'";
+$sql.=",'$curp'";
+
+$sql.=")";	
 
 	if (!mysql_query($sql,$con))
   {

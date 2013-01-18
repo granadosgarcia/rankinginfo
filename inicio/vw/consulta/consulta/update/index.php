@@ -67,9 +67,33 @@ if(!($result=mysql_query($sql,$con)))
 		<li><label>Teléfono</label>
 		<p><?php echo $row['telefono']?></p></li>
 
-		<li><label>Domicilio</label>
-		<p><?php echo $row['domicilio']?></p></li>
-
+		<li><label>Domicilio</label></li>
+		
+		<li><label>Calle</label>
+		<p><?php echo $row['calle']?></p></li>
+		
+				<li><label>No. Interior</label>
+		<p><?php echo $row['no_interior']?></p></li>
+		
+				<li><label>No. Exterior</label>
+		<p><?php echo $row['no_exterior']?></p></li>
+		
+				<li><label>Colonia</label>
+		<p><?php echo $row['colonia']?></p></li>
+		
+				<li><label>Ciudad</label>
+		<p><?php echo $row['ciudad']?></p></li>
+		
+				<li><label>Municipio</label>
+		<p><?php echo $row['municipio']?></p></li>
+		
+				<li><label>Delegación</label>
+		<p><?php echo $row['delegacion']?></p></li>
+		
+				<li><label>Estado</label>
+		<p><?php echo $row['estado']?></p></li>
+		
+				
 	</ul>
 	
 
@@ -123,6 +147,7 @@ while($row2 = mysql_fetch_array($resultado2)){
 				echo "<td>". htmlentities($row2['saldo_atrasado']). "</td>";
 				echo "<td>". htmlentities($row2['comentario']). "</td>";
 				echo "<td>". htmlentities($row2['fecha']). "</td>";
+
 
 				
 		echo "</tr>";
