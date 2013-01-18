@@ -79,7 +79,7 @@ var x=document.getElementById("hidden");
 				<div id="primerrow">
 					<label>Tipo</label><br>
 					<select name="tipo_gestion" id="tipo_gestion" onchange="conyuge(this)">
-					<option >---</option>
+					<option value="" >---</option>
 					<option >Telefonica</option>
 					<option >Presencial</option>
 					<option >Juicio</option>
@@ -92,14 +92,15 @@ var x=document.getElementById("hidden");
 						</div>
 		
 					<?php
-					
+					$contador ==1;
 					if(mysql_num_rows ($resultado2 )>0){
-					 while($row2 = mysql_fetch_array($resultado2)){ ?>
+					 while($row2 = mysql_fetch_array($resultado2)){ 
+					 ?>
 					 					<label>Monto de Deuda</label>
 
 					 <input name="monto_deuda" id="monto_deuda" type="text" value="<?php echo $row2['monto_deuda']?>"><br>
 					
-				<?php	}}
+				<?php	break;}}
 					else {
 ?>
 					<label>Monto de Deuda</label>

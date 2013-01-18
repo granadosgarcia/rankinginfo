@@ -40,9 +40,10 @@ font-size: 15px;
 #botongestion{
 	width: 170px;
 margin: 0 auto 23px}
+
 #gestiones{
-width: 800px;
-margin: 26px auto;
+width: 1015px;
+margin: 35px -154px 0px 0px;
 float: right;
 }
 
@@ -86,6 +87,17 @@ width: 200px;
 margin: 0px 0px 0px -180px;
 padding: 0;
 float: left;
+}
+.info_deudor{
+	background: #484747;
+	font-weight: bold;
+}
+#info_deudor ul{
+    list-style-type: none;
+    
+}
+
+#info_deudor ul li {
 }
 
 #primerrow2{

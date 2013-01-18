@@ -50,49 +50,49 @@ if(!($result=mysql_query($sql,$con)))
 	<div id="info_deudor">
 		<ul>
 
-		<li><p>Nombres</p>
+		<li><label class="info_deudor">Nombres</label>
 		<p><?php echo $row['nombre']?></p></li>
 		
-		<li><labe>Apellido Paterno</label>
+		<li><label class="info_deudor">Apellido Paterno</label>
 		<p><?php echo $row['apellido_paterno']?></p></li>
 
-		<li><label>Apellido Materno</label>
+		<li><label class="info_deudor">Apellido Materno</label>
 		<p><?php echo $row['apellido_materno']?></p></li>
 
 			
-		<li><label>CURP</label>
+		<li><label class="info_deudor">CURP</label>
 		<p><?php echo $row['curp'] ?></p></li>
 				
-		<li><label>No. Cliente</label>
+		<li><label class="info_deudor">No. Cliente</label>
 		<p><?php echo $row['no_cliente'] ?></p></li>
 			
-		<li><label>Teléfono</label>
+		<li><label class="info_deudor">Teléfono</label>
 		<p><?php echo $row['telefono']?></p></li>
 
-		<li><label>Domicilio</label></li>
+		<li><label class="info_deudor">Domicilio</label></li><br>
 		
-		<li><label>Calle</label>
+		<li><label class="info_deudor">Calle</label>
 		<p><?php echo $row['calle']?></p></li>
 		
-				<li><label>No. Interior</label>
+				<li><label class="info_deudor">No. Interior</label>
 		<p><?php echo $row['no_interior']?></p></li>
 		
-				<li><label>No. Exterior</label>
+				<li><label class="info_deudor">No. Exterior</label>
 		<p><?php echo $row['no_exterior']?></p></li>
 		
-				<li><label>Colonia</label>
+				<li><label class="info_deudor">Colonia</label>
 		<p><?php echo $row['colonia']?></p></li>
 		
-				<li><label>Ciudad</label>
+				<li><label class="info_deudor">Ciudad</label>
 		<p><?php echo $row['ciudad']?></p></li>
 		
-				<li><label>Municipio</label>
+				<li><label class="info_deudor">Municipio</label>
 		<p><?php echo $row['municipio']?></p></li>
 		
-				<li><label>Delegación</label>
+				<li><label class="info_deudor">Delegación</label>
 		<p><?php echo $row['delegacion']?></p></li>
 		
-				<li><label>Estado</label>
+				<li><label class="info_deudor">Estado</label>
 		<p><?php echo $row['estado']?></p></li>
 		
 				
@@ -130,7 +130,6 @@ echo '<div id="botongestion">';
 					<tr role='row'>
 		<th class='sorting' role='columnheader' tabindex='0'>Tipo de Gestión</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Etapa Procesal</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Etapa Juicio</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Semanas Atraso</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Ultimo Abono</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Saldo Atrasado</th>
@@ -147,15 +146,14 @@ while($row2 = mysql_fetch_array($resultado2)){
 			
 		echo "<tr class='infooo'>";
 			
-				echo "<td>". htmlentities($row2['tipo_gestion']). "</td>";
-				echo "<td>". htmlentities($row2['etapa_procesal']). "</td>";
-				echo "<td>". htmlentities($row2['etapa_juicio']). "</td>";
-				echo "<td>". htmlentities($row2['semanas_atraso']). "</td>";
-				echo "<td>". htmlentities($row2['ultimo_abono']). "</td>";
-				echo "<td>". htmlentities($row2['saldo_atrasado']). "</td>";
-				echo "<td>". htmlentities($row2['monto_deuda']). "</td>";
-				echo "<td>". htmlentities($row2['comentario']). "</td>";
-				echo "<td>". htmlentities($row2['fecha']). "</td>";
+				echo "<td>". ($row2['tipo_gestion']). "</td>";
+				echo "<td>". ($row2['etapa_procesal']). "</td>";
+				echo "<td>". ($row2['semanas_atraso']). "</td>";
+				echo "<td>". ($row2['ultimo_abono']). "</td>";
+				echo "<td>". ($row2['saldo_atrasado']). "</td>";
+				echo "<td>". ($row2['monto_deuda']). "</td>";
+				echo "<td>". ($row2['comentario']). "</td>";
+				echo "<td>". ($row2['fecha']). "</td>";
 
 
 				

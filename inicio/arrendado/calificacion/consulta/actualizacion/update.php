@@ -33,7 +33,7 @@ $sql.="nombre_evaluador,";
 if(!empty($_GET['telefono_evaluador']))
 $sql.="telefono_evaluador,";
 if(!empty($_GET['direccion_evaluador']))
-$sql.="direccion_evaluador";
+$sql.="direccion_evaluador,";
 $sql.="curp";
 
 $sql.=")";
@@ -55,7 +55,7 @@ $sql.="'$nombre_evaluador',";
 if(!empty($_GET['telefono_evaluador']))
 $sql.="'$telefono_evaluador',";
 if(!empty($_GET['direccion_evaluador']))
-$sql.="'$direccion_evaluador'";
+$sql.="'$direccion_evaluador',";
 $sql.="'$curp'";
 
 $sql.=")";
