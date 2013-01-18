@@ -21,6 +21,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
  $delegacion= mysql_real_escape_string($_POST['delegacion']);
  $estado= mysql_real_escape_string($_POST['estado']);
  $codigo_postal= mysql_real_escape_string($_POST['codigo_postal']);
+ $curp =mysql_real_escape_string($_POST['curp']);
+ $no_cliente= mysql_real_escape_string($_POST['no_cliente']);
 
 
 $sqlact="
@@ -56,6 +58,8 @@ if(!empty($_POST['estado']))
 $sql.=",estado";
 if(!empty($_POST['codigo_postal']))
 $sql.=",codigo_postal";
+if(!empty($_POST['no_cliente']))
+$sql.=",no_cliente";
 /* New */
 if(!empty($_POST['telefono']))
 $sql.=",telefono";
@@ -65,6 +69,7 @@ $sql.=")
 
 VALUES(
 '$nombre'";
+
 if(!empty($_POST['apellido_paterno']))
 $sql.=",'$apellido_paterno'";
 if(!empty($_POST['apellido_materno']))
@@ -87,10 +92,12 @@ if(!empty($_POST['delegacion']))
 $sql.=",'$delegacion'";
 if(!empty($_POST['estado']))
 $sql.=",'$estado'";
-
+if(!empty($_POST['no_cliente']))
+$sql.=",'$no_cliente'";
 
 if(!empty($_POST['telefono']))
 $sql.=",'$telefono'";
+
 $sql.=",'$curp'";
 
 $sql.=")";	

@@ -92,7 +92,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 			<input type="text" name="telefono"       id="telefono"> 	</li>
 			<li><label>Curp</label>
 			<input type="text" name="curp"        id="curp"></li>
-			
+			<li><label>No.Cliente</label>
+			<input type="text" name="no_cliente"        id="no_cliente"></li>
 			</ul>
 			
 		</div>

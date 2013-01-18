@@ -15,7 +15,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
  $saldo_atrasado= mysql_real_escape_string($_POST['saldo_atrasado']);
  $semanas_atraso= mysql_real_escape_string($_POST['semanas_atraso']);
  $ultimo_abono= mysql_real_escape_string($_POST['ultimo_abono']);
-
+ $monto_deuda= mysql_real_escape_string($_POST['monto_deuda']);
  
  $sqlact="
 INSERT INTO actividades (id_usuario, fecha, actividad)
@@ -53,6 +53,9 @@ $sql.=",semanas_atraso";
 if(!empty($_POST['ultimo_abono']))
 $sql.=",ultimo_abono";
 
+if(!empty($_POST['monto_deuda']))
+$sql.=",monto_deuda";
+
 $sql.=")";
 
 
@@ -71,6 +74,9 @@ if(!empty($_POST['semanas_atraso']))
 $sql.=",'$semanas_atraso'";
 if(!empty($_POST['ultimo_abono']))
 $sql.=",'$ultimo_abono'";
+
+if(!empty($_POST['monto_deuda']))
+$sql.=",'$monto_deuda'";
 
 $sql.=")";
 

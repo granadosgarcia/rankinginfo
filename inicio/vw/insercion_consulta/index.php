@@ -23,7 +23,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 	   	
 	   	<div id="calificacion">
 	   				
-	   		<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_vw.php";?>
+	   		<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_gestion_VW.php";?>
 
 
 	   		<p name="alerta"></p>
@@ -61,17 +61,21 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 					</select>
 					<br>
 					
+					<label>Monto de Deuda</label>
+					 <input name="monto_deuda" id="monto_deuda" type="text"><br>
+					
 					<label>Saldo Atrasado</label>
-					 <input name="saldo_atrasado" id="saldo_atrasado" type="text">
+					 <input name="saldo_atrasado" id="saldo_atrasado" type="text"><br>
 					 
 					 <label>Semanas de Atraso</label>
-					 <input name="semanas_atraso" id="semanas_atraso" type="text">	
+					 <input name="semanas_atraso" id="semanas_atraso" type="text">	<br>
 					 
 					 <label>Ultimo Abono</label>
-					 <input name="ultimo_abono" id="ultimo_abono" type="text">	
+					 <input name="ultimo_abono" id="ultimo_abono" type="text">	<br><br>
 					 	
 					<label>Comentario</label>
-					 <input name="comentario" id="comentario" type="text">					
+					<textarea rows="3" cols="35" name="comentario" id="comentario" ></textarea>
+
 				
 					
 					

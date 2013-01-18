@@ -44,7 +44,7 @@ if(!($result=mysql_query($sql,$con)))
                 </div>
                 <div id="inputss">
 <input style="visibility:hidden; display: none;"type="text" name="consulta" value="<?php echo $row['curp']?>">
-    <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";?>
+    <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query_VW.php";?>
 
 
 
