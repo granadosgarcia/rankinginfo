@@ -48,7 +48,7 @@ if(!($result=mysql_query($sql,$con)))
 
 
 
-	<div id="primerrow">
+	<div id="info_deudor">
 		<ul>
 
 		<li><p>Nombres</p>
@@ -127,6 +127,7 @@ if(!($resultado2=mysql_query($sql2,$con)))
 		<th class='sorting' role='columnheader' tabindex='0'>Semanas Atraso</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Ultimo Abono</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Saldo Atrasado</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Monto de Deuda</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Comentario</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Fecha</th>
 
@@ -145,6 +146,7 @@ while($row2 = mysql_fetch_array($resultado2)){
 				echo "<td>". htmlentities($row2['semanas_atraso']). "</td>";
 				echo "<td>". htmlentities($row2['ultimo_abono']). "</td>";
 				echo "<td>". htmlentities($row2['saldo_atrasado']). "</td>";
+				echo "<td>". htmlentities($row2['monto_deuda']). "</td>";
 				echo "<td>". htmlentities($row2['comentario']). "</td>";
 				echo "<td>". htmlentities($row2['fecha']). "</td>";
 

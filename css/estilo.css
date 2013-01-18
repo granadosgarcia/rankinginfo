@@ -42,8 +42,9 @@ font-size: 15px;
 margin: 14px auto;
 }
 #gestiones{
-	width: 700px;
-margin: 0px auto;
+width: 800px;
+margin: 100px auto;
+float: right;
 }
 
 #contenedortabla{
@@ -77,6 +78,15 @@ border-radius: 15px;
 width: 320px;
 margin: 30px auto;
 padding: 15px 25px 20px 10px;
+}
+
+#info_deudor{
+border: 1px solid;
+border-radius: 15px;
+width: 200px;
+margin: 0px 0px 0px -180px;
+padding: 0;
+float: left;
 }
 
 #primerrow2{

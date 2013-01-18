@@ -16,12 +16,12 @@ $numeropalabras = count($palabrasquery);
 if($numeropalabras == 1)
 {
 $sql= "SELECT DISTINCT *
-FROM vw
+FROM vw v
 WHERE 
 nombre regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
 OR apellido_paterno regexp'[[:<:]]".$palabrasquery1."[[:>:]]' 
 OR apellido_materno = '".$palabrasquery1."'
-OR curp ='".$palabrasquery1."'
+OR v.curp ='".$palabrasquery1."'
 OR telefono ='".$palabrasquery1."'";
 }
 
@@ -122,10 +122,7 @@ echo " 	<form method='GET' action='update/'>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Materno</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Curp</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Telefono</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Domicilio</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Saldo Atrasado</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Semanas Atraso</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Último Abono</th>
+
 
 					</tr>
 		</thead>
@@ -143,10 +140,7 @@ while($row = mysql_fetch_array($resultado)){
 				echo "<td>". $row['apellido_materno']. "</td>";
 				echo "<td>". $row['curp']. "</td>";
 				echo "<td>". $row['telefono']. " </td>";
-				echo "<td>". $row['domicilio']. " </td>";
-				echo "<td>". $row['saldo_atrasado']. " </td>";
-				echo "<td>". $row['semanas_atraso']. " </td>";
-				echo "<td>". $row['ultimo_abono']. " </td>";
+
 
 				
 				
