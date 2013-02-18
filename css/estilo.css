@@ -53,6 +53,7 @@ float: right;
 }
 
 .infooo{
+	
 	color: black;
 }
 
@@ -236,6 +237,12 @@ body{
 
 #wrapper{
 	width: 920px;
+			margin-left: auto;
+			margin-right: auto;
+}
+
+#wrapper2{
+	width: 1200px;
 			margin-left: auto;
 			margin-right: auto;
 }

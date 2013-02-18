@@ -43,6 +43,9 @@ margin: -200px 0px 0px -160px;">
 		   					<a href="admin/"><input type="button" value="Admin" class="edita"></a>
 <?php } ?>
 
+		   					<a href="juicios/"><input type="button" value="Juicios" class="edita"></a>
+
+
 		   				
 
 		   				</div>

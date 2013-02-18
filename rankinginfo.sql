@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 15, 2013 at 01:46 AM
+-- Generation Time: Jan 19, 2013 at 04:33 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=221 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=109 ;
 
 --
 -- Dumping data for table `actividades`
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `arr_calif` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `arr_calif`
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   `clave_ife` int(30) DEFAULT NULL,
   PRIMARY KEY (`curp`),
   KEY `clave_escolaridad` (`clave_escolaridad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `empleado`
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `emp_calif` (
   `puesto_evaluador` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `emp_calif`
@@ -225,9 +225,10 @@ CREATE TABLE IF NOT EXISTS `gestiones` (
   `saldo_atrasado` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `semanas_atraso` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `ultimo_abono` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `monto_deuda` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `gestiones`
@@ -248,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `privilegios` int(2) NOT NULL,
   `img_foto` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `usuario`
@@ -269,7 +270,16 @@ CREATE TABLE IF NOT EXISTS `vw` (
   `apellido_materno` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   `curp` varchar(30) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `telefono` int(30) DEFAULT NULL,
-  `domicilio` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `calle` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `no_interior` varchar(20) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `no_exterior` varchar(20) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `colonia` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `ciudad` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `municipio` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `delegacion` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `estado` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `codigo_postal` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `no_cliente` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`curp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
