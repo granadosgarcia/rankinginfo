@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 19, 2013 at 04:33 PM
+-- Generation Time: Feb 19, 2013 at 02:47 AM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=109 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `actividades`
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `arr_calif` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `arr_calif`
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   `clave_ife` int(30) DEFAULT NULL,
   PRIMARY KEY (`curp`),
   KEY `clave_escolaridad` (`clave_escolaridad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `empleado`
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `emp_calif` (
   `puesto_evaluador` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `emp_calif`
@@ -228,10 +228,43 @@ CREATE TABLE IF NOT EXISTS `gestiones` (
   `monto_deuda` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `gestiones`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `relacion_juicios`
+--
+
+CREATE TABLE IF NOT EXISTS `relacion_juicios` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `actor_nombres` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `actor_apellido_paterno` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `actor_apellido_materno` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `demandado_nombres` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `demandado_apellido_paterno` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `demandado_apellido_materno` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `juicio` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `expediente` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `juzgado` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(250) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `ultima_actuacion` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `s_actuacion_01` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `s_actuacion_02` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `estado_procesal_tramite_pendiente` varchar(500) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `comentario_01` varchar(500) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `lugar` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `fecha` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `relacion_juicios`
 --
 
 
