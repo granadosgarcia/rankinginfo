@@ -1,6 +1,4 @@
 <?php 
-
-
 /* Includes de PHP */
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";

@@ -33,6 +33,9 @@ margin: -200px 0px 0px -160px;'>
                           $imprim = str_replace('rankinginfo/inicio/', "", $_SERVER["REQUEST_URI"]);
                         $imprim = str_replace(' /', "",$imprim);
                                           echo $imprim; ?></h3>
+                                          
+                                         <?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/notifications.php"; ?>
+
     <p class="bienvenida"><?php 
     echo "Bienvenido ". $_SESSION['nombreusuario'];?></p>
     
