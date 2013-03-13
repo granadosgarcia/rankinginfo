@@ -8,14 +8,72 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 <link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script><script> 
+  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+  <script> 
     function verifica (){
-        if(document.getElementById("nombre").value=="")
+    
+        if(document.getElementById("actor_nombres").value=="")
         {
-	        alert("Nombre Obligatorio");
+	        alert("Nombre Actor Obligatorio");
+	        return false;
+        }
+        if(document.getElementById("actor_apellido_paterno").value=="")
+        {
+	        alert("Apellido Actor Paterno Obligatorio");
+	        return false;
+        }
+        if(document.getElementById("actor_apellido_materno").value=="")
+        {
+	        alert("Apellido Actor Materno Obligatorio");
+	        return false;
+        }
+        if(document.getElementById("demandado_nombres").value=="")
+        {
+	        alert("Nombre Demandado Obligatorio");
+	        return false;
+        }
+        if(document.getElementById("demandado_apellido_paterno").value=="")
+        {
+	        alert("Apellido Demandado Paterno Obligatorio");
+	        return false;
+        }
+        if(document.getElementById("demandado_apellido_materno").value=="")
+        {
+	        alert("Apellido Demandado Materno Obligatorio");
 	        return false;
         }
 
+        if(document.getElementById("actor_apellido_materno").value=="")
+        {
+	        alert("Apellido Paterno Obligatorio");
+	        return false;
+        }
+        if(document.getElementById("juicio").value=="")
+        {
+	        alert("Juicio Obligatorio");
+	        return false;
+        }    
+        if(document.getElementById("expediente").value=="")
+        {
+	        alert("Expediente Obligatorio");
+	        return false;
+        }    
+        if(document.getElementById("juzgado").value=="")
+        {
+	        alert("Juzgado Obligatorio");
+	        return false;
+        }
+        if(document.getElementById("estado_procesal").value=="")
+        {
+	        alert("Estado Procesal Obligatorio");
+	        return false;
+        }
+        if(document.getElementById("datepicker").value=="")
+        {
+	        alert("Fecha Obligatoria");
+	        return false;
+        }
+        
         else
         return true;
         
@@ -26,9 +84,11 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
 <script>
   $(function() {
-    $( "#datepicker" ).datepicker({ dateFormat: "yy-mm-dd" });
+    $( "#datepicker" ).datepicker({ dateFormat: "dd-mm-yy" });
   });
  </script>
+ 
+ 
 
 
 
@@ -77,24 +137,26 @@ margin: -130px 0px 0px -153px;'>
 			<li><label>Demandado</label></li>
 
 			<li><label>Nombre</label><input type="text" name="demandado_nombres"    id="demandado_nombres">	</li>
-			<li><label>Apellido Paterno</label><input type="text" name="demandado_apellido_paterno"    id="apellido_paterno">	</li>
-			<li><label>Apellido Materno </label><input type="text" name="demandado_apellido_materno"    id="apellido_materno">	</li>
+			<li><label>Apellido Paterno</label><input type="text" name="demandado_apellido_paterno"    id="demandado_apellido_paterno">	</li>
+			<li><label>Apellido Materno </label><input type="text" name="demandado_apellido_materno"    id="demandado_apellido_materno">	</li>
 
 			<br>
 			
 			<li><label>Juicio</label><input type="text" name="juicio"    id="juicio"></li>
-			<li><label>expediente</label><input type="text" name="expediente"    id="expediente"></li>
-			<li><label>juzgado</label><input type="text" name="juzgado"    id="juzgado"></li>
-			<li><label>estatus</label><input type="text" name="estatus"    id="estatus"></li>
+			<li><label>Expediente</label><input type="text" name="expediente"    id="expediente"></li>
+			<li><label>Juzgado</label><input type="text" name="juzgado"    id="juzgado"></li>
+			
+			<li><label>Distrito Judicial</label><input type="text" name="distrito_juidicial"    id="distrito_juidicial"></li>	
+									
 			<li><label>Ultima actuacion</label><input type="text" name="ultima_actuacion"    id="ultima_actuacion"></li>
 			<li><label>S.Actuación</label><input type="text" name="s_actuacion_01"    id="s_actuacion_01"></li>		
 			<li><label>S.Actuación</label><input type="text" name="s_actuacion_02"    id="s_actuacion_02"></li>	<br>
-			<li><label>Estado Procesal y Tramite Pendiente</label>
-			<br><input type="text" name="estado_procesal_tramite_pendiente"    id="estado_procesal_tramite_pendiente"></li><br><br>
+			<li><label>Estado Procesal</label>
+			<br><input type="text" name="estado_procesal"    id="estado_procesal"></li><br><br>
 			
-						<li><label>Lugar</label><input type="text" name="lugar"    id="lugar"></li>		
+	
 						
-									<li><label>Fecha (Año-Mes-Día)</label><input type="text" id="datepicker" name="datepicker" /></li>
+									<li><label>Fecha de Vencimiento de Termino (Día-Mes-Año)</label><input type="text" id="datepicker" name="datepicker" /></li>
 
 			
 			

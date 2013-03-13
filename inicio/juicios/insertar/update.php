@@ -21,16 +21,16 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
   $juicio= mysql_real_escape_string($_POST['juicio']);
   $expediente= mysql_real_escape_string($_POST['expediente']);
   $juzgado= mysql_real_escape_string($_POST['juzgado']);
-  $estatus= mysql_real_escape_string($_POST['estatus']);
   $ultima_actuacion= mysql_real_escape_string($_POST['ultima_actuacion']);
   $s_actuacion_01= mysql_real_escape_string($_POST['s_actuacion_01']);
   $s_actuacion_02= mysql_real_escape_string($_POST['s_actuacion_02']);
-  $estado_procesal_tramite_pendiente= mysql_real_escape_string($_POST['estado_procesal_tramite_pendiente']);
+  $estado_procesal= mysql_real_escape_string($_POST['estado_procesal']);
   $comentario_01= mysql_real_escape_string($_POST['comentario_01']);
-  $lugar= mysql_real_escape_string($_POST['lugar']);
+  $distrito_juidicial= mysql_real_escape_string($_POST['distrito_juidicial']);
    $fecha= mysql_real_escape_string($_POST['datepicker']);
-   echo $fecha;
 
+	$originalDate = $fecha;
+	$newDate = date("Y-m-d", strtotime($originalDate));
   
  $sqlact="
 INSERT INTO actividades (id_usuario, fecha, actividad)
@@ -72,9 +72,6 @@ if(!empty($_POST['juzgado']))
 $sql.=",juzgado";
 
 
-if(!empty($_POST['estatus']))
-$sql.=",estatus";
-
 
 if(!empty($_POST['ultima_actuacion']))
 $sql.=",ultima_actuacion";
@@ -85,20 +82,20 @@ $sql.=",s_actuacion_01";
 if(!empty($_POST['s_actuacion_02']))
 $sql.=",s_actuacion_02";
 
-if(!empty($_POST['estado_procesal_tramite_pendiente']))
-$sql.=",estado_procesal_tramite_pendiente";
+if(!empty($_POST['estado_procesal']))
+$sql.=",estado_procesal";
 
 if(!empty($_POST['comentario_01']))
 $sql.=",comentario_01";
 
-if(!empty($_POST['lugar']))
-$sql.=",lugar";
+if(!empty($_POST['distrito_juidicial']))
+$sql.=",distrito_juidicial";
 
 $sql.=")
 
 VALUES(";
 if(!empty($_POST['datepicker']))
-$sql.="'$fecha'";
+$sql.="'$newDate'";
 
 if(!empty($_POST['actor_nombres']))
 $sql.=",'$actor_nombres'";
@@ -130,8 +127,7 @@ if(!empty($_POST['juzgado']))
 $sql.=",'$juzgado'";
 
 
-if(!empty($_POST['estatus']))
-$sql.=",'$estatus'";
+
 
 
 if(!empty($_POST['ultima_actuacion']))
@@ -143,14 +139,14 @@ $sql.=",'$s_actuacion_01'";
 if(!empty($_POST['s_actuacion_02']))
 $sql.=",'$s_actuacion_02'";
 
-if(!empty($_POST['estado_procesal_tramite_pendiente']))
-$sql.=",'$estado_procesal_tramite_pendiente'";
+if(!empty($_POST['estado_procesal']))
+$sql.=",'$estado_procesal'";
 
 if(!empty($_POST['comentario_01']))
 $sql.=",'$comentario_01'";
 
-if(!empty($_POST['lugar']))
-$sql.=",'$lugar'";
+if(!empty($_POST['distrito_juidicial']))
+$sql.=",'$distrito_juidicial'";
 
 $sql.=")";	
 
@@ -161,7 +157,7 @@ $sql.=")";
   }
   
     mysql_query($sqlact,$con);
-  echo '<script> alert("Agregado Exitosamente"); history.go(-1); </script>';
+  echo '<script> alert("Agregado Exitosamente"); history.go(-2); </script>';
 
  mysql_close($con);
 ?>

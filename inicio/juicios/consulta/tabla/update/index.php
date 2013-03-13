@@ -4,7 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 
 $_SESSION['curp']= $_REQUEST['consulta'];
 
-$sql="SELECT * from relacion_juicios WHERE id='".$_SESSION['curp']."'";
+$sql="SELECT * from relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
 	$result=mysql_query($sql);
 	while($row = mysql_fetch_array($result)){?>
 <html>
@@ -33,52 +33,61 @@ $sql="SELECT * from relacion_juicios WHERE id='".$_SESSION['curp']."'";
             <div id="wrapper">
 
                 <div id="inputss">
+                
+                <br>
     <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";?>
 
 <form method="POST"  action="update.php" enctype="multipart/form-data">
-<input style="visibility:hidden; display: none;"type="text" name="consulta" value="<?php echo $row['id']?>">
+<input style="visibility:hidden; display: none;"type="text" name="consulta" value="<?php echo $row['expediente']?>">
 
 
 	<div id="primerrow">
+	
+	
+	<label>Expediente</label>
+		<p><?php echo $row['expediente']?></p>
+			</br>	
+			
+			
 		<label>Actor</label>
 		<br>
-		<br><label>Nombres</label><input type="text" name="actor_nombres" id="actor_nombres"				value="<?php echo $row['actor_nombres']?>" class="inputderecha">
+		<br><label>Nombres</label><p><?php echo $row['actor_nombres']?></p>
 	<br>
 		<label>Apellido Paterno</label>
-		<input type="text" name="actor_apellido_paterno"    id="actor_apellido_paterno"		value="<?php echo $row['actor_apellido_paterno']?>" class="inputderecha">
+		<p><?php echo $row['actor_apellido_paterno']?> </p>
 			</br>
 
 		<label>Apellido Materno</label>
-		<input type="text" name="actor_apellido_materno"    id="actor_apellido_materno"		value="<?php echo $row['actor_apellido_materno']?>" class="inputderecha">
+		<p> <?php echo $row['actor_apellido_materno']?></p>
 			</br>
 			
 					<label>Demandado</label>
 		<br>
-		<br><label>Nombres</label><input type="text" name="demandado_nombres" id="demandado_nombres"				value="<?php echo $row['demandado_nombres']?>" class="inputderecha">
+		<br><label>Nombres</label><p><?php echo $row['demandado_nombres']?></p>
 	<br>
 		<label>Apellido Paterno</label>
-		<input type="text" name="demandado_apellido_paterno"    id="demandado_apellido_paterno"		value="<?php echo $row['demandado_apellido_paterno']?>" class="inputderecha">
+		<p><?php echo $row['demandado_apellido_paterno']?> </p>
 			</br>
 
 		<label>Apellido Materno</label>
-		<input type="text" name="demandado_apellido_materno"    id="demandado_apellido_materno"		value="<?php echo $row['demandado_apellido_materno']?>" class="inputderecha">
+		<p><?php echo $row['demandado_apellido_materno']?></p>
 			</br>
 		<label>Juicio</label>
-		<input type="text" name="juicio"    id="juicio"		value="<?php echo $row['juicio']?>" class="inputderecha">
+		<p><?php echo $row['juicio']?></p>
 			</br>			
 			
-					<label>Expediente</label>
-		<input type="text" name="expediente"    id="expediente"		value="<?php echo $row['expediente']?>" class="inputderecha">
-			</br>	
+					
 			
 					<label>Juzgado</label>
-		<input type="text" name="juzgado"    id="jugado"		value="<?php echo $row['juzgado']?>" class="inputderecha">
+		<p><?php echo $row['juzgado']?></p>
 			</br>	
 			
-					<label>Estatus</label>
-		<input type="text" name="estatus"    id="estatus"		value="<?php echo $row['estatus']?>" class="inputderecha">
+			
+														<label>Distrito Judicial</label>
+		<input type="text" name="distrito_juidicial"    id="distrito_juidicial"		value="<?php echo $row['distrito_juidicial']?>" class="inputderecha">
 			</br>	
 			
+					
 					<label>ultima_actuacion</label>
 		<input type="text" name="utlima_actuacion"    id="ultima_actuacion"		value="<?php echo $row['ultima_actuacion']?>" class="inputderecha">
 			</br>	
@@ -92,15 +101,13 @@ $sql="SELECT * from relacion_juicios WHERE id='".$_SESSION['curp']."'";
 			</br>	<br>
 			
 			
-								<label>Estado Procesal y Tramite Pendiente</label><br>
-		<input type="text" name="estado_procesal_tramite_pendiente"    id="estado_procesal_tramite_pendiente"		value="<?php echo $row['estado_procesal_tramite_pendiente']?>" class="inputderecha">
+								<label>Estado Procesal</label><br>
+		<input type="text" name="estado_procesal"    id="estado_procesal"		value="<?php echo $row['estado_procesal']?>" class="inputderecha">
 			</br>	
 			
-											<label>Lugar</label>
-		<input type="text" name="lugar"    id="lugar"		value="<?php echo $row['lugar']?>" class="inputderecha">
-			</br>		
+	
 			
-											<label>Fecha</label>
+											<label>Fecha de Vencimiento de Termino (Día-Mes-Año)</label>
 											
 		<input type="text" id="datepicker" name="datepicker" value="<?php echo $row['fecha']?>" />
 											
