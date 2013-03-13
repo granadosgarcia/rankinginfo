@@ -101,56 +101,56 @@ if(!empty($_POST['datepicker']))
 $sql.="'$fecha'";
 
 if(!empty($_POST['actor_nombres']))
-$sql.=",$actor_nombres";
+$sql.=",'$actor_nombres'";
 
 if(!empty($_POST['actor_apellido_paterno']))
-$sql.=",$actor_apellido_paterno";
+$sql.=",'$actor_apellido_paterno'";
 
 if(!empty($_POST['actor_apellido_materno']))
-$sql.=",$actor_apellido_materno";
+$sql.=",'$actor_apellido_materno'";
 
 if(!empty($_POST['demandado_nombres']))
-$sql.=",$demandado_nombres";
+$sql.=",'$demandado_nombres'";
 
 if(!empty($_POST['demandado_apellido_paterno']))
-$sql.=",$demandado_apellido_paterno";
+$sql.=",'$demandado_apellido_paterno'";
 
 if(!empty($_POST['demandado_apellido_materno']))
-$sql.=",$demandado_apellido_materno";
+$sql.=",'$demandado_apellido_materno'";
 
 if(!empty($_POST['juicio']))
-$sql.=",$juicio";
+$sql.=",'$juicio'";
 
 
 if(!empty($_POST['expediente']))
-$sql.=",$expediente";
+$sql.=",'$expediente'";
 
 
 if(!empty($_POST['juzgado']))
-$sql.=",$juzgado";
+$sql.=",'$juzgado'";
 
 
 if(!empty($_POST['estatus']))
-$sql.=",$estatus";
+$sql.=",'$estatus'";
 
 
 if(!empty($_POST['ultima_actuacion']))
-$sql.=",$ultima_actuacion";
+$sql.=",'$ultima_actuacion'";
 
 if(!empty($_POST['s_actuacion_01']))
-$sql.=",$s_actuacion_01";
+$sql.=",'$s_actuacion_01'";
 
 if(!empty($_POST['s_actuacion_02']))
-$sql.=",$s_actuacion_02";
+$sql.=",'$s_actuacion_02'";
 
 if(!empty($_POST['estado_procesal_tramite_pendiente']))
-$sql.=",$estado_procesal_tramite_pendiente";
+$sql.=",'$estado_procesal_tramite_pendiente'";
 
 if(!empty($_POST['comentario_01']))
-$sql.=",$comentario_01";
+$sql.=",'$comentario_01'";
 
 if(!empty($_POST['lugar']))
-$sql.=",$lugar";
+$sql.=",'$lugar'";
 
 $sql.=")";	
 
