@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 19, 2013 at 02:47 AM
+-- Generation Time: Mar 26, 2013 at 03:20 AM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -32,12 +32,59 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=47 ;
 
 --
 -- Dumping data for table `actividades`
 --
 
+INSERT INTO `actividades` (`id_usuario`, `fecha`, `actividad`, `id`) VALUES
+(8, '2013-03-07 18:17:40', 'Insercion Juicio', 1),
+(8, '2013-03-07 18:52:30', 'Insercion Juicio', 2),
+(8, '2013-03-07 18:52:52', 'Insercion Juicio', 3),
+(8, '2013-03-07 18:52:57', 'Insercion Juicio', 4),
+(8, '2013-03-12 18:59:44', 'Insercion Juicio', 5),
+(8, '2013-03-12 19:05:37', 'Insercion Juicio', 6),
+(8, '2013-03-12 19:12:19', 'Insercion Juicio', 7),
+(8, '2013-03-12 19:12:34', 'Insercion Juicio', 8),
+(8, '2013-03-12 19:13:02', 'Insercion Juicio', 9),
+(8, '2013-03-12 19:14:24', 'Insercion Juicio', 10),
+(8, '2013-03-12 19:19:24', 'Insercion Juicio', 11),
+(8, '2013-03-12 19:19:45', 'Insercion Juicio', 12),
+(8, '2013-03-12 19:20:19', 'Insercion Juicio', 13),
+(8, '2013-03-12 19:20:45', 'Insercion Juicio', 14),
+(8, '2013-03-12 19:21:04', 'Insercion Juicio', 15),
+(8, '2013-03-12 19:22:16', 'Insercion Juicio', 16),
+(8, '2013-03-12 19:22:48', 'Insercion Juicio', 17),
+(8, '2013-03-12 19:29:46', 'Insercion Juicio', 18),
+(8, '2013-03-12 19:30:07', 'Insercion Juicio', 19),
+(8, '2013-03-12 19:45:19', 'Insercion Juicio', 20),
+(8, '2013-03-12 19:45:43', 'Insercion Juicio', 21),
+(8, '2013-03-12 19:47:59', 'Insercion Juicio', 22),
+(8, '2013-03-12 19:48:05', 'Insercion Juicio', 23),
+(8, '2013-03-12 19:48:11', 'Insercion Juicio', 24),
+(8, '2013-03-12 19:49:42', 'Insercion Juicio', 25),
+(8, '2013-03-12 19:59:59', 'Insercion Juicio', 26),
+(8, '2013-03-12 20:02:03', 'Insercion Juicio', 27),
+(8, '2013-03-12 20:02:19', 'Insercion Juicio', 28),
+(8, '2013-03-12 20:10:17', 'Insercion Juicio', 29),
+(8, '2013-03-12 20:11:33', 'Insercion Juicio', 30),
+(8, '2013-03-12 20:13:28', 'Insercion Juicio', 31),
+(8, '2013-03-12 20:14:07', 'Insercion Juicio', 32),
+(8, '2013-03-12 20:15:00', 'Insercion Juicio', 33),
+(8, '2013-03-12 20:17:08', 'Insercion Juicio', 34),
+(8, '2013-03-12 20:18:12', 'Insercion Juicio', 35),
+(8, '2013-03-12 20:23:15', 'InserciÃ³n Juicio', 36),
+(8, '2013-03-12 20:23:46', 'InserciÃ³n Juicio', 37),
+(8, '2013-03-12 20:24:30', 'InserciÃ³n Juicio', 38),
+(8, '2013-03-12 20:39:59', 'Insercion Juicio', 39),
+(8, '2013-03-12 20:40:53', 'Insercion Juicio', 40),
+(8, '2013-03-12 20:50:59', 'Insercion Juicio', 41),
+(8, '2013-03-12 20:56:15', 'InserciÃ³n Juicio', 42),
+(8, '2013-03-12 20:58:09', 'InserciÃ³n Juicio', 43),
+(8, '2013-03-12 20:58:47', 'InserciÃ³n Juicio', 44),
+(8, '2013-03-12 20:59:38', 'InserciÃ³n Juicio', 45),
+(8, '2013-03-25 21:11:16', 'Insercion Juicio', 46);
 
 -- --------------------------------------------------------
 
@@ -153,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   `clave_ife` int(30) DEFAULT NULL,
   PRIMARY KEY (`curp`),
   KEY `clave_escolaridad` (`clave_escolaridad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `empleado`
@@ -238,35 +285,77 @@ CREATE TABLE IF NOT EXISTS `gestiones` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `notificacion`
+--
+
+CREATE TABLE IF NOT EXISTS `notificacion` (
+  `comentario` varchar(5000) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `fecha_notificacion` date DEFAULT NULL,
+  `fecha_promocion` date DEFAULT NULL,
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `expediente` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `expediente` (`expediente`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `notificacion`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `promocion`
+--
+
+CREATE TABLE IF NOT EXISTS `promocion` (
+  `fecha_notificacion` date DEFAULT NULL,
+  `fecha_promocion` date DEFAULT NULL,
+  `comentario` date DEFAULT NULL,
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `expediente` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `expediente` (`expediente`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `promocion`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `relacion_juicios`
 --
 
 CREATE TABLE IF NOT EXISTS `relacion_juicios` (
-  `id` int(100) NOT NULL AUTO_INCREMENT,
-  `actor_nombres` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `actor_apellido_paterno` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `actor_apellido_materno` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `demandado_nombres` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `demandado_apellido_paterno` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `demandado_apellido_materno` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `juicio` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `expediente` varchar(150) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `juzgado` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `estatus` varchar(250) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `ultima_actuacion` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `s_actuacion_01` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `s_actuacion_02` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `estado_procesal_tramite_pendiente` varchar(500) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `comentario_01` varchar(500) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
-  `lugar` varchar(300) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `actor_nombres` varchar(150) COLLATE latin1_spanish_ci NOT NULL,
+  `actor_apellido_paterno` varchar(150) COLLATE latin1_spanish_ci NOT NULL,
+  `actor_apellido_materno` varchar(150) COLLATE latin1_spanish_ci NOT NULL,
+  `demandado_nombres` varchar(150) COLLATE latin1_spanish_ci NOT NULL,
+  `demandado_apellido_paterno` varchar(150) COLLATE latin1_spanish_ci NOT NULL,
+  `demandado_apellido_materno` varchar(150) COLLATE latin1_spanish_ci NOT NULL,
+  `juicio` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
+  `expediente` varchar(150) COLLATE latin1_spanish_ci NOT NULL,
+  `juzgado` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `ultima_actuacion` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
+  `s_actuacion_01` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
+  `s_actuacion_02` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
+  `estado_procesal` varchar(500) COLLATE latin1_spanish_ci NOT NULL,
+  `comentario_01` varchar(500) COLLATE latin1_spanish_ci NOT NULL,
+  `distrito_juidicial` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
   `fecha` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+  PRIMARY KEY (`expediente`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Dumping data for table `relacion_juicios`
 --
 
+INSERT INTO `relacion_juicios` (`actor_nombres`, `actor_apellido_paterno`, `actor_apellido_materno`, `demandado_nombres`, `demandado_apellido_paterno`, `demandado_apellido_materno`, `juicio`, `expediente`, `juzgado`, `ultima_actuacion`, `s_actuacion_01`, `s_actuacion_02`, `estado_procesal`, `comentario_01`, `distrito_juidicial`, `fecha`) VALUES
+('Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', '123oexpediente', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'hola', 'Prueba', '2013-03-12');
 
 -- --------------------------------------------------------
 
@@ -354,3 +443,15 @@ ALTER TABLE `escolaridad`
 --
 ALTER TABLE `gestiones`
   ADD CONSTRAINT `gestiones_ibfk_1` FOREIGN KEY (`curp`) REFERENCES `vw` (`curp`);
+
+--
+-- Constraints for table `notificacion`
+--
+ALTER TABLE `notificacion`
+  ADD CONSTRAINT `notificacion_ibfk_1` FOREIGN KEY (`expediente`) REFERENCES `relacion_juicios` (`expediente`);
+
+--
+-- Constraints for table `promocion`
+--
+ALTER TABLE `promocion`
+  ADD CONSTRAINT `promocion_ibfk_1` FOREIGN KEY (`expediente`) REFERENCES `relacion_juicios` (`expediente`);
