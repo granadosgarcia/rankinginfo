@@ -105,7 +105,7 @@ while($cont2>0){
 <input style="visibility:hidden; display: none;"type="text" name="consulta" value="<?php echo $row['expediente']?>">
 
 
-	<div id="primerrow">
+	<div id="primerrowww">
 	
 	
 	<label>Expediente</label>
