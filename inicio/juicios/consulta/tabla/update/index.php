@@ -6,25 +6,88 @@ $_SESSION['curp']= $_REQUEST['consulta'];
 
 $sql="SELECT * from relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
 	$result=mysql_query($sql);
-	while($row = mysql_fetch_array($result)){?>
+	
+	$sql1="SELECT * from notificacion WHERE expediente='".$_SESSION['curp']."'";
+	$result1=mysql_query($sql1);
+	$contador=mysql_num_rows($result1);
+	
+	$expediente = $_SESSION['curp'];
+
+	$sql="SELECT DISTINCT * FROM promocion
+	WHERE
+	expediente='".$expediente."'";
+
+
+
+if(!($resultado3=mysql_query($sql)))
+{
+	die ($sql."Error".mysql_error());
+}
+	
+	?>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 
         <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";?>
 
-
+	<link rel='stylesheet' href='/rankinginfo/css/jquery.dataTables.css' type='text/css' charset='utf-8'>
 <title> Editar Juicio </title>
 
 <link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script> 
+  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+  <script type='text/javascript' language='javascript' src='/rankinginfo/js/jquery.dataTables.js'></script>
+ <script>
+ function popUpClosed() {
+    window.location.reload();
+}
+ </script>
   
   <script>
   $(function() {
     $( "#datepicker" ).datepicker({ dateFormat: "yy-mm-dd" });
   });
+ </script>
+ 
+ <script type='text/javascript' charset='utf-8'>
+			$(document).ready(function() {
+				$('#tabla1').dataTable();
+			} );
+		</script>
+ <script>
+ 
+ function quitar () {
+	 <?php 
+	$cont =1;
+			$cont2=$contador;
+
+
+while($cont2>0){
+	?>
+		document.getElementById('notif2<?php echo $cont?>').style.visibility='hidden';
+				
+		
+		<?php
+		$cont++;
+		 $cont2--;}?>
+	 
+ }
+	<?php 
+	$cont =1;
+			$cont2=$contador;
+
+
+while($cont2>0){
+	?>
+			function mostrar<?php echo $cont?>(){
+				document.getElementById('notif2<?php echo $cont?>').style.visibility='visible';
+				
+			}
+		<?php
+		$cont++;
+		 $cont2--;}?>
  </script>
 </head>
 
@@ -35,7 +98,8 @@ $sql="SELECT * from relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
                 <div id="inputss">
                 
                 <br>
-    <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";?>
+    <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";
+	while($row = mysql_fetch_array($result)){?>
 
 <form method="POST"  action="update.php" enctype="multipart/form-data">
 <input style="visibility:hidden; display: none;"type="text" name="consulta" value="<?php echo $row['expediente']?>">
@@ -115,10 +179,65 @@ $sql="SELECT * from relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
 			
 											<label>Comentario</label>
 		<textarea  name="comentario_01"    id="comentario_01"		 rows="6" cols="35"><?php echo $row['comentario_01']?></textarea>
-
-			
-			
+<?php } 
+?>
 			</div>
+
+<div id="notificaciones">
+<ul style="list-style:none">
+<?php
+$cont = 1;
+while ($contador>0){
+	echo "<li><input id='notif".$cont."' type='button' onClick='quitar(); mostrar".$cont."(); ' value='Notificación ".$cont++."'/></li>";
+	$contador--;
+}
+?>
+
+</ul>
+
+
+</div>
+
+	<?php
+	
+			$cont=1;
+			 while($row1 = mysql_fetch_array($result1)){
+
+	?>
+			<div id="notif2<?php echo $cont ?>" style="visibility:hidden">
+				<p><?php echo $row1['comentario']; ?></p>
+			</div>
+		<?php
+		$cont++;
+		 }?>
+
+<div id = "tabla_promocion">
+		<table id ='tabla1'>
+		<thead>	
+					<tr role='row'>
+		<th class='sorting' role='columnheader' tabindex='0'>Comentario</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Fecha de Promoción</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Fecha de Notificación</th>
+					</tr>
+		</thead>
+		<tbody>
+
+
+<?php while($row = mysql_fetch_array($resultado3)){   ?>
+			
+		<tr class='infooo'>
+				<td><?php echo $row['comentario'] ?></td>
+				<td><?php echo $row['fecha_promocion'] ?></td>
+				<td><?php echo $row['fecha_notificacion'] ?></td>
+			
+		</tr>
+	<?php	} ?>
+
+		</tbody>
+</table>
+
+</div>	
+			
 	
 		<div id="botonesrow">
 		
@@ -139,5 +258,4 @@ $sql="SELECT * from relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
 	</body>
 
 </html>
-<?php } ?>
 

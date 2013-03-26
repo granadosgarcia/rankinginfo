@@ -18,7 +18,13 @@
         }
 </script>
 
-
+	 <script>
+ window.onunload = function() {
+    if (window.opener && !window.opener.closed) {
+        window.opener.popUpClosed();
+    }
+};
+ </script>
 </head>
 
 
@@ -28,7 +34,7 @@
 		
 		
 		<h1>Notificación</h1>
-<form method="post" onsubmit="return verifica ()" action="update_notificacion.php" enctype="multipart/form-data">
+<form method="GET" onsubmit="return verifica ()" action="update_notificacion.php" enctype="multipart/form-data">
 			
 			
 			<li>

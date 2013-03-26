@@ -23,6 +23,14 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 
   });
  </script>
+ 	 <script>
+ window.onunload = function() {
+    if (window.opener && !window.opener.closed) {
+        window.opener.popUpClosed();
+    }
+};
+ </script>
+
 </head>
 <body>
 	<div >
