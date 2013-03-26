@@ -129,6 +129,7 @@ $sql="SELECT * from relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
 		
 		<FORM> 
 			<INPUT type="button" value="Promocion" onClick="window.open('promocion.php','mywindow','width=600,height=800')"> 
+			<INPUT type="button" value="Promocion" onClick="window.open('notificacion.php','mywindow','width=600,height=800')"> 
 		</FORM>
 
 		</div>
