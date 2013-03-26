@@ -107,67 +107,95 @@ while($cont2>0){
 
 	<div id="primerrowww">
 	
-	
-	<label>Expediente</label>
+		
+		<label>Expediente: </label>
 		<p><?php echo $row['expediente']?></p>
-			
-			
-		<label>Actor</label>
+		</br></br>
+		<label class="titulo_label2">Actor</label>
 		<br>
-		<br><label>Nombres</label><p><?php echo $row['actor_nombres']?></p>
+		<label>Nombres</label>
+		<p><?php echo $row['actor_nombres']?></p>
+		</br>
 		<label>Apellido Paterno</label>
 		<p><?php echo $row['actor_apellido_paterno']?> </p>
-
+		</br>
 		<label>Apellido Materno</label>
-		<p> <?php echo $row['actor_apellido_materno']?></p>
+		<p><?php echo $row['actor_apellido_materno']?></p>
+		</br></br>
 			
-					<label>Demandado</label>
+		<label class="titulo_label">Demandado</label>
 		<br>
-		<br><label>Nombres</label><p><?php echo $row['demandado_nombres']?></p>
+		<label>Nombres</label>
+		<p><?php echo $row['demandado_nombres']?></p>
+		</br>
 		<label>Apellido Paterno</label>
 		<p><?php echo $row['demandado_apellido_paterno']?> </p>
-
+		</br>
 		<label>Apellido Materno</label>
 		<p><?php echo $row['demandado_apellido_materno']?></p>
+		</br></br>
 		<label>Juicio</label>
 		<p><?php echo $row['juicio']?></p>
-			
-					
-			
-					<label>Juzgado</label>
+		</br>
+		<label>Juzgado</label>
 		<p><?php echo $row['juzgado']?></p>
-			
-			
-														<label>Distrito Judicial</label>		<input type="text" name="distrito_juidicial"    id="distrito_juidicial"		value="<?php echo $row['distrito_juidicial']?>" class="inputderecha">
-			
-					
-					<label>ultima_actuacion</label>
+		</br><br>
+		<label>Distrito Judicial</label>
+		<input type="text" name="distrito_juidicial"    id="distrito_juidicial"		value="<?php echo $row['distrito_juidicial']?>" class="inputderecha">
+		<label>Ultima Actuación</label>
 		<input type="text" name="utlima_actuacion"    id="ultima_actuacion"		value="<?php echo $row['ultima_actuacion']?>" class="inputderecha">
-			
-					<label>S.Actuación</label>
+		<label>S.Actuación</label>
 		<input type="text" name="s_actuacion_01"    id="s_actuacion_01"		value="<?php echo $row['s_actuacion_01']?>" class="inputderecha">
-			
-								<label>S.Actuación</label>
+		<label>S.Actuación</label>
 		<input type="text" name="s_actuacion_02"    id="s_actuacion_02"		value="<?php echo $row['s_actuacion_02']?>" class="inputderecha">
-			</br>
-			
-			
-								<label>Estado Procesal</label><br>
+		</br>
+		<label>Estado Procesal</label><br>
 		<input type="text" name="estado_procesal"    id="estado_procesal"		value="<?php echo $row['estado_procesal']?>" class="inputderecha">
-			
-	
-			
-											<label>Fecha de Vencimiento de Termino (Día-Mes-Año)</label>
-											
+		<label>Fecha de Vencimiento de Termino (Día-Mes-Año)</label>
 		<input type="text" id="datepicker" name="datepicker" value="<?php echo $row['fecha']?>" />
-											
-			</br>
+		</br><br>
+		<label>Comentario</label>
+		<textarea  name="comentario_01"    id="comentario_01"		 rows="6" cols="42"><?php echo $row['comentario_01']?></textarea>
+		<br><br>
+		<input type="submit" name="ok" value="Modificar" class="inserta2">
+<?php } ?>
+	</div>
+</form>
+
+
+
+<div id = "tabla_promocion">
+		<table id ='tabla1'>
+		<thead>	
+					<tr role='row'>
+		<th class='sorting' role='columnheader' tabindex='0'>Fecha de Promoción</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Fecha de Notificación</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Comentario</th>
+					</tr>
+		</thead>
+		<tbody>
+
+
+<?php while($row = mysql_fetch_array($resultado3)){   ?>
 			
-											<label>Comentario</label>
-		<textarea  name="comentario_01"    id="comentario_01"		 rows="6" cols="35"><?php echo $row['comentario_01']?></textarea>
-<?php } 
-?>
-			</div>
+		<tr class='infooo'>
+				<td><?php $originalDate=$row['fecha_promocion'] ;
+							$newDate = date("d-m-Y", strtotime($originalDate));
+							echo $newDate;												?></td>
+				<td><?php $originalDate = $row['fecha_notificacion'] ;
+					$newDate = date("d-m-Y", strtotime($originalDate));
+							echo $newDate;
+				?></td>
+				<td><?php echo $row['comentario'] ?></td>
+
+			
+		</tr>
+	<?php	} ?>
+
+		</tbody>
+</table>
+
+</div>	
 
 <div id="notificaciones">
 <ul style="list-style:none">
@@ -191,45 +219,16 @@ while ($contador>0){
 
 	?>
 			<div id="notif2<?php echo $cont ?>" style="visibility:hidden">
-				<p><?php echo $row1['comentario']; ?></p>
+				<p><?php echo $row1['comentario']; ?></p></br>
 			</div>
 		<?php
 		$cont++;
 		 }?>
-
-<div id = "tabla_promocion">
-		<table id ='tabla1'>
-		<thead>	
-					<tr role='row'>
-		<th class='sorting' role='columnheader' tabindex='0'>Comentario</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Fecha de Promoción</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Fecha de Notificación</th>
-					</tr>
-		</thead>
-		<tbody>
-
-
-<?php while($row = mysql_fetch_array($resultado3)){   ?>
-			
-		<tr class='infooo'>
-				<td><?php echo $row['comentario'] ?></td>
-				<td><?php echo $row['fecha_promocion'] ?></td>
-				<td><?php echo $row['fecha_notificacion'] ?></td>
-			
-		</tr>
-	<?php	} ?>
-
-		</tbody>
-</table>
-
-</div>	
 			
 	
 		<div id="botonesrow">
 		
-			<div id="modificarrow">
-		<input type="submit" name="ok" value="Modificar" class="inserta">
-		</div></form>
+
 		
 		
 		<FORM> 
