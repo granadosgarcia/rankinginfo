@@ -88,13 +88,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
   });
  </script>
  
- 
-
-
-
 </head>
-
-
 
 	<body>
 	<div id="entero">
@@ -112,7 +106,7 @@ margin: -130px 0px 0px -153px;'>
                           $imprim = str_replace('rankinginfo/inicio/', "", $_SERVER["REQUEST_URI"]);
                         $imprim = str_replace(' /', "",$imprim);
                                           echo $imprim; ?></h3>
-	   				<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_confirm.php";?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_confirm.php";?>
 
 
 <p name="alerta"></p>
@@ -171,6 +165,8 @@ margin: -130px 0px 0px -153px;'>
 </div>
 			</div>
 </form>
+
+
 
 </div>	   				</div></div></div>
 
