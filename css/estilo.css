@@ -10,173 +10,22 @@
     display:none;
 }
 }
-
+#notif_wrap{
+	display:block;
+	float:left;
+	width: 500px;
+}
 
 #notif21{
-position: absolute;
-top: 435px;
-right: 197px;
 width: 406px;
 border: 1px solid;
 border-radius: 15px;
 display: block;
 padding: 1px 0px 0px 15px;
+z-index: -100;
+margin:32px 0px 0px 205px;
 }
 
-
-#notif22{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-#notif23{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-#notif24{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-#notif25{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-#notif26{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-#notif27{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-#notif28{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-#notif29{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-#notif210{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-#notif211{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-#notif212{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-#notif213{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-#notif214{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
-
-
-#notif215{
-position: absolute;
-top: 435px;
-right: 197px;
-width: 406px;
-border: 1px solid;
-border-radius: 15px;
-display: block;
-padding: 1px 0px 0px 15px;
-}
 #usuario {
     margin: 32px 0 0 796px;
     width: 200px;
@@ -255,7 +104,8 @@ padding: 15px 25px 20px 10px;
     border: 1px solid;
 border-radius: 15px;
 padding: 15px 25px 20px 10px;
-margin:32px 0px -12px 20px;}
+margin:14px 0px -12px 20px;
+z-index: :100;}
 
 #primerrowww{
 border: 1px solid;
@@ -288,7 +138,6 @@ margin: 30px 0px 0px 17px;
 padding: 0px 0px 0px 0px;
 display: block;
 float: left;
-
 }
 
 #info_deudor{

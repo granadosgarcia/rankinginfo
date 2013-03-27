@@ -66,7 +66,7 @@ if(!($resultado3=mysql_query($sql)))
 
 while($cont2>0){
 	?>
-		document.getElementById('notif2<?php echo $cont?>').style.visibility='hidden';
+		document.getElementById('pnotif2<?php echo $cont?>').style.display='none';
 				
 		
 		<?php
@@ -82,7 +82,7 @@ while($cont2>0){
 while($cont2>0){
 	?>
 			function mostrar<?php echo $cont?>(){
-				document.getElementById('notif2<?php echo $cont?>').style.visibility='visible';
+				document.getElementById('pnotif2<?php echo $cont?>').style.display='block';
 				
 			}
 		<?php
@@ -110,7 +110,7 @@ while($cont2>0){
 		
 		<label>Expediente: </label>
 		<p><?php echo $row['expediente']?></p>
-		</br></br>
+		</br>
 		<label class="titulo_label2">Actor</label>
 		<br>
 		<label>Nombres</label>
@@ -196,7 +196,7 @@ while($cont2>0){
 </table>
 
 </div>	
-
+<div id="notif_wrap">
 <div id="notificaciones">
 <ul style="list-style:none">
 <?php
@@ -209,8 +209,9 @@ while ($contador>0){
 
 </ul>
 
+	</div>
 
-</div>
+			<div id="notif21" >
 
 	<?php
 	
@@ -218,14 +219,13 @@ while ($contador>0){
 			 while($row1 = mysql_fetch_array($result1)){
 
 	?>
-			<div id="notif2<?php echo $cont ?>" style="visibility:hidden">
-				<p><?php echo $row1['comentario']; ?></p></br>
-			</div>
+				<p id="pnotif2<?php echo $cont ?>" style="display:none"><?php echo $row1['comentario']; ?></p></br>
 		<?php
 		$cont++;
 		 }?>
-			
-	
+						</div>
+
+</div>
 		<div id="botonesrow">
 		
 
