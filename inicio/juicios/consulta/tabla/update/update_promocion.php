@@ -23,18 +23,18 @@ $kevin2 = date("Y-m-d", strtotime($originalDate1));
 $sql="INSERT INTO promocion(";
 if(!empty($_GET['comentario']))
 $sql.="comentario,";
-if(!empty($_GET['fecha_notificacion']))
+if(!empty($kevin1))
 $sql.="fecha_notificacion,";
-if(!empty($_GET['fecha_promocion']))
+if(!empty($kevin2))
 $sql.="fecha_promocion,";
 $sql.="expediente";
 $sql.=")";
 $sql.="VALUES(";
 if(!empty($_GET['comentario']))
 $sql.="'$kevin',";
-if(!empty($_GET['fecha_notificacion']))
+if(!empty($kevin1))
 $sql.="'$kevin1',";
-if(!empty($_GET['fecha_promocion']))
+if(!empty($kevin2))
 $sql.="'$kevin2',";
 $sql.="'$curp'";
 
