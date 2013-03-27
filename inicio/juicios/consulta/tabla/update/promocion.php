@@ -33,17 +33,23 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 
 </head>
 <body>
-	<div >
+	<div>
 		<h1>Inserta Promoción</h1>
 	</div>
-	<div>
+	<div id="promociones">
 		<form action="update_promocion.php" method="GET">
 		<ul style="list-style: none;">
+			<li><label>Fecha de Notificación</label><input style ="float:right" type="text" name="fecha_notificacion" id="fecha_notificacion"/></li>
+			<br>
+			<li><label>Fecha de Promoción</label><input style ="float:right" type="text" name="fecha_promocion" id="fecha_promocion"/></li>
+			<br>
 			<li><label>Comentario</label><br>
 			<textarea rows="10" cols="35" id="comentario" name="comentario"></textarea></li>
-			<li><label>Fecha de Notificación</label><input type="text" name="fecha_notificacion" id="fecha_notificacion"/></li>
-			<li><label>Fecha de Promoción</label><input type="text" name="fecha_promocion" id="fecha_promocion"/></li>
-			<li><input type="submit"/></li>
+
+			<li><input class = "guardar" type="Submit" value="Guardar"/></li>
+			
+			<li><button class="descartar" type="button" onclick="window.open('', '_self', ''); window.close();">Descartar</button><li>
+
 		</ul>
 
 		</form>

@@ -106,7 +106,7 @@ margin: -130px 0px 0px -153px;'>
                           $imprim = str_replace('rankinginfo/inicio/', "", $_SERVER["REQUEST_URI"]);
                         $imprim = str_replace(' /', "",$imprim);
                                           echo $imprim; ?></h3>
-<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_confirm.php";?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query_j.php";?>
 
 
 <p name="alerta"></p>
@@ -118,7 +118,7 @@ margin: -130px 0px 0px -153px;'>
 		<div id="primerrow">
 		<ul style="  list-style-type: none;">
 		
-			<li><label>Actor</label></li>
+			<li><label style="margin-left:70px;text-decoration:underline ">Actor</label></li><br>
 
 			<li><label>Nombres</label><input type="text" name="actor_nombres" id="actor_nombres">	</li>
 
@@ -128,7 +128,7 @@ margin: -130px 0px 0px -153px;'>
 			<li><label>Apellido Materno </label><input type="text" name="actor_apellido_materno"    id="actor_apellido_materno">	</li>
 
 			<br>
-			<li><label>Demandado</label></li>
+			<li><label style="margin-left:70px; text-decoration:underline">Demandado</label></li><br>
 
 			<li><label>Nombre</label><input type="text" name="demandado_nombres"    id="demandado_nombres">	</li>
 			<li><label>Apellido Paterno</label><input type="text" name="demandado_apellido_paterno"    id="demandado_apellido_paterno">	</li>
@@ -146,12 +146,12 @@ margin: -130px 0px 0px -153px;'>
 			<li><label>S.Actuación</label><input type="text" name="s_actuacion_01"    id="s_actuacion_01"></li>		
 			<li><label>S.Actuación</label><input type="text" name="s_actuacion_02"    id="s_actuacion_02"></li>	<br>
 			<li><label>Estado Procesal</label>
-			<br><input type="text" name="estado_procesal"    id="estado_procesal"></li><br><br>
+			<input type="text" name="estado_procesal"    id="estado_procesal"></li><br><br>
 			
 	
 						
-									<li><label>Fecha de Vencimiento de Termino (Día-Mes-Año)</label><input type="text" id="datepicker" name="datepicker" /></li>
-
+									<li><label>Fecha de Vencimiento de Termino</label><input type="text" id="datepicker" name="datepicker" /></li>
+<br>
 			
 			
 			

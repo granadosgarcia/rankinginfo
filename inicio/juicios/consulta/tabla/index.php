@@ -28,7 +28,7 @@ OR actor_apellido_materno regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
 OR demandado_nombres regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
 OR demandado_apellido_paterno regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
 OR demandado_apellido_materno regexp '[[:<:]]".$palabrasquery1."[[:>:]]'
-OR lugar = '".$palabrasquery1."'
+OR distrito_juidicial = '".$palabrasquery1."'
 OR expediente ='".$palabrasquery1."'
 OR fecha ='".$palabrasquery1."'";}
 
@@ -108,7 +108,10 @@ else { ?>
 			
 		<tr class='infooo'>
 				<td><input checked type='radio' name='consulta' class='case' value='<?php echo $row['expediente'] ?>' > </td>
-				<td><?php echo $row['fecha'] ?></td>
+				<td><?php  $originalDate = $row['fecha'] ;
+					$newDate = date("d-m-Y", strtotime($originalDate));
+							echo $newDate;
+?></td>
 				<td><?php echo $row['expediente'] ?></td>
 				<td><?php echo $row['juzgado'] ?></td>
 				<td><?php echo $row['actor_nombres']." ".$row['actor_apellido_paterno']." ".$row['actor_apellido_materno'] ?></td>

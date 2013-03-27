@@ -47,7 +47,7 @@ if(!($resultado3=mysql_query($sql)))
   
   <script>
   $(function() {
-    $( "#datepicker" ).datepicker({ dateFormat: "yy-mm-dd" });
+    $( "#datepicker" ).datepicker({ dateFormat: "dd-mm-yy" });
   });
  </script>
  
@@ -56,6 +56,31 @@ if(!($resultado3=mysql_query($sql)))
 				$('#tabla1').dataTable();
 			} );
 		</script>
+		
+		<script> 
+    function verifica (){
+    
+         
+       
+        if(document.getElementById("estado_procesal").value=="")
+        {
+	        alert("Estado Procesal Obligatorio");
+	        return false;
+        }
+        if(document.getElementById("datepicker").value=="")
+        {
+	        alert("Fecha Obligatoria");
+	        return false;
+        }
+        
+        else
+        return true;
+        
+        
+    }
+
+</script>
+
  <script>
  
  function quitar () {
@@ -66,8 +91,11 @@ if(!($resultado3=mysql_query($sql)))
 
 while($cont2>0){
 	?>
+	
 		document.getElementById('pnotif2<?php echo $cont?>').style.display='none';
-				
+
+
+		
 		
 		<?php
 		$cont++;
@@ -82,6 +110,8 @@ while($cont2>0){
 while($cont2>0){
 	?>
 			function mostrar<?php echo $cont?>(){
+				document.getElementById('notif21').style.display='block';
+
 				document.getElementById('pnotif2<?php echo $cont?>').style.display='block';
 				
 			}
@@ -98,7 +128,8 @@ while($cont2>0){
                 <div id="inputss">
                 
                 <br>
-    <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query.php";
+        <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query_j.php";
+
 	while($row = mysql_fetch_array($result)){?>
 
 <form method="POST"  action="update.php" enctype="multipart/form-data">
@@ -142,8 +173,9 @@ while($cont2>0){
 		</br><br>
 		<label>Distrito Judicial</label>
 		<input type="text" name="distrito_juidicial"    id="distrito_juidicial"		value="<?php echo $row['distrito_juidicial']?>" class="inputderecha">
+		<br>
 		<label>Ultima Actuación</label>
-		<input type="text" name="utlima_actuacion"    id="ultima_actuacion"		value="<?php echo $row['ultima_actuacion']?>" class="inputderecha">
+		<input type="text" name="utlima_actuacion"    id="utlima_actuacion"		value="<?php echo $row['ultima_actuacion']?>" class="inputderecha">
 		<label>S.Actuación</label>
 		<input type="text" name="s_actuacion_01"    id="s_actuacion_01"		value="<?php echo $row['s_actuacion_01']?>" class="inputderecha">
 		<label>S.Actuación</label>
@@ -152,7 +184,10 @@ while($cont2>0){
 		<label>Estado Procesal</label><br>
 		<input type="text" name="estado_procesal"    id="estado_procesal"		value="<?php echo $row['estado_procesal']?>" class="inputderecha">
 		<label>Fecha de Vencimiento de Termino (Día-Mes-Año)</label>
-		<input type="text" id="datepicker" name="datepicker" value="<?php echo $row['fecha']?>" />
+		<input type="text" id="datepicker" name="datepicker" value="<?php $originalDate = $row['fecha'] ;
+					$newDate = date("d-m-Y", strtotime($originalDate));
+							echo $newDate;
+?>" />
 		</br><br>
 		<label>Comentario</label>
 		<textarea  name="comentario_01"    id="comentario_01"		 rows="6" cols="42"><?php echo $row['comentario_01']?></textarea>
@@ -165,6 +200,8 @@ while($cont2>0){
 
 
 <div id = "tabla_promocion">
+		 			<INPUT class="inserta3" type="button" value="Insertar Promoción" onClick="window.open('promocion.php','mywindow','width=400,height=400')"> 
+
 		<table id ='tabla1'>
 		<thead>	
 					<tr role='row'>
@@ -205,6 +242,8 @@ while($cont2>0){
 </div>	
 <div id="notif_wrap">
 <div id="notificaciones">
+		 			<INPUT  class="inserta4" type="button" value="Insertar Notificación" onClick="window.open('notificacion.php','mywindow','width=500,height=700')"> 
+
 <ul style="list-style:none">
 <?php
 $cont = 1;
@@ -218,18 +257,20 @@ while ($contador>0){
 
 	</div>
 
-			<div id="notif21" >
-
+			<div style="display:none" id="notif21" >
+<h1>Notificación:</h1>
 	<?php
 	
 			$cont=1;
 			 while($row1 = mysql_fetch_array($result1)){
 
 	?>
-				<p id="pnotif2<?php echo $cont ?>" style="display:none"><?php echo $row1['comentario']; ?></p></br>
+				<p id="pnotif2<?php echo $cont ?>"><?php echo $row1['comentario']; ?></p>
 		<?php
 		$cont++;
 		 }?>
+
+
 						</div>
 
 </div>
@@ -238,10 +279,8 @@ while ($contador>0){
 
 		
 		
-		<FORM> 
-			<INPUT type="button" value="Promocion" onClick="window.open('promocion.php','mywindow','width=600,height=800')"> 
-			<INPUT type="button" value="Promocion" onClick="window.open('notificacion.php','mywindow','width=600,height=800')"> 
-		</FORM>
+		
+		
 
 		</div>
         </div>

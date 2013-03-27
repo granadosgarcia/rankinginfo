@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 26, 2013 at 03:20 AM
+-- Generation Time: Mar 27, 2013 at 02:39 AM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=47 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=92 ;
 
 --
 -- Dumping data for table `actividades`
@@ -84,7 +84,52 @@ INSERT INTO `actividades` (`id_usuario`, `fecha`, `actividad`, `id`) VALUES
 (8, '2013-03-12 20:58:09', 'InserciÃ³n Juicio', 43),
 (8, '2013-03-12 20:58:47', 'InserciÃ³n Juicio', 44),
 (8, '2013-03-12 20:59:38', 'InserciÃ³n Juicio', 45),
-(8, '2013-03-25 21:11:16', 'Insercion Juicio', 46);
+(8, '2013-03-25 21:11:16', 'Insercion Juicio', 46),
+(8, '2013-03-25 21:44:27', 'Insertar NotificaciÃ³n', 47),
+(8, '2013-03-25 21:45:53', 'Insertar NotificaciÃ³n', 48),
+(8, '2013-03-25 21:46:31', 'Insertar NotificaciÃ³n', 49),
+(8, '2013-03-25 22:40:35', 'InserciÃ³n Juicio', 50),
+(8, '2013-03-25 22:56:56', 'Insertar NotificaciÃ³n', 51),
+(8, '2013-03-25 22:58:28', 'Insertar NotificaciÃ³n', 52),
+(8, '2013-03-25 23:00:54', 'Insertar NotificaciÃ³n', 53),
+(8, '2013-03-25 23:04:37', 'Insertar Promocion', 54),
+(8, '2013-03-25 23:05:31', 'Insertar Promocion', 55),
+(8, '2013-03-25 23:15:16', 'Insertar Promocion', 56),
+(8, '2013-03-25 23:16:15', 'Insertar Promocion', 57),
+(8, '2013-03-25 23:16:51', 'Insertar NotificaciÃ³n', 58),
+(8, '2013-03-25 23:16:57', 'Insertar NotificaciÃ³n', 59),
+(8, '2013-03-25 23:17:57', 'Insertar NotificaciÃ³n', 60),
+(8, '2013-03-25 23:18:04', 'Insertar Promocion', 61),
+(8, '2013-03-25 23:18:23', 'Insertar NotificaciÃ³n', 62),
+(8, '2013-03-25 23:18:30', 'Insertar Promocion', 63),
+(8, '2013-03-25 23:19:33', 'Insertar Promocion', 64),
+(8, '2013-03-25 23:19:38', 'Insertar NotificaciÃ³n', 65),
+(8, '2013-03-26 17:47:09', 'Insertar NotificaciÃ³n', 66),
+(8, '2013-03-26 17:47:49', 'Insertar Promocion', 67),
+(8, '2013-03-26 17:48:45', 'Insertar Promocion', 68),
+(8, '2013-03-26 17:48:58', 'Insertar Promocion', 69),
+(8, '2013-03-26 17:49:25', 'Insertar Promocion', 70),
+(8, '2013-03-26 18:03:35', 'Insertar Promocion', 71),
+(8, '2013-03-26 18:03:58', 'Insertar Promocion', 72),
+(8, '2013-03-26 19:42:54', 'Insercion Arrendado', 73),
+(8, '2013-03-26 19:50:40', 'Insertar Promocion', 74),
+(8, '2013-03-26 19:51:44', 'Insertar Promocion', 75),
+(8, '2013-03-26 19:51:53', 'Insertar Promocion', 76),
+(8, '2013-03-26 20:09:41', 'Insercion Juicio', 77),
+(8, '2013-03-26 20:11:50', 'InserciÃ³n Juicio', 78),
+(8, '2013-03-26 20:12:38', 'Insertar Promocion', 79),
+(8, '2013-03-26 20:12:44', 'InserciÃ³n Juicio', 80),
+(8, '2013-03-26 20:17:01', 'InserciÃ³n Juicio', 81),
+(8, '2013-03-26 20:17:13', 'InserciÃ³n Juicio', 82),
+(8, '2013-03-26 20:17:54', 'Insertar NotificaciÃ³n', 83),
+(8, '2013-03-26 20:18:13', 'InserciÃ³n Juicio', 84),
+(8, '2013-03-26 20:21:06', 'InserciÃ³n Juicio', 85),
+(8, '2013-03-26 20:22:04', 'InserciÃ³n Juicio', 86),
+(8, '2013-03-26 20:22:25', 'InserciÃ³n Juicio', 87),
+(8, '2013-03-26 20:31:20', 'InserciÃ³n Juicio', 88),
+(8, '2013-03-26 20:32:49', 'InserciÃ³n Juicio', 89),
+(8, '2013-03-26 20:33:00', 'Insertar NotificaciÃ³n', 90),
+(8, '2013-03-26 20:33:11', 'InserciÃ³n Juicio', 91);
 
 -- --------------------------------------------------------
 
@@ -290,13 +335,11 @@ CREATE TABLE IF NOT EXISTS `gestiones` (
 
 CREATE TABLE IF NOT EXISTS `notificacion` (
   `comentario` varchar(5000) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `fecha_notificacion` date DEFAULT NULL,
-  `fecha_promocion` date DEFAULT NULL,
   `id` int(100) NOT NULL AUTO_INCREMENT,
   `expediente` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `expediente` (`expediente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `notificacion`
@@ -312,12 +355,12 @@ CREATE TABLE IF NOT EXISTS `notificacion` (
 CREATE TABLE IF NOT EXISTS `promocion` (
   `fecha_notificacion` date DEFAULT NULL,
   `fecha_promocion` date DEFAULT NULL,
-  `comentario` date DEFAULT NULL,
+  `comentario` varchar(5000) COLLATE latin1_spanish_ci DEFAULT NULL,
   `id` int(100) NOT NULL AUTO_INCREMENT,
   `expediente` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `expediente` (`expediente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `promocion`
@@ -354,8 +397,6 @@ CREATE TABLE IF NOT EXISTS `relacion_juicios` (
 -- Dumping data for table `relacion_juicios`
 --
 
-INSERT INTO `relacion_juicios` (`actor_nombres`, `actor_apellido_paterno`, `actor_apellido_materno`, `demandado_nombres`, `demandado_apellido_paterno`, `demandado_apellido_materno`, `juicio`, `expediente`, `juzgado`, `ultima_actuacion`, `s_actuacion_01`, `s_actuacion_02`, `estado_procesal`, `comentario_01`, `distrito_juidicial`, `fecha`) VALUES
-('Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', '123oexpediente', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'hola', 'Prueba', '2013-03-12');
 
 -- --------------------------------------------------------
 

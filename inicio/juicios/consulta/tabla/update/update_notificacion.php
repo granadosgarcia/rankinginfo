@@ -35,7 +35,7 @@ $sql.=")";
   }
 $id = mysql_insert_id();
  mysql_query($sqlact,$con);
-echo '<script> alert("Notificacion Agregada Exitosamente"); window.close(); </script>';
+echo '<script>window.close(); </script>';
 
  mysql_close($con);
  

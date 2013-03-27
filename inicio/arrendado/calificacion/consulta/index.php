@@ -123,7 +123,7 @@ while($row = mysql_fetch_array($resultado)){
 ?>
 			
 									<tr class='infooo'>
-										<td><input type='radio' name='consulta' value='<?php echo $row['curp']?>'></td>
+										<td><input type='radio' name='consulta' value='<?php echo $row['curp']?>' checked ></td>
 										<td><?php echo $row['nombre']?></td>
 										<td><?php echo $row['apellido_paterno']?></td>
 										<td><?php echo $row['apellido_materno']?></td>

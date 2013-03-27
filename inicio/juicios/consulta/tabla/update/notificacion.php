@@ -1,54 +1,59 @@
+<?php
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 
+?>
+
+<!DOCTYPE html>
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
-<title> Insertar Arrendado </title>
-<link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
-<script> 
-    function verifica (){
-        if(document.getElementById("comentario").value=="")
-        {
-	        alert("Comentario Vacio");
-	        return false;
-        }
-        
-                else
-        return true;
-        }
-</script>
 
-	 <script>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+
+  <script>
+  $(function() {
+    $( "#fecha_notificacion" ).datepicker({ dateFormat: "yy-mm-dd" });
+        $( "#fecha_promocion" ).datepicker({ dateFormat: "yy-mm-dd" });
+
+  });
+ </script>
+ 	 <script>
  window.onunload = function() {
     if (window.opener && !window.opener.closed) {
         window.opener.popUpClosed();
     }
 };
  </script>
+
 </head>
+<body>
+	<div>
+		<h1>Inserta Notificación</h1>
+	</div>
+	<div id="promociones">
+		<form action="update_notificacion.php" method="GET">
+		<ul style="list-style: none;">
+			<li><br><textarea rows="40" cols="55" id="comentario" name="comentario"></textarea></li>
 
-
-
-	<body>
-			<ul style="  list-style-type: none;">
-		
-		
-		<h1>Notificación</h1>
-<form method="GET" onsubmit="return verifica ()" action="update_notificacion.php" enctype="multipart/form-data">
+			<li><input class = "guardar" type="Submit" value="Guardar"/></li>
 			
-			
-			<li>
-			<br><textarea rows="40" cols="55" id="comentario" name="comentario"></textarea>
-			
-			
-						<div id="botonesrow">
-	
-<div id="modificarrow">
-				<input type="submit" name="ok" value="Insertar" class="edita">
-</div>
-</form>
+			<li><button class="descartar" type="button" onclick="window.open('', '_self', ''); window.close();">Descartar</button><li>
 
+		</ul>
 
-	</body>
+		</form>
+	</div>
 
+</body>
 </html>
+
+
+			
+			
+						

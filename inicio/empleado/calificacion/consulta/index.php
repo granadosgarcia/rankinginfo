@@ -124,7 +124,7 @@ echo " 	<form method='POST' action='update/index.php'>
 while($row = mysql_fetch_array($resultado)){ 
 			
 		echo"<tr class='infooo'>";
-				echo "<td><input type='radio' name='consulta' value='".$row['curp']."'> </td>";
+				echo "<td><input type='radio' name='consulta' value='".$row['curp']."' checked> </td>";
 			
 				echo "<td>". $row['nombres']. " </td>";
 				echo "<td>". $row['apellido_paterno']. "</td>";
