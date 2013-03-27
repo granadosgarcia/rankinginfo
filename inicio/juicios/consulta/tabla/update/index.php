@@ -179,12 +179,19 @@ while($cont2>0){
 <?php while($row = mysql_fetch_array($resultado3)){   ?>
 			
 		<tr class='infooo'>
-				<td><?php $originalDate=$row['fecha_promocion'] ;
+				<td><?php 
+				if(!empty($row['fecha_promocion'])){
+
+				 $originalDate=$row['fecha_promocion'] ;
 							$newDate = date("d-m-Y", strtotime($originalDate));
-							echo $newDate;												?></td>
-				<td><?php $originalDate = $row['fecha_notificacion'] ;
+							echo $newDate;
+							}												?></td>
+				<td><?php 
+				if(!empty($row['fecha_notificacion'])){
+				$originalDate = $row['fecha_notificacion'] ;
 					$newDate = date("d-m-Y", strtotime($originalDate));
 							echo $newDate;
+						}
 				?></td>
 				<td><?php echo $row['comentario'] ?></td>
 
