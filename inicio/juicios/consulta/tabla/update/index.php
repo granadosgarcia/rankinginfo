@@ -132,7 +132,7 @@ while($cont2>0){
 
 	while($row = mysql_fetch_array($result)){?>
 
-<form method="POST"  action="update.php" enctype="multipart/form-data">
+<form method="POST" onsubmit="return verifica ()" action="update.php" enctype="multipart/form-data">
 <input style="visibility:hidden; display: none;"type="text" name="consulta" value="<?php echo $row['expediente']?>">
 
 
@@ -200,7 +200,7 @@ while($cont2>0){
 
 
 <div id = "tabla_promocion">
-		 			<INPUT class="inserta3" type="button" value="Insertar Promoción" onClick="window.open('promocion.php','mywindow','width=400,height=400')"> 
+		 			<INPUT class="inserta3" type="button" value="Insertar Promoción" onClick="window.open('promocion.php','mywindow','width=400,height=430')"> 
 
 		<table id ='tabla1'>
 		<thead>	
@@ -242,7 +242,7 @@ while($cont2>0){
 </div>	
 <div id="notif_wrap">
 <div id="notificaciones">
-		 			<INPUT  class="inserta4" type="button" value="Insertar Notificación" onClick="window.open('notificacion.php','mywindow','width=500,height=700')"> 
+		 			<INPUT  class="inserta4" type="button" value="Insertar Notificación" onClick="window.open('notificacion.php','mywindow','width=500,height=740')"> 
 
 <ul style="list-style:none">
 <?php

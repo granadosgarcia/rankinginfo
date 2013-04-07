@@ -30,14 +30,34 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
     }
 };
  </script>
+ 
+ <script> 
+    function verifica (){
+    
+         
+       
+        if(document.getElementById("fecha_notificacion").value=="" &&  document.getElementById("fecha_promocion").value=="" &&  document.getElementById("comentario").value==""){
+document.getElementById("error").innerHTML="<p style='color:RED; font-size:20px;margin-left: 40px; '>Por lo menos llena un campo</p>";        
+return false;
+        }
+        
+        else
+        return true;
+        }
+
+</script>
+
 
 </head>
 <body>
 	<div>
 		<h1>Inserta Promoción</h1>
 	</div>
+	
+	<div  id="error">
+	</div>
 	<div id="promociones">
-		<form action="update_promocion.php" method="GET">
+		<form action="update_promocion.php" onsubmit="return verifica ()" method="GET">
 		<ul style="list-style: none;">
 			<li><label>Fecha de Notificación</label><input style ="float:right" type="text" name="fecha_notificacion" id="fecha_notificacion"/></li>
 			<br>

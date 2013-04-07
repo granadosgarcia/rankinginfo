@@ -30,14 +30,33 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
     }
 };
  </script>
+ 
+  <script> 
+    function verifica (){
+    
+         
+       
+        if(document.getElementById("comentario").value==""){
+document.getElementById("error").innerHTML="<p style='color:RED; font-size:20px;margin-left: 40px; '>Introduce una Notificación</p>";        
+return false;
+        }
+        
+        else
+        return true;
+        }
+
+</script>
+
 
 </head>
 <body>
 	<div>
 		<h1>Inserta Notificación</h1>
 	</div>
+	<div id="error">
+	</div>
 	<div id="promociones">
-		<form action="update_notificacion.php" method="GET">
+		<form action="update_notificacion.php" onsubmit="return verifica ()" method="GET">
 		<ul style="list-style: none;">
 			<li><br><textarea rows="40" cols="55" id="comentario" name="comentario"></textarea></li>
 
