@@ -152,7 +152,7 @@ $sql.=")";
 
 	if (!mysql_query($sql,$con))
   {
-  echo $sql."<br>";
+  echo $sql."<br>".mysql_error()."<br> <p>numero de error</p>".mysql_errno()."<br>";
   die('Error al insertar el registro a la base de datos ' . mysql_error());
   }
   
