@@ -97,7 +97,6 @@ else { ?>
 		<th class='sorting' role='columnheader' tabindex='0'>S.Actuacion</th>
 		<th class='sorting' role='columnheader' tabindex='0'>S.Actuacion</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Estado Procesal</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Comentario</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Distrito Judicial</th>
 					</tr>
 		</thead>
@@ -120,7 +119,6 @@ else { ?>
 				<td><?php echo $row['s_actuacion_01'] ?></td>
 				<td><?php echo $row['s_actuacion_02'] ?></td>
 				<td><?php echo $row['estado_procesal'] ?></td>
-				<td><?php echo $row['comentario_01'] ?></td>
 				<td><?php echo $row['distrito_juidicial'] ?></td>
 		</tr>
 	<?php	} ?>
