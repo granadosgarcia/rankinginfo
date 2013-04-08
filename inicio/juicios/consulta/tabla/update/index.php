@@ -84,43 +84,35 @@ if(!($resultado4=mysql_query($sql)))
 	        return false;
         }
         
-        else{
-         var string1 = document.getElementById("expediente").value;
-        var patt1 = /[A-z]|[;:{}^*?¿'¡!"·$%&()#]/g;
-        var result =patt1.test(string1);
-
-        if(result)
-        {
-        	alert("Solo Números o '-' '/' ");
-	        return false;
-
-        }
-        return true;
+       else return true;
         
-        }
+        
     }
 
 </script>
 
 <!-- MAGI STARTS HERE -->
 <script>
+$(document).ready(function() {  
 <?php
 
-$gor=0;
+$gor=1;
  while ($gor!=$pot) { ?>
-	function mostrar<?php echo $pot ?> ()
-	{
-		for(var i = 1; i<= <? echo $pot ?> ; i++)
-		{
-			document.getElementById("com"+i).style.visibility="none;"	
-		}
-		
-		document.getElementById("com<?php echo $pot ?>").style.visibility="block;"	
-	}
+ 
+ 
+ $("#bot<?php echo $gor ?>").click(function() {
+	 
+	 for(var i=1; i<=<?php echo $pot ?>;i++)
+	 $("#com"+i).css('display','none');
+
+	 $("#com<?php echo $gor ?>").css('display','block');
 	
+  });
+		
 <?php
 $gor++; } ?>
 
+});
 
 </script>
 
@@ -205,9 +197,9 @@ $gor++; } ?>
 
 
 <div id = "tabla_promocion">
-		 			<INPUT class="inserta3" type="button" value="Insertar Promoción" onClick="window.open('promocion.php','mywindow','width=400,height=430')"> 
+		 			<INPUT class="inserta3" type="button" value="+ Promoción" onClick="window.open('promocion.php','mywindow','width=400,height=430')"> 
 		 			
-		 					 			<INPUT class="inserta3" type="button" value="Insertar Notificación" onClick="window.open('notificacion.php','mywindow','width=400,height=430')"> 
+		 					 			<INPUT class="inserta3" type="button" value="+ Notificación" onClick="window.open('notificacion.php','mywindow','width=400,height=430')"> 
 
 
 		<table id ='tabla1'>
@@ -239,9 +231,10 @@ while($row = mysql_fetch_array($resultado3)){   ?>
 				?></td>
 				<? 	if(!empty($row['comentario'])){ ?>
 
-				<td><input type="button" value="Ver" id="bot<?php echo $fot?>" name="bot<?php echo $fot?>"</td>
+				<td><input type="button" action="mostrar<?php echo $fot?>()" value="Ver" id="bot<?php echo $fot?>" name="bot<?php echo $fot?>"</td>
 				
-				<?php }
+				<?php $fot++;
+				}
 					else { echo "<td></td>";}
 				?>
 		</tr>
