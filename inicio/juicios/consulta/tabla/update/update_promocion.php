@@ -20,11 +20,6 @@ $originalDate = $kevin1;
 $kevin1 = date("Y-m-d", strtotime($originalDate));
 }
 
-if(!empty($_GET['fecha_promocion']))
-{
-$originalDate1 = $kevin2;
-$kevin2 = date("Y-m-d", strtotime($originalDate1));
-}
 
 $sql="INSERT INTO promocion(";
 $sql.="tipo,";
@@ -32,8 +27,6 @@ if(!empty($_GET['comentario']))
 $sql.="comentario,";
 if(!empty($_GET['fecha_notificacion']))
 $sql.="fecha_notificacion,";
-if(!empty($_GET['fecha_promocion']))
-$sql.="fecha_promocion,";
 $sql.="expediente";
 $sql.=")";
 $sql.="VALUES(";
@@ -42,8 +35,6 @@ if(!empty($_GET['comentario']))
 $sql.="'$kevin',";
 if(!empty($_GET['fecha_notificacion']))
 $sql.="'$kevin1',";
-if(!empty($_GET['fecha_promocion']))
-$sql.="'$kevin2',";
 $sql.="'$curp'";
 
 

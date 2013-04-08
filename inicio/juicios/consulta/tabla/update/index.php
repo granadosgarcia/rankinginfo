@@ -97,7 +97,7 @@ $(document).ready(function() {
 <?php
 
 $gor=0;
- while ($gor!=$pot) { ?>
+ while ($gor!=$pot+1) { ?>
  
  
  $("#bot<?php echo $gor ?>").click(function() {
@@ -234,7 +234,7 @@ while($row = mysql_fetch_array($resultado3)){   ?>
 				?></td>
 				<? 	if(!empty($row['comentario'])){ ?>
 
-				<td><input type="button" action="mostrar<?php echo $fot?>()" value="Ver" id="bot<?php echo $fot?>" name="bot<?php echo $fot?>"</td>
+				<td><input type="button" action="mostrar<?php echo $fot?>()" value="Ver" id="bot<?php echo $fot?>" name="bot<?php echo $fot?>"></td>
 				
 				<?php $fot++;
 				}

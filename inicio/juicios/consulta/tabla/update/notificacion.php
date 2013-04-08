@@ -18,8 +18,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 
   <script>
   $(function() {
-    $( "#fecha_notificacion" ).datepicker({ dateFormat: "yy-mm-dd" });
-        $( "#fecha_promocion" ).datepicker({ dateFormat: "yy-mm-dd" });
+    $( "#fecha_notificacion" ).datepicker({ dateFormat: "dd-mm-yy" });
+        $( "#fecha_promocion" ).datepicker({ dateFormat: "dd-mm-yy" });
 
   });
  </script>
