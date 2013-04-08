@@ -84,10 +84,20 @@ if(!($resultado4=mysql_query($sql)))
 	        return false;
         }
         
-        else
+        else{
+         var string1 = document.getElementById("expediente").value;
+        var patt1 = /[A-z]|[;:{}^*?¿'¡!"·$%&()#]/g;
+        var result =patt1.test(string1);
+
+        if(result)
+        {
+        	alert("Solo Números o '-' '/' ");
+	        return false;
+
+        }
         return true;
         
-        
+        }
     }
 
 </script>
