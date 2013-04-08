@@ -9,8 +9,6 @@ $sql="SELECT * from relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
 	
 	$sql1="SELECT * from notificacion WHERE expediente='".$_SESSION['curp']."'";
 	$result1=mysql_query($sql1);
-	$contador=mysql_num_rows($result1);
-	
 	$expediente = $_SESSION['curp'];
 
 	$sql="SELECT DISTINCT * FROM promocion
@@ -81,45 +79,7 @@ if(!($resultado3=mysql_query($sql)))
 
 </script>
 
- <script>
- 
- function quitar () {
-	 <?php 
-	$cont =1;
-			$cont2=$contador;
-
-
-while($cont2>0){
-	?>
-	
-		document.getElementById('pnotif2<?php echo $cont?>').style.display='none';
-
-
-		
-		
-		<?php
-		$cont++;
-		 $cont2--;}?>
-	 
- }
-	<?php 
-	$cont =1;
-			$cont2=$contador;
-
-
-while($cont2>0){
-	?>
-			function mostrar<?php echo $cont?>(){
-				document.getElementById('notif21').style.display='block';
-
-				document.getElementById('pnotif2<?php echo $cont?>').style.display='block';
-				
-			}
-		<?php
-		$cont++;
-		 $cont2--;}?>
- </script>
-</head>
+ </head>
 
 	<body>
         <div id="entero">
@@ -241,37 +201,9 @@ while($cont2>0){
 
 </div>	
 <div id="notif_wrap">
-<div id="notificaciones">
-		 			<INPUT  class="inserta4" type="button" value="Insertar Notificación" onClick="window.open('notificacion.php','mywindow','width=500,height=740')"> 
-
-<ul style="list-style:none">
-<?php
-$cont = 1;
-while ($contador>0){
-	echo "<li><input id='notif".$cont."' type='button' onClick='quitar(); mostrar".$cont."(); ' value='Notificación ".$cont++."'/></li>";
-	$contador--;
-}
-?>
-
-</ul>
-
-	</div>
-
-			<div style="display:none" id="notif21" >
-<h1>Notificación:</h1>
-	<?php
-	
-			$cont=1;
-			 while($row1 = mysql_fetch_array($result1)){
-
-	?>
-				<p id="pnotif2<?php echo $cont ?>"><?php echo $row1['comentario']; ?></p>
-		<?php
-		$cont++;
-		 }?>
 
 
-						</div>
+
 
 </div>
 		<div id="botonesrow">

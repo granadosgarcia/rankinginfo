@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 27, 2013 at 02:39 AM
+-- Generation Time: Apr 08, 2013 at 12:01 AM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=92 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=109 ;
 
 --
 -- Dumping data for table `actividades`
@@ -98,38 +98,7 @@ INSERT INTO `actividades` (`id_usuario`, `fecha`, `actividad`, `id`) VALUES
 (8, '2013-03-25 23:16:15', 'Insertar Promocion', 57),
 (8, '2013-03-25 23:16:51', 'Insertar NotificaciÃ³n', 58),
 (8, '2013-03-25 23:16:57', 'Insertar NotificaciÃ³n', 59),
-(8, '2013-03-25 23:17:57', 'Insertar NotificaciÃ³n', 60),
-(8, '2013-03-25 23:18:04', 'Insertar Promocion', 61),
-(8, '2013-03-25 23:18:23', 'Insertar NotificaciÃ³n', 62),
-(8, '2013-03-25 23:18:30', 'Insertar Promocion', 63),
-(8, '2013-03-25 23:19:33', 'Insertar Promocion', 64),
-(8, '2013-03-25 23:19:38', 'Insertar NotificaciÃ³n', 65),
-(8, '2013-03-26 17:47:09', 'Insertar NotificaciÃ³n', 66),
-(8, '2013-03-26 17:47:49', 'Insertar Promocion', 67),
-(8, '2013-03-26 17:48:45', 'Insertar Promocion', 68),
-(8, '2013-03-26 17:48:58', 'Insertar Promocion', 69),
-(8, '2013-03-26 17:49:25', 'Insertar Promocion', 70),
-(8, '2013-03-26 18:03:35', 'Insertar Promocion', 71),
-(8, '2013-03-26 18:03:58', 'Insertar Promocion', 72),
-(8, '2013-03-26 19:42:54', 'Insercion Arrendado', 73),
-(8, '2013-03-26 19:50:40', 'Insertar Promocion', 74),
-(8, '2013-03-26 19:51:44', 'Insertar Promocion', 75),
-(8, '2013-03-26 19:51:53', 'Insertar Promocion', 76),
-(8, '2013-03-26 20:09:41', 'Insercion Juicio', 77),
-(8, '2013-03-26 20:11:50', 'InserciÃ³n Juicio', 78),
-(8, '2013-03-26 20:12:38', 'Insertar Promocion', 79),
-(8, '2013-03-26 20:12:44', 'InserciÃ³n Juicio', 80),
-(8, '2013-03-26 20:17:01', 'InserciÃ³n Juicio', 81),
-(8, '2013-03-26 20:17:13', 'InserciÃ³n Juicio', 82),
-(8, '2013-03-26 20:17:54', 'Insertar NotificaciÃ³n', 83),
-(8, '2013-03-26 20:18:13', 'InserciÃ³n Juicio', 84),
-(8, '2013-03-26 20:21:06', 'InserciÃ³n Juicio', 85),
-(8, '2013-03-26 20:22:04', 'InserciÃ³n Juicio', 86),
-(8, '2013-03-26 20:22:25', 'InserciÃ³n Juicio', 87),
-(8, '2013-03-26 20:31:20', 'InserciÃ³n Juicio', 88),
-(8, '2013-03-26 20:32:49', 'InserciÃ³n Juicio', 89),
-(8, '2013-03-26 20:33:00', 'Insertar NotificaciÃ³n', 90),
-(8, '2013-03-26 20:33:11', 'InserciÃ³n Juicio', 91);
+(8, '2013-03-25 23:17:57', 'Insertar NotificaciÃ³n', 60);
 
 -- --------------------------------------------------------
 
@@ -330,37 +299,18 @@ CREATE TABLE IF NOT EXISTS `gestiones` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notificacion`
---
-
-CREATE TABLE IF NOT EXISTS `notificacion` (
-  `comentario` varchar(5000) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `id` int(100) NOT NULL AUTO_INCREMENT,
-  `expediente` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `expediente` (`expediente`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=15 ;
-
---
--- Dumping data for table `notificacion`
---
-
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `promocion`
 --
 
 CREATE TABLE IF NOT EXISTS `promocion` (
   `fecha_notificacion` date DEFAULT NULL,
-  `fecha_promocion` date DEFAULT NULL,
   `comentario` varchar(5000) COLLATE latin1_spanish_ci DEFAULT NULL,
   `id` int(100) NOT NULL AUTO_INCREMENT,
   `expediente` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  `tipo` varchar(150) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `expediente` (`expediente`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `promocion`
@@ -484,12 +434,6 @@ ALTER TABLE `escolaridad`
 --
 ALTER TABLE `gestiones`
   ADD CONSTRAINT `gestiones_ibfk_1` FOREIGN KEY (`curp`) REFERENCES `vw` (`curp`);
-
---
--- Constraints for table `notificacion`
---
-ALTER TABLE `notificacion`
-  ADD CONSTRAINT `notificacion_ibfk_1` FOREIGN KEY (`expediente`) REFERENCES `relacion_juicios` (`expediente`);
 
 --
 -- Constraints for table `promocion`
