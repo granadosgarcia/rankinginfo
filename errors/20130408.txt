@@ -1,0 +1,42 @@
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,s_actuacion_01,s_actuacion_02,estado_procesal,distrito_juidicial)
+
+VALUES('2013-04-03','prueba','prueba','prueba','prueba','prueba','prueba','prueba','123','prueba','prueba','prueba','prueba','prueba','prueba')
+ El error es: Duplicate entry '123' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,s_actuacion_01,s_actuacion_02,estado_procesal,distrito_juidicial)
+
+VALUES('2013-04-03','prueba','prueba','prueba','prueba','prueba','prueba','prueba','123','prueba','prueba','prueba','prueba','prueba','prueba')
+ El error es: Duplicate entry '123' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,s_actuacion_01,s_actuacion_02,estado_procesal,distrito_juidicial)
+
+VALUES('2013-04-03','prueba','prueba','prueba','prueba','prueba','prueba','prueba','123','prueba','prueba','prueba','prueba','prueba','prueba')
+ El error es: Duplicate entry '123' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,s_actuacion_01,s_actuacion_02,estado_procesal,distrito_juidicial)
+
+VALUES('2013-04-03','joto','prueba','prueba','prueba','prueba','prueba','prueba','123','prueba','prueba','prueba','prueba','prueba','prueba')
+ El error es: Duplicate entry '123' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,s_actuacion_01,s_actuacion_02,estado_procesal,distrito_juidicial)
+
+VALUES('2013-04-03','joto','prueba','prueba','prueba','prueba','prueba','prueba','123','prueba','prueba','prueba','prueba','prueba','prueba')
+ El error es: Duplicate entry '123' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,s_actuacion_01,s_actuacion_02,estado_procesal,distrito_juidicial)
+
+VALUES('2013-04-03','joto','prueba','prueba','prueba','prueba','prueba','prueba','123','prueba','prueba','prueba','prueba','prueba','prueba')
+ El error es: Duplicate entry '123' for key 'PRIMARY'
+
+--------------------
+

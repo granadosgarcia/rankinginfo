@@ -118,7 +118,7 @@ echo " 	<form method='GET' action='update/'>
 		 <table id ='tabla'>
 		<thead>	
 					<tr role='row'>
-							<th class='sorting' role='columnheader' tabindex='0'> </th>
+		<th class='sorting' role='columnheader' tabindex='0'> </th>
 		<th class='sorting' role='columnheader' tabindex='0'>Nombre</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Paterno</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Apellido Materno</th>

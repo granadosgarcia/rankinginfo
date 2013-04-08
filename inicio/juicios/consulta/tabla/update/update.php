@@ -55,8 +55,7 @@ expediente ='$curp'";
 
 	if (!mysql_query($sql,$con))
   {
-  echo $sql."<br>";
-  die('Error al insertar el registro a la base de datos ' . mysql_error());
+	  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/errorsql.php";
   }
   
     mysql_query($sqlact,$con);

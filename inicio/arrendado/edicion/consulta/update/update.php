@@ -61,7 +61,7 @@ curp='$curp'";
 
 	if (!mysql_query($sql,$con))
   {
-  	die('Error al actualizar el registro a la base de datos ' . mysql_error());
+	  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/errorsql.php";
   }
   
     else  if(!empty($_FILES['file']['name'][0]) ||
