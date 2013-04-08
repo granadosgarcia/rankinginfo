@@ -1,8 +1,10 @@
 <?php
 //Si el error es 1062 es un error de que ya existe la clave (CURP,Expediente)
-
+if (mysql_errno() == 1062) {
 //Avisa eso y regresa
-
+alert("El registro ya existe en la base de datos");
+echo "<script>javascript: history.go(-1);<script>";
+}
 
 
 
