@@ -96,7 +96,7 @@ if(!($resultado4=mysql_query($sql)))
 $(document).ready(function() {  
 <?php
 
-$gor=1;
+$gor=0;
  while ($gor!=$pot) { ?>
  
  

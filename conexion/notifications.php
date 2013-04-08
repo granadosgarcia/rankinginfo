@@ -23,7 +23,7 @@ else {
 	<div id="notifications" name="notifications">
 
 <a class="edita2" href="/rankinginfo/inicio/juicios/consulta/tabla/notification.php">
-Hay <?php echo count($notifications) ?> Juicios que vencen termino
+Hay <?php echo count($notifications) ?> Juicios que vencen término
 </a>
 	</div>
 <?php	
