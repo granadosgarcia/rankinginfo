@@ -225,7 +225,7 @@ while($row = mysql_fetch_array($resultado3)){   ?>
 				<td><?php echo $row['tipo'] ?></td>
 
 				
-				<td><?php 
+				<td style="text-align:center;"><?php 
 				if(!empty($row['fecha_notificacion'])){
 				$originalDate = $row['fecha_notificacion'] ;
 					$newDate = date("d-m-Y", strtotime($originalDate));
@@ -234,7 +234,7 @@ while($row = mysql_fetch_array($resultado3)){   ?>
 				?></td>
 				<? 	if(!empty($row['comentario'])){ ?>
 
-				<td><input type="button" action="mostrar<?php echo $fot?>()" value="Ver" id="bot<?php echo $fot?>" name="bot<?php echo $fot?>"></td>
+				<td style="text-align:center;"><input type="button" action="mostrar<?php echo $fot?>()" class="ver" value="Ver Comentario" id="bot<?php echo $fot?>" name="bot<?php echo $fot?>"></td>
 				
 				<?php $fot++;
 				}
