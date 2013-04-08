@@ -102,6 +102,8 @@ $gor=1;
  
  $("#bot<?php echo $gor ?>").click(function() {
 	 
+	 	$("#notif21").css('display','block');
+
 	 for(var i=1; i<=<?php echo $pot ?>;i++)
 	 $("#com"+i).css('display','none');
 
@@ -200,7 +202,8 @@ $gor++; } ?>
 		 			<INPUT class="inserta3" type="button" value="+ Promoción" onClick="window.open('promocion.php','mywindow','width=400,height=430')"> 
 		 			
 		 					 			<INPUT class="inserta3" type="button" value="+ Notificación" onClick="window.open('notificacion.php','mywindow','width=400,height=430')"> 
-
+<br>
+<br>
 
 		<table id ='tabla1'>
 		<thead>	
@@ -247,6 +250,7 @@ while($row = mysql_fetch_array($resultado3)){   ?>
 
 </div>	
 <div id="notif_wrap">
+<div id="notif21" style="display:none;">
 
 <?php   
 $fot = 1;
@@ -254,12 +258,13 @@ while($row = mysql_fetch_array($resultado4)){
 
 		 echo "<div style='display:none;' name='com".$fot."' id='com".$fot."'>";
 		 $fot++;
+		 echo "<h2>Comentario</h2>";
 		 echo $row['comentario'] ;
-		 echo "</div>";
+		 echo "<br><br></div>";
 }
 ?>
 
-
+</div>
 </div>
 		<div id="botonesrow">
 		

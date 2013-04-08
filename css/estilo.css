@@ -23,7 +23,7 @@ border-radius: 15px;
 display: block;
 padding: 1px 0px 0px 15px;
 z-index: -100;
-margin:32px 0px 0px 205px;
+margin:32px 0px 0px 55px;
 text-align: justify;
 padding: 0px 25px;
 }
@@ -107,7 +107,8 @@ padding: 15px 25px 20px 10px;
 border-radius: 15px;
 padding: 15px 25px 20px 10px;
 margin:14px 0px -12px 20px;
-z-index: :100;}
+z-index: :100;
+text-align: center;}
 
 #primerrowww{
 border: 1px solid;

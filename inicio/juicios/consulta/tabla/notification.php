@@ -4,7 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 
 
-$sql= "SELECT * from relacion_juicios j WHERE DATEDIFF(j.fecha,CURDATE())<=15 AND DATEDIFF(j.fecha,CURDATE())>=-15";
+$sql= "SELECT * from relacion_juicios j WHERE DATEDIFF(j.fecha,CURDATE())<=3 AND DATEDIFF(j.fecha,CURDATE())>=-3";
 
 
 
