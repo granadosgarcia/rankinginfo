@@ -84,7 +84,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 
         if(result)
         {
-        	alert("Solo Números o '-' '/' ");
+        	alert("Expediente solo acepta números o '-' '/' ");
 	        return false;
 
         }
