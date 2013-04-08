@@ -561,6 +561,7 @@ background-color: #7fbf4d;
 }
 
 
+
 .inserta3{
 background-color: #7fbf4d;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
@@ -575,12 +576,10 @@ background-color: #7fbf4d;
   -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
   box-shadow: inset 0 1px 0 0 #96ca6d;
   color: #fff;
-  font: bold 14px/1 "NeutonBold", Geneva, Verdana, sans-serif;
-  padding: 7px 0 8px 0;
+  font: bold 18px/1 "NeutonBold", Geneva, Verdana, sans-serif;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
   width: 150px; 
-  margin:0px 0px 0px 175px;
 }
 .inserta3:hover{
 	background-color: #76b347;

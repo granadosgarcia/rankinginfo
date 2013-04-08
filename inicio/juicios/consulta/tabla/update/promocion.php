@@ -58,11 +58,12 @@ return false;
 	</div>
 	<div id="promociones">
 		<form action="update_promocion.php" onsubmit="return verifica ()" method="GET">
+		<
 		<ul style="list-style: none;">
+		<input style ="display:none" type="text" value="Promoción" name="tipo" id="tipo"/>
 			<li><label>Fecha de Notificación</label><input style ="float:right" type="text" name="fecha_notificacion" id="fecha_notificacion"/></li>
 			<br>
-			<li><label>Fecha de Promoción</label><input style ="float:right" type="text" name="fecha_promocion" id="fecha_promocion"/></li>
-			<br>
+
 			<li><label>Comentario</label><br>
 			<textarea rows="10" cols="35" id="comentario" name="comentario"></textarea></li>
 

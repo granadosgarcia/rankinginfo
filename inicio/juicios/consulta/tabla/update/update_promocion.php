@@ -11,6 +11,8 @@ VALUES ('$_SESSION[usuario_id]', NOW(), 'Insertar Promocion')";
 $kevin = mysql_real_escape_string($_GET["comentario"]);
 $kevin1 = mysql_real_escape_string($_GET["fecha_notificacion"]);
 $kevin2 = mysql_real_escape_string($_GET["fecha_promocion"]);
+$kevin3 = mysql_real_escape_string($_GET["tipo"]);
+
  $curp= mysql_real_escape_string($_SESSION['curp']);
 
 if(!empty($_GET['fecha_notificacion'])){
@@ -25,6 +27,7 @@ $kevin2 = date("Y-m-d", strtotime($originalDate1));
 }
 
 $sql="INSERT INTO promocion(";
+$sql.="tipo,";
 if(!empty($_GET['comentario']))
 $sql.="comentario,";
 if(!empty($_GET['fecha_notificacion']))
@@ -34,6 +37,7 @@ $sql.="fecha_promocion,";
 $sql.="expediente";
 $sql.=")";
 $sql.="VALUES(";
+$sql.="'$kevin3',";
 if(!empty($_GET['comentario']))
 $sql.="'$kevin',";
 if(!empty($_GET['fecha_notificacion']))

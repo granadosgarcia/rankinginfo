@@ -21,6 +21,18 @@ if(!($resultado3=mysql_query($sql)))
 {
 	die ($sql."Error".mysql_error());
 }
+
+
+$sql="SELECT DISTINCT * FROM promocion
+	WHERE
+	expediente='".$expediente."'";
+
+
+
+if(!($resultado4=mysql_query($sql)))
+{
+	die ($sql."Error".mysql_error());
+}
 	
 	?>
 <html>
@@ -161,28 +173,30 @@ if(!($resultado3=mysql_query($sql)))
 
 <div id = "tabla_promocion">
 		 			<INPUT class="inserta3" type="button" value="Insertar Promoción" onClick="window.open('promocion.php','mywindow','width=400,height=430')"> 
+		 			
+		 					 			<INPUT class="inserta3" type="button" value="Insertar Notificación" onClick="window.open('notificacion.php','mywindow','width=400,height=430')"> 
+
 
 		<table id ='tabla1'>
 		<thead>	
 					<tr role='row'>
-		<th class='sorting' role='columnheader' tabindex='0'>Fecha de Promoción</th>
-		<th class='sorting' role='columnheader' tabindex='0'>Fecha de Notificación</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Tipo</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Fecha</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Comentario</th>
 					</tr>
 		</thead>
 		<tbody>
 
 
-<?php while($row = mysql_fetch_array($resultado3)){   ?>
+<?php 
+$fot = 1;
+while($row = mysql_fetch_array($resultado3)){   ?>
 			
 		<tr class='infooo'>
-				<td><?php 
-				if(!empty($row['fecha_promocion'])){
+				
+				<td><?php echo $row['tipo'] ?></td>
 
-				 $originalDate=$row['fecha_promocion'] ;
-							$newDate = date("d-m-Y", strtotime($originalDate));
-							echo $newDate;
-							}												?></td>
+				
 				<td><?php 
 				if(!empty($row['fecha_notificacion'])){
 				$originalDate = $row['fecha_notificacion'] ;
@@ -190,19 +204,34 @@ if(!($resultado3=mysql_query($sql)))
 							echo $newDate;
 						}
 				?></td>
-				<td><?php echo $row['comentario'] ?></td>
+				<? 	if(!empty($row['comentario'])){ ?>
 
-			
+				<td><input type="button" value="Ver" id="bot<?php echo $fot?>" name="bot<?php echo $fot?>"</td>
+				
+				<?php }
+					else { echo "<td></td>";}
+				?>
 		</tr>
-	<?php	} ?>
+		
+		
 
+<?php } ?>
 		</tbody>
 </table>
 
 </div>	
 <div id="notif_wrap">
 
+<?php   
+$fot = 1;
+while($row = mysql_fetch_array($resultado4)){   
 
+		 echo "<div name='com".$fot."' id='com".$fot."'>";
+		 $fot++;
+		 echo $row['comentario'] ;
+		 echo "</div>";
+}
+?>
 
 
 </div>
