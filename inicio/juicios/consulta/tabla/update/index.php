@@ -33,8 +33,9 @@ if(!($resultado4=mysql_query($sql)))
 {
 	die ($sql."Error".mysql_error());
 }
+
+ $pot = mysql_num_rows($resultado4); ?>
 	
-	?>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
@@ -88,6 +89,28 @@ if(!($resultado4=mysql_query($sql)))
         
         
     }
+
+</script>
+
+<!-- MAGI STARTS HERE -->
+<script>
+<?php
+
+$gor=0;
+ while ($gor!=$pot) { ?>
+	function mostrar<?php echo $pot ?> ()
+	{
+		for(var i = 1; i<= <? echo $pot ?> ; i++)
+		{
+			document.getElementById("com"+i).style.visibility="none;"	
+		}
+		
+		document.getElementById("com<?php echo $pot ?>").style.visibility="block;"	
+	}
+	
+<?php
+$gor++; } ?>
+
 
 </script>
 
@@ -226,7 +249,7 @@ while($row = mysql_fetch_array($resultado3)){   ?>
 $fot = 1;
 while($row = mysql_fetch_array($resultado4)){   
 
-		 echo "<div name='com".$fot."' id='com".$fot."'>";
+		 echo "<div style='display:none;' name='com".$fot."' id='com".$fot."'>";
 		 $fot++;
 		 echo $row['comentario'] ;
 		 echo "</div>";
