@@ -175,11 +175,7 @@ $gor++; } ?>
 		<br>
 		<label>Ultima Actuación</label>
 		<input type="text" name="utlima_actuacion"    id="utlima_actuacion"		value="<?php echo $row['ultima_actuacion']?>" class="inputderecha">
-		<label>S.Actuación</label>
-		<input type="text" name="s_actuacion_01"    id="s_actuacion_01"		value="<?php echo $row['s_actuacion_01']?>" class="inputderecha">
-		<label>S.Actuación</label>
-		<input type="text" name="s_actuacion_02"    id="s_actuacion_02"		value="<?php echo $row['s_actuacion_02']?>" class="inputderecha">
-		</br>
+		
 		<label>Estado Procesal</label><br>
 		<input type="text" name="estado_procesal"    id="estado_procesal"		value="<?php echo $row['estado_procesal']?>" class="inputderecha">
 		<label>Fecha de Vencimiento de Termino (Día-Mes-Año)</label>

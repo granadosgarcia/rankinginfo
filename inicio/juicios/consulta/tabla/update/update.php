@@ -11,8 +11,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
  $curp= mysql_real_escape_string($_POST['consulta']);
 
   $utlima_actuacion= mysql_real_escape_string($_POST['utlima_actuacion']);
-  $s_actuacion_01= mysql_real_escape_string($_POST['s_actuacion_01']);
-  $s_actuacion_02= mysql_real_escape_string($_POST['s_actuacion_02']);
   $estado_procesal_tramite_pendiente= mysql_real_escape_string($_POST['estado_procesal']);
   $comentario_01= mysql_real_escape_string($_POST['comentario_01']);
   $lugar= mysql_real_escape_string($_POST['distrito_juidicial']);
@@ -34,11 +32,6 @@ $sql.="fecha = '$fecha'";
 if(!empty($_POST['utlima_actuacion']))
 $sql.=", ultima_actuacion = '$utlima_actuacion'";
 
-if(!empty($_POST['s_actuacion_01']))
-$sql.=", s_actuacion_01 = '$s_actuacion_01'";
-
-if(!empty($_POST['s_actuacion_02']))
-$sql.=", s_actuacion_02 = '$s_actuacion_02'";
 
 if(!empty($_POST['estado_procesal']))
 $sql.=", estado_procesal = '$estado_procesal_tramite_pendiente'";

@@ -94,8 +94,6 @@ else { ?>
 		<th class='sorting' role='columnheader' tabindex='0'>Demandado</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Juicio</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Ultima Actuacion </th>
-		<th class='sorting' role='columnheader' tabindex='0'>S.Actuacion</th>
-		<th class='sorting' role='columnheader' tabindex='0'>S.Actuacion</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Estado Procesal</th>
 		<th class='sorting' role='columnheader' tabindex='0'>Distrito Judicial</th>
 					</tr>
@@ -116,8 +114,6 @@ else { ?>
 				<td><?php echo $row['actor_nombres']." ".$row['actor_apellido_paterno']." ".$row['actor_apellido_materno'] ?></td>
 				<td><?php echo $row['demandado_nombres']." ".$row['demandado_apellido_paterno']." ".$row['demandado_apellido_materno'] ?></td>				<td><?php echo $row['juicio'] ?></td>
 				<td><?php echo $row['ultima_actuacion'] ?></td>
-				<td><?php echo $row['s_actuacion_01'] ?></td>
-				<td><?php echo $row['s_actuacion_02'] ?></td>
 				<td><?php echo $row['estado_procesal'] ?></td>
 				<td><?php echo $row['distrito_juidicial'] ?></td>
 		</tr>

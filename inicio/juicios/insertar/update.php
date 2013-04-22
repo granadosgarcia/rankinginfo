@@ -22,8 +22,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
   $expediente= mysql_real_escape_string($_POST['expediente']);
   $juzgado= mysql_real_escape_string($_POST['juzgado']);
   $ultima_actuacion= mysql_real_escape_string($_POST['ultima_actuacion']);
-  $s_actuacion_01= mysql_real_escape_string($_POST['s_actuacion_01']);
-  $s_actuacion_02= mysql_real_escape_string($_POST['s_actuacion_02']);
   $estado_procesal= mysql_real_escape_string($_POST['estado_procesal']);
   $comentario_01= mysql_real_escape_string($_POST['comentario_01']);
   $distrito_juidicial= mysql_real_escape_string($_POST['distrito_juidicial']);
@@ -72,15 +70,8 @@ if(!empty($_POST['juzgado']))
 $sql.=",juzgado";
 
 
-
 if(!empty($_POST['ultima_actuacion']))
 $sql.=",ultima_actuacion";
-
-if(!empty($_POST['s_actuacion_01']))
-$sql.=",s_actuacion_01";
-
-if(!empty($_POST['s_actuacion_02']))
-$sql.=",s_actuacion_02";
 
 if(!empty($_POST['estado_procesal']))
 $sql.=",estado_procesal";
@@ -118,26 +109,14 @@ $sql.=",'$demandado_apellido_materno'";
 if(!empty($_POST['juicio']))
 $sql.=",'$juicio'";
 
-
 if(!empty($_POST['expediente']))
 $sql.=",'$expediente'";
-
 
 if(!empty($_POST['juzgado']))
 $sql.=",'$juzgado'";
 
-
-
-
-
 if(!empty($_POST['ultima_actuacion']))
 $sql.=",'$ultima_actuacion'";
-
-if(!empty($_POST['s_actuacion_01']))
-$sql.=",'$s_actuacion_01'";
-
-if(!empty($_POST['s_actuacion_02']))
-$sql.=",'$s_actuacion_02'";
 
 if(!empty($_POST['estado_procesal']))
 $sql.=",'$estado_procesal'";

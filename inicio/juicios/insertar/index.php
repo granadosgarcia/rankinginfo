@@ -156,8 +156,6 @@ margin: -130px 0px 0px -153px;'>
 			<li><label>Distrito Judicial</label><input type="text" name="distrito_juidicial"    id="distrito_juidicial"></li>	
 									
 			<li><label>Ultima actuacion</label><input type="text" name="ultima_actuacion"    id="ultima_actuacion"></li>
-			<li><label>S.Actuación</label><input type="text" name="s_actuacion_01"    id="s_actuacion_01"></li>		
-			<li><label>S.Actuación</label><input type="text" name="s_actuacion_02"    id="s_actuacion_02"></li>	<br>
 			<li><label>Estado Procesal</label>
 			<input type="text" name="estado_procesal"    id="estado_procesal"></li><br><br>
 			
