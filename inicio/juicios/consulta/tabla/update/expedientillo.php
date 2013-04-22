@@ -134,13 +134,8 @@ $gor++; } ?>
 <form method="POST" onsubmit="return verifica ()" action="update.php" enctype="multipart/form-data">
 <input style="visibility:hidden; display: none;"type="text" name="consulta" value="<?php echo $row['expediente']?>">
 
-<?php
-if ($row['expedientillo']== 'NULL')
-echo "<h1>Expediente Principal</h1>";
-else
-echo "";
 
-?>
+<a href="" style="boton">Volver al Expediente Principal</a>
 	<div id="primerrowww">
 	
 		
