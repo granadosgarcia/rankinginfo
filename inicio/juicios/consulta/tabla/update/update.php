@@ -8,13 +8,13 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
 
- $curp= mysql_real_escape_string($_POST['consulta']);
+ $curp= mysql_real_escape_string($_REQUEST['consulta']);
 
-  $utlima_actuacion= mysql_real_escape_string($_POST['utlima_actuacion']);
-  $estado_procesal_tramite_pendiente= mysql_real_escape_string($_POST['estado_procesal']);
-  $comentario_01= mysql_real_escape_string($_POST['comentario_01']);
-  $lugar= mysql_real_escape_string($_POST['distrito_juidicial']);
-   $fecha= mysql_real_escape_string($_POST['datepicker']);
+  $utlima_actuacion= mysql_real_escape_string($_REQUEST['utlima_actuacion']);
+  $estado_procesal_tramite_pendiente= mysql_real_escape_string($_REQUEST['estado_procesal']);
+  $comentario_01= mysql_real_escape_string($_REQUEST['comentario_01']);
+  $lugar= mysql_real_escape_string($_REQUEST['distrito_juidicial']);
+   $fecha= mysql_real_escape_string($_REQUEST['datepicker']);
    $originalDate = $fecha;
    $newDate = date("Y-m-d", strtotime($originalDate));
    $fecha= $newDate;  
@@ -26,20 +26,20 @@ VALUES ('$_SESSION[usuario_id]', NOW(), 'Inserción Juicio')";
 
 $sql="UPDATE relacion_juicios SET ";
 
-if(!empty($_POST['datepicker']))
+if(!empty($_REQUEST['datepicker']))
 $sql.="fecha = '$fecha'";
 
-if(!empty($_POST['utlima_actuacion']))
+if(!empty($_REQUEST['utlima_actuacion']))
 $sql.=", ultima_actuacion = '$utlima_actuacion'";
 
 
-if(!empty($_POST['estado_procesal']))
+if(!empty($_REQUEST['estado_procesal']))
 $sql.=", estado_procesal = '$estado_procesal_tramite_pendiente'";
 
-if(!empty($_POST['comentario_01']))
+if(!empty($_REQUEST['comentario_01']))
 $sql.=", comentario_01 = '$comentario_01'";
 
-if(!empty($_POST['distrito_juidicial']))
+if(!empty($_REQUEST['distrito_juidicial']))
 $sql.=", distrito_juidicial = '$lugar'";
 
 $sql.=" WHERE 

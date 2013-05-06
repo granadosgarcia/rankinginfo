@@ -5,3 +5,33 @@ VALUES('2013-05-16','hola','hola','hola','hola','hola','hola','jaja','123','hola
 
 --------------------
 
+UPDATE relacion_juicios SET  WHERE 
+expediente =''
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE 
+expediente =''' at line 1
+
+UPDATE relacion_juicios SET  WHERE 
+expediente =''
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE 
+expediente =''' at line 1
+
+UPDATE relacion_juicios SET  WHERE 
+expediente =''
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE 
+expediente =''' at line 1
+
+UPDATE relacion_juicios SET  WHERE 
+expediente ='Prueba'
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE 
+expediente ='Prueba'' at line 1
+
+UPDATE relacion_juicios SET  WHERE 
+expediente ='123'
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE 
+expediente ='123'' at line 1
+
+UPDATE relacion_juicios SET  WHERE 
+expediente ='123'
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE 
+expediente ='123'' at line 1
+
