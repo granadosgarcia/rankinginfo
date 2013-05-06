@@ -137,7 +137,7 @@ $gor++; } ?>
 
 	while($row = mysql_fetch_array($result)){?>
 
-<form method="GET" onsubmit="return verifica ()" action="update.php" enctype="multipart/form-data">
+<form method="GET" onsubmit="return verifica ()" action="update.php" enctype="multipart/form-data" style="margin-top: 15px;">
 <input style="visibility:hidden; display: none;"type="text" name="consulta" value="<?php echo $row['expediente']?>">
 
 <?php
@@ -148,7 +148,7 @@ $expe = 1;
 $expe2= $row['expediente'];
 }
 else{
-echo "<a class='inserta3' href='index.php?consulta=".$row['expedientillo']."'>Expedientillo de ".$row['expedientillo']."</a>";
+echo "<a class='inserta3 espacioo' href='index.php?consulta=".$row['expedientillo']."'>Expediente Principal: ".$row['expedientillo']."</a>";
 $expe = 0;
 }
 ?>
@@ -212,7 +212,8 @@ $expe = 0;
 <?php if($expe == 1){ ?>
 
 <div id="expedientillo">
-		 			<a class="inserta3" type="button" href="nuevo_exp/index.php?consulta=<?php echo $expe2 ?>">+ Expedientillo</a>
+	<h2>Expedientillo</h2>
+		 			<a class="inserta3 expedientilloo" type="button" href="nuevo_exp/index.php?consulta=<?php echo $expe2 ?>">Nuevo Juicio</a>
 <?php if (mysql_num_rows($resultado5)>0){ ?>
 <table id='tabla2'>
 		<thead>	
