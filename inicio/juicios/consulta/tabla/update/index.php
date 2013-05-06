@@ -14,8 +14,12 @@ $sql="SELECT * from relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
 	$sql="SELECT DISTINCT * FROM promocion
 	WHERE
 	expediente='".$expediente."'";
-
-
+	
+	$expedientillo = "SELECT DISTINCT * FROM relacion_juicios WHERE expedientillo='".$_SESSION['curp']."'";
+	if(!($resultado5=mysql_query($expedientillo)))
+	{
+		die ($expedientillo."Error".mysql_error());
+	}
 
 if(!($resultado3=mysql_query($sql)))
 {
@@ -65,6 +69,8 @@ if(!($resultado4=mysql_query($sql)))
  <script type='text/javascript' charset='utf-8'>
 			$(document).ready(function() {
 				$('#tabla1').dataTable();
+				$('#tabla2').dataTable();
+
 			} );
 		</script>
 		
@@ -131,15 +137,20 @@ $gor++; } ?>
 
 	while($row = mysql_fetch_array($result)){?>
 
-<form method="POST" onsubmit="return verifica ()" action="update.php" enctype="multipart/form-data">
+<form method="GET" onsubmit="return verifica ()" action="update.php" enctype="multipart/form-data">
 <input style="visibility:hidden; display: none;"type="text" name="consulta" value="<?php echo $row['expediente']?>">
 
 <?php
-if ($row['expedientillo']== 'NULL')
+/* Expedientillo */
+if ($row['expedientillo']== NULL){
 echo "<h1>Expediente Principal</h1>";
-else
-echo "";
-
+$expe = 1;
+$expe2= $row['expediente'];
+}
+else{
+echo "<a class='inserta3' href='index.php?consulta=".$row['expedientillo']."'>Expedientillo de ".$row['expedientillo']."</a>";
+$expe = 0;
+}
 ?>
 	<div id="primerrowww">
 	
@@ -198,7 +209,30 @@ echo "";
 	</div>
 </form>
 
+<?php if($expe == 1){ ?>
 
+<div id="expedientillo">
+		 			<a class="inserta3" type="button" href="nuevo_exp/index.php?consulta=<?php echo $expe2 ?>">+ Expedientillo</a>
+<?php if (mysql_num_rows($resultado5)>0){ ?>
+<table id='tabla2'>
+		<thead>	
+					<tr role='row'>
+		<th class='sorting' role='columnheader' tabindex='0'>Juicio</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Fecha</th>
+		<th class='sorting' role='columnheader' tabindex='0'>Ver</th>
+					</tr>
+		</thead>
+		<tbody>
+<?php while($row = mysql_fetch_array($resultado5)){ ?>
+<tr class="infooo">
+	<td><?php echo $row['juicio'] ?> </td> 
+	<td><?php echo $row['fecha'] ?> </td> 
+<?php echo "<td><a href='index.php?consulta=".$row['expediente']."'>ver</a></td></tr>"; } ?>
+</tbody></table>
+<?php } ?>
+
+</div>
+<?php } ?>
 
 <div id = "tabla_promocion">
 		 			<INPUT class="inserta3" type="button" value="+ Promoción" onClick="window.open('promocion.php','mywindow','width=400,height=430')"> 
@@ -264,6 +298,7 @@ while($row = mysql_fetch_array($resultado4)){
 		 echo $row['comentario'] ;
 		 echo "<br><br></div>";
 }
+
 ?>
 
 </div>

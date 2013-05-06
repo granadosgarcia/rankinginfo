@@ -19,8 +19,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
   <script>
   $(function() {
     $( "#fecha_notificacion" ).datepicker({ dateFormat: "dd-mm-yy" });
-        $( "#fecha_promocion" ).datepicker({ dateFormat: "dd-mm-yy" });
-
   });
  </script>
  	 <script>
@@ -36,10 +34,15 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
     
          
        
-        if(document.getElementById("fecha_notificacion").value=="" &&  document.getElementById("fecha_promocion").value=="" &&  document.getElementById("comentario").value==""){
+        if(document.getElementById("fecha_notificacion").value=="" &&  document.getElementById("comentario").value==""){
 document.getElementById("error").innerHTML="<p style='color:RED; font-size:20px;margin-left: 40px; '>Por lo menos llena un campo</p>";        
 return false;
         }
+        if(document.getElementById("fecha_notificacion").value==""){
+        document.getElementById("error").innerHTML="<p style='color:RED; font-size:20px;margin-left: 40px; '>Fecha Obligatoria</p>";        
+        return false;
+        }
+        
         
         else
         return true;
@@ -58,10 +61,10 @@ return false;
 	</div>
 	<div id="promociones">
 		<form action="update_promocion.php" onsubmit="return verifica ()" method="GET">
-		<
+		
 		<ul style="list-style: none;">
 		<input style ="display:none" type="text" value="Promoción" name="tipo" id="tipo"/>
-			<li><label>Fecha de Notificación</label><input style ="float:right" type="text" name="fecha_notificacion" id="fecha_notificacion"/></li>
+			<li><label>Fecha de Promoción</label><input style ="float:right" type="text" name="fecha_notificacion" id="fecha_notificacion"/></li>
 			<br>
 
 			<li><label>Comentario</label><br>

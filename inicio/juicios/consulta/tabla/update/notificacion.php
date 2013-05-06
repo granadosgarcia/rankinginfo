@@ -19,7 +19,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
   <script>
   $(function() {
     $( "#fecha_notificacion" ).datepicker({ dateFormat: "dd-mm-yy" });
-        $( "#fecha_promocion" ).datepicker({ dateFormat: "dd-mm-yy" });
 
   });
  </script>
@@ -36,9 +35,14 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
     
          
        
-        if(document.getElementById("fecha_notificacion").value=="" &&  document.getElementById("fecha_promocion").value=="" &&  document.getElementById("comentario").value==""){
+        if(document.getElementById("fecha_notificacion").value==""  &&  document.getElementById("comentario").value==""){
 document.getElementById("error").innerHTML="<p style='color:RED; font-size:20px;margin-left: 40px; '>Por lo menos llena un campo</p>";        
 return false;
+        }
+        
+             if(document.getElementById("fecha_notificacion").value==""){
+        document.getElementById("error").innerHTML="<p style='color:RED; font-size:20px;margin-left: 40px; '>Fecha Obligatoría</p>";        
+        return false;
         }
         
         else

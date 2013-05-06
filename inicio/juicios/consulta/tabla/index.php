@@ -112,7 +112,8 @@ else { ?>
 				<td><?php echo $row['expediente'] ?></td>
 				<td><?php echo $row['juzgado'] ?></td>
 				<td><?php echo $row['actor_nombres']." ".$row['actor_apellido_paterno']." ".$row['actor_apellido_materno'] ?></td>
-				<td><?php echo $row['demandado_nombres']." ".$row['demandado_apellido_paterno']." ".$row['demandado_apellido_materno'] ?></td>				<td><?php echo $row['juicio'] ?></td>
+				<td><?php echo $row['demandado_nombres']." ".$row['demandado_apellido_paterno']." ".$row['demandado_apellido_materno'] ?></td>				
+				<td><?php echo $row['juicio'] ?></td>
 				<td><?php echo $row['ultima_actuacion'] ?></td>
 				<td><?php echo $row['estado_procesal'] ?></td>
 				<td><?php echo $row['distrito_juidicial'] ?></td>
