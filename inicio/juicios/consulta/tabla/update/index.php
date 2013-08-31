@@ -15,7 +15,7 @@ $sql="SELECT * from relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
 	WHERE
 	expediente='".$expediente."'";
 	
-	$expedientillo = "SELECT DISTINCT * FROM relacion_juicios WHERE expedientillo='".$_SESSION['curp']."'";
+	$expedientillo = "SELECT DISTINCT * FROM relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
 	if(!($resultado5=mysql_query($expedientillo)))
 	{
 		die ($expedientillo."Error".mysql_error());
