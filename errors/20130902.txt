@@ -12,3 +12,20 @@ VALUES('2013-09-09','prueba3','prueba3','prueba3','prueba3','prueba3','prueba3',
 
 --------------------
 
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,juzgado,ultima_actuacion,estado_procesal,comentario_01,distrito_juidicial,expedientillo)
+
+VALUES('2013-09-09','PRUEBA','PRUEBA','PRUEBA','PRUEBA','PRUEBA','PRUEBA','PRUEBA','PRUEBA','PRUEBA','PRUEBA','PRUEBAPRUEBAPRUEBA','PRUEBA','')
+ El error es: Duplicate entry '' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,juzgado,ultima_actuacion,estado_procesal,comentario_01,distrito_juidicial,expedientillo)
+
+VALUES('2013-09-24','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','850/850','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINALPRUEBAFINALPRUEBAFINAL','PRUEBAFINAL','123/321')
+ El error es: Column count doesn't match value count at row 1
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,juzgado,ultima_actuacion,estado_procesal,comentario_01,distrito_juidicial,expedientillo)
+
+VALUES('2013-09-24','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','850/850','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINAL','PRUEBAFINALPRUEBAFINALPRUEBAFINAL','PRUEBAFINAL','123/321')
+ El error es: Column count doesn't match value count at row 1
+

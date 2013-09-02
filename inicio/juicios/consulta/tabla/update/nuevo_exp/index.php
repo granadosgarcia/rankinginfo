@@ -1,20 +1,14 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
-$consulta = $_REQUEST['consulta']
 ?>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
-<title> Insertar Arrendado </title>
+<title> Insertar Juicio </title>
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/header_juicios.php";
 ?>
-<!--
-<link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
--->
+
   <script> 
     function verifica (){
     
@@ -59,7 +53,11 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/header_juicios.php
 	        alert("Juicio Obligatorio");
 	        return false;
         }    
- 
+        if(document.getElementById("expediente").value=="")
+        {
+	        alert("Expediente Obligatorio");
+	        return false;
+        }    
         if(document.getElementById("juzgado").value=="")
         {
 	        alert("Juzgado Obligatorio");
@@ -130,41 +128,55 @@ margin: -130px 0px 0px -153px;'>
 
 <form method="post" onsubmit="return verifica ()" action="update.php" enctype="multipart/form-data">
 
-		<div id="primerrow">
+	<div id ="izquierdaJuicios">
+			<div id="Actor">
+				<ul style="  list-style-type: none;">
+				
+					<li><label style="margin-left:70px;text-decoration:underline ">Actor</label></li><br>
+
+					<li><label>Nombres</label><input type="text" name="actor_nombres" id="actor_nombres">	</li>
+
+					<li><label>Apellido Paterno </label><input type="text" name="actor_apellido_paterno" id="actor_apellido_paterno">	</li>
+
+					
+					<li><label>Apellido Materno </label><input type="text" name="actor_apellido_materno"    id="actor_apellido_materno">	</li>
+
+
+					<br>
+
+				</ul>
+
+			</div>
+
+				<div id="Demandado">
+					<ul style="  list-style-type: none;">
+						<li><label style="margin-left:70px; text-decoration:underline">Demandado</label></li><br>
+
+						<li><label>Nombre</label><input type="text" name="demandado_nombres"    id="demandado_nombres">	</li>
+						<li><label>Apellido Paterno</label><input type="text" name="demandado_apellido_paterno"    id="demandado_apellido_paterno">	</li>
+						<li><label>Apellido Materno </label><input type="text" name="demandado_apellido_materno"    id="demandado_apellido_materno">	</li>
+
+						<br>
+					</ul>
+				</div>
+			</div>
+			<div id="idJuicio">
 		<ul style="  list-style-type: none;">
-		
-			<li><label style="margin-left:70px;text-decoration:underline ">Actor</label></li><br>
+					<li><label style="margin-left:70px; text-decoration:underline">Juicio</label></li><br>
 
-			<li><label>Nombres</label><input type="text" name="actor_nombres" id="actor_nombres">	</li>
-
-			<li><label>Apellido Paterno </label><input type="text" name="actor_apellido_paterno" id="actor_apellido_paterno">	</li>
-
-			
-			<li><label>Apellido Materno </label><input type="text" name="actor_apellido_materno"    id="actor_apellido_materno">	</li>
-
-			<br>
-			<li><label style="margin-left:70px; text-decoration:underline">Demandado</label></li><br>
-
-			<li><label>Nombre</label><input type="text" name="demandado_nombres"    id="demandado_nombres">	</li>
-			<li><label>Apellido Paterno</label><input type="text" name="demandado_apellido_paterno"    id="demandado_apellido_paterno">	</li>
-			<li><label>Apellido Materno </label><input type="text" name="demandado_apellido_materno"    id="demandado_apellido_materno">	</li>
-
-			<br>
-			
 			<li><label>Tipo de Juicio</label><input type="text" name="juicio"    id="juicio"></li>
-			<li><label>Expediente</label><input type="text" name="expediente"    id="expediente"></li>
-
+			<li><label style=" float: left;">Número de Expediente</label><input type="text" name="expediente1"    id="expediente1" class="expParte1"><label style=" float: left;">/</label><input type="text" name="expediente2"  class="expParte2"  id="expediente2"> <br></li>
 			<li><label>Juzgado</label><input type="text" name="juzgado"    id="juzgado"></li>
 			
 			<li><label>Distrito Judicial</label><input type="text" name="distrito_juidicial"    id="distrito_juidicial"></li>	
 									
-			<li><label>Ultima actuacion</label><input type="text" name="ultima_actuacion"    id="ultima_actuacion"></li>
+			<li><label>Ultima actuación</label><input type="text" name="ultima_actuacion"    id="ultima_actuacion"></li>
 			<li><label>Estado Procesal</label>
 			<input type="text" name="estado_procesal"    id="estado_procesal"></li><br><br>
 			
-	
+		
 						
-									<li><label>Fecha de Vencimiento de Termino</label><input type="text" id="datepicker" name="datepicker" /></li>
+									<li><label>Fecha de Vencimiento de Término</label><input type="text" id="datepicker" name="datepicker" /></li>
 <br>
 			
 			
@@ -175,11 +187,12 @@ margin: -130px 0px 0px -153px;'>
 			<div id="botonesrow">
 	
 <div id="modificarrow">
-<input style="display:none;" name ="expedientillo" type="text" value="<?php echo $consulta ?>">
 				<input type="submit" name="ok" value="Insertar" class="edita">
 </div>
 			</div>
+			<input style="display:none;" name ="expedientillo" id="expedientillo" type="text" value="<?php echo $_REQUEST['consulta']; ?>">
 </form>
+
 
 
 
