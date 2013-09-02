@@ -150,18 +150,18 @@ margin: -130px 0px 0px -153px;'>
 			<br>
 			
 			<li><label>Tipo de Juicio</label><input type="text" name="juicio"    id="juicio"></li>
-			<li><label>Número de Expediente</label><input type="text" name="expediente"    id="expediente"><label>/</label><input type="text" name="expediente2"    id="expediente"></li>
+			<li><label>Número de Expediente</label><input type="text" name="expediente"    id="expediente"><label>/</label><input type="text" name="expediente2"    id="expediente2"></li>
 			<li><label>Juzgado</label><input type="text" name="juzgado"    id="juzgado"></li>
 			
 			<li><label>Distrito Judicial</label><input type="text" name="distrito_juidicial"    id="distrito_juidicial"></li>	
 									
-			<li><label>Ultima actuacion</label><input type="text" name="ultima_actuacion"    id="ultima_actuacion"></li>
+			<li><label>Ultima actuación</label><input type="text" name="ultima_actuacion"    id="ultima_actuacion"></li>
 			<li><label>Estado Procesal</label>
 			<input type="text" name="estado_procesal"    id="estado_procesal"></li><br><br>
 			
 	
 						
-									<li><label>Fecha de Vencimiento de Termino</label><input type="text" id="datepicker" name="datepicker" /></li>
+									<li><label>Fecha de Vencimiento de Término</label><input type="text" id="datepicker" name="datepicker" /></li>
 <br>
 			
 			
