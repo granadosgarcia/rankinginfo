@@ -49,10 +49,15 @@ if(!($resultado4=mysql_query($sql)))
 	<link rel='stylesheet' href='/rankinginfo/css/jquery.dataTables.css' type='text/css' charset='utf-8'>
 <title> Editar Juicio </title>
 
+<?php
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/header_juicios.php";
+?>
+<!--
 <link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+-->
   <script type='text/javascript' language='javascript' src='/rankinginfo/js/jquery.dataTables.js'></script>
  <script>
  function popUpClosed() {
@@ -97,7 +102,7 @@ if(!($resultado4=mysql_query($sql)))
 
 </script>
 
-<!-- MAGI STARTS HERE -->
+<!-- MAGIC STARTS HERE -->
 <script>
 $(document).ready(function() {  
 <?php
@@ -228,7 +233,7 @@ $expe = 0;
 <tr class="infooo">
 	<td><?php echo $row['juicio'] ?> </td> 
 	<td><?php echo $row['fecha'] ?> </td> 
-<?php echo "<td><a href='index.php?consulta=".$row['expediente']."'>ver</a></td></tr>"; } ?>
+<?php echo "<td><a class='ver' href='index.php?consulta=".$row['expediente']."'>ver</a></td></tr>"; } ?>
 </tbody></table>
 <?php } ?>
 
@@ -305,12 +310,6 @@ while($row = mysql_fetch_array($resultado4)){
 </div>
 </div>
 		<div id="botonesrow">
-		
-
-		
-		
-		
-		
 
 		</div>
         </div>

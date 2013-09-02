@@ -7,12 +7,13 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 <html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+	
+	<?php
+include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/header_juicios.php";
+?>
 
-<link rel="stylesheet" href="/rankinginfo/css/estilo.css" type="text/css" charset="utf-8">
 
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+
   
   <script>
   $(function() {
