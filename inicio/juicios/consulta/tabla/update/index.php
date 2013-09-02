@@ -15,7 +15,7 @@ $sql="SELECT * from relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
 	WHERE
 	expediente='".$expediente."'";
 	
-	$expedientillo = "SELECT DISTINCT * FROM relacion_juicios WHERE expediente='".$_SESSION['curp']."'";
+	$expedientillo = "SELECT DISTINCT * FROM relacion_juicios WHERE expedientillo='".$_SESSION['curp']."'";
 	if(!($resultado5=mysql_query($expedientillo)))
 	{
 		die ($expedientillo."Error".mysql_error());
@@ -233,7 +233,7 @@ $expe = 0;
 <tr class="infooo">
 	<td><?php echo $row['juicio'] ?> </td> 
 	<td><?php echo $row['fecha'] ?> </td> 
-<?php echo "<td><a class='ver' href='index.php?consulta=".$row['expediente']."'>ver</a></td></tr>"; } ?>
+<?php echo "<td><a href='index.php?consulta=".$row['expediente']."'>ver</a></td></tr>"; } ?>
 </tbody></table>
 <?php } ?>
 

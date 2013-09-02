@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 22, 2013 at 12:46 AM
+-- Generation Time: Sep 02, 2013 at 01:29 AM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -32,136 +32,12 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=172 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=188 ;
 
 --
 -- Dumping data for table `actividades`
 --
 
-INSERT INTO `actividades` (`id_usuario`, `fecha`, `actividad`, `id`) VALUES
-(8, '2013-03-07 18:17:40', 'Insercion Juicio', 1),
-(8, '2013-03-07 18:52:30', 'Insercion Juicio', 2),
-(8, '2013-03-07 18:52:52', 'Insercion Juicio', 3),
-(8, '2013-03-07 18:52:57', 'Insercion Juicio', 4),
-(8, '2013-03-12 18:59:44', 'Insercion Juicio', 5),
-(8, '2013-03-12 19:05:37', 'Insercion Juicio', 6),
-(8, '2013-03-12 19:12:19', 'Insercion Juicio', 7),
-(8, '2013-03-12 19:12:34', 'Insercion Juicio', 8),
-(8, '2013-03-12 19:13:02', 'Insercion Juicio', 9),
-(8, '2013-03-12 19:14:24', 'Insercion Juicio', 10),
-(8, '2013-03-12 19:19:24', 'Insercion Juicio', 11),
-(8, '2013-03-12 19:19:45', 'Insercion Juicio', 12),
-(8, '2013-03-12 19:20:19', 'Insercion Juicio', 13),
-(8, '2013-03-12 19:20:45', 'Insercion Juicio', 14),
-(8, '2013-03-12 19:21:04', 'Insercion Juicio', 15),
-(8, '2013-03-12 19:22:16', 'Insercion Juicio', 16),
-(8, '2013-03-12 19:22:48', 'Insercion Juicio', 17),
-(8, '2013-03-12 19:29:46', 'Insercion Juicio', 18),
-(8, '2013-03-12 19:30:07', 'Insercion Juicio', 19),
-(8, '2013-03-12 19:45:19', 'Insercion Juicio', 20),
-(8, '2013-03-12 19:45:43', 'Insercion Juicio', 21),
-(8, '2013-03-12 19:47:59', 'Insercion Juicio', 22),
-(8, '2013-03-12 19:48:05', 'Insercion Juicio', 23),
-(8, '2013-03-12 19:48:11', 'Insercion Juicio', 24),
-(8, '2013-03-12 19:49:42', 'Insercion Juicio', 25),
-(8, '2013-03-12 19:59:59', 'Insercion Juicio', 26),
-(8, '2013-03-12 20:02:03', 'Insercion Juicio', 27),
-(8, '2013-03-12 20:02:19', 'Insercion Juicio', 28),
-(8, '2013-03-12 20:10:17', 'Insercion Juicio', 29),
-(8, '2013-03-12 20:11:33', 'Insercion Juicio', 30),
-(8, '2013-03-12 20:13:28', 'Insercion Juicio', 31),
-(8, '2013-03-12 20:14:07', 'Insercion Juicio', 32),
-(8, '2013-03-12 20:15:00', 'Insercion Juicio', 33),
-(8, '2013-03-12 20:17:08', 'Insercion Juicio', 34),
-(8, '2013-03-12 20:18:12', 'Insercion Juicio', 35),
-(8, '2013-03-12 20:23:15', 'InserciÃ³n Juicio', 36),
-(8, '2013-03-12 20:23:46', 'InserciÃ³n Juicio', 37),
-(8, '2013-03-12 20:24:30', 'InserciÃ³n Juicio', 38),
-(8, '2013-03-12 20:39:59', 'Insercion Juicio', 39),
-(8, '2013-03-12 20:40:53', 'Insercion Juicio', 40),
-(8, '2013-03-12 20:50:59', 'Insercion Juicio', 41),
-(8, '2013-03-12 20:56:15', 'InserciÃ³n Juicio', 42),
-(8, '2013-03-12 20:58:09', 'InserciÃ³n Juicio', 43),
-(8, '2013-03-12 20:58:47', 'InserciÃ³n Juicio', 44),
-(8, '2013-03-12 20:59:38', 'InserciÃ³n Juicio', 45),
-(8, '2013-03-25 21:11:16', 'Insercion Juicio', 46),
-(8, '2013-03-25 21:44:27', 'Insertar NotificaciÃ³n', 47),
-(8, '2013-03-25 21:45:53', 'Insertar NotificaciÃ³n', 48),
-(8, '2013-03-25 21:46:31', 'Insertar NotificaciÃ³n', 49),
-(8, '2013-03-25 22:40:35', 'InserciÃ³n Juicio', 50),
-(8, '2013-03-25 22:56:56', 'Insertar NotificaciÃ³n', 51),
-(8, '2013-03-25 22:58:28', 'Insertar NotificaciÃ³n', 52),
-(8, '2013-03-25 23:00:54', 'Insertar NotificaciÃ³n', 53),
-(8, '2013-03-25 23:04:37', 'Insertar Promocion', 54),
-(8, '2013-03-25 23:05:31', 'Insertar Promocion', 55),
-(8, '2013-03-25 23:15:16', 'Insertar Promocion', 56),
-(8, '2013-03-25 23:16:15', 'Insertar Promocion', 57),
-(8, '2013-03-25 23:16:51', 'Insertar NotificaciÃ³n', 58),
-(8, '2013-03-25 23:16:57', 'Insertar NotificaciÃ³n', 59),
-(8, '2013-03-25 23:17:57', 'Insertar NotificaciÃ³n', 60),
-(8, '2013-04-07 19:03:16', 'Insercion Juicio', 109),
-(8, '2013-04-07 19:14:13', 'Insertar Promocion', 110),
-(8, '2013-04-07 19:15:27', 'Insertar Promocion', 111),
-(8, '2013-04-07 19:17:01', 'Insertar Promocion', 112),
-(8, '2013-04-07 19:30:59', 'Insertar Promocion', 113),
-(8, '2013-04-07 20:27:08', 'Insertar Promocion', 114),
-(8, '2013-04-07 20:27:16', 'Insertar Promocion', 115),
-(8, '2013-04-07 20:32:11', 'Insertar Promocion', 116),
-(8, '2013-04-07 20:32:33', 'Insertar Promocion', 117),
-(8, '2013-04-07 20:34:24', 'Insertar Promocion', 118),
-(8, '2013-04-07 20:35:25', 'Insertar Promocion', 119),
-(8, '2013-04-07 20:38:48', 'Insertar Promocion', 120),
-(8, '2013-04-07 20:38:52', 'Insertar Promocion', 121),
-(8, '2013-04-07 20:39:10', 'Insertar Promocion', 122),
-(8, '2013-04-07 20:39:42', 'Insertar Promocion', 123),
-(8, '2013-04-07 20:40:51', 'Insertar Promocion', 124),
-(8, '2013-04-07 20:41:01', 'Insertar Promocion', 125),
-(8, '2013-04-07 20:42:48', 'Insertar Promocion', 126),
-(8, '2013-04-07 20:44:40', 'Insertar Promocion', 127),
-(8, '2013-04-07 20:48:31', 'Insertar Promocion', 128),
-(8, '2013-04-07 20:48:45', 'Insertar Promocion', 129),
-(8, '2013-04-07 20:48:56', 'Insertar Promocion', 130),
-(8, '2013-04-07 20:49:20', 'Insertar Promocion', 131),
-(8, '2013-04-07 20:50:58', 'Insertar Promocion', 132),
-(8, '2013-04-07 20:51:23', 'Insertar Promocion', 133),
-(8, '2013-04-07 20:51:42', 'Insertar Promocion', 134),
-(8, '2013-04-07 22:01:55', 'Insercion Juicio', 135),
-(8, '2013-04-07 22:02:16', 'Insercion Juicio', 136),
-(8, '2013-04-07 22:04:36', 'Insercion Juicio', 137),
-(8, '2013-04-07 22:04:46', 'Insercion Juicio', 138),
-(8, '2013-04-07 22:04:56', 'Insercion Juicio', 139),
-(8, '2013-04-07 22:05:24', 'Insercion Juicio', 140),
-(8, '2013-04-07 22:05:27', 'Insercion Juicio', 141),
-(8, '2013-04-07 22:07:15', 'Insercion Juicio', 142),
-(8, '2013-04-07 22:07:39', 'Insercion Juicio', 143),
-(8, '2013-04-07 22:11:17', 'Insercion Juicio', 144),
-(8, '2013-04-07 22:11:41', 'Insercion Juicio', 145),
-(8, '2013-04-07 22:12:47', 'Insercion Juicio', 146),
-(8, '2013-04-07 22:13:09', 'Insercion Juicio', 147),
-(8, '2013-04-07 22:13:41', 'Insercion Juicio', 148),
-(8, '2013-04-07 22:13:55', 'Insercion Juicio', 149),
-(8, '2013-04-07 22:16:22', 'Insercion Juicio', 150),
-(8, '2013-04-07 22:17:56', 'Insercion Juicio', 151),
-(8, '2013-04-07 22:21:44', 'Insercion Juicio', 152),
-(8, '2013-04-07 22:22:07', 'Insercion Juicio', 153),
-(8, '2013-04-07 22:23:43', 'Insercion Juicio', 154),
-(8, '2013-04-07 22:24:04', 'Insercion Juicio', 155),
-(8, '2013-04-07 22:24:47', 'Insercion Juicio', 156),
-(8, '2013-04-07 22:24:58', 'Insercion Juicio', 157),
-(8, '2013-04-07 22:25:04', 'Insercion Juicio', 158),
-(8, '2013-04-07 22:25:29', 'Insercion Juicio', 159),
-(8, '2013-04-07 22:25:31', 'Insercion Juicio', 160),
-(8, '2013-04-07 22:25:32', 'Insercion Juicio', 161),
-(8, '2013-04-07 22:27:48', 'Insercion Juicio', 162),
-(8, '2013-04-07 22:28:08', 'Insercion Juicio', 163),
-(8, '2013-04-07 22:28:24', 'Insercion Juicio', 164),
-(8, '2013-04-07 22:34:22', 'Insercion Deudor VW', 165),
-(8, '2013-04-07 22:36:05', ' Consulta VW', 166),
-(8, '2013-04-07 22:36:47', ' Consulta VW', 167),
-(8, '2013-04-11 05:52:55', 'Insertar Promocion', 168),
-(8, '2013-04-11 05:53:03', 'Insertar Promocion', 169),
-(8, '2013-04-18 18:12:25', 'Insertar Promocion', 170),
-(8, '2013-04-18 18:23:11', 'Insercion Juicio', 171);
 
 -- --------------------------------------------------------
 
@@ -373,16 +249,12 @@ CREATE TABLE IF NOT EXISTS `promocion` (
   `comentario` varchar(5000) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `expediente` (`expediente`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `promocion`
 --
 
-INSERT INTO `promocion` (`fecha_notificacion`, `id`, `expediente`, `tipo`, `comentario`) VALUES
-('2013-04-04', 1, 'Prueba', 'PromociÃ³n', 'adsf'),
-('2013-04-03', 2, 'Prueba', 'NotificaciÃ³n', 'hola'),
-(NULL, 3, 'Prueba', 'NotificaciÃ³n', 'Auto De Fecha Veinticinco De Marzo Del Dos Mil Trece.-\r\ntÃ©ngase A La Ocursante Nombrando Abogado Patrono A \r\nLa Profesionista Que Menciona, SeÅ„alando Domicilio Para \r\nRecibir Notificaciones El Que Indica. De Igual Forma Se Le \r\nTiene Contestando En Tiempo Y Forma Legal A La \r\nDemanda Instaurada En Su Contra, Oponiendo \r\nExcepciones Que De La Misma Se Desprende, Objetando \r\nMaterial Probatorio Exhibido Por Su Contraria, Se Le Tiene \r\nAnunciando Pruebas De Su Parte, Con Su Contenido Dese \r\nVista A La Contraria Por El TÃ©rmino De Tres DÃ­as \r\nSiguiente A La NotificaciÃ³n Para Que Objete Las Que \r\nPermite La Ley Y Ofrezca Pruebas Tendientes A Justificar \r\nSus Objeciones. NotifÃ­quese Por Lista.');
 
 -- --------------------------------------------------------
 
@@ -407,6 +279,7 @@ CREATE TABLE IF NOT EXISTS `relacion_juicios` (
   `comentario_01` varchar(500) COLLATE latin1_spanish_ci NOT NULL,
   `distrito_juidicial` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
   `fecha` date NOT NULL,
+  `expedientillo` varchar(150) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`expediente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
@@ -414,10 +287,6 @@ CREATE TABLE IF NOT EXISTS `relacion_juicios` (
 -- Dumping data for table `relacion_juicios`
 --
 
-INSERT INTO `relacion_juicios` (`actor_nombres`, `actor_apellido_paterno`, `actor_apellido_materno`, `demandado_nombres`, `demandado_apellido_paterno`, `demandado_apellido_materno`, `juicio`, `expediente`, `juzgado`, `ultima_actuacion`, `s_actuacion_01`, `s_actuacion_02`, `estado_procesal`, `comentario_01`, `distrito_juidicial`, `fecha`) VALUES
-('prueba', 'prueba', 'prueba', 'v', 'vprueba', 'vprueba', 'prueba', '123', 'prueba', 'prueba', 'prueba', 'prueba', 'prueba', '', 'prueba', '2013-04-02'),
-('abraham', 'gonzalez', 'gonzalez', 'emilio', 'peredo', 'peredo', 'Ejecutivo Mercantil', '346/13', 'Septimo Mercantil', 'Presento demanda', '', '', 'Se presento demanda', 'Hay que esperar se notifique auto de radicacion', 'PUebla', '2013-04-04'),
-('Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'Prueba', 'PruebaPruebaPruebaPruebaPruebaPruebaPrueba', 'Prueba', '2013-04-27');
 
 -- --------------------------------------------------------
 
@@ -471,8 +340,6 @@ CREATE TABLE IF NOT EXISTS `vw` (
 -- Dumping data for table `vw`
 --
 
-INSERT INTO `vw` (`nombre`, `apellido_paterno`, `apellido_materno`, `curp`, `telefono`, `calle`, `no_interior`, `no_exterior`, `colonia`, `ciudad`, `municipio`, `delegacion`, `estado`, `codigo_postal`, `no_cliente`) VALUES
-('prueba', 'prueba', 'prueba', 'prueba', 123121, 'prueba', 'prueba', 'prueba', 'prueba', 'prueba', 'prueba', 'prueba', 'prueba', NULL, 'prueba');
 
 --
 -- Constraints for dumped tables

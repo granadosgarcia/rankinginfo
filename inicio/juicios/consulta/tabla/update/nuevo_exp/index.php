@@ -59,11 +59,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/header_juicios.php
 	        alert("Juicio Obligatorio");
 	        return false;
         }    
-        if(document.getElementById("expediente").value=="")
-        {
-	        alert("Expediente Obligatorio");
-	        return false;
-        }    
+ 
         if(document.getElementById("juzgado").value=="")
         {
 	        alert("Juzgado Obligatorio");
@@ -155,8 +151,9 @@ margin: -130px 0px 0px -153px;'>
 
 			<br>
 			
-			<li><label>Juicio</label><input type="text" name="juicio"    id="juicio"></li>
+			<li><label>Tipo de Juicio</label><input type="text" name="juicio"    id="juicio"></li>
 			<li><label>Expediente</label><input type="text" name="expediente"    id="expediente"></li>
+
 			<li><label>Juzgado</label><input type="text" name="juzgado"    id="juzgado"></li>
 			
 			<li><label>Distrito Judicial</label><input type="text" name="distrito_juidicial"    id="distrito_juidicial"></li>	
@@ -178,7 +175,7 @@ margin: -130px 0px 0px -153px;'>
 			<div id="botonesrow">
 	
 <div id="modificarrow">
-<input  name ="expedientillo" type="text" value="<?php echo $consulta ?>">
+<input style="display:none;" name ="expedientillo" type="text" value="<?php echo $consulta ?>">
 				<input type="submit" name="ok" value="Insertar" class="edita">
 </div>
 			</div>
