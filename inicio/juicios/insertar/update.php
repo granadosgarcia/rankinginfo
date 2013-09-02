@@ -19,7 +19,11 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
  $demandado_apellido_materno= mysql_real_escape_string($_POST['demandado_apellido_materno']);
  
   $juicio= mysql_real_escape_string($_POST['juicio']);
-  $expediente= mysql_real_escape_string($_POST['expediente']);
+  $expediente1= mysql_real_escape_string($_POST['expediente']);
+    $expediente2= mysql_real_escape_string($_POST['expediente2']);
+    
+    $expediente= $expediente1."/".$expediente2;
+
   $juzgado= mysql_real_escape_string($_POST['juzgado']);
   $ultima_actuacion= mysql_real_escape_string($_POST['ultima_actuacion']);
   $estado_procesal= mysql_real_escape_string($_POST['estado_procesal']);

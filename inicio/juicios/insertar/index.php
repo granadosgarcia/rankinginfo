@@ -149,8 +149,8 @@ margin: -130px 0px 0px -153px;'>
 
 			<br>
 			
-			<li><label>Juicio</label><input type="text" name="juicio"    id="juicio"></li>
-			<li><label>Expediente</label><input type="text" name="expediente"    id="expediente"></li>
+			<li><label>Tipo de Juicio</label><input type="text" name="juicio"    id="juicio"></li>
+			<li><label>Número de Expediente</label><input type="text" name="expediente"    id="expediente"><label>/</label><input type="text" name="expediente2"    id="expediente"></li>
 			<li><label>Juzgado</label><input type="text" name="juzgado"    id="juzgado"></li>
 			
 			<li><label>Distrito Judicial</label><input type="text" name="distrito_juidicial"    id="distrito_juidicial"></li>	
