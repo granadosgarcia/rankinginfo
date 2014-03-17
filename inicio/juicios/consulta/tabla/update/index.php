@@ -193,7 +193,7 @@ $expe = 0;
 		<p><?php echo $row['juzgado']?></p>
 		</br><br>
 		<label>Distrito Judicial</label>
-		<input type="text" name="distrito_juidicial"    id="distrito_juidicial"		value="<?php echo $row['distrito_juidicial']?>" class="inputderecha">
+		<p><?php echo $row['distrito_juidicial']?></p>
 		<br>
 		<label>Ultima Actuación</label>
 		<input type="text" name="utlima_actuacion"    id="utlima_actuacion"		value="<?php echo $row['ultima_actuacion']?>" class="inputderecha">

@@ -13,7 +13,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
   $utlima_actuacion= mysql_real_escape_string($_REQUEST['utlima_actuacion']);
   $estado_procesal_tramite_pendiente= mysql_real_escape_string($_REQUEST['estado_procesal']);
   $comentario_01= mysql_real_escape_string($_REQUEST['comentario_01']);
-  $lugar= mysql_real_escape_string($_REQUEST['distrito_juidicial']);
    $fecha= mysql_real_escape_string($_REQUEST['datepicker']);
    $originalDate = $fecha;
    $newDate = date("Y-m-d", strtotime($originalDate));
@@ -39,8 +38,7 @@ $sql.=", estado_procesal = '$estado_procesal_tramite_pendiente'";
 if(!empty($_REQUEST['comentario_01']))
 $sql.=", comentario_01 = '$comentario_01'";
 
-if(!empty($_REQUEST['distrito_juidicial']))
-$sql.=", distrito_juidicial = '$lugar'";
+
 
 $sql.=" WHERE 
 expediente ='$curp'";

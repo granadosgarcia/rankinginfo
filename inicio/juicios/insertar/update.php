@@ -66,7 +66,7 @@ if(!empty($_POST['juicio']))
 $sql.=",juicio";
 
 
-if(!empty($_POST['expediente1']) && !empty($_POST['expediente2']))
+if(!empty($_POST['expediente']) && !empty($_POST['expediente2']))
 $sql.=",expediente";
 
 
@@ -113,7 +113,7 @@ $sql.=",'$demandado_apellido_materno'";
 if(!empty($_POST['juicio']))
 $sql.=",'$juicio'";
 
-if(!empty($_POST['expediente1']) && !empty($_POST['expediente2']))
+if(!empty($_POST['expediente']) && !empty($_POST['expediente2']))
 $sql.=",'$expediente'";
 
 if(!empty($_POST['juzgado']))
