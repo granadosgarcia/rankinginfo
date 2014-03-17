@@ -1,0 +1,21 @@
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,juzgado,ultima_actuacion,estado_procesal,distrito_juidicial)
+
+VALUES('2014-03-07','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba')
+ El error es: Duplicate entry '' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,juzgado,ultima_actuacion,estado_procesal,distrito_juidicial)
+
+VALUES('2014-03-07','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba')
+ El error es: Duplicate entry '' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,juzgado,ultima_actuacion,estado_procesal,distrito_juidicial)
+
+VALUES('2014-03-07','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba','prueba')
+ El error es: Duplicate entry '' for key 'PRIMARY'
+
+--------------------
+

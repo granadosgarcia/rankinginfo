@@ -1,5 +1,5 @@
 <?php
-$con = mysql_connect("localhost","root","crazyMarines910208");
+$con = mysql_connect("localhost","root","");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
@@ -9,6 +9,6 @@ if (!$database)
   {
   die('Could not connect: ' . mysql_error());
   }
-
+//password crazyMarines910208
 	
 ?> 

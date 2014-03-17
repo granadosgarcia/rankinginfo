@@ -30,11 +30,14 @@ $extension = end(explode(".", $_FILES["file"]["name"][$i]));
 
 	if ((($_FILES["file"]["type"][$i] == "image/gif") || 
 		 ($_FILES["file"]["type"][$i] == "image/jpeg")|| 
-		 ($_FILES["file"]["type"][$i] == "image/pjpeg")) && 
+		 ($_FILES["file"]["type"][$i] == "image/pjpeg")||
+		 ($_FILES["file"]["type"][$i] == "image/png")) && 
 		 ($_FILES["file"]["size"][$i] < 20000000) && 
 		  in_array($extension, $allowedExts))
 	
 	  {
+	  	echo "\nSuccess";
+
 	  	if ($_FILES["file"]["error"][$i] > 0)
 	    {
 	    	echo "Return Code: " . $_FILES["file"]["error"][$i] . "<br />";
@@ -75,11 +78,11 @@ $extension = end(explode(".", $_FILES["file"]["name"][$i]));
 }
 		
 				$sql.=" WHERE curp='$_POST[curp]'";
-/* 						echo "<br><br>".$sql."<br><br>"; */
+ 						echo "<br><br>".$sql."<br><br>"; 
 
 		      if (!mysql_query($sql,$con))
 				  {
-				  	die('Error al insertar imagen a la base de datos' . mysql_error());
+				  	die('Error al insertar imagen a la base de datos arrendador' . mysql_error());
 				  }
   
   

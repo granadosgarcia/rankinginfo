@@ -1,0 +1,61 @@
+INSERT INTO arrendado(
+nombre,curp,apellido_paterno,apellido_materno,estado_civil,arrendador_actual,arrendador_anterior,domicilio_anterior,nombre_aval,domicilio_aval,telefono_aval,clave_ife,no_interior,no_exterior,colonia,ciudad,estado,codigo_postal,municipio,delegacion,telefono_particular,telefono_personal)
+
+VALUES(
+'Abraham','abr95','Gonzalez','Farías','Soltero','sadf','lkjl','kjlk','jlk','jkl','23312312','12423kl','lj','lñkj','lk','jlkj','lñj','lñj','lñj','ñlj','234234','23423432')
+ El error es: Unknown column 'telefono_personal' in 'field list'
+
+INSERT INTO arrendado(
+nombre,curp,apellido_paterno,apellido_materno,estado_civil,arrendador_actual,arrendador_anterior,domicilio_anterior,nombre_aval,domicilio_aval,telefono_aval,clave_ife,calle,no_interior,no_exterior,colonia,ciudad,estado,codigo_postal,municipio,delegacion,telefono_particular,telefono_personal)
+
+VALUES(
+'Abraham','abr9544','Gonzalez','Farías','Soltero','sadf','lkjl','kjlk','jlk','jkl','23312312','12423kl','23','lj','lñkj','lk','jlkj','lñj','lñj','lñj','ñlj','234234','23423432')
+ El error es: Duplicate entry 'abr9544' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO arrendado(
+nombre,curp,apellido_paterno,apellido_materno,estado_civil,arrendador_actual,arrendador_anterior,domicilio_anterior,nombre_aval,domicilio_aval,telefono_aval,clave_ife,calle,no_interior,no_exterior,colonia,ciudad,estado,codigo_postal,municipio,delegacion,telefono_particular,telefono_personal)
+
+VALUES(
+'Abraham','abr9544323','Gonzalez','Farías','Soltero','sadf','lkjl','kjlk','jlk','jkl','23312312','12423kl','23','lj','lñkj','lk','jlkj','lñj','lñj','lñj','ñlj','234234','23423432')
+ El error es: Duplicate entry 'abr9544323' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO arrendado(
+nombre,curp,apellido_paterno,apellido_materno,estado_civil,arrendador_actual,arrendador_anterior,domicilio_anterior,nombre_aval,domicilio_aval,telefono_aval,clave_ife,calle,no_interior,no_exterior,colonia,ciudad,estado,codigo_postal,municipio,delegacion,telefono_particular,telefono_personal)
+
+VALUES(
+'Abraham','abr9544323333d','Gonzalez','Farías','Soltero','sadf','lkjl','kjlk','jlk','jkl','23312312','12423kl','23','lj','lñkj','lk','jlkj','lñj','lñj','lñj','ñlj','234234','23423432')
+ El error es: Duplicate entry 'abr9544323333d' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO arrendado(
+nombre,curp,apellido_paterno,apellido_materno,estado_civil,arrendador_actual,arrendador_anterior,domicilio_anterior,nombre_aval,domicilio_aval,telefono_aval,clave_ife,calle,no_interior,no_exterior,colonia,ciudad,estado,codigo_postal,municipio,delegacion,telefono_particular,telefono_personal)
+
+VALUES(
+'Abraham','1','Gonzalez','Farías','Soltero','sadf','lkjl','kjlk','jlk','jkl','23312312','12423kl','23','lj','lñkj','lk','jlkj','lñj','lñj','lñj','ñlj','234234','23423432')
+ El error es: Duplicate entry '1' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO arrendado(
+nombre,curp,apellido_paterno,apellido_materno,estado_civil,arrendador_actual,arrendador_anterior,domicilio_anterior,nombre_aval,domicilio_aval,telefono_aval,clave_ife,calle,no_interior,no_exterior,colonia,ciudad,estado,codigo_postal,municipio,delegacion,telefono_particular,telefono_personal)
+
+VALUES(
+'Abraham','12','Gonzalez','Farías','Soltero','sadf','lkjl','kjlk','jlk','jkl','23312312','12423kl','23','lj','lñkj','lk','jlkj','lñj','lñj','lñj','ñlj','234234','23423432')
+ El error es: Duplicate entry '12' for key 'PRIMARY'
+
+--------------------
+
+INSERT INTO arrendado(
+nombre,curp,apellido_paterno,apellido_materno,estado_civil,arrendador_actual,arrendador_anterior,domicilio_anterior,nombre_aval,domicilio_aval,telefono_aval,clave_ife,calle,no_interior,no_exterior,colonia,ciudad,estado,codigo_postal,municipio,delegacion,telefono_particular,telefono_personal)
+
+VALUES(
+'Abraham','123','Gonzalez','Farías','Soltero','sadf','lkjl','kjlk','jlk','jkl','23312312','12423kl','23','lj','lñkj','lk','jlkj','lñj','lñj','lñj','ñlj','234234','23423432')
+ El error es: Duplicate entry '123' for key 'PRIMARY'
+
+--------------------
+
