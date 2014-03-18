@@ -157,7 +157,7 @@ echo "<a class='inserta3 espacioo' href='index.php?consulta=".$row['expedientill
 $expe = 0;
 }
 ?>
-	<div id="primerrowww">
+	<div id="primerrowww" class="seccion">
 	
 		
 		<label>Expediente: </label>
@@ -216,7 +216,7 @@ $expe = 0;
 
 <?php if($expe == 1){ ?>
 
-<div id="expedientillo">
+<div id="expedientillo" class="seccion">
 	<h2>Expedientillo</h2>
 		 			<a class="inserta3 expedientilloo" type="button" href="nuevo_exp/index.php?consulta=<?php echo $expe2 ?>">Nuevo Juicio</a>
 <?php if (mysql_num_rows($resultado5)>0){ ?>
@@ -240,7 +240,7 @@ $expe = 0;
 </div>
 <?php } ?>
 
-<div id = "tabla_promocion">
+<div id = "tabla_promocion" class="seccion">
 		 			<INPUT class="inserta3" type="button" value="+ Promoción" onClick="window.open('promocion.php','mywindow','width=400,height=430')"> 
 		 			
 		 					 			<INPUT class="inserta3" type="button" value="+ Notificación" onClick="window.open('notificacion.php','mywindow','width=400,height=430')"> 

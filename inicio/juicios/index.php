@@ -24,7 +24,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 	   				<div id="header">
 	   			
    <h1 class="titulo">Ranking Information </h1>
-   <img src='/rankinginfo/img/third1.jpg' height='150' width='150' style='float: left;
+   <img src='/rankinginfo/img/third1.png' height='150' width='150' style='float: left;
 margin: -200px 0px 0px -160px;'>
    					</div>
    				

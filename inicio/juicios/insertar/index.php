@@ -128,8 +128,8 @@ margin: -130px 0px 0px -153px;'>
 
 <form method="post" onsubmit="return verifica ()" action="update.php" enctype="multipart/form-data">
 
-	<div id ="izquierdaJuicios">
-			<div id="Actor">
+	<div id ="izquierdaJuicios" >
+			<div id="Actor" class="seccion">
 				<ul style="  list-style-type: none;">
 				
 					<li><label style="margin-left:70px;text-decoration:underline ">Actor</label></li><br>
@@ -148,7 +148,7 @@ margin: -130px 0px 0px -153px;'>
 
 			</div>
 
-				<div id="Demandado">
+				<div id="Demandado" class="seccion">
 					<ul style="  list-style-type: none;">
 						<li><label style="margin-left:70px; text-decoration:underline">Demandado</label></li><br>
 
@@ -160,7 +160,7 @@ margin: -130px 0px 0px -153px;'>
 					</ul>
 				</div>
 			</div>
-			<div id="idJuicio">
+			<div id="idJuicio" class="seccion">
 		<ul style="  list-style-type: none;">
 					<li><label style="margin-left:70px; text-decoration:underline">Juicio</label></li><br>
 
