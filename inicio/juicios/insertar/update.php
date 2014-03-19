@@ -13,6 +13,13 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/css_js.php";
  $actor_apellido_paterno= mysql_real_escape_string($_POST['actor_apellido_paterno']);
  $actor_apellido_materno= mysql_real_escape_string($_POST['actor_apellido_materno']);
  
+ $persona_moral_nombres= mysql_real_escape_string($_POST['persona_moral_nombres']);
+ $persona_moral_apellido_paterno= mysql_real_escape_string($_POST['persona_moral_apellido_paterno']);
+ $persona_moral_apellido_materno= mysql_real_escape_string($_POST['persona_moral_apellido_materno']);
+ 
+ $abogado_patrono_nombres= mysql_real_escape_string($_POST['abogado_patrono_nombres']);
+ $abogado_patrono_apellido_paterno= mysql_real_escape_string($_POST['abogado_patrono_apellido_paterno']);
+ $abogado_patrono_apellido_materno= mysql_real_escape_string($_POST['abogado_patrono_apellido_materno']);
  
  $demandado_nombres= mysql_real_escape_string($_POST['demandado_nombres']);
  $demandado_apellido_paterno= mysql_real_escape_string($_POST['demandado_apellido_paterno']);
@@ -44,6 +51,7 @@ $sql="INSERT INTO relacion_juicios(";
 
 if(!empty($_POST['datepicker']))
 $sql.="fecha";
+
 if(!empty($_POST['actor_nombres']))
 $sql.=",actor_nombres";
 
@@ -52,6 +60,24 @@ $sql.=",actor_apellido_paterno";
 
 if(!empty($_POST['actor_apellido_materno']))
 $sql.=",actor_apellido_materno";
+
+if(!empty($_POST['persona_moral_nombres']))
+$sql.=",persona_moral_nombres";
+
+if(!empty($_POST['persona_moral_apellido_paterno']))
+$sql.=",persona_moral_apellido_paterno";
+
+if(!empty($_POST['persona_moral_apellido_materno']))
+$sql.=",persona_moral_apellido_materno";
+
+if(!empty($_POST['abogado_patrono_nombres']))
+$sql.=",abogado_patrono_nombres";
+
+if(!empty($_POST['abogado_patrono_apellido_paterno']))
+$sql.=",abogado_patrono_apellido_paterno";
+
+if(!empty($_POST['abogado_patrono_apellido_materno']))
+$sql.=",abogado_patrono_apellido_materno";
 
 if(!empty($_POST['demandado_nombres']))
 $sql.=",demandado_nombres";
@@ -101,6 +127,24 @@ $sql.=",'$actor_apellido_paterno'";
 if(!empty($_POST['actor_apellido_materno']))
 $sql.=",'$actor_apellido_materno'";
 
+if(!empty($_POST['abogado_patrono_nombres']))
+$sql.=",'$abogado_patrono_nombres'";
+
+if(!empty($_POST['abogado_patrono_apellido_paterno']))
+$sql.=",'$abogado_patrono_apellido_paterno'";
+
+if(!empty($_POST['abogado_patrono_apellido_materno']))
+$sql.=",'$abogado_patrono_apellido_materno'";
+
+if(!empty($_POST['persona_moral_nombres']))
+$sql.=",'$persona_moral_nombres'";
+
+if(!empty($_POST['persona_moral_apellido_paterno']))
+$sql.=",'$persona_moral_apellido_paterno'";
+
+if(!empty($_POST['persona_moral_apellido_materno']))
+$sql.=",'$persona_moral_apellido_materno'";
+
 if(!empty($_POST['demandado_nombres']))
 $sql.=",'$demandado_nombres'";
 
@@ -132,6 +176,8 @@ if(!empty($_POST['distrito_juidicial']))
 $sql.=",'$distrito_juidicial'";
 
 $sql.=")";	
+
+/* echo $sql; */
 
     mysql_query($sqlact,$con);
 

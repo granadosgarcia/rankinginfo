@@ -28,6 +28,14 @@ text-align: justify;
 padding: 0px 25px;
 }
 
+.hidden{
+	display: none;
+}
+
+.seccion{
+	background-color: #f5f5f5;
+}
+
 #usuario {
     margin: 32px 0 0 796px;
     width: 200px;

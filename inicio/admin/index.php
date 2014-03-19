@@ -72,7 +72,7 @@ $(function(){
    			<div id='wrapper'>
 	   				<div id='header'>
 	   					<h1>Actividades Realizadas en el Sistema</h1>
-					 <img src='/rankinginfo/img/third1.jpg' height='150' width='150' style='float: left;
+					 <img src='/rankinginfo/img/third1.png' height='150' width='150' style='float: left;
 margin: -68px 0px 0px -160px;'>
 						<h3> Estás en ".str_replace('rankinginfo/inicio/', "", $_SERVER["REQUEST_URI"])."</h3>
 					</div>
