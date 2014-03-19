@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.4
+-- version 4.1.6
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 02, 2013 at 01:29 AM
--- Server version: 5.1.44
--- PHP Version: 5.3.1
+-- Generation Time: Mar 19, 2014 at 01:26 AM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.9
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -32,12 +33,7 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=188 ;
-
---
--- Dumping data for table `actividades`
---
-
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=31 ;
 
 -- --------------------------------------------------------
 
@@ -77,13 +73,9 @@ CREATE TABLE IF NOT EXISTS `arrendado` (
   `img_comprobante_domicilio` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
   `img_foto` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
   `clave_ife` int(30) DEFAULT NULL,
+  `telefono_personal` int(10) DEFAULT NULL,
   PRIMARY KEY (`curp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
---
--- Dumping data for table `arrendado`
---
-
 
 -- --------------------------------------------------------
 
@@ -105,11 +97,6 @@ CREATE TABLE IF NOT EXISTS `arr_calif` (
   PRIMARY KEY (`id`),
   KEY `curp` (`curp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `arr_calif`
---
-
 
 -- --------------------------------------------------------
 
@@ -155,11 +142,6 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   KEY `clave_escolaridad` (`clave_escolaridad`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `empleado`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -179,10 +161,20 @@ CREATE TABLE IF NOT EXISTS `emp_calif` (
   KEY `curp` (`curp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `emp_calif`
+-- Table structure for table `errores_juicios`
 --
 
+CREATE TABLE IF NOT EXISTS `errores_juicios` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `input` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
+  `explicacion` varchar(500) COLLATE latin1_spanish_ci NOT NULL,
+  `id_juicio` varchar(150) COLLATE latin1_spanish_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_juicio` (`id_juicio`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -202,11 +194,6 @@ CREATE TABLE IF NOT EXISTS `escolaridad` (
   `img_cedula_profesional` varchar(300) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`clave`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
---
--- Dumping data for table `escolaridad`
---
-
 
 -- --------------------------------------------------------
 
@@ -230,11 +217,6 @@ CREATE TABLE IF NOT EXISTS `gestiones` (
   KEY `curp` (`curp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `gestiones`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -249,12 +231,7 @@ CREATE TABLE IF NOT EXISTS `promocion` (
   `comentario` varchar(5000) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `expediente` (`expediente`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=12 ;
-
---
--- Dumping data for table `promocion`
---
-
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -280,13 +257,14 @@ CREATE TABLE IF NOT EXISTS `relacion_juicios` (
   `distrito_juidicial` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
   `fecha` date NOT NULL,
   `expedientillo` varchar(150) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `abogado_patrono_nombres` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `abogado_patrono_apellido_paterno` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `abogado_patrono_apellido_materno` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `persona_moral_nombres` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `persona_moral_apellido_paterno` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `persona_moral_apellido_materno` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`expediente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
---
--- Dumping data for table `relacion_juicios`
---
-
 
 -- --------------------------------------------------------
 
@@ -302,7 +280,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `privilegios` int(2) NOT NULL,
   `img_foto` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `usuario`
@@ -337,11 +315,6 @@ CREATE TABLE IF NOT EXISTS `vw` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `vw`
---
-
-
---
 -- Constraints for dumped tables
 --
 
@@ -364,6 +337,12 @@ ALTER TABLE `emp_calif`
   ADD CONSTRAINT `emp_calif_ibfk_1` FOREIGN KEY (`curp`) REFERENCES `empleado` (`curp`);
 
 --
+-- Constraints for table `errores_juicios`
+--
+ALTER TABLE `errores_juicios`
+  ADD CONSTRAINT `error_juicio01` FOREIGN KEY (`id_juicio`) REFERENCES `relacion_juicios` (`expediente`);
+
+--
 -- Constraints for table `escolaridad`
 --
 ALTER TABLE `escolaridad`
@@ -380,3 +359,7 @@ ALTER TABLE `gestiones`
 --
 ALTER TABLE `promocion`
   ADD CONSTRAINT `promocion_ibfk_1` FOREIGN KEY (`expediente`) REFERENCES `relacion_juicios` (`expediente`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
