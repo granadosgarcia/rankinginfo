@@ -174,6 +174,38 @@ $expe = 0;
 		<label>Apellido Materno</label>
 		<p><?php echo $row['actor_apellido_materno']?></p>
 		</br></br>
+		
+		
+		
+		<label class="titulo_label2">Representante Legal</label>
+		<br>
+		<label>Nombres</label>
+		<p><?php echo $row['persona_moral_nombres']?></p>
+		</br>
+		<label>Apellido Paterno</label>
+		<p><?php echo $row['persona_moral_apellido_paterno']?> </p>
+		</br>
+		<label>Apellido Materno</label>
+		<p><?php echo $row['persona_moral_apellido_materno']?></p>
+		</br></br>
+		
+		<label class="titulo_label2">Abogado Patrono</label>
+		<br>
+		<label>Nombres</label>
+		<p><?php echo $row['abogado_patrono_nombres']?></p>
+		</br>
+		<label>Apellido Paterno</label>
+		<p><?php echo $row['abogado_patrono_apellido_paterno']?> </p>
+		</br>
+		<label>Apellido Materno</label>
+		<p><?php echo $row['abogado_patrono_apellido_materno']?></p>
+		</br></br>
+		
+		
+		
+		
+		
+		
 			
 		<label class="titulo_label">Demandado</label>
 		<br>

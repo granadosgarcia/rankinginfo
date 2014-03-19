@@ -130,21 +130,84 @@ margin: -130px 0px 0px -153px;'>
 
 	<div id ="izquierdaJuicios" >
 			<div id="Actor" class="seccion">
+
 				<ul style="  list-style-type: none;">
 				
-					<li><label style="margin-left:70px;text-decoration:underline ">Actor</label></li><br>
-
-					<li><label>Nombres</label><input type="text" name="actor_nombres" id="actor_nombres">	</li>
-
-					<li><label>Apellido Paterno </label><input type="text" name="actor_apellido_paterno" id="actor_apellido_paterno">	</li>
-
+					<li class="actor"><label  style="margin-left:70px;text-decoration:underline ">Actor</label></li>
+					<li class="actor"><br></li>
+					<li class="actor"><label>Nombres</label><input type="text" name="actor_nombres" id="actor_nombres">	</li>
+					<li class="actor"><label>Apellido Paterno </label>
+							<input  type="text" name="actor_apellido_paterno" id="actor_apellido_paterno">	</li>
+					<li class="actor"><label>Apellido Materno </label>
+					<input type="text" name="actor_apellido_materno"    id="actor_apellido_materno">	</li>
 					
-					<li><label>Apellido Materno </label><input type="text" name="actor_apellido_materno"    id="actor_apellido_materno">	</li>
-
-
+					<li class="moral hidden"><label style="margin-left:70px;text-decoration:underline ">Representante Legal</label><br></li>
+					<li class="moral hidden"><br></li>
+					<li class="moral hidden"><label>Nombres R.L</label><input type="text" name="persona_moral_nombres" id="persona_moral_nombres">	</li>
+					<li class="moral hidden">
+						<label>Apellido Paterno R.L </label><input type="text" name="persona_moral_apellido_paterno" id="persona_moral_apellido_paterno">	
+					</li>
+					<li class="moral hidden">
+					<label>Apellido Materno R.L </label>
+					<input class="moral hidden" type="text" name="persona_moral_apellido_materno"    id="persona_moral_apellido_materno">	
+					</li>
+					<li class="patrono hidden"><br></li>
+					
+						<li class="patrono hidden"><label style="margin-left:70px;text-decoration:underline ">Abogado Patrono</label><br></li>
+					<li class="patrono hidden"><br></li>
+					<li class="patrono hidden"><label>Nombres</label><input type="text" name="abogado_patrono_nombres" id="abogado_patrono_nombres">	</li>
+					<li class="patrono hidden">
+						<label>Apellido Paterno </label><input type="text" name="abogado_patrono_apellido_paterno" id="abogado_patrono_apellido_paterno">	
+					</li>
+					<li class="patrono hidden">
+					<label>Apellido Materno </label>
+					<input class="patrono hidden" type="text" name="abogado_patrono_apellido_materno"    id="abogado_patrono_apellido_materno">	
+					</li>
+					
+					
 					<br>
 
 				</ul>
+							<input id="mora" type="button" name="ok" value="Persona Moral" class="inserta3" style="float:left;" onclick="moral();">
+							<input id="patro" type="button" name="ok" value="Abogado Patrono" class="inserta3" style="float:right;" onclick="patrono();">
+							
+							<script>
+							var mor = true;
+							var pat = true;
+							
+							function moral()
+							{
+								if(mor)
+								{
+									$(".moral").removeClass("hidden");
+									$(".actor").addClass("hidden");
+									mor = false;
+								}
+								else
+								{
+									$(".actor").removeClass("hidden");
+									$(".moral").addClass("hidden");
+									mor = true;
+								}
+								
+							}
+							
+							function patrono(){
+								if(pat)
+								{
+									$(".patrono").removeClass("hidden");
+									pat = false;
+								}
+								else
+								{
+									$(".patrono").addClass("hidden");
+									pat = true;
+								}
+							}
+								
+							</script>
+
+
 
 			</div>
 
@@ -152,7 +215,7 @@ margin: -130px 0px 0px -153px;'>
 					<ul style="  list-style-type: none;">
 						<li><label style="margin-left:70px; text-decoration:underline">Demandado</label></li><br>
 
-						<li><label>Nombre</label><input type="text" name="demandado_nombres"    id="demandado_nombres">	</li>
+						<li><label>Nombres</label><input type="text" name="demandado_nombres"    id="demandado_nombres">	</li>
 						<li><label>Apellido Paterno</label><input type="text" name="demandado_apellido_paterno"    id="demandado_apellido_paterno">	</li>
 						<li><label>Apellido Materno </label><input type="text" name="demandado_apellido_materno"    id="demandado_apellido_materno">	</li>
 

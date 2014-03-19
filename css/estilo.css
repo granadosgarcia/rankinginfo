@@ -28,6 +28,10 @@ text-align: justify;
 padding: 0px 25px;
 }
 
+.hidden{
+	display: none;
+}
+
 .seccion{
 	background-color: #f5f5f5;
 }

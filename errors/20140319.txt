@@ -1,0 +1,40 @@
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,persona_moral_nombres,persona_moral_apellido_paterno,persona_moral_apellido_materno,abogado_patrono_nombres,abogado_patrono_apellido_paterno,abogado_patrono_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,estado_procesal,comentario_01,distrito_juidicial)
+
+VALUES('2014-03-19','holis','holis','holis','','actor_apellido_materno','actor_apellido_materno','holis','holis','holis','holis','holis','holis'holis,'holis','123/123','holis','holis','holis','holisholisholisholisholis','holis')
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'holis,'holis','123/123','holis','holis','holis','holisholisholisholisholis','hol' at line 3
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,persona_moral_nombres,persona_moral_apellido_paterno,persona_moral_apellido_materno,abogado_patrono_nombres,abogado_patrono_apellido_paterno,abogado_patrono_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,estado_procesal,comentario_01,distrito_juidicial)
+
+VALUES('2014-03-19','holis','holis','holis','','actor_apellido_materno','actor_apellido_materno','holis','holis','holis','holis','holis','holis'holis,'holis','123/123','holis','holis','holis','holisholisholisholisholis','holis')
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'holis,'holis','123/123','holis','holis','holis','holisholisholisholisholis','hol' at line 3
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,persona_moral_nombres,persona_moral_apellido_paterno,persona_moral_apellido_materno,abogado_patrono_nombres,abogado_patrono_apellido_paterno,abogado_patrono_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,estado_procesal,comentario_01,distrito_juidicial)
+
+VALUES('2014-03-19','holis','holis','holis','','actor_apellido_materno','actor_apellido_materno','holis','holis','holis','holis','holis','holis'holis,'holis','123/123','holis','holis','holis','holisholisholisholisholis','holis')
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'holis,'holis','123/123','holis','holis','holis','holisholisholisholisholis','hol' at line 3
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,persona_moral_nombres,persona_moral_apellido_paterno,persona_moral_apellido_materno,abogado_patrono_nombres,abogado_patrono_apellido_paterno,abogado_patrono_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,estado_procesal,comentario_01,distrito_juidicial)
+
+VALUES('2014-03-19','holis','holis','holis','actor_apellido_materno','actor_apellido_materno','actor_apellido_materno','holis','holis','holis','holis','holis','holis'holis,'holis','123/123','holis','holis','holis','holisholisholisholisholis','holis')
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'holis,'holis','123/123','holis','holis','holis','holisholisholisholisholis','hol' at line 3
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,persona_moral_nombres,persona_moral_apellido_paterno,persona_moral_apellido_materno,abogado_patrono_nombres,abogado_patrono_apellido_paterno,abogado_patrono_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,estado_procesal,comentario_01,distrito_juidicial)
+
+VALUES('2014-03-12','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1'holis,'holis1','12/3412','holis1','holis1','holis1','holis1holis1holis1holis1holis1holis1holis1holis1holis1','holis1')
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'holis,'holis1','12/3412','holis1','holis1','holis1','holis1holis1holis1holis1hol' at line 3
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,persona_moral_nombres,persona_moral_apellido_paterno,persona_moral_apellido_materno,abogado_patrono_nombres,abogado_patrono_apellido_paterno,abogado_patrono_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,estado_procesal,comentario_01,distrito_juidicial)
+
+VALUES('2014-03-12','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1'holis,'holis1','12/3412','holis1','holis1','holis1','holis1holis1holis1holis1holis1holis1holis1holis1holis1','holis1')
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'holis,'holis1','12/3412','holis1','holis1','holis1','holis1holis1holis1holis1hol' at line 3
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,persona_moral_nombres,persona_moral_apellido_paterno,persona_moral_apellido_materno,abogado_patrono_nombres,abogado_patrono_apellido_paterno,abogado_patrono_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,estado_procesal,comentario_01,distrito_juidicial)
+
+VALUES('2014-03-12','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','12/3412','holis1','holis1','holis1','holis1holis1holis1holis1holis1holis1holis1holis1holis1','holis1')
+ El error es: Unknown column 'abogado_patrono_apellido_materno' in 'field list'
+
+INSERT INTO relacion_juicios(fecha,actor_nombres,actor_apellido_paterno,actor_apellido_materno,persona_moral_nombres,persona_moral_apellido_paterno,persona_moral_apellido_materno,abogado_patrono_nombres,abogado_patrono_apellido_paterno,abogado_patrono_apellido_materno,demandado_nombres,demandado_apellido_paterno,demandado_apellido_materno,juicio,expediente,juzgado,ultima_actuacion,estado_procesal,comentario_01,distrito_juidicial)
+
+VALUES('2014-03-12','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','holis1','1232/3412','holis1','holis1','holis1','holis1holis1holis1holis1holis1holis1holis1holis1holis1','holis1')
+ El error es: Unknown column 'abogado_patrono_apellido_materno' in 'field list'
+
