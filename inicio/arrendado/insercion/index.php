@@ -159,7 +159,7 @@ margin: -130px 0px 0px -153px;'>
 			<li><label>CURP</label>
 			<input type="text" name="curp"               id="curp">	</li>
 
-			<li><label>Clave del IFE</label>
+			<li><label>Clave de Elector (IFE)</label>
 			<input type="text" name="clave_ife" id="clave_ife"></li>
 
 			

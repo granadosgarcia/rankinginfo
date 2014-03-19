@@ -1,0 +1,7 @@
+INSERT INTO arrendado(
+nombre,curp,apellido_paterno,apellido_materno,estado_civil,arrendador_actual,arrendador_anterior,domicilio_anterior,nombre_aval,domicilio_aval,telefono_aval,clave_ife,nombre_conyuge,calle,no_interior,no_exterior,colonia,ciudad,estado,codigo_postal,municipio,delegacion,telefono_particular,telefono_personal)
+
+VALUES(
+'Masdf','Masdf','Masdf','Masdf','Casada','asfdasdfasdfasdf','asdfasdfasdfa','sfdasdfasdf','asdfasdf','asdfasdfasdf','123124123','1234','asdfasdf','Masdf','Masdf','Masdf','MasdfMasdf','Masdf','Masdf','1234','Masdf','Masdf','1234','1234')
+ El error es: Unknown column 'telefono_personal' in 'field list'
+

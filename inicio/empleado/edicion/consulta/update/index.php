@@ -274,7 +274,7 @@ var x=document.getElementById("hidden");
 		<input type="text" name="curp"               id="curp"					value="<?php echo $row['curp'] ?>" class="inputderecha">
 			</br>			
 
-		<label>Clave del IFE</label>
+		<label>Clave de Elector (IFE)</label>
 
 		<input type="text" name="clave_ife"               id="clave_ife"					value="<?php echo $row['clave_ife'] ?>" class="inputderecha">
 						</br>			
