@@ -332,7 +332,7 @@ var x=document.getElementById("hidden");
 				break;
 		} ?><br>
 		<div id="hidden" style="">
-		<label style="float:left;">Nombre del Conyuge</label>
+		<label style="float:left;">Nombre del Cónyuge</label>
 		<input style="float:right;" type="text" name="nombre_conyuge"     id="nombre_conyuge"		value="<? echo $row['nombre_conyuge'] ?>" class="inputderecha">
 		</div><br>
 			</div>
@@ -361,7 +361,7 @@ var x=document.getElementById("hidden");
 		<input type="text" name="domicilio_aval"     id="domicilio_aval"		value="<?php echo $row['domicilio_aval'] ?>" class="inputderecha">
 			</br>
 
-		<label>Télefono del Aval</label>
+		<label>Teléfono del Aval</label>
 		<input type="text" name="telefono_aval"      id="telefono_aval"			value="<?php echo $row['telefono_aval'] ?>" class="inputderecha">
 			</br>
 
