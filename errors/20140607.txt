@@ -1,0 +1,4 @@
+UPDATE relacion_juicios SET actor_nombres = 'kevin'actor_apellido_paterno = 'kevin'actor_apellido_materno = 'kevin kevin'persona_moral_nombres = 'kevin'persona_moral_apellido_paterno = 'kevin'persona_moral_apellido_materno = 'kevin'abogado_patrono_nombres = 'kevin'abogado_patrono_apellido_paterno = 'kevin'abogado_patrono_apellido_materno = 'kevin'demandado_nombres = 'Kevin'demandado_apellido_paterno = 'kevin'demandado_apellido_materno = 'Holis kevin'juicio = 'kevin'juzgado = 'kevin'distrito_juidicial = 'kevin'fecha = '2014-05-17', ultima_actuacion = 'kevin', estado_procesal = 'kevin', comentario_01 = 'kevin kevin kevin kevin' WHERE
+expediente ='123/212'
+ El error es: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'actor_apellido_paterno = 'kevin'actor_apellido_materno = 'kevin kevin'persona_mo' at line 1
+

@@ -1,11 +1,11 @@
-<?php 
+<?php
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/sesion.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 ?>
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
 		<link rel="stylesheet" type="text/css" href="/rankinginfo/css/estilo.css">
     	<title>Menú de opciones</title>
@@ -19,18 +19,18 @@ include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/con.php";
 margin: -200px 0px 0px -160px;">
 
 		   			</div>
-   				
+
 		   			<div id="contenido">
-		   				 <h3 style="color: #808080; margin: -50px 0px -15px 700px;"> <?php 
-                          $imprim  = date("g:i a"); 
+		   				 <h3 style="color: #808080; margin: -50px 0px -15px 700px;"> <?php
+                          $imprim  = date("g:i a");
                                           echo $imprim; ?></h3>
-		   				
+
 	   					<p class="bienvenida"><?php echo "Bienvenido ". $_SESSION['nombreusuario'];?></p>
-		   				
+
 	   					<div class="salida">
 	   						<a href="/rankinginfo/cerrar_sesion.php" ><input type="button" value="Cerrar sesi&oacute;n" class="logout"></a>
 	   					</div>
-    	
+
 	   					<div class="botonera">
 		   					<a href="arrendado/"><input type="button" value="Arrendado" class="inserta"></a>
 
@@ -38,21 +38,23 @@ margin: -200px 0px 0px -160px;">
 
 		   					<a href="vw/"><input type="button" value="VW" class="edita"></a>
 
-		   					<?php if(isset($_SESSION['privilegios'])&&$_SESSION['privilegios']>=10){ 
- ?>
+		   					<?php
+								//Mayor de 10 es admin
+								 		if(isset($_SESSION['privilegios'])&&$_SESSION['privilegios']>=10){
+
+ 								?>
 		   					<a href="admin/"><input type="button" value="Admin" class="edita"></a>
 <?php } ?>
 
 		   					<a href="juicios/"><input type="button" value="Juicios" class="edita"></a>
 
 
-		   				
+
 
 		   				</div>
-	
+
 		   			</div>
-   					
+
 		   		</div>
     </body>
-</html>    
-
+</html>
