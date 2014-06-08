@@ -136,6 +136,7 @@ $gor++; } ?>
             <div id="wrapper">
 
                 <div id="inputss">
+									<a href="excel.php?id=<?php echo $_REQUEST['consulta']?>">Excel</a>
 
                 <br>
         <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query_j.php";
