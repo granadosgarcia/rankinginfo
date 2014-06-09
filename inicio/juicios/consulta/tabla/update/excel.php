@@ -131,6 +131,8 @@ $expediente = $_SESSION['curp']; //Variable temporal para guardar el id del expe
     </tr>
 <?php } ?>
 </table>
+
+<a href="../../">Regresar</a>
 </div>
 
 <script>

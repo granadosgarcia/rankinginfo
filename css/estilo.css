@@ -74,19 +74,19 @@ float: right;
 }
 
 #contenedortabla{
-	
+
 	margin: 40px 0px;
 }
 
 .infooo{
-	
+
 	color: black;
 }
 
 .submitquery{
 	margin: 2px 0px 0px 0px;
 	float: right;
-	
+
 }
 .espacioo{
   margin-top: 20px;
@@ -96,7 +96,7 @@ padding: 2px 10px;
 .busquedatexto{
 	width: 300px;
 	font-size: 1.25em;
-	
+
 }
 .expedientilloo{
   text-decoration: none;
@@ -145,7 +145,7 @@ float: left;
 
 .expParte1{
 width: 50px;
-float: left!important; 
+float: left!important;
 margin: 0 3px 0 19px !important;
 
 }
@@ -242,7 +242,7 @@ float: left;
 }
 #info_deudor ul{
     list-style-type: none;
-    
+
 }
 
 #info_deudor ul li {
@@ -298,22 +298,22 @@ padding: 10px 15px;
 
 #inputss input[type="text"] { float: right;
 margin: 0px 3px;
-	
+
 }
 
 #inputss input[type="password"] { float: right;
 margin: 0px 3px;
-	
+
 }
 
 #inputsss input[type="text"] { float: right;
 margin: 0px -15px;
-	
+
 }
 
 #inputsss input[type="password"] { float: right;
 margin: 0px -15px;
-	
+
 }
 
 
@@ -374,7 +374,7 @@ width: 200px;
 
 .salida{
 	margin: 0px 0px 0px 700px;
-	
+
 }
 
 #edicion{
@@ -384,7 +384,7 @@ width: 200px;
 
 #calificacion{
 	margin: 0px 0px 0px 0px;
-	
+
 }
 
 #minimenu{
@@ -429,7 +429,7 @@ body{
 #header{
 	background-color: #535151;
 	color: #ffffff;
-	
+
 }
 
 #ko{
@@ -493,7 +493,7 @@ input.pass{
 #co{
 	margin: 20px auto;
 width: 330px;
-	
+
 }
 
 #ni{
@@ -561,7 +561,7 @@ padding: 8px 0;
 text-align: center;
 text-shadow: 0 1px 0 #EEE;
 width: 120px;
-	
+
 }
 .boton:hover {
     background-color: #dddddd;
@@ -575,7 +575,7 @@ width: 120px;
     border-bottom: 1px solid #999;
     cursor: pointer;
     text-shadow: 0 1px 0 #ddd; }
-    
+
   .boton:active {
     border: 1px solid #aaa;
     border-bottom: 1px solid #888;
@@ -602,7 +602,7 @@ width: 120px;
   padding: 7px 0 8px 0;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
-  width: 150px; 
+  width: 150px;
 }
 
 
@@ -624,7 +624,7 @@ background-color: #7fbf4d;
   padding: 7px 0 8px 0;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
-  width: 150px; 
+  width: 150px;
   margin:0px 0px 0px 81px;
 }
 .inserta2:hover{
@@ -637,18 +637,17 @@ background-color: #7fbf4d;
     background-image: linear-gradient(top, #76b347, #5e9e2e);
     -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
     box-shadow: inset 0 1px 0 0 #8dbf67;
-    cursor: pointer; 
+    cursor: pointer;
 }
 .inserta2:active{
 	    border: 1px solid #5b992b;
     border-bottom: 1px solid #538c27;
     -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
 }
 
-
-
-.inserta3{
+.inse{
+  text-decoration:none;
 background-color: #7fbf4d;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
   background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
@@ -665,7 +664,30 @@ background-color: #7fbf4d;
   font: bold 18px/1 "NeutonBold", Geneva, Verdana, sans-serif;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
-  width: 150px; 
+  width: 140px;
+}
+
+
+
+.inserta3{
+  text-decoration:none;
+background-color: #7fbf4d;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
+  background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: linear-gradient(top, #7fbf4d, #63a62f);
+  border: 1px solid #63a62f;
+  border-bottom: 1px solid #5b992b;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+  box-shadow: inset 0 1px 0 0 #96ca6d;
+  color: #fff;
+  font: bold 18px/1 "NeutonBold", Geneva, Verdana, sans-serif;
+  text-align: center;
+  text-shadow: 0 -1px 0 #4c9021;
+  width: 150px;
 }
 .inserta3:hover{
 	background-color: #76b347;
@@ -677,13 +699,13 @@ background-color: #7fbf4d;
     background-image: linear-gradient(top, #76b347, #5e9e2e);
     -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
     box-shadow: inset 0 1px 0 0 #8dbf67;
-    cursor: pointer; 
+    cursor: pointer;
 }
 .inserta3:active{
 	    border: 1px solid #5b992b;
     border-bottom: 1px solid #538c27;
     -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
 }
 
 
@@ -709,7 +731,7 @@ background-color: #7fbf4d;
   padding: 7px 0 8px 0;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
-  width: 145px; 
+  width: 145px;
   margin:15px 0px 0px 15px;
 }
 .inserta4:hover{
@@ -722,13 +744,13 @@ background-color: #7fbf4d;
     background-image: linear-gradient(top, #76b347, #5e9e2e);
     -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
     box-shadow: inset 0 1px 0 0 #8dbf67;
-    cursor: pointer; 
+    cursor: pointer;
 }
 .inserta4:active{
 	    border: 1px solid #5b992b;
     border-bottom: 1px solid #538c27;
     -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
 }
 
 
@@ -743,13 +765,13 @@ background-color: #7fbf4d;
     background-image: linear-gradient(top, #76b347, #5e9e2e);
     -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
     box-shadow: inset 0 1px 0 0 #8dbf67;
-    cursor: pointer; 
+    cursor: pointer;
 }
 .inserta:active{
 	    border: 1px solid #5b992b;
     border-bottom: 1px solid #538c27;
     -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
 }
 
 
@@ -771,7 +793,7 @@ background-color: #7fbf4d;
   padding: 7px 0 8px 0;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
-  width: 150px; 
+  width: 150px;
 }
 
 .crea{
@@ -792,7 +814,7 @@ background-color: #7fbf4d;
   padding: 7px 0 8px 0;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
-  width: 150px; 
+  width: 150px;
  margin: 0 0 0 90px;
 }
 .edita:hover{
@@ -805,14 +827,14 @@ background-color: #7fbf4d;
     background-image: linear-gradient(top, #76b347, #5e9e2e);
     -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
     box-shadow: inset 0 1px 0 0 #8dbf67;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .edita:active{
 	   border: 1px solid #5b992b;
     border-bottom: 1px solid #538c27;
     -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
 }
 .califica{
 		background-color: #7fbf4d;
@@ -832,7 +854,7 @@ background-color: #7fbf4d;
   padding: 7px 0 8px 0;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
-  width: 150px; 
+  width: 150px;
 }
 .califica:hover{
 	background-color: #76b347;
@@ -859,7 +881,7 @@ background-color: #7fbf4d;
 	 border: 1px solid #5b992b;
     border-bottom: 1px solid #538c27;
     -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
 }
 .consulta{
 	background-color: #7fbf4d;
@@ -879,7 +901,7 @@ background-color: #7fbf4d;
   padding: 7px 0 8px 0;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
-  width: 150px; 
+  width: 150px;
 }
 .consulta:hover{
 	background-color: #76b347;
@@ -954,7 +976,7 @@ background-color: #7fbf4d;
   padding: 7px 0 8px 0;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
-  width: 85px; 
+  width: 85px;
   margin: 0px 0px 0px 15px;
   float:left;
 }
@@ -968,13 +990,13 @@ background-color: #7fbf4d;
     background-image: linear-gradient(top, #76b347, #5e9e2e);
     -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
     box-shadow: inset 0 1px 0 0 #8dbf67;
-    cursor: pointer; 
+    cursor: pointer;
 }
 .guardar:active{
 	    border: 1px solid #5b992b;
     border-bottom: 1px solid #538c27;
     -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
 }
 
 
@@ -999,7 +1021,7 @@ background-color: #7fbf4d;
   padding: 7px 0 8px 0;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
-  width: 85px; 
+  width: 85px;
   float:left;
   margin: 0px 0px 0px 70px;
 }
@@ -1099,5 +1121,3 @@ background-color: #7fbf4d;
     font-weight: normal;
     font-style: normal;
 }
-
-

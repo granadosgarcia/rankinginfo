@@ -136,7 +136,10 @@ $gor++; } ?>
             <div id="wrapper">
 
                 <div id="inputss">
-									<a href="excel.php?id=<?php echo $_REQUEST['consulta']?>">Excel</a>
+									<a class="inse" href="excel.php?id=<?php echo $_REQUEST['consulta']?>">Descargar a Excel</a>
+									<INPUT class="inse" type="button" value="Reportar un Error" onClick="window.open('error.php','mywindow','width=400,height=430')">
+
+
 
                 <br>
         <?php  include_once $_SERVER['DOCUMENT_ROOT']."/rankinginfo/conexion/menu_query_j.php";
@@ -391,7 +394,7 @@ $expe = 0;
 <div id = "tabla_promocion" class="seccion">
 		 			<INPUT class="inserta3" type="button" value="+ Promoción" onClick="window.open('promocion.php','mywindow','width=400,height=430')">
 
-		 					 			<INPUT class="inserta3" type="button" value="+ Notificación" onClick="window.open('notificacion.php','mywindow','width=400,height=430')">
+		 			<INPUT class="inserta3" type="button" value="+ Notificación" onClick="window.open('notificacion.php','mywindow','width=400,height=430')">
 <br>
 <br>
 
